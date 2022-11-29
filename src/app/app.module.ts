@@ -12,6 +12,7 @@ import { FavouritesComponent } from './pages/favourites/favourites.component';
 import { ThemesComponent } from './pages/themes/themes.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { TagsComponent } from './components/tags/tags.component';
+import { ChannelVideosComponent } from './pages/channel/channel-videos/channel-videos.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { TagsComponent } from './components/tags/tags.component';
     FavouritesComponent,
     ThemesComponent,
     NavigationComponent,
-    TagsComponent
+    TagsComponent,
+    ChannelVideosComponent
   ],
   imports: [
     BrowserModule,
