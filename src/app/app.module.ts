@@ -11,8 +11,8 @@ import { PlaylistsComponent } from './pages/playlists/playlists.component';
 import { FavouritesComponent } from './pages/favourites/favourites.component';
 import { ThemesComponent } from './pages/themes/themes.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
-import { TagsComponent } from './components/tags/tags.component';
 import { ChannelVideosComponent } from './pages/channel/channel-videos/channel-videos.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 
 @NgModule({
   declarations: [
@@ -25,12 +25,12 @@ import { ChannelVideosComponent } from './pages/channel/channel-videos/channel-v
     FavouritesComponent,
     ThemesComponent,
     NavigationComponent,
-    TagsComponent,
     ChannelVideosComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
