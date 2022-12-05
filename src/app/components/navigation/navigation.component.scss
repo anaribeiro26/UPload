@@ -8,19 +8,25 @@
   background-color: #1c1c24;
   overflow-x: hidden;
   padding-top: 10px;
-  color: white;
+  color: rgba(255, 255, 255, 80%);
 
   .menu {
     padding-top: 20px;
 
+    .menu-item {
+      border-left: 2px solid #1c1c24;
+    }
+
     .menu-item:hover {
       border-left: 2px solid #FFFFFF;
+      color: rgba(255, 255, 255, 100%);
     }
   }
 
   .nav {
     border-top: 1px solid lightslategray;
   }
+
   p {
     display: inline-block;
   }
@@ -32,9 +38,17 @@
   .logo {
     display: flex;
     justify-content: center;
+
     img {
       max-width: 80%;
     }
   }
-}
 
+  .tags {
+    p {
+      padding: 1em;
+      font-size: 0.9em;
+      color: rgba(255, 255, 255, 80%);
+    }
+  }
+}
