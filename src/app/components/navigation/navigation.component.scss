@@ -1,20 +1,40 @@
-.nav {
+.sidebar {
   height: 100%;
-  width: 25%;
+  width: 20%;
   position: fixed;
   z-index: 1;
   top: 0;
   left: 0;
   background-color: #1c1c24;
   overflow-x: hidden;
-  padding-top: 60px;
+  padding-top: 10px;
   color: white;
 
+  .menu {
+    padding-top: 20px;
+
+    .menu-item:hover {
+      border-left: 2px solid #FFFFFF;
+    }
+  }
+
+  .nav {
+    border-top: 1px solid lightslategray;
+  }
   p {
     display: inline-block;
   }
+
   fa-icon {
     padding: 1em;
+  }
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    img {
+      max-width: 80%;
+    }
   }
 }
 
