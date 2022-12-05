@@ -15,6 +15,11 @@ export class VideosService {
   getChannels(id: number) {
     return this.http.get(BASE_URL + "/canais")
   }
+
+  getHomepage(id: number) {
+    return this.http.get(BASE_URL + "/videos")
+  }
+
   toggleFavorite(id: number) {
     if (!this.isFavorite(id)) {
       this.favorites.push(id)
