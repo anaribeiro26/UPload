@@ -7,7 +7,7 @@ import {faHouse, faBarsStaggered, faClapperboard, faPlay} from "@fortawesome/fre
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  first_title:string = "Inicio";
+  first_title:string = "Início";
   second_title:string = "Canais";
   third_title:string = "Temáticas";
   fourth_title:string = "Playlists";
