@@ -7,6 +7,7 @@ export interface Video {
   tags: string[];
   descricao: string;
   field_data_video: string;
+  logotipo: string;
 
 }
 

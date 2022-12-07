@@ -21,7 +21,7 @@ export class VideosService {
     return this.http.get(BASE_URL + "/videos")
   }
 
-  getVideos() {
+  getVideoTest() {
     return this.http.get(BASE_URL + "/videos")
   }
 

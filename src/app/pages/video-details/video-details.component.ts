@@ -11,11 +11,12 @@ import {Video} from "./video.model";
 export class VideoDetailsComponent implements OnInit {
 
   videos: Video[] = [];
+  index: any;
 
   constructor(private route: ActivatedRoute, private video: VideosService) {}
 
   ngOnInit(): void {
-    this.video.getVideos().subscribe((videos) => {
+    this.video.getVideoTest().subscribe((videos) => {
       this.videos = videos as Video[];
     });
   }

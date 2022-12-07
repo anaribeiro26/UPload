@@ -1,7 +1,12 @@
 
-<p *ngFor="let item of videos">
-{{item.descricao}}
+<div *ngFor="let item of videos, let index = index">
+  <p *ngIf="index > 0">
+  {{item.titulo}}
+    <img [src]="item.logotipo">
 </p>
-
+</div>
 
 <p>teste</p>
+
+
+
