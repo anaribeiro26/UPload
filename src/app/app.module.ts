@@ -13,6 +13,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { ChannelVideosComponent } from './pages/channel/channel-videos/channel-videos.component';
 import {ArticlesComponent} from './pages/articles/articles.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

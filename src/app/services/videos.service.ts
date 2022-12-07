@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 
-const BASE_URL = "https://project-upskill-grupo05.pantheonsite.io/api"
+const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 
 @Injectable({
   providedIn: 'root'
@@ -12,11 +12,16 @@ export class VideosService {
 
   constructor(private http: HttpClient) {
   }
+
   getChannels(id: number) {
     return this.http.get(BASE_URL + "/canais")
   }
 
   getHomepage(id: number) {
+    return this.http.get(BASE_URL + "/videos")
+  }
+
+  getVideos() {
     return this.http.get(BASE_URL + "/videos")
   }
 

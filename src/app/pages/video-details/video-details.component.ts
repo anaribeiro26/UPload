@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
+import {VideosService} from "../../services/videos.service";
+import {Video} from "./video.model";
 
 @Component({
   selector: 'app-video-details',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class VideoDetailsComponent implements OnInit {
 
-  constructor() { }
+  videos: Video[] = [];
+
+  constructor(private route: ActivatedRoute, private video: VideosService) {}
 
   ngOnInit(): void {
+    this.video.getVideos().subscribe((videos) => {
+      this.videos = videos as Video[];
+    });
   }
 
 }
