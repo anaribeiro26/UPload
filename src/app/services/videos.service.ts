@@ -17,7 +17,7 @@ export class VideosService {
     return this.http.get(BASE_URL + "/canais")
   }
 
-  getHomepage(id: number) {
+  getVideos(id: number) {
     return this.http.get(BASE_URL + "/videos")
   }
 
