@@ -1,5 +1,10 @@
-<div>
+<div *ngFor=" let c of channels">
   <div>
-<p>channel works!</p>
+  <h4 class="title">{{c.titulo}}</h4>
+  <p class="title">{{c.bio}}</p>
+</div>
+<div>
+  <img [src]="c.logo">
+  <img [src]="c.header">
 </div>
 </div>
