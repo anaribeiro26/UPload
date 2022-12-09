@@ -14,7 +14,7 @@ export class VideosService {
   }
 
   getChannels(id: number) {
-    return this.http.get(BASE_URL + "/canais")
+    return this.http.get(BASE_URL + "/canais" + id)
   }
 
   getVideos(id: number) {
