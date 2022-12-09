@@ -14,7 +14,8 @@ export class ChannelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.video.getChannels().subscribe((channels) => {
+    let id = this.route.snapshot.params['id'];
+    this.video.getChannels(id).subscribe((channels) => {
       this.channels = <any[]>channels;
     })
   }
