@@ -14,8 +14,8 @@ export class ChannelComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.video.getChannels().subscribe((channels) => {
-      this.channels = <any[]>channels;
-    })
+    //     this.video.getChannels().subscribe((channels) => {
+    //   this.channels = <any[]>channels;
+    // })
   }
 }

@@ -18,11 +18,11 @@ export class VideosService {
   }
 
   getVideos(id: number) {
-    return this.http.get(BASE_URL + "/videos")
+    return this.http.get(BASE_URL + "/video")
   }
 
   getVideoTest() {
-    return this.http.get(BASE_URL + "/videos")
+    return this.http.get(BASE_URL + "/video")
   }
 
   toggleFavorite(id: number) {

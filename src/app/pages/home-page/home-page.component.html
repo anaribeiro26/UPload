@@ -1,15 +1,26 @@
 <div class="header">
   <h1>Últimos Vídeos</h1>
 </div>
-<<<<<<< HEAD
+<div *ngFor="let v of videos">
+  <div class="itens">
+    <h5 class="name">{{v.canal}}</h5>
+    <h4 class="titleVideo">{{v.titulo}}</h4>
+    <h6 class="date">{{v.data}}</h6>
 
-=======
+  </div>
+  <div class="logo">
+    <img [src]="v.logotipo">
+  </div>
+
+</div>
+
+
 <div class="sugestionChannel">
   <h5>Canais sugeridos</h5>
 </div>
 <div class="sugestionThemes">
   <h5>Temáticas sugeridas</h5>
 </div>
->>>>>>> ef3311614dfe30d46e57b01b2c0251f952f96a30
-<app-video-details></app-video-details>
+
+
 
