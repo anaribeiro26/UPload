@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {VideosService} from "../../services/videos.service";
-import {Video} from "./video.model";
+import {Video} from "../../services/video.model";
+
 
 @Component({
   selector: 'app-video-details',
