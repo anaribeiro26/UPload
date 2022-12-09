@@ -1,10 +1,10 @@
-<div *ngFor=" let c of channels">
+<div *ngIf="channels">
   <div>
-  <h4 class="title">{{c.titulo}}</h4>
-  <p class="title">{{c.bio}}</p>
+  <h4 class="title">{{channels.titulo}}</h4>
+  <p class="title">{{channels.bio}}</p>
 </div>
 <div>
-  <img [src]="c.logo">
-  <img [src]="c.header">
+  <img [src]="channels.logo">
+  <img [src]="channels.header">
 </div>
 </div>

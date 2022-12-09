@@ -14,15 +14,15 @@ export class VideosService {
   }
 
   getChannels(id: number) {
-    return this.http.get(BASE_URL + "/canais")
+    return this.http.get(BASE_URL + "/canais" + id)
   }
 
   getVideos(id: number) {
-    return this.http.get(BASE_URL + "/videos")
+    return this.http.get(BASE_URL + "/video")
   }
 
   getVideoTest() {
-    return this.http.get(BASE_URL + "/videos")
+    return this.http.get(BASE_URL + "/video")
   }
 
   toggleFavorite(id: number) {
