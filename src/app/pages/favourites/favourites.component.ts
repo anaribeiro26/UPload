@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {VideosService} from "../../services/videos.service";
+import {UPloadService} from "../../services/UPload.service";
 
 @Component({
   selector: 'app-favourites',
@@ -9,7 +9,7 @@ import {VideosService} from "../../services/videos.service";
 export class FavouritesComponent implements OnInit {
   favorites_list: any;
 
-  constructor(private video: VideosService) {
+  constructor(private video: UPloadService) {
   }
 
   ngOnInit(): void {

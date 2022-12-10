@@ -7,7 +7,7 @@ const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
   providedIn: 'root'
 })
 
-export class VideosService {
+export class UPloadService {
   favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
   constructor(private http: HttpClient) {
@@ -17,13 +17,28 @@ export class VideosService {
     return this.http.get(BASE_URL + "/canais" + id)
   }
 
-  getVideos(id: number) {
-    return this.http.get(BASE_URL + "/video")
+  getVideos() {
+    return this.http.get(BASE_URL + "/videos")
   }
 
-  getVideoTest() {
-    return this.http.get(BASE_URL + "/video")
+  getVideoDetails(id: string) {
+    return this.http.get(BASE_URL + "/video/" + id)
   }
+
+  getPlaylistVideos (id: number) {
+    return this.http.get(BASE_URL + "/videos/playlist")
+  }
+
+  getVideosCanal (id: number) {
+    return this.http.get(BASE_URL + "/videos/canal")
+  }
+
+  getPlaylists () {
+    return this.http.get(BASE_URL + "/playlists")
+  }
+
+
+
 
   toggleFavorite(id: number) {
     if (!this.isFavorite(id)) {

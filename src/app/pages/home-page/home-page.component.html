@@ -3,14 +3,16 @@
 </div>
 <div *ngFor="let v of videos">
   <div class="itens">
-    <h5 class="name">{{v.canal}}</h5>
-    <h4 class="titleVideo">{{v.titulo}}</h4>
-    <h6 class="date">{{v.data}}</h6>
+    <h5 class="name">{{v.channel}}</h5>
+    <a routerLink="/video/{{v.id}}" routerLinkActive="active">
+      <h4 class="titleVideo">{{v.title}}</h4>
+    </a>
+    <h6 class="date">{{v.date}}</h6>
 
   </div>
-  <div class="logo">
-    <img [src]="v.logotipo">
-  </div>
+  <!--<div class="logo">
+    <img [src]=""
+  </div>-->
 
 </div>
 
@@ -21,14 +23,3 @@
 <div class="sugestionThemes">
   <h5>Temáticas sugeridas</h5>
 </div>
-<<<<<<< HEAD
->>>>>>> ef3311614dfe30d46e57b01b2c0251f952f96a30
-
-
-
-<app-video-details></app-video-details>
-=======
-
-
-
->>>>>>> 4f61ea26089754e81ea13f17bbc83dbd73653a42

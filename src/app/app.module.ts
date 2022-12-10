@@ -8,7 +8,7 @@ import {CommentsComponent} from './pages/video-details/comments/comments.compone
 import {ChannelComponent} from './pages/channel/channel.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {PlaylistsComponent} from './pages/playlists/playlists.component';
-import {FavouritesComponent} from './pages/favourites/favourites.component';
+import {FavouritesComponent} from "./pages/favourites/favourites.component";
 import {ArticlesComponent} from './pages/articles/articles.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
 import {ChannelVideosComponent} from './pages/channel/channel-videos/channel-videos.component';

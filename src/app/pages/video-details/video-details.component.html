@@ -1,12 +1,15 @@
-
-<div *ngFor="let item of videos, let index = index">
-  <p *ngIf="index > 0">
-  {{item.titulo}}
-    <img [src]="item.titulo">
-</p>
+<div *ngIf="video">
+  <h1>{{video.title}}</h1>
+  <p>{{video.tags}}</p>
+  <p>{{video.categories}}</p>
+  <p>{{video.date}}</p>
+  <p>{{video.description}}</p>
 </div>
 
-<p>teste</p>
+
+
+
+
 
 
 

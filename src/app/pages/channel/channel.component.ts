@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {VideosService} from "../../services/videos.service";
+import {UPloadService} from "../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -10,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class ChannelComponent implements OnInit {
   channels: any;
 
-  constructor(private route: ActivatedRoute, private video: VideosService) {
+  constructor(private route: ActivatedRoute, private video: UPloadService) {
   }
 
   ngOnInit(): void {
