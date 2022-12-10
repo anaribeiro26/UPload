@@ -10,7 +10,7 @@ import {VideoDetailsComponent} from "./pages/video-details/video-details.compone
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'homepage', component: HomePageComponent},
-  {path: 'videos/:title', component: VideoDetailsComponent},
+  {path: 'video/:id', component: VideoDetailsComponent},
   {path: 'channels', component: ChannelComponent},
   {path: 'favourites', component: FavouritesComponent},
   {path: 'playlists', component: PlaylistsComponent},

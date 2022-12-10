@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {VideosService} from "../../services/videos.service";
+import {UPloadService} from "../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
+import {Videos} from "../../services/UPload.model";
 
 @Component({
   selector: 'app-home-page',
@@ -9,14 +10,15 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class HomePageComponent implements OnInit {
 
-  videos: any
+  videos: Videos[] = [];
 
-  constructor(private route: ActivatedRoute, private video: VideosService) { }
+
+  constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.params['id']
-    this.video.getVideos(id).subscribe((videos) => {
-      this.videos = <any[]>videos
+
+    this.UPload.getVideos().subscribe((videos) => {
+      this.videos = videos as Videos[];
     })
   }
 

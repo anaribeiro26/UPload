@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
-import {VideosService} from "../../services/videos.service";
-import {Video} from "../../services/video.model";
+import {ActivatedRoute, Router} from "@angular/router";
+import {UPloadService} from "../../services/UPload.service";
+import {VideoDetails} from "../../services/UPload.model";
 
 
 @Component({
@@ -11,15 +11,18 @@ import {Video} from "../../services/video.model";
 })
 export class VideoDetailsComponent implements OnInit {
 
-  videos: Video[] = [];
-  index: any;
+  video: VideoDetails | undefined;
 
-  constructor(private route: ActivatedRoute, private video: VideosService) {}
+
+  constructor(private route: ActivatedRoute, private UPload: UPloadService, private router: Router) {}
 
   ngOnInit(): void {
-    this.video.getVideoTest().subscribe((videos) => {
-      this.videos = videos as Video[];
+    const id = this.route.snapshot.params["id"];
+    this.UPload.getVideoDetails(id).subscribe((video) => {
+      this.video = (video as VideoDetails[])[0];
     });
   }
+
+
 
 }
