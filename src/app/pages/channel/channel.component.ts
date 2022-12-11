@@ -9,6 +9,8 @@ import {Channels} from "../../services/UPload.model";
   styleUrls: ['./channel.component.scss']
 })
 export class ChannelComponent implements OnInit {
+  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+
   channels: Channels | undefined;
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
