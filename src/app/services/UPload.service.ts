@@ -7,7 +7,7 @@ const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
   providedIn: 'root'
 })
 
-export class VideosService {
+export class UPloadService {
   favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
   constructor(private http: HttpClient) {
