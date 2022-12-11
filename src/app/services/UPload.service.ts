@@ -22,7 +22,7 @@ export class UPloadService {
   }
 
   getVideoDetails(id: string) {
-    return this.http.get(BASE_URL + "/video/" + id)
+    return this.http.get(BASE_URL + "/videos/" + id)
   }
 
   getPlaylistVideos (id: number) {
