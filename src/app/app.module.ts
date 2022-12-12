@@ -15,6 +15,7 @@ import {ChannelVideosComponent} from './pages/channel/channel-videos/channel-vid
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 import {HttpClientModule} from "@angular/common/http";
 import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/playlist-details.component';
+import { ChannelsListComponent } from './pages/channel/channels-list/channels-list.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/pla
     ArticlesComponent,
     NavigationComponent,
     ChannelVideosComponent,
-    PlaylistDetailsComponent
+    PlaylistDetailsComponent,
+    ChannelsListComponent
   ],
   imports: [
     BrowserModule,
