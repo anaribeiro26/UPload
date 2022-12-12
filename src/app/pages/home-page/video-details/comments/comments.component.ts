@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {UPloadService} from "../../../../services/UPload.service";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-comments',
@@ -8,7 +10,7 @@ import { Component, OnInit } from '@angular/core';
 export class CommentsComponent implements OnInit {
 
 
-  constructor() { }
+  constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
   ngOnInit(): void {
   }
