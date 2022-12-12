@@ -5,7 +5,7 @@ import {ChannelComponent} from "./pages/channel/channel.component";
 import {FavouritesComponent} from "./pages/favourites/favourites.component";
 import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {PlaylistsComponent} from "./pages/playlists/playlists.component";
-import {VideoDetailsComponent} from "./pages/video-details/video-details.component";
+import {VideoDetailsComponent} from "./pages/home-page/video-details/video-details.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
