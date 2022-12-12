@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'homepage', component: HomePageComponent},
   {path: 'video/:id', component: VideoDetailsComponent},
   {path: 'channels', component: ChannelComponent},
+  {path: 'channels/:id', component: ChannelComponent},
   {path: 'favourites', component: FavouritesComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'articles', component: ArticlesComponent}

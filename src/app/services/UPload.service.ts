@@ -14,7 +14,7 @@ export class UPloadService {
   }
 
   getChannels(id: number) {
-    return this.http.get(BASE_URL + "/canais" + id)
+    return this.http.get(BASE_URL + "/canais/" + id)
   }
 
   getVideos() {
@@ -22,7 +22,7 @@ export class UPloadService {
   }
 
   getVideoDetails(id: string) {
-    return this.http.get(BASE_URL + "/videos/" + id)
+    return this.http.get(BASE_URL + "/video/" + id)
   }
 
   getPlaylistVideos (id: string) {
@@ -36,9 +36,6 @@ export class UPloadService {
   getPlaylists () {
     return this.http.get(BASE_URL + "/playlists")
   }
-
-
-
 
   toggleFavorite(id: number) {
     if (!this.isFavorite(id)) {
