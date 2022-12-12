@@ -14,7 +14,11 @@ export class UPloadService {
   constructor(private http: HttpClient) {
   }
 
-  getChannels(id: number) {
+  getChannels() {
+    return this.http.get<Channels[]>(BASE_URL + "/canais")
+  }
+
+  getChannel(id: number) {
     return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
   }
 
