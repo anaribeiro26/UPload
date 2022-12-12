@@ -3,8 +3,8 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
-import {VideoDetailsComponent} from './pages/video-details/video-details.component';
-import {CommentsComponent} from './pages/video-details/comments/comments.component';
+import {VideoDetailsComponent} from './pages/home-page/video-details/video-details.component';
+import {CommentsComponent} from './pages/home-page/video-details/comments/comments.component';
 import {ChannelComponent} from './pages/channel/channel.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {PlaylistsComponent} from './pages/playlists/playlists.component';
@@ -14,6 +14,7 @@ import {NavigationComponent} from './components/navigation/navigation.component'
 import {ChannelVideosComponent} from './pages/channel/channel-videos/channel-videos.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 import {HttpClientModule} from "@angular/common/http";
+import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/playlist-details.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import {HttpClientModule} from "@angular/common/http";
     FavouritesComponent,
     ArticlesComponent,
     NavigationComponent,
-    ChannelVideosComponent
+    ChannelVideosComponent,
+    PlaylistDetailsComponent
   ],
   imports: [
     BrowserModule,

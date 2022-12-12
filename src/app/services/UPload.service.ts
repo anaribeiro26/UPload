@@ -25,12 +25,12 @@ export class UPloadService {
     return this.http.get(BASE_URL + "/video/" + id)
   }
 
-  getPlaylistVideos (id: number) {
+  getPlaylistVideos (id: string) {
     return this.http.get(BASE_URL + "/videos/playlist")
   }
 
-  getVideosCanal (id: number) {
-    return this.http.get(BASE_URL + "/videos/canal")
+  getVideosCanal (id: string) {
+    return this.http.get(BASE_URL + "/videos/canal" + id)
   }
 
   getPlaylists () {

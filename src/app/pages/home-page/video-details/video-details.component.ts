@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
-import {UPloadService} from "../../services/UPload.service";
-import {VideoDetails} from "../../services/UPload.model";
+import {UPloadService} from "../../../services/UPload.service";
+import {VideoDetails} from "../../../services/UPload.model";
 
 
 @Component({
