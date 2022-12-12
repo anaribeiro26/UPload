@@ -4,3 +4,25 @@
 //  background-color: black;
 //  color: white;
 //}
+
+.itens {
+  position: absolute;
+  width: 443px;
+  height: 323px;
+  left: 0px;
+  top: 0px;
+
+  background: #1C1C24;
+  border-radius: 20px;
+
+  .image {
+    position: absolute;
+    width: 443px;
+    height: 210px;
+    left: 0px;
+    top: 0px;
+
+    //background: url(video2_t.jpg);
+    border-radius: 20px 20px 0px 0px;
+  }
+}

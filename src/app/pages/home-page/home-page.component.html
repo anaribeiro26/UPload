@@ -1,19 +1,19 @@
 <div class="header">
   <h1>Últimos Vídeos</h1>
 </div>
+
 <div *ngFor="let v of videos">
   <div class="itens">
+    <div class="image">
+      <img [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
+    </div>
     <h5 class="name">{{v.channel}}</h5>
     <a routerLink="/video/{{v.id}}" routerLinkActive="active">
       <h4 class="titleVideo">{{v.title}}</h4>
     </a>
     <h6 class="date">{{v.date}}</h6>
-
-
   </div>
-  <div class="logo">
-    <img [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
-  </div>
+
 
 </div>
 
