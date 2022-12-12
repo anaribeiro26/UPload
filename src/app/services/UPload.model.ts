@@ -69,9 +69,10 @@ export interface Playlists {
   videos: string[];
 }
 
-export interface Channel {
+export interface Channels {
   title: string;
-  category: string[];
+  categories: string;
+  categories_id: string;
   description: string;
   header: string;
   logo: string;
