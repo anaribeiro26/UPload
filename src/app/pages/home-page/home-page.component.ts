@@ -20,7 +20,9 @@ export class HomePageComponent implements OnInit {
     this.UPload.getVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
     })
+
   }
+
 
 }
 
