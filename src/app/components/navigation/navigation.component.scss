@@ -32,7 +32,10 @@
   }
 
   fa-icon {
-    padding: 1em;
+    padding: 1.2em;
+
+    &.faPlay {
+margin-right: 0.3em;}
   }
 
   .logo {
