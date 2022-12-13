@@ -3,27 +3,25 @@
 
   .header_image {
     width: 100%;
-    max-height: 18.75rem;
+    height: 18.75rem;
     object-fit: cover;
   }
 
   .profile_picture {
     position: absolute;
-    display: flex;
     left: 50rem;
-    top: 11.25rem;
+    top: 12rem;
   }
 
   .logo {
-    border-radius: 7.5rem;
+    border-radius: 50%;
     border: 6px solid #FFFFFF;
-    width: 8.75rem;
     height: 8.75rem;
+    width: 8.75rem;
   }
 
   .title {
     position: absolute;
-    display: flex;
     top: 270px;
     left: 2.5rem;
     font-size: 28px;
@@ -33,11 +31,8 @@
 
   .description {
     position: absolute;
-    font-size: 1rem;
-    display: flex;
     left: 2.5rem;
     top: 21.25rem;
-    text-align: justify;
     color: #E7E7E7;
   }
 }
