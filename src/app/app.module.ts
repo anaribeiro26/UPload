@@ -12,10 +12,13 @@ import {FavouritesComponent} from "./pages/favourites/favourites.component";
 import {ArticlesComponent} from './pages/articles/articles.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
 import {ChannelVideosComponent} from './pages/channel/channel-videos/channel-videos.component';
-import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 import {HttpClientModule} from "@angular/common/http";
 import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/playlist-details.component';
 import { ChannelsListComponent } from './pages/channel/channels-list/channels-list.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+
+
 
 @NgModule({
   declarations: [
@@ -31,12 +34,14 @@ import { ChannelsListComponent } from './pages/channel/channels-list/channels-li
     ChannelVideosComponent,
     PlaylistDetailsComponent,
     ChannelsListComponent
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     FontAwesomeModule,
-    HttpClientModule
+    NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

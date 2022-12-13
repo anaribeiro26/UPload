@@ -1,19 +1,22 @@
+<div class="body">
+
+
+
 <div class="header">
   <h1>Últimos Vídeos</h1>
 </div>
+
 <div *ngFor="let v of videos">
   <div class="itens">
+
     <h5 class="name">{{v.channel}}</h5>
     <a routerLink="/video/{{v.id}}" routerLinkActive="active">
-      <h4 class="titleVideo">{{v.title}}</h4>
+      <img [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
     </a>
+    <h4 class="titleVideo">{{v.title}}</h4>
     <h6 class="date">{{v.date}}</h6>
-
-
   </div>
-  <div class="logo">
-    <img [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
-  </div>
+
 
 </div>
 
@@ -24,3 +27,9 @@
 <div class="sugestionThemes">
   <h5>Temáticas sugeridas</h5>
 </div>
+
+<<<<<<< HEAD
+=======
+
+</div>
+>>>>>>> 5722c6e8b030aa7b67a3bc573a527ff775fdcb2e

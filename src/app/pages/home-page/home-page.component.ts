@@ -24,7 +24,9 @@ export class HomePageComponent implements OnInit {
       this.videos = videos as Videos[];
 
     })
+
   }
+
 
 }
 
