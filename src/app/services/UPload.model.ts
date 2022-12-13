@@ -1,3 +1,5 @@
+import {SafeResourceUrl} from "@angular/platform-browser";
+
 export interface VideoDetails {
   id: string;
   categories: string;

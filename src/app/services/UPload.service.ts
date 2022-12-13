@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {VideoDetails} from "./UPload.model";
+import {Channels, VideoDetails} from "./UPload.model";
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 
@@ -14,8 +14,12 @@ export class UPloadService {
   constructor(private http: HttpClient) {
   }
 
-  getChannels(id: number) {
-    return this.http.get(BASE_URL + "/canais/" + id)
+  getChannels() {
+    return this.http.get<Channels[]>(BASE_URL + "/canais")
+  }
+
+  getChannel(id: number) {
+    return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
   }
 
   getVideos() {

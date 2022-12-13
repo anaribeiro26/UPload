@@ -16,6 +16,8 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome'
 import {HttpClientModule} from "@angular/common/http";
 import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/playlist-details.component';
 import { EmbedVideoComponent } from './embed-video/embed-video.component';
+import { ChannelsListComponent } from './pages/channel/channels-list/channels-list.component';
+
 
 @NgModule({
   declarations: [
@@ -30,8 +32,8 @@ import { EmbedVideoComponent } from './embed-video/embed-video.component';
     NavigationComponent,
     ChannelVideosComponent,
     PlaylistDetailsComponent,
-    EmbedVideoComponent
-
+    EmbedVideoComponent,
+    ChannelsListComponent
 
   ],
   imports: [
