@@ -7,4 +7,4 @@
   <p class="description">{{channels.description}}</p>
 </div>
 <p class="section">Vídeos</p>
-<app-channel-videos></app-channel-videos>
+<app-channel-videos *ngIf="channels" [channel_id]="channels.id"></app-channel-videos>
