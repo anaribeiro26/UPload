@@ -13,7 +13,7 @@ import {Videos} from "../../services/UPload.model";
 export class HomePageComponent implements OnInit {
 
   videos: Videos[] = [];
-  imageUrl = '/hqdefault.jpg'
+  imageUrl = '/maxresdefault.jpg'
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
