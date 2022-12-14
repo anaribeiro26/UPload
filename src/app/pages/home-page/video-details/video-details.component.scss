@@ -1,0 +1,73 @@
+.container {
+  position: relative;
+  width: 1600px;
+  height: 1314px;
+  background: #13131A;
+
+  .title {
+
+    position: absolute;
+    width: 605px;
+    height: 36px;
+    left: 281px;
+    top: 32px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+    color: #FAFAFB;
+  }
+
+  .tags {
+
+    position: absolute;
+    width: 605px;
+    height: 36px;
+    left: 281px;
+    top: 32px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 36px;
+    /* identical to box height */
+
+
+    color: #FAFAFB;
+  }
+
+  .video {
+    position: absolute;
+    width: 1000px;
+    height: 200px;
+    left: 281px;
+    top: 300px;
+  }
+
+  .description {
+    position: absolute;
+    width: 871px;
+    height: 150px;
+    left: 314px;
+    top: 768px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    /* or 179% */
+
+    text-align: justify;
+    letter-spacing: 0.2px;
+
+    color: #FAFAFB;
+  }
+}
+
+
