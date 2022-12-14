@@ -9,51 +9,51 @@ const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 })
 
 export class UPloadService {
-  favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
+  // favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
   constructor(private http: HttpClient) {
   }
-
-  getChannels() {
-    return this.http.get<Channels[]>(BASE_URL + "/canais")
-  }
-
-  getChannel(id: number) {
-    return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
-  }
-
-  getVideos() {
-    return this.http.get(BASE_URL + "/videos")
-  }
-
-  getVideoDetails(id: string) {
-    return this.http.get<VideoDetails[]>(BASE_URL + "/videos/" + id)
-  }
-
-  getPlaylistVideos (id: string) {
-    return this.http.get(BASE_URL + "/videos/playlist")
-  }
-
-  getVideosCanal (id: string) {
-    return this.http.get(BASE_URL + "/videos/canal" + id)
-  }
-
-  getPlaylists () {
-    return this.http.get(BASE_URL + "/playlists")
-  }
-
-  toggleFavorite(id: number) {
-    if (!this.isFavorite(id)) {
-      this.favorites.push(id)
-    } else {
-      let index = this.favorites.indexOf(id);
-      this.favorites.splice(index, 1)
+  /*
+    getChannels() {
+      return this.http.get<Channels[]>(BASE_URL + "/canais")
     }
-    localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
-  }
+  */
+    getChannel(id: number) {
+      return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
+    }
 
-  isFavorite(id: number): boolean {
-    return this.favorites.includes(id);
-  }
+    getChannelVideos () {
+      return this.http.get(BASE_URL + "/videos/canal")
+    }
 
+    getVideos() {
+      return this.http.get(BASE_URL + "/videos")
+    }
+
+    getVideoDetails(id: string) {
+      return this.http.get<VideoDetails[]>(BASE_URL + "/videos/" + id)
+    }
+  /*
+    getPlaylistVideos (id: string) {
+      return this.http.get(BASE_URL + "/videos/playlist")
+    }
+
+    getPlaylists () {
+      return this.http.get(BASE_URL + "/playlists")
+    }
+
+    toggleFavorite(id: number) {
+      if (!this.isFavorite(id)) {
+        this.favorites.push(id)
+      } else {
+        let index = this.favorites.indexOf(id);
+        this.favorites.splice(index, 1)
+      }
+      localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
+    }
+
+    isFavorite(id: number): boolean {
+      return this.favorites.includes(id);
+    }
+  */
 }
