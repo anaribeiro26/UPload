@@ -1,4 +1,62 @@
-.channel {
-  left: 25%;
+.channels {
+  position: relative;
+
+  .header_image {
+    width: 100%;
+    height: 18.75rem;
+    object-fit: cover;
+  }
+
+  .profile_picture {
+    position: absolute;
+    left: 50rem;
+    top: 12rem;
+  }
+
+  .logo {
+    border-radius: 50%;
+    border: 6px solid #FFFFFF;
+    height: 8.75rem;
+    width: 8.75rem;
+  }
+
+  .title {
+    position: absolute;
+    top: 270px;
+    left: 2.5rem;
+    font-size: 28px;
+    color: #FAFAFB;
+
+  }
+
+  .description {
+    position: absolute;
+    left: 2.5rem;
+    top: 21.25rem;
+    color: #E7E7E7;
+  }
+}
+
+.section {
+  display: flex;
+  position: absolute;
+  top: 22em;
+  margin-left: 2.5rem;
+  color: #ffffff;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/*.channel {
   position: absolute;
 }
+
+.header {
+  top: 0;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  background-size: cover;
+}
+*/
+

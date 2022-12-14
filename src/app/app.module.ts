@@ -41,7 +41,7 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-    NgxYoutubePlayerModule.forRoot()
+   NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
