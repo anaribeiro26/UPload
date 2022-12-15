@@ -1,5 +1,4 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../../services/UPload.service";
 import {ChannelVideos} from "../../../services/UPload.model";
 
