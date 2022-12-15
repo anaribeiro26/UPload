@@ -8,7 +8,9 @@ import {ChannelVideos} from "../../../services/UPload.model";
   styleUrls: ['./channel-videos.component.scss']
 })
 export class ChannelVideosComponent implements OnInit {
-  videos: ChannelVideos | undefined;
+
+  videos: ChannelVideos[] = [];
+
   image_url = '/hqdefault.jpg'
   @Input() channel_id!: number;
 
@@ -17,7 +19,7 @@ export class ChannelVideosComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getChannelVideos(this.channel_id).subscribe((videos) => {
-      this.videos = videos[0];
+      this.videos = videos as ChannelVideos[];
     })
   }
 

@@ -1,14 +1,14 @@
 <div class="uploads">
   <div class="videos">
-    <div class="outer_box" *ngIf="videos" routerLink="/video/{{videos.id}}" routerLinkActive="active">
+    <div class="outer_box" *ngFor="let v of videos" routerLink="/video/{{v.id}}" routerLinkActive="active">
       <div class="inner_box">
         <img class="thumbnail"
-             [src]="videos.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
-        <div class="details">{{videos.duration}}</div>
-        <p class="tags">#{{videos.tags}}</p>
+             [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+        <div class="details">{{v.duration}}</div>
+        <p class="tags">#{{v.tags}}</p>
       </div>
-      <p class="title" title="{{videos.title}}">{{videos.title}}</p>
-      <p class="timestamp">{{videos.date}}</p>
+      <p class="title" title="{{v.title}}">{{v.title}}</p>
+      <p class="timestamp">{{v.date}} atrás</p>
     </div>
   </div>
 </div>

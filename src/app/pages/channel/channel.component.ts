@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UPloadService} from "../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
+import {UPloadService} from "../../services/UPload.service";
 import {Channels} from "../../services/UPload.model";
 
 @Component({
@@ -11,7 +11,7 @@ import {Channels} from "../../services/UPload.model";
 export class ChannelComponent implements OnInit {
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
-  channels: Channels | undefined;
+  channels: Channels[] = [];
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
@@ -19,7 +19,7 @@ export class ChannelComponent implements OnInit {
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
     this.UPload.getChannel(id).subscribe((channels) => {
-      this.channels = channels[0];
+      this.channels = channels as Channels[];
     })
   }
 }
