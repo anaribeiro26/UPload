@@ -1,17 +1,23 @@
 <div class="container"*ngIf="video">
     <div class="title">
       <h1>{{video.title}}</h1>
-      <span class="tags">{{video.tags}}</span>
+      <span class="tags">#{{video.tags}}</span>
     </div>
-    <p>{{video.categories}}</p>
-    <p>{{video.date}}</p>
   <div class="video">
     <youtube-player
       [videoId]="getYoutubeId(video.video)"
+      [width]="30"
+      [height]="450"
     >
     </youtube-player>
   </div>
+    <div class="channel">
+      <p>{{video.channel}}</p>
+      <p class="date">{{video.date}}</p>
+    </div>
+  <div class="description-container">
     <p class="description">{{video.description}}</p>
+  </div>
 </div>
 
 
