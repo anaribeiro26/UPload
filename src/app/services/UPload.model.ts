@@ -51,7 +51,7 @@ export interface ChannelVideos {
   channel: string;
   id: string;
   video: string;
-  canal_id: string;
+  channel_id: number;
   categories: string;
   description: string;
   tags: string;
@@ -76,7 +76,7 @@ export interface Channels {
   description: string;
   header: string;
   logo: string;
-  id: string;
+  id: number;
 }
 
 
