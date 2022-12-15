@@ -3,26 +3,26 @@
 <div class="header">
   <h1>Últimos Vídeos</h1>
 </div>
-
+<div class="container">
   <div class="row">
-<div class="cel" *ngFor="let v of videos">
+    <div class="cel" *ngFor="let v of videos">
+      <div class="box">
+        <div class="card_image">
+          <a routerLink="/video/{{v.id}}" routerLinkActive="active">
+            <img class="small_image" [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
+          </a>
+        </div>
+        <div class="itens">
+          <h5 class="name">{{v.channel}}</h5>
+          <h4 class="titleVideo">{{v.title}}</h4>
+          <h6 class="date">{{v.date}}</h6>
+          <h6 class="duration">{{v.duration}}</h6>
+        </div>
+       </div>
 
-  <div class="box">
-    <div class="card_image">
-      <a routerLink="/video/{{v.id}}" routerLinkActive="active">
-        <img class="small_image" [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
-      </a>
-    </div>
-    <div class="itens">
-      <h5 class="name">{{v.channel}}</h5>
-      <h4 class="titleVideo">{{v.title}}</h4>
-      <h6 class="date">{{v.date}}</h6>
     </div>
   </div>
-
 </div>
-  </div>
-
 <div class="sugestionChannel">
   <h5>Canais sugeridos</h5>
 </div>
@@ -30,8 +30,6 @@
   <h5>Temáticas sugeridas</h5>
 </div>
 
-<<<<<<< HEAD
-=======
 
 </div>
->>>>>>> 5722c6e8b030aa7b67a3bc573a527ff775fdcb2e
+

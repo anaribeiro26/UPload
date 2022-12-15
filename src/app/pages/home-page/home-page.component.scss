@@ -1,6 +1,11 @@
-* {
-  margin: 0;
-  padding: 0;
+.header{
+  margin-top: 10px;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-size: 20px;
+  letter-spacing: 0.1px;
+  color: #FAFAFB;
+  margin-left: 20px;
 }
 
 .body {
@@ -8,56 +13,74 @@
   width: 100%;
   margin: 0em;
   //padding-top: 10px;
-  background-color: #232323;
+  //background-color: #232323;
   color: white;
 
 }
 
-
-.row {
-  width: 80%;
+.container {
   display: flex;
-  flex-wrap: wrap;
-  //justify-content: center;
-  align-items: center;
+  justify-content: center;
+
+  .row {
+    //width: 100%;
+    //display: flex;
+    //flex-wrap: wrap;
+    //justify-content: center;
+    //align-items: center;
+
+    position: absolute;
+    //top: 30em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 25px;
 
 
-}
+    .cel {
+      //position: relative;
+      //justify-content: space-between;
+      //display: flex;
+      //width: 50%;
+      //margin-bottom: 40px;
+      //padding: 30px 30px;
 
-.cel {
+      width: 19.5rem;
+      border-radius: 1rem;
+      background-color: #1c1c24;
 
-  width: 50%;
-}
+      .box {
+        width: 20rem;
+        height: 50%;
+        border-radius: 20px;
+        background-color: #1C1C24;
 
-.box {
-  width: 443px;
-  height: 323px;
-  border-radius: 20px;
-  background-color: #1C1C24;
+        .card_image {
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+        }
 
-}
+          .small_image {
+            height: 100%;
+            width: 100%;
+            cursor: pointer;
+            left: 0;
+            top: 0;
+            border-radius: 20px 20px 0 0;
+            transition: all linear 0.4s;
+          }
 
-.card_image {
-  width: 443px;
-  height: 210px;
-  overflow: hidden;
+            .small_image:hover {
+              filter: grayscale(70%);
+              transform: scale(1.1);
+            }
+          }
+        }
+      }
+  }
 
-}
-
-.small_image {
-  height: 100%;
-  width: 100%;
-  cursor: pointer;
-  left: 0;
-  top: 0;
-  border-radius: 20px 20px 0 0;
-  transition: all linear 0.4s;
-}
-
-.small_image:hover{
-  filter: grayscale(70%);
-  transform: scale(1.1);
-}
 
 .itens {
   margin: 20px;
@@ -68,14 +91,14 @@
   font-size: 14px;
   font-family: Roboto;
   letter-spacing: 0.1px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .titleVideo {
   color: #FAFAFB;
   font-family: 'Poppins';
   font-size: 18px;
-  margin-bottom: 5px;
+  margin-bottom: 3px;
 }
 
 .date {
@@ -85,3 +108,101 @@
   color: #92929D;
 }
 
+.duration {
+  display: flex;
+  position: absolute;
+  align-items: center;
+  justify-content: center;
+  height: 1.5rem;
+  width: 3rem;
+  top: 7.5rem;
+  margin-left: 1rem;
+  background-color: #171725;
+  border-radius: 0.5rem;
+  color: #ffffff;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+//
+//.container {
+//  display: flex;
+//  justify-content: center;
+//
+//  .row {
+//    position: absolute;
+//    top: 30em;
+//    display: flex;
+//    justify-content: center;
+//    flex-wrap: wrap;
+//    gap: 20px;
+//    padding-bottom: 25px;
+//
+//    .cel {
+//      width: 19.5rem;
+//      border-radius: 1rem;
+//      background-color: #1c1c24;
+//
+//      .small_image {
+//        height: 11rem;
+//        width: 19.5rem;
+//        object-fit: cover;
+//        border-radius: 1rem 1rem 0 0;
+//
+//
+//        .date {
+//          margin-left: 1rem;
+//          color: #92929d;
+//          font-size: 0.9rem;
+//
+//          .card_image {
+//            height: 12.5rem;
+//            position: relative;
+//
+//            .duration {
+//              display: flex;
+//              position: absolute;
+//              align-items: center;
+//              justify-content: center;
+//              height: 1.5rem;
+//              width: 3rem;
+//              top: 9rem;
+//              margin-left: 1rem;
+//              background-color: #171725;
+//              border-radius: 0.5rem;
+//              color: #ffffff;
+//              font-size: 0.8rem;
+//              font-weight: 500;
+//            }
+//
+//            .name {
+//              position: absolute;
+//              top: 11rem;
+//              margin-left: 1rem;
+//              color: #1e75ff;
+//              font-size: 0.85rem;
+//            }
+//          }
+//
+//          .titleVideo {
+//            margin-left: 1rem;
+//            margin-bottom: 0.5rem;
+//            color: #FFFFFF;
+//            font-size: 1rem;
+//            font-weight: 400;
+//          }
+//        }
+//      }
+//    }
+//  }
+//}
