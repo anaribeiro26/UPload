@@ -1,0 +1,87 @@
+.container {
+
+  height: 100%;
+  width: 100%;
+  margin: 0em;
+  background: #13131A;
+
+  .title {
+
+    position: absolute;
+    left: 256px;
+    font-family: "Poppins";
+    font-style: normal;
+    font-size: 0.7em;
+    margin: 2em;
+    line-height: 50px;
+    color: #FAFAFB;
+  }
+
+  .tags {
+    color: #0835c9;
+    position: absolute;
+    left: 2px;
+    top: 49px;
+    font-size: 15px;
+  }
+
+  .video {
+    position: absolute;
+    width: 41%;
+    height: 200px;
+    left: 281px;
+    top: 200px;
+  }
+
+  .channel {
+
+    position: absolute;
+    left: 373px;
+    top: 668px;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: 0.1px;
+
+    color: #FAFAFB;
+  }
+
+  .date {
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    letter-spacing: 0.1px;
+
+    color: #92929D;
+
+
+  }
+
+  .description {
+    position: absolute;
+    width: 871px;
+    left: 20em;
+    font-family: "Poppins";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 25px;
+    text-align: justify;
+    letter-spacing: 0.2px;
+    color: #FAFAFB;
+    top: 55em;
+    border-radius: 20px;
+    background: #1C1C24;
+
+
+
+
+  }
+}
+
+

@@ -1,8 +1,17 @@
 /* You can add global styles to this file, and also import other style files */
-body {
-  background: #13131A;
+div > youtube-player > iframe {
+  display: block;
+  width: 100%;
 }
 
+<<<<<<< HEAD
+body {
+  background-color: #13131A;
+}
+
+
+=======
 * {
   box-sizing: border-box;
 }
+>>>>>>> 08c3e0a9a63916e5606e1891492f1d61ddf2f879
