@@ -13,26 +13,27 @@ export class UPloadService {
 
   constructor(private http: HttpClient) {
   }
-  /*
-    getChannels() {
-      return this.http.get<Channels[]>(BASE_URL + "/canais")
-    }
-  */
-    getChannel(id: number) {
-      return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
-    }
 
-    getChannelVideos (channel_id: number) {
-      return this.http.get<ChannelVideos[]>(BASE_URL + "/videos/canal/" + channel_id)
-    }
+  getChannels() {
+    return this.http.get(BASE_URL + "/canais")
+  }
 
-    getVideos() {
-      return this.http.get(BASE_URL + "/videos")
-    }
+  getChannel(id: number) {
+    return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
+  }
 
-    getVideoDetails(id: string) {
-      return this.http.get<VideoDetails[]>(BASE_URL + "/videos/" + id)
-    }
+  getChannelVideos(channel_id: number) {
+    return this.http.get<ChannelVideos[]>(BASE_URL + "/videos/canal/" + channel_id)
+  }
+
+  getVideos() {
+    return this.http.get(BASE_URL + "/videos")
+  }
+
+  getVideoDetails(id: string) {
+    return this.http.get<VideoDetails[]>(BASE_URL + "/videos/" + id)
+  }
+
   /*
     getPlaylistVideos (id: string) {
       return this.http.get(BASE_URL + "/videos/playlist")
