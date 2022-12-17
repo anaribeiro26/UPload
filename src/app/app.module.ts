@@ -17,25 +17,28 @@ import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/pla
 import { ChannelsListComponent } from './pages/channel/channels-list/channels-list.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
+import {SplitPipe} from "./pages/channel/channel-videos/split.pipe";
 
 
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    VideoDetailsComponent,
-    CommentsComponent,
-    ChannelComponent,
-    HomePageComponent,
-    PlaylistsComponent,
-    FavouritesComponent,
-    ArticlesComponent,
-    NavigationComponent,
-    ChannelVideosComponent,
-    PlaylistDetailsComponent,
-    ChannelsListComponent
+    declarations: [
+        AppComponent,
+        VideoDetailsComponent,
+        CommentsComponent,
+        ChannelComponent,
+        HomePageComponent,
+        PlaylistsComponent,
+        FavouritesComponent,
+        ArticlesComponent,
+        NavigationComponent,
+        ChannelVideosComponent,
+        PlaylistDetailsComponent,
+        ChannelsListComponent,
+        SplitPipe,
+        SplitPipe
 
-  ],
+    ],
   imports: [
     BrowserModule,
     AppRoutingModule,
