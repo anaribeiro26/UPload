@@ -1,19 +1,19 @@
 <div class="content" *ngFor="let c of channelsList">
   <div class="primary">
     <div class="content-section">
-      <h4 class="title">{{c.title}}</h4>
-      <p class="title">{{c.description}}</p>
-    </div>
-    <div class="logo-section">
-      <div class="logo-scope"></div>
-      <!--<img class="logo" [src]="image_url+c.logo"> -->
-    </div>
-    <div class="info-section">
-      <div class="title">
+      <div class="logo-section">
+        <div class="logo-scope"></div>
+        <img class="logo" [src]="image_url + c.logo">
       </div>
-      <div class="metadata">
+      <div class="info-section">
+        <div class="title">
+          <h4 class="channel-title">{{c.title}}</h4>
+        </div>
+        <div class="metadata">
+        </div>
+        <div class="description"><p class="channel-description">{{c.description}}</p>
+        </div>
       </div>
-      <div class="description"></div>
     </div>
   </div>
 </div>

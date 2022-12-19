@@ -4,7 +4,8 @@
     <img class="logo" [src]="image_url+c.logo">
   </div>
   <h4 class="title">{{c.title}}</h4>
-  <p class="description">{{c.description}}</p>
+ <!-- <p class="description">{{c.description}}</p>-->
+  <p class="description" [innerHTML]="c.description"></p>
 </div>
 <p class="section">Vídeos</p>
 <app-channel-videos *ngFor="let c of channels" [channel_id]="c.id"></app-channel-videos>

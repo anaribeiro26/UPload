@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UPloadService} from "../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
-import {ChannelVideos} from "../../../services/UPload.model";
+import {Channels} from "../../../services/UPload.model";
 
 @Component({
   selector: 'app-channels-list',
@@ -9,14 +9,15 @@ import {ChannelVideos} from "../../../services/UPload.model";
   styleUrls: ['./channels-list.component.scss']
 })
 export class ChannelsListComponent implements OnInit {
-  channelsList: ChannelVideos[] = [];
+  channelsList: Channels[] = [];
+  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
 
   ngOnInit(): void {
     this.UPload.getChannels().subscribe((channelsList) => {
-      this.channelsList = channelsList as ChannelVideos[];
+      this.channelsList = channelsList as Channels[];
     })
   }
 }

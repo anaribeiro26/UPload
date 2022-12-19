@@ -1,3 +1,65 @@
 .content {
   color: #FFFFFF;
+  display: flex;
+  flex-direction: row;
+
+  .logo-section {
+    margin-right: 16px;
+    max-width: 360px;
+    min-width: 240px;
+    flex: 1;
+
+    .logo-scope {
+      width: 246px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+      flex: none;
+    }
+  }
+
+  .info-section {
+    display: flex;
+    flex-direction: row;
+    flex: 1;
+    padding: 0 16px 16px 16px;
+    min-width: 0;
+    justify-content: center;
+
+    .title {
+      margin-bottom: 8px;
+      font-size: 1.8rem;
+      line-height: 2.6rem;
+      font-weight: 400;
+      max-height: 5.2rem;
+      overflow: hidden;
+      display: block;
+      -webkit-line-clamp: 2;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+      white-space: normal;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+    }
+    .description {
+      word-break: break-word;
+      font-size: 1.2rem;
+      line-height: 1.8rem;
+      font-weight: 400;
+      max-height: 3.6rem;
+      overflow: hidden;
+      display: block;
+      -webkit-line-clamp: 2;
+    }
+  }
+
+  img {
+    border-radius: 50%;
+    overflow: hidden;
+    height: 136px;
+    width: 136px;
+  }
 }
