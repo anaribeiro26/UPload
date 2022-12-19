@@ -1,0 +1,15 @@
+.tag-page {
+  color: #FFFFFF;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .tag {
+    font-size: 1.2em;
+    p::first-letter {
+      margin-left: 5px;
+      text-transform: capitalize;
+    }
+  }
+}
