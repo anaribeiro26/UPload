@@ -30,7 +30,7 @@ export interface Videos {
 
 }
 
-export interface VideosPlaylist{
+export interface VideosPlaylist {
 
   video: string;
   channel: string;
@@ -57,7 +57,7 @@ export interface ChannelVideos {
   tags: string;
   title: string;
   categories_id: string;
-  tags_id: string;
+  tags_id: number;
   date: string;
   duration: string;
 
@@ -79,8 +79,25 @@ export interface Channels {
   id: number;
 }
 
+export interface Tags {
+  name: string;
+  id: number;
+}
 
-
+export interface TagVideos {
+  channel: string;
+  video_id: number;
+  videos: string;
+  channel_id: number;
+  categories: string;
+  description: string;
+  tags: string;
+  title: string;
+  categories_id: string;
+  tags_id: number;
+  date: string;
+  duration: string;
+}
 
 
 

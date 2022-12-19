@@ -13,38 +13,37 @@ import {ArticlesComponent} from './pages/articles/articles.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
 import {ChannelVideosComponent} from './pages/channel/channel-videos/channel-videos.component';
 import {HttpClientModule} from "@angular/common/http";
-import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/playlist-details.component';
-import { ChannelsListComponent } from './pages/channel/channels-list/channels-list.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
-import {SplitPipe} from "./pages/channel/channel-videos/split.pipe";
-
+import {PlaylistDetailsComponent} from './pages/playlists/playlist-details/playlist-details.component';
+import {ChannelsListComponent} from './pages/channel/channels-list/channels-list.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {NgxYoutubePlayerModule} from 'ngx-youtube-player';
+import { TagsComponent } from './pages/articles/tags/tags.component';
+import { TagsVideosComponent } from './pages/articles/tags-videos/tags-videos.component';
 
 
 @NgModule({
-    declarations: [
-        AppComponent,
-        VideoDetailsComponent,
-        CommentsComponent,
-        ChannelComponent,
-        HomePageComponent,
-        PlaylistsComponent,
-        FavouritesComponent,
-        ArticlesComponent,
-        NavigationComponent,
-        ChannelVideosComponent,
-        PlaylistDetailsComponent,
-        ChannelsListComponent,
-        SplitPipe,
-        SplitPipe
-
-    ],
+  declarations: [
+    AppComponent,
+    VideoDetailsComponent,
+    CommentsComponent,
+    ChannelComponent,
+    HomePageComponent,
+    PlaylistsComponent,
+    FavouritesComponent,
+    ArticlesComponent,
+    NavigationComponent,
+    ChannelVideosComponent,
+    PlaylistDetailsComponent,
+    ChannelsListComponent,
+    TagsComponent,
+    TagsVideosComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-   NgxYoutubePlayerModule.forRoot()
+    NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
