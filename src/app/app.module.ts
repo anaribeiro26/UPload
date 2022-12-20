@@ -13,11 +13,13 @@ import {ArticlesComponent} from './pages/articles/articles.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
 import {ChannelVideosComponent} from './pages/channel/channel-videos/channel-videos.component';
 import {HttpClientModule} from "@angular/common/http";
-import { PlaylistDetailsComponent } from './pages/playlists/playlist-details/playlist-details.component';
-import { ChannelsListComponent } from './pages/channel/channels-list/channels-list.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
-
+import {PlaylistDetailsComponent} from './pages/playlists/playlist-details/playlist-details.component';
+import {ChannelsListComponent} from './pages/channel/channels-list/channels-list.component';
+import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
+import {NgxYoutubePlayerModule} from 'ngx-youtube-player';
+import { TagsComponent } from './pages/tags/tags.component';
+import { TagsVideosComponent } from './pages/tags/tags-videos/tags-videos.component';
+import { PlaylistVideosComponent } from './pages/playlists/playlist-videos/playlist-videos.component';
 
 
 @NgModule({
@@ -33,15 +35,17 @@ import { NgxYoutubePlayerModule } from 'ngx-youtube-player';
     NavigationComponent,
     ChannelVideosComponent,
     PlaylistDetailsComponent,
-    ChannelsListComponent
-
+    ChannelsListComponent,
+    TagsComponent,
+    TagsVideosComponent,
+    PlaylistVideosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
-   NgxYoutubePlayerModule.forRoot()
+    NgxYoutubePlayerModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

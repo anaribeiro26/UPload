@@ -1,10 +1,11 @@
-<div class="channels" *ngIf="channels">
-    <img class="header_image" [src]="image_url+channels.header">
+<div class="channels" *ngFor="let c of channels">
+  <img class="header_image" [src]="image_url+c.header">
   <div class="profile_picture">
-  <img class="logo" [src]="image_url+channels.logo">
+    <img class="logo" [src]="image_url+c.logo">
   </div>
-  <h4 class="title">{{channels.title}}</h4>
-  <p class="description">{{channels.description}}</p>
+  <h4 class="title">{{c.title}}</h4>
+ <!-- <p class="description">{{c.description}}</p>-->
+  <p class="description" [innerHTML]="c.description"></p>
 </div>
 <p class="section">Vídeos</p>
-<app-channel-videos *ngIf="channels" [channel_id]="channels.id"></app-channel-videos>
+<app-channel-videos *ngFor="let c of channels" [channel_id]="c.id"></app-channel-videos>

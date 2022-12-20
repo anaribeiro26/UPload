@@ -1,1 +1,4 @@
-<p>playlist-details works!</p>
+<div class="playlist" *ngFor="let p of playlistDetails">
+  <p [innerHTML]="p.title"></p>
+</div>
+<app-playlist-videos *ngFor="let p of playlistDetails" [id]="p.id"></app-playlist-videos>

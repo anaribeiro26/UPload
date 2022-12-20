@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {faHouse, faBarsStaggered, faClapperboard, faPlay} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -7,19 +7,21 @@ import {faHouse, faBarsStaggered, faClapperboard, faPlay} from "@fortawesome/fre
   styleUrls: ['./navigation.component.scss']
 })
 export class NavigationComponent implements OnInit {
-  first_item:string = "Início";
-  second_item:string = "Canais";
-  third_item:string = "Temáticas";
-  fourth_item:string = "Playlists";
+  first_item: string = "Início";
+  second_item: string = "Canais";
+  third_item: string = "Temáticas";
+  fourth_item: string = "Playlists";
 
   faHouse = faHouse;
   faBarsStaggered = faBarsStaggered;
   faClapperboard = faClapperboard;
   faPlay = faPlay;
 
-  constructor() { }
+  sidebar: boolean = false;
+
+  constructor() {
+  }
 
   ngOnInit(): void {
   }
-
 }
