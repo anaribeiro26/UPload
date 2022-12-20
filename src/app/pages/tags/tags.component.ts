@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Tags} from "../../../services/UPload.model";
+import {Tags} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
-import {UPloadService} from "../../../services/UPload.service";
+import {UPloadService} from "../../services/UPload.service";
 
 @Component({
   selector: 'app-tags',
