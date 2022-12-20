@@ -1,13 +1,20 @@
 .content {
   color: #FFFFFF;
   display: flex;
-  flex-direction: row;
+ // flex-direction: row;
+  border-bottom: 0.5px solid rgba(189, 195, 199, 20%);
+  padding-bottom: 10px;
+  padding-top: 10px;
 
-  .logo-section {
-    margin-right: 16px;
-    max-width: 360px;
-    min-width: 240px;
-    flex: 1;
+    .logo-section {
+    // margin-right: 16px;
+    //  max-width: 360px;
+    //  min-width: 240px;
+    // flex: 1;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     .logo-scope {
       width: 246px;
@@ -19,47 +26,55 @@
     }
   }
 
-  .info-section {
+  .content-section {
     display: flex;
+  }
+
+  .info-section {
     flex-direction: row;
-    flex: 1;
     padding: 0 16px 16px 16px;
     min-width: 0;
     justify-content: center;
+    max-width: 800px;
 
     .title {
-      margin-bottom: 8px;
-      font-size: 1.8rem;
-      line-height: 2.6rem;
+      // margin-bottom: 4px;
+      font-size: 1rem;
+      line-height: 1rem;
       font-weight: 400;
-      max-height: 5.2rem;
-      overflow: hidden;
-      display: block;
-      -webkit-line-clamp: 2;
-      display: -webkit-box;
-      -webkit-box-orient: vertical;
+      // max-height: 5.2rem;
+      //overflow: hidden;
       text-overflow: ellipsis;
       white-space: normal;
       display: flex;
-      flex-direction: row;
+      // flex-direction: row;
       align-items: center;
     }
+
     .description {
-      word-break: break-word;
-      font-size: 1.2rem;
-      line-height: 1.8rem;
-      font-weight: 400;
-      max-height: 3.6rem;
+      // word-break: break-word;
+      font-size: 0.9rem;
+      // line-height: 1.8rem;
+      // font-weight: 400;
+      // max-height: 3.6rem;
+      // overflow: hidden;
+      // white-space: nowrap;
+      //text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-line-clamp: 1;
+      -webkit-box-orient: vertical;
       overflow: hidden;
-      display: block;
-      -webkit-line-clamp: 2;
+      text-overflow: ellipsis;
     }
   }
 
   img {
     border-radius: 50%;
     overflow: hidden;
-    height: 136px;
-    width: 136px;
+    height: 110px;
+    width: 110px;
   }
+}
+.content:hover {
+  border-bottom: 1px solid rgba(189, 195, 199, 60%);
 }
