@@ -7,11 +7,11 @@
       </div>
       <div class="info-section">
         <div class="title">
-          <h4 class="channel-title">{{c.title}}</h4>
+          <h4 class="channel-title" [innerHTML]="c.title"></h4>
         </div>
         <div class="metadata">
         </div>
-        <div class="description"><p class="channel-description">{{c.description}}</p>
+        <div class="description"><p class="channel-description" [innerHTML]="c.description"></p>
         </div>
       </div>
     </div>
