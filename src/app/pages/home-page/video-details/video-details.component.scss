@@ -1,86 +1,91 @@
-.container {
+.big-box {
+  display: flex;
+  justify-content: center;
 
-  height: 100%;
-  width: 100%;
-  margin: 0em;
-  background: #13131A;
+  .container {
 
-  .title {
+    height: 100%;
+    width: 100%;
+    margin: 0em;
+    background: #13131A;
 
-    position: absolute;
-    left: 256px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-size: 0.7em;
-    margin: 2em;
-    line-height: 50px;
-    color: #FAFAFB;
-  }
+    .title {
 
-  .tags {
-    color: #0835c9;
-    position: absolute;
-    left: 2px;
-    top: 49px;
-    font-size: 15px;
-  }
+      position: absolute;
+      left: 256px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-size: 0.7em;
+      margin: 2em;
+      line-height: 50px;
+      color: #FAFAFB;
+    }
 
-  .video {
-    position: absolute;
-    width: 41%;
-    height: 200px;
-    left: 281px;
-    top: 200px;
-  }
+    .tags {
+      color: #0835c9;
+      position: absolute;
+      left: 2px;
+      top: 49px;
+      font-size: 15px;
+    }
 
-  .channel {
+    .video {
+      position: absolute;
+      width: 41%;
+      height: 200px;
+      left: 281px;
+      top: 200px;
+    }
 
-    position: absolute;
-    left: 373px;
-    top: 668px;
+    .channel {
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.1px;
+      position: absolute;
+      left: 373px;
+      top: 668px;
 
-    color: #FAFAFB;
-  }
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1px;
 
-  .date {
+      color: #FAFAFB;
+    }
 
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.1px;
+    .date {
 
-    color: #92929D;
+      font-family: 'Roboto';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      letter-spacing: 0.1px;
 
-
-  }
-
-  .description {
-    position: absolute;
-    width: 871px;
-    left: 20em;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 25px;
-    text-align: justify;
-    letter-spacing: 0.2px;
-    color: #FAFAFB;
-    top: 55em;
-    border-radius: 20px;
-    background: #1C1C24;
+      color: #92929D;
 
 
+    }
+
+    .description {
+      position: absolute;
+      width: 871px;
+      left: 20em;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 25px;
+      text-align: justify;
+      letter-spacing: 0.2px;
+      color: #FAFAFB;
+      top: 55em;
+      border-radius: 20px;
+      background: #1C1C24;
 
 
+
+
+    }
   }
 }
 
