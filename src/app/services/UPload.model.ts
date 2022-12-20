@@ -30,6 +30,7 @@ export interface Videos {
   description: string;
   id: string;
   tags: string;
+  logo: string;
   video: string;
   title: string;
   duration: string;
@@ -44,6 +45,7 @@ export interface VideoDetails {
   description: string;
   date: string;
   video: string;
+  logo: string;
   title: string;
   categories_id: string;
   tags_id: string;
