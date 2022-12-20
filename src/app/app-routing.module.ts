@@ -8,16 +8,18 @@ import {PlaylistsComponent} from "./pages/playlists/playlists.component";
 import {VideoDetailsComponent} from "./pages/home-page/video-details/video-details.component";
 import {ChannelsListComponent} from "./pages/channel/channels-list/channels-list.component";
 import {TagsComponent} from "./pages/articles/tags/tags.component";
+import {PlaylistDetailsComponent} from "./pages/playlists/playlist-details/playlist-details.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
-  {path: 'homepage', component: HomePageComponent},
-  {path: 'video/:id', component: VideoDetailsComponent},
+  {path: 'articles', component: ArticlesComponent},
   {path: 'channels', component: ChannelsListComponent},
   {path: 'channels/:id', component: ChannelComponent},
+  {path: 'homepage', component: HomePageComponent},
+  {path: 'video/:id', component: VideoDetailsComponent},
   {path: 'favourites', component: FavouritesComponent},
   {path: 'playlists', component: PlaylistsComponent},
-  {path: 'articles', component: ArticlesComponent},
+  {path: 'playlists/:id', component: PlaylistDetailsComponent},
   {path: 'tags/:id', component: TagsComponent}
 ];
 

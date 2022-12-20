@@ -17,8 +17,9 @@ import {PlaylistDetailsComponent} from './pages/playlists/playlist-details/playl
 import {ChannelsListComponent} from './pages/channel/channels-list/channels-list.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {NgxYoutubePlayerModule} from 'ngx-youtube-player';
-import { TagsComponent } from './pages/articles/tags/tags.component';
-import { TagsVideosComponent } from './pages/articles/tags-videos/tags-videos.component';
+import { TagsComponent } from './pages/tags/tags.component';
+import { TagsVideosComponent } from './pages/tags/tags-videos/tags-videos.component';
+import { PlaylistVideosComponent } from './pages/playlists/playlist-videos/playlist-videos.component';
 
 
 @NgModule({
@@ -36,7 +37,8 @@ import { TagsVideosComponent } from './pages/articles/tags-videos/tags-videos.co
     PlaylistDetailsComponent,
     ChannelsListComponent,
     TagsComponent,
-    TagsVideosComponent
+    TagsVideosComponent,
+    PlaylistVideosComponent
   ],
   imports: [
     BrowserModule,
