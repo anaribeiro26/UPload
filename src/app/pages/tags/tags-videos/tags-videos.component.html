@@ -4,13 +4,15 @@
       <div class="inner_box">
         <img class="thumbnail"
              [src]="t.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
-        <div class="details">{{t.duration}}</div>
-        <p class="tags" routerLink="/tags/{{t.tags_id}}"
-           routerLinkActive="active">{{t.tags.split(",").slice(0, 3).join(" ")}}</p>
+        <div class="details" [innerHTML]="t.duration"></div>
+        <div routerLink="/tags/{{t.tags_id}}"
+             routerLinkActive="active">
+          <p class="tags" [innerHTML]="t.tags.split(',').slice(0, 3).join(' ')"></p>
+        </div>
         <!--  routerLinkActive="active">{{t.tags.replace(" ,", " ").split(",").slice(0, 3)}}</p>-->
       </div>
-      <p class="title" title="{{t.title}}">{{t.title}}</p>
-      <p class="timestamp">{{t.date}} atrás</p>
+      <p class="title" title="{{t.title}}" [innerHTML]="t.title"></p>
+      <p class="timestamp" [innerHTML]="t.date"> atrás</p>
     </div>
   </div>
 </div>

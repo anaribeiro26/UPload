@@ -1,6 +1,6 @@
 <div class="tag-page">Vídeos relacionados pela tag:
-<div class="tag" *ngFor="let t of tags">
-  <p>{{t.name.slice(1)}}</p>
-</div>
+  <div class="tag" *ngFor="let t of tags">
+    <p [innerHTML]="t.name.slice(1)"></p>
+  </div>
 </div>
 <app-tags-videos *ngFor="let t of tags" [tags_id]="t.id"></app-tags-videos>

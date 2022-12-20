@@ -17,7 +17,7 @@ export class TagsComponent implements OnInit {
 
   ngOnInit(): void {
     let id = this.route.snapshot.params['id'];
-    this.UPload.getTags(id).subscribe((tags) => {
+    this.UPload.getTag(id).subscribe((tags) => {
       this.tags = tags as Tags[];
     })
   }
