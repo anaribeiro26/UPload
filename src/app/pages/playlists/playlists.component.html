@@ -1,6 +1,6 @@
 <div class="uploads">
   <div class="videos">
-    <div class="outer_box" *ngFor="let p of playlists" routerLink="/playlist/{{p.id}}" routerLinkActive="active">
+    <div class="outer_box" *ngFor="let p of playlists" routerLink="/playlists/{{p.id}}" routerLinkActive="active">
        <!-- <img class="thumbnail"
              [src]="p.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         <div class="details" [innerHTML]="v.duration">
