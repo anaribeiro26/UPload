@@ -2,7 +2,7 @@
   margin-top: 10px;
   font-family: 'Poppins';
   font-style: normal;
-  font-size: 20px;
+  font-size: 16px;
   letter-spacing: 0.1px;
   color: #FAFAFB;
   margin-left: 20px;
@@ -124,7 +124,60 @@
   font-weight: 500;
 }
 
+.side {
+  //position: absolute;
+  border-bottom: 1px solid lightslategray;
+  width: 330px;
+  height: 1px;
+  left: 1243px;
+  top: 86px;
+}
 
+h2 {
+  position: absolute;
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.1px;
+  color: #FAFAFB;
+}
+
+.sugestionChannel {
+  position: absolute;
+  width: 330px;
+  height: 401px;
+  left: 1243px;
+  top: 36px;
+
+  background: #1C1C24;
+  border-radius: 15px;
+
+  .more{
+    //position: absolute;
+    width: 330px;
+    height: 48px;
+    left: 1243px;
+    top: 389px;
+
+    background: #92929D;
+    mix-blend-mode: normal;
+    opacity: 0.1;
+    border-radius: 0px 0px 15px 15px;
+  }
+}
+
+.sugestionThemes {
+  position: absolute;
+  width: 330px;
+  height: 327px;
+  left: 1243px;
+  top: 459px;
+
+  background: #1C1C24;
+  border-radius: 15px;
+}
 
 
 
