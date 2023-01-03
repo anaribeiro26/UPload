@@ -5,6 +5,8 @@ import {Videos} from "../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid, faShareNodes} from "@fortawesome/free-solid-svg-icons";
 
+import {Channels} from "../../services/UPload.model";
+
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
@@ -19,6 +21,8 @@ export class HomePageComponent implements OnInit {
   faBookmark = faBookmark;
   faShare = faShareNodes;
 
+  channelsList: Channels[] = [];
+
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
 
@@ -27,6 +31,10 @@ export class HomePageComponent implements OnInit {
     this.UPload.getVideos().subscribe((videos) => {
       // this.videos = videos as Videos[];
       this.videos = <any[]>videos;
+    })
+
+    this.UPload.getChannels().subscribe((channelsList) => {
+      this.channelsList = channelsList as Channels[];
     })
   }
 

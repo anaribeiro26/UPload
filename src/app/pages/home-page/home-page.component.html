@@ -4,7 +4,7 @@
   <div class="body">
   <div class="container">
     <div class="row">
-      <div class="cel" *ngFor="let v of videos" >
+      <div class="cel" *ngFor="let v of videos">
         <div class="box">
           <div class="card_image">
             <a routerLink="/video/{{v.id}}" routerLinkActive="active">
@@ -12,11 +12,11 @@
             </a>
           </div>
           <div class="itens">
-            <p class="name">{{v.channel}}</p>
-            <p class="titleVideo">{{v.title}}</p>
-            <p class="date">{{v.date}}</p>
+            <p class="name" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.channel}}</p>
+            <p class="titleVideo" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.title}}</p>
+            <p class="date" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.date}}</p>
             <p class="duration">{{v.duration}}</p>
-            <img class="logo" [src]="image_url + v.logo">
+            <img class="logo" [src]="image_url + v.logo" routerLink="/video/{{v.id}}" routerLinkActive="active">
             <div class="bookmark" (click)="changeFavorite(v.id)">
               <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
             </div>
@@ -30,7 +30,13 @@
   <div class="sideBr">
     <div class="sugestionChannel">
       <div class="line">
-      <h2>Canais sugeridos</h2>
+        <h2>Canais sugeridos</h2>
+      </div>
+      <div class="sugestion" *ngFor="let c of channelsList | slice: 0: 5">
+        <div class="option">
+          <img class="logomark" [src]="image_url + c.logo" routerLink="/channels/{{c.id}}" routerLinkActive="active">
+          <h2 class="title" routerLink="/channels/{{c.id}}" routerLinkActive="active">{{c.title}}</h2>
+        </div>
       </div>
       <a routerLink="/channels/">
         <div class="more">
