@@ -8,6 +8,7 @@ import {Channels} from "../../../services/UPload.model";
   templateUrl: './channels-list.component.html',
   styleUrls: ['./channels-list.component.scss']
 })
+
 export class ChannelsListComponent implements OnInit {
   channelsList: Channels[] = [];
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
