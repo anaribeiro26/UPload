@@ -17,7 +17,7 @@
       <p class="date">{{video.date}}</p>
     </div>
     <div class="description-container">
-      <p class="description">{{video.description}}</p>
+      <p [innerHTML]="video.description" class="description"></p>
     </div>
   </div>
 </div>
