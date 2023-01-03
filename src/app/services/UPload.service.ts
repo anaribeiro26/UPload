@@ -9,7 +9,8 @@ const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 })
 
 export class UPloadService {
-  // favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
+  favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
+  favourites: number[] = [];
 
   constructor(private http: HttpClient) {
   }
@@ -54,7 +55,11 @@ export class UPloadService {
     return this.http.get<TagVideos[]>(BASE_URL + "/videos/tag/" + tags_id)
   }
 
-  /*
+  getFavourites() {
+    return this.http.get(BASE_URL + "/videos?ids="+ this.favourites.join(','));
+  }
+
+
       toggleFavorite(id: number) {
         if (!this.isFavorite(id)) {
           this.favorites.push(id)
@@ -68,5 +73,5 @@ export class UPloadService {
       isFavorite(id: number): boolean {
         return this.favorites.includes(id);
       }
-    */
+
 }

@@ -1,11 +1,10 @@
-<div class="body">
-
   <div class="header">
     <h1>Últimos Vídeos</h1>
   </div>
+  <div class="body">
   <div class="container">
     <div class="row">
-      <div class="cel" *ngFor="let v of videos">
+      <div class="cel" *ngFor="let v of videos" >
         <div class="box">
           <div class="card_image">
             <a routerLink="/video/{{v.id}}" routerLinkActive="active">
@@ -17,22 +16,36 @@
             <p class="titleVideo">{{v.title}}</p>
             <p class="date">{{v.date}}</p>
             <p class="duration">{{v.duration}}</p>
+            <img class="logo" [src]="image_url + v.logo">
+            <div class="bookmark" (click)="changeFavorite(v.id)">
+              <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
+            </div>
+            <fa-icon class="faIcon" [icon]="faShare"></fa-icon>
           </div>
         </div>
-
       </div>
     </div>
   </div>
 
-  <div class="side">
+  <div class="sideBr">
     <div class="sugestionChannel">
+      <div class="line">
       <h2>Canais sugeridos</h2>
-      <h2 class="more">Mostrar mais</h2>
+      </div>
+      <a routerLink="/channels/">
+        <div class="more">
+          <h3 class="letter">Mostrar mais</h3>
+        </div>
+      </a>
     </div>
     <div class="sugestionThemes">
-      <h2>Temáticas sugeridas</h2>
+      <div class="line2">
+        <p>Temáticas sugeridas</p>
+        <a routerLink="/articles/">
+          <p>VER TODAS</p>
+        </a>
+      </div>
     </div>
-
   </div>
 </div>
 
