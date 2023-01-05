@@ -20,7 +20,7 @@ import {NgxYoutubePlayerModule} from 'ngx-youtube-player';
 import { TagsComponent } from './pages/tags/tags.component';
 import { TagsVideosComponent } from './pages/tags/tags-videos/tags-videos.component';
 import { PlaylistVideosComponent } from './pages/playlists/playlist-videos/playlist-videos.component';
-import { SuggestedVideosComponent } from './pages/home-page/video-details/suggested-videos/suggested-videos.component';
+import {SuggestedVideosComponent} from "./suggested-videos/suggested-videos.component";
 
 
 @NgModule({

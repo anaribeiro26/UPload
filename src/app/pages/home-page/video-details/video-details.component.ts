@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../../services/UPload.service";
 import {VideoDetails} from "../../../services/UPload.model";
+import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
+import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
+
 
 //@ts-ignore
 
@@ -14,6 +17,10 @@ export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+  faThumbsUp = faThumbsUp;
+  faThumbsDown = faThumbsDown;
+  faThumbsDownSolid = faThumbsDownSolid;
+  faThumbsUpSolid = faThumbsUpSolid;
 
 
 
