@@ -1,0 +1,122 @@
+.main-container {
+  width: 22%;
+  float: right;
+  justify-content: left;
+  position: absolute;
+  right: 3em;
+  margin-top: 98px;
+
+  .container {
+    //width: 50%;
+    position: absolute;
+    //top: 30em;
+    //display: flex;
+    justify-content: flex-start;
+    //flex-wrap: wrap;
+    gap: 35px;
+    padding-bottom: 25px;
+    margin-left: 30px;
+    flex-direction: column;
+
+    .cel {
+      width: 19rem;
+      border-radius: 1rem;
+      background-color: #1c1c24;
+      position: relative;
+
+      .card_image {
+        width: 19rem;
+        height: 9.99rem;
+        object-fit: cover;
+        border-radius: 1rem 1rem 0 0;
+        overflow: hidden;
+      }
+
+      .small_image {
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        left: 0;
+        top: 0;
+        border-radius: 20px 20px 0 0;
+        transition: all linear 0.4s;
+      }
+
+      .small_image:hover {
+        filter: grayscale(70%);
+        transform: scale(1.1);
+      }
+
+      .itens {
+        margin: 20px;
+
+        .name {
+          color: #1E75FF;
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          margin-bottom: 3px;
+        }
+
+        .title {
+          color: #FAFAFB;
+          font-size: 18px;
+          margin-bottom: 3px;
+          text-decoration: none;
+        }
+
+        .date {
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          color: #92929D;
+          padding-bottom: 15px;
+        }
+
+        .duration {
+          display: flex;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          height: 1.5rem;
+          width: 3rem;
+          top: 7.5rem;
+          margin-left: 1rem;
+          background-color: #171725;
+          border-radius: 0.5rem;
+          color: #ffffff;
+          font-size: 0.8rem;
+          font-weight: 500;
+        }
+
+        .logo {
+          border-radius: 50%;
+          overflow: hidden;
+          height: 59px;
+          width: 60px;
+          position: absolute;
+          top: 8.4rem;
+          margin-left: 13rem;
+          border: 2px solid #FFFFFF;
+          background-color: #1C1C24;
+        }
+
+        .ng-fa-icon {
+          font-size: 1.3em;
+          color: #92929D;
+          cursor: pointer;
+          position: absolute;
+          top: 17.5rem;
+          margin-left: 16rem;
+        }
+
+        .faIcon {
+          font-size: 1.3em;
+          color: #92929D;
+          cursor: pointer;
+          position: absolute;
+          top: 17.5rem;
+          margin-left: 18rem;
+        }
+      }
+    }
+  }
+}

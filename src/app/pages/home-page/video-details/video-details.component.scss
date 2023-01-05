@@ -1,86 +1,114 @@
-.container {
-
-  height: 100%;
+.big-box {
+  display: flex;
+  justify-content: flex-start;
   width: 100%;
-  margin: 0em;
-  background: #13131A;
-
-  .title {
-
-    position: absolute;
-    left: 256px;
-    font-family: "Poppins";
-    font-style: normal;
-    font-size: 0.7em;
-    margin: 2em;
-    line-height: 50px;
-    color: #FAFAFB;
-  }
-
-  .tags {
-    color: #0835c9;
-    position: absolute;
-    left: 2px;
-    top: 49px;
-    font-size: 15px;
-  }
-
-  .video {
-    position: absolute;
-    width: 41%;
-    height: 200px;
-    left: 281px;
-    top: 200px;
-  }
-
-  .channel {
-
-    position: absolute;
-    left: 373px;
-    top: 668px;
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
-    letter-spacing: 0.1px;
-
-    color: #FAFAFB;
-  }
-
-  .date {
-
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    letter-spacing: 0.1px;
-
-    color: #92929D;
-
-
-  }
-
-  .description {
-    position: absolute;
-    width: 871px;
-    left: 20em;
-    font-family: "Poppins";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 14px;
-    line-height: 25px;
-    text-align: justify;
-    letter-spacing: 0.2px;
-    color: #FAFAFB;
-    top: 55em;
-    border-radius: 20px;
-    background: #1C1C24;
 
 
 
 
+  .container {
+    width: 30%;
+    height: 100%;
+    background: #13131A;
+
+
+    .title {
+
+      position: absolute;
+      font-family: "Poppins";
+      font-style: normal;
+      font-size: 0.7em;
+      line-height: 50px;
+      color: #FAFAFB;
+      left: 240px;
+      margin-top: 2px;
+    }
+
+    .tags {
+      color: #0835c9;
+      position: absolute;
+      top: 40px;
+      font-size: 15px;
+    }
+
+    .video {
+      position: absolute;
+      width: 55%;
+      //height: 50%;
+      left: 240px;
+      //top: 200px;
+      margin-top: 98px;
+      border-radius: 20px 20px 20px 20px;
+      overflow: hidden;
+      z-index: 1;
+
+    }
+
+
+    .channel {
+      position: absolute;
+      left: 324px;
+      margin-top: 570px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 19px;
+      letter-spacing: 0.1px;
+      color: #FAFAFB;
+    }
+
+    .date {
+
+      left: 373px;
+      top: 696px;
+      font-family: "Roboto";
+      font-style: normal;
+      font-weight: 400;
+      line-height: 1px;
+      letter-spacing: 0.1px;
+      color: #92929D;
+
+
+
+    }
+
+    .logo {
+      border-radius: 50%;
+      position: absolute;
+      width: 69.72px;
+      height: 69.65px;
+      left: 240px;
+      margin-top: 570px;
+      border: 2px solid #FFFFFF;
+    }
+
+    .description {
+      position: absolute;
+      width: 55%;
+      left: 240px;
+      font-family: "Poppins";
+      font-style: normal;
+      font-weight: 400;
+      font-size: 14px;
+      line-height: 25px;
+      text-align: justify;
+      letter-spacing: 0.2px;
+      color: #FAFAFB;
+      top: 48em;
+      border-radius: 20px;
+      background: #1C1C24;
+
+    }
+
+    .side-bar {
+      left: 20em;
+      float: left;
+      width: 30%;
+      justify-content: left;
+      position: relative;
+      flex-wrap: wrap;
+    }
   }
 }
 
