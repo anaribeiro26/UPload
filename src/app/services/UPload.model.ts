@@ -1,3 +1,13 @@
+export interface Articles {
+  title: string;
+  categories: string;
+  categories_id: string;
+  description: string;
+  header: string;
+  logo: string;
+  id: number;
+}
+
 export interface Channels {
   title: string;
   categories: string;

@@ -2,17 +2,17 @@
   <div class="videos">
     <div class="outer_box" *ngFor="let v of videos" routerLink="/video/{{v.id}}" routerLinkActive="active">
       <div class="inner_box">
-        <img class="thumbnail"
+        <img class="thumbnail" alt="thumbnail"
              [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         <div class="details" [innerHTML]="v.duration">
         </div>
         <div routerLink="/tags/{{v.tags_id}}"
-        routerLinkActive="active">
+             routerLinkActive="active">
           <p class="tags">{{v.tags.replace(",", " ").split(",").slice(0, 3)}}</p>
         </div>
       </div>
       <p class="title" title="{{v.title}}" [innerHTML]="v.title"></p>
-      <p class="timestamp" [innerHTML]="v.date"> atrás</p>
+      <p class="timestamp" [innerHTML]="v.date">atrás</p>
     </div>
   </div>
 </div>

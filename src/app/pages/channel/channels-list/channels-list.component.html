@@ -1,8 +1,8 @@
 <div class="content" *ngFor="let c of channelsList">
-  <div class="content-section">
+  <div class="content-section" routerLink="/channels/{{c.id}}">
     <div class="logo-section">
       <div class="logo-scope"></div>
-      <img class="logo" [src]="image_url + c.logo">
+      <img class="logo" alt="logo" [src]="image_url + c.logo">
     </div>
     <div class="info-section">
       <div class="title">
