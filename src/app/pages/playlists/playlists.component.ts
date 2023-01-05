@@ -16,8 +16,8 @@ export class PlaylistsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.UPload.getPlaylists().subscribe((playlists) => {
+    /*this.UPload.getPlaylists().subscribe((playlists) => {
       this.playlists = playlists as Playlists[];
-    })
+    })*/
   }
 }

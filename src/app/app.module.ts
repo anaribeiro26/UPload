@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {AppComponent} from './app.component';
 import {VideoDetailsComponent} from './pages/home-page/video-details/video-details.component';
-import {VideoCommentsComponent} from './pages/home-page/video-details/video-comments/video-comments.component';
+import {CommentsComponent} from './pages/home-page/video-details/comments/comments.component';
 import {ChannelComponent} from './pages/channel/channel.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {PlaylistsComponent} from './pages/playlists/playlists.component';
@@ -20,14 +20,13 @@ import {NgxYoutubePlayerModule} from 'ngx-youtube-player';
 import { TagsComponent } from './pages/tags/tags.component';
 import { TagsVideosComponent } from './pages/tags/tags-videos/tags-videos.component';
 import { PlaylistVideosComponent } from './pages/playlists/playlist-videos/playlist-videos.component';
-import { ChannelCommentsComponent } from './pages/channel/channel-comments/channel-comments.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     VideoDetailsComponent,
-    VideoCommentsComponent,
+    CommentsComponent,
     ChannelComponent,
     HomePageComponent,
     PlaylistsComponent,
@@ -39,8 +38,7 @@ import { ChannelCommentsComponent } from './pages/channel/channel-comments/chann
     ChannelsListComponent,
     TagsComponent,
     TagsVideosComponent,
-    PlaylistVideosComponent,
-    ChannelCommentsComponent
+    PlaylistVideosComponent
   ],
   imports: [
     BrowserModule,
