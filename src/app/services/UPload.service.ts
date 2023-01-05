@@ -55,12 +55,12 @@ export class UPloadService {
     return this.http.get<TagVideos[]>(BASE_URL + "/videos/tag/" + tags_id)
   }
 
-  getFavourites() {
-    return this.http.get(BASE_URL + "/videos?ids="+ this.favourites.join(','));
-  }
+  // getFavourites() {
+  //   return this.http.get(BASE_URL + "/videos?ids="+ this.favourites.join(','));
+  // }
 
 
-      toggleFavorite(id: number) {
+      toggleFavorite(id: string) {
         if (!this.isFavorite(id)) {
           this.favorites.push(id)
         } else {
@@ -70,7 +70,7 @@ export class UPloadService {
         localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
       }
 
-      isFavorite(id: number): boolean {
+      isFavorite(id: string): boolean {
         return this.favorites.includes(id);
       }
 

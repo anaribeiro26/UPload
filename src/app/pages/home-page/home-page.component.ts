@@ -5,7 +5,6 @@ import {Videos} from "../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid, faShareNodes} from "@fortawesome/free-solid-svg-icons";
 
-import {Channels} from "../../services/UPload.model";
 
 @Component({
   selector: 'app-home-page',
@@ -13,15 +12,12 @@ import {Channels} from "../../services/UPload.model";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
-  videos: any;
-  // videos: Videos[] = [];
+  videos: Videos[] | undefined = [];
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   imageUrl = '/maxresdefault.jpg'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
   faShare = faShareNodes;
-
-  channelsList: Channels[] = [];
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
@@ -29,21 +25,17 @@ export class HomePageComponent implements OnInit {
   ngOnInit(): void {
 
     this.UPload.getVideos().subscribe((videos) => {
-      // this.videos = videos as Videos[];
-      this.videos = <any[]>videos;
+      this.videos = videos as Videos[];
     })
 
-    this.UPload.getChannels().subscribe((channelsList) => {
-      this.channelsList = channelsList as Channels[];
-    })
   }
 
-  changeFavorite(video_id: number) {
+  changeFavorite(video_id: string) {
     console.log('id ' + video_id )
     this.UPload.toggleFavorite(video_id)
   }
 
-  favourite(video_id: number) {
+  favourite(video_id: string) {
     console.log('id 2 ' + video_id )
     return this.UPload.isFavorite(video_id)
   }

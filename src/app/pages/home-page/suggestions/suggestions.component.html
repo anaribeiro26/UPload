@@ -1,0 +1,28 @@
+<div class="body">
+  <div class="sideBr">
+    <div class="sugestionChannel">
+      <div class="line">
+        <h2>Canais sugeridos</h2>
+      </div>
+      <div class="sugestion" *ngFor="let c of channelsList | slice: 0: 5">
+        <div class="option">
+          <img class="logomark" [src]="image_url + c.logo" routerLink="/channels/{{c.id}}" routerLinkActive="active">
+          <h2 class="title" routerLink="/channels/{{c.id}}" routerLinkActive="active">{{c.title}}</h2>
+        </div>
+      </div>
+      <a routerLink="/channels/">
+        <div class="more">
+          <h3 class="letter">Mostrar mais</h3>
+        </div>
+      </a>
+    </div>
+    <div class="sugestionThemes">
+      <div class="line2">
+        <p>Temáticas sugeridas</p>
+        <a routerLink="/articles/">
+          <p>VER TODAS</p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

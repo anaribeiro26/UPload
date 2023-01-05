@@ -20,6 +20,7 @@ import {NgxYoutubePlayerModule} from 'ngx-youtube-player';
 import { TagsComponent } from './pages/tags/tags.component';
 import { TagsVideosComponent } from './pages/tags/tags-videos/tags-videos.component';
 import { PlaylistVideosComponent } from './pages/playlists/playlist-videos/playlist-videos.component';
+import { SuggestionsComponent } from './pages/home-page/suggestions/suggestions.component';
 
 
 @NgModule({
@@ -38,7 +39,8 @@ import { PlaylistVideosComponent } from './pages/playlists/playlist-videos/playl
     ChannelsListComponent,
     TagsComponent,
     TagsVideosComponent,
-    PlaylistVideosComponent
+    PlaylistVideosComponent,
+    SuggestionsComponent
   ],
   imports: [
     BrowserModule,
