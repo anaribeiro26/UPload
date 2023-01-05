@@ -13,6 +13,7 @@ import {VideoDetails} from "../../../services/UPload.model";
 export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
+  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
 
 
