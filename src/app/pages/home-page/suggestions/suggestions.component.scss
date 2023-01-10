@@ -3,10 +3,13 @@
   width: 100%;
   flex-wrap: wrap;
   flex-direction: row;
+  padding-right: 20px;
+
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
 
   .sideBr {
-    float: right;
-    width: 30%;
     justify-content: right;
     position: relative;
     flex-wrap: wrap;
@@ -70,10 +73,12 @@
           margin: 20px 0px 0px 15px;
           border: 1px solid #FFFFFF;
           background-color: #1C1C24;
+          cursor: pointer;
         }
 
         .title {
           margin: 20px 0px 0px 60px;
+          cursor: pointer;
         }
       }
     }
