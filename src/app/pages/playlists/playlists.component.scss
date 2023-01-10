@@ -1,22 +1,39 @@
 .uploads {
   color: #FFFFFF;
 
-  .outer_box {
-
+  .box {
+    position: relative;
+    width: 30%;
+    height: 25%;
+    border-radius: 20px;
   }
-}
 
-.thumbnail {
-  position: relative;
-  width: 20rem;
-  height: 15rem;
-  border-radius: 20px;
-
+  .thumbnail {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
 
   .play {
-    position: absolute;
-    height: 100%;
-    width: 50%;
-    background: red;
+
   }
 }
+
+//.outer_box {
+//
+//}
+//
+//.thumbnail {
+//  position: relative;
+//  width: 30%;
+//  height: 25%;
+//  border-radius: 20px;
+//
+//
+//  .play {
+//    position: absolute;
+//    height: 100%;
+//    width: 50%;
+//    background: red;
+//  }
+//}

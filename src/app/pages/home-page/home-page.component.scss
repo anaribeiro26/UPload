@@ -11,18 +11,14 @@
 .body {
   justify-content: flex-start;
   width: 100%;
-  flex-wrap: wrap;
-  flex-direction: row;
+  display: flex;
 
     .container {
       display: flex;
-      width: 30%;
       //justify-content: center;
-      margin-left: 40px;
+      margin-left: 0px;
 
       .row {
-        width: 50%;
-        position: absolute;
         //top: 30em;
         display: flex;
         justify-content: flex-start;
