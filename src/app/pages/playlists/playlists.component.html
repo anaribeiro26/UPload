@@ -1,12 +1,30 @@
-<div class="uploads">
-  <div class="videos">
-    <div class="outer_box" *ngFor="let p of playlists" routerLink="/playlists/{{p.id}}" routerLinkActive="active">
-       <!-- <img class="thumbnail"
-             [src]="p.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
-        <div class="details" [innerHTML]="v.duration">
-        </div> -->
-      <p class="title" title="{{p.title}}" [innerHTML]="p.title"></p>
-      <p class="timestamp" [innerHTML]="p.date"> atrás</p>
+<!--<div class="uploads">-->
+<!--  <div class="videos">-->
+<!--    <div class="outer_box" *ngFor="let p of playlists" routerLink="/playlists/{{p.id}}" routerLinkActive="active">-->
+<!--       <img class="thumbnail"-->
+<!--             [src]="p.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>-->
+<!--        <div class="details" [innerHTML]="v.duration">-->
+<!--        </div>-->
+<!--      <p class="title" title="{{p.title}}" [innerHTML]="p.title"></p>-->
+<!--      <p class="timestamp" [innerHTML]="p.date"> atrás</p>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+
+
+<div  class="uploads">
+  <div  class="videos">
+    <div class="outer_box" *ngFor="let p of playlists">
+      <a routerLink="/playlists/{{p.id}}" routerLinkActive="active">
+        <img class="thumbnail"
+             [src] = "p.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"
+        />
+        <div class="play">
+          <p>5 videos</p>
+        </div>
+      </a>
+      <p>{{p.title}}</p>
     </div>
   </div>
 </div>
+

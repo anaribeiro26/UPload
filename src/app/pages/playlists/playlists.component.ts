@@ -10,14 +10,14 @@ import {UPloadService} from "../../services/UPload.service";
 })
 export class PlaylistsComponent implements OnInit {
   playlists: Playlists[] = [];
-  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+  image_url = '/maxresdefault.jpg';
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
 
   ngOnInit(): void {
-    /*this.UPload.getPlaylists().subscribe((playlists) => {
+    this.UPload.getPlaylists().subscribe((playlists) => {
       this.playlists = playlists as Playlists[];
-    })*/
+    })
   }
 }
