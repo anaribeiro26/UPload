@@ -7,5 +7,12 @@
   margin-bottom: 56px;
   font-family: "Space Grotesk";
   padding-left: 212px;
+  overflow: hidden;
   //padding-left: 215px;
+}
+
+@media screen and (max-width: 560px) {
+  .wrapper {
+    padding-left: 0;
+  }
 }
