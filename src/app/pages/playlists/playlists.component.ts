@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {Playlists} from "../../services/UPload.model";
+import {Playlists, VideosPlaylist} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../services/UPload.service";
-import {PlaylistVideosComponent} from "./playlist-videos/playlist-videos.component";
+
 
 @Component({
   selector: 'app-playlists',
@@ -16,8 +16,6 @@ export class PlaylistsComponent implements OnInit {
 
   image_url = '/maxresdefault.jpg';
 
-  // videosArray: number
-
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
 
@@ -29,11 +27,13 @@ export class PlaylistsComponent implements OnInit {
       this.playlists.forEach((obj) =>{
         if (obj.id !== prevId) {
           this.playListFilters.push(obj)
-          }
-          prevId = obj.id
         }
+        prevId = obj.id
 
-      )
+        this.UPload.getPlaylistVideos(obj.id).subscribe((videosPlaylist) => {
+          obj.numberOfVideos = videosPlaylist.length;
+        })
+      })
     })
 
   }
