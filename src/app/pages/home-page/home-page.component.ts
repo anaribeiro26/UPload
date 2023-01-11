@@ -31,13 +31,15 @@ export class HomePageComponent implements OnInit {
   }
 
   changeFavorite(video_id: string) {
-    console.log('id ' + video_id )
     this.UPload.toggleFavorite(video_id)
   }
 
   favourite(video_id: string) {
-    console.log('id 2 ' + video_id )
     return this.UPload.isFavorite(video_id)
+  }
+
+  share(txt: string) {
+    console.log(txt)
   }
 }
 
