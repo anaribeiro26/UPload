@@ -14,15 +14,17 @@
 
 <div  class="uploads">
   <div  class="videos">
-    <div class="outer_box" *ngFor="let p of playlists">
-      <a routerLink="/playlists/{{p.id}}" routerLinkActive="active">
-        <img class="thumbnail"
-             [src] = "p.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"
-        />
+    <div class="outer_box" *ngFor="let p of playListFilters">
+      <div class="box">
+        <a routerLink="/playlists/{{p.id}}" routerLinkActive="active">
+          <img class="thumbnail"
+             [src] = "p.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+        </a>
         <div class="play">
-          <p>5 videos</p>
+          <div class="text">{{p.id}} videos</div>
         </div>
-      </a>
+
+      </div>
       <p>{{p.title}}</p>
     </div>
   </div>

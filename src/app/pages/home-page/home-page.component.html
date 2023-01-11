@@ -20,7 +20,7 @@
               <div class="bookmark" (click)="changeFavorite(v.id)">
                 <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
               </div>
-              <fa-icon class="faIcon" [icon]="faShare"></fa-icon>
+              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>
             </div>
           </div>
         </div>

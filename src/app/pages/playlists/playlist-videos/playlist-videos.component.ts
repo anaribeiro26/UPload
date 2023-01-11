@@ -12,13 +12,18 @@ export class PlaylistVideosComponent implements OnInit {
   image_url = '/hqdefault.jpg'
   @Input() id!: number;
 
+
   constructor(private UPload: UPloadService) {
   }
 
   ngOnInit(): void {
     this.UPload.getPlaylistVideos(this.id).subscribe((videosPlaylist) => {
       this.videosPlaylist = videosPlaylist as VideosPlaylist[];
+      const videoArray = this.videosPlaylist;
+      videoArray.length
+      console.log(videoArray.length)
     })
   }
+
 
 }
