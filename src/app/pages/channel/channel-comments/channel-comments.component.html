@@ -1,4 +1,33 @@
-<div class="comments" *ngFor="let c of comments">
-  <p [innerHTML]="c.name"></p>
-  <p [innerHTML]="c.comment"></p>
+<div class="comments">
+  <h4 class="title">{{title}}</h4>
+  <div class="form">
+    <div class="random_photo">
+      <img alt="photo" [src]="url+random+set">
+    </div>
+    <div class="inputs">
+      <div class="user_data">
+        <input type="text">
+        <input type="email">
+      </div>
+      <input type="text">
+    </div>
+    <input type="submit" class="button">
+  </div>
+  <div class="comment" *ngFor="let c of comments">
+    <div class="photo">
+      <img alt="user photo" [src]="url+c.name.replace(' ', '')+set">
+    </div>
+    <div class="content">
+      <div class="data">
+        <div class="user">
+          <p class="name" [innerHTML]="c.name"></p>
+        </div>
+        <div class="timestamp">
+          <span class="ago">há</span>
+          <span class="date" [innerHTML]="c.date"></span>
+        </div>
+      </div>
+      <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
+    </div>
+  </div>
 </div>

@@ -9,6 +9,10 @@ import {UPloadService} from "../../../services/UPload.service";
 })
 export class ChannelCommentsComponent implements OnInit {
   comments: ChannelComments[] = [];
+  title = "Comentários"
+  url = "https://robohash.org/";
+  set = "?set=set4&bgset=bg2"
+  random = (Math.random() + 1).toString(36).substring(7);
   @Input() channel_id!: number;
 
   constructor(private UPload: UPloadService) {
