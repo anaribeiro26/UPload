@@ -6,17 +6,39 @@
     width: 30%;
     height: 25%;
     border-radius: 20px;
+
+    .thumbnail {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 20px;
+    }
+    .play {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      left: 15.7rem;
+      right: 0;
+      width: 50%;
+      opacity: 0.9;
+      transition: 0.5s ease;
+      background-color: #1C1C24;
+
+      .text {
+        color: white;
+        font-size: 20px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        -webkit-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        text-align: center;
+      }
+    }
   }
 
-  .thumbnail {
-    display: block;
-    width: 100%;
-    height: auto;
-  }
 
-  .play {
-
-  }
 }
 
 //.outer_box {
