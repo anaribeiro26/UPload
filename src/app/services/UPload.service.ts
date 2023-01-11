@@ -4,11 +4,15 @@ import {Channels, ChannelVideos, VideoDetails, VideosPlaylist, Tags, TagVideos} 
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 
+
 @Injectable({
   providedIn: 'root'
 })
 
 export class UPloadService {
+
+  videosPlaylist: VideosPlaylist[] = [];
+
   favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
   favourites: number[] = [];
 
@@ -47,6 +51,9 @@ export class UPloadService {
     return this.http.get<VideosPlaylist[]>(BASE_URL + "/videos/playlist/" + id)
   }
 
+
+
+
   getTag(id: number) {
     return this.http.get<Tags[]>(BASE_URL + "/tags/" + id)
   }
@@ -54,6 +61,8 @@ export class UPloadService {
   getTagVideos(tags_id: number) {
     return this.http.get<TagVideos[]>(BASE_URL + "/videos/tag/" + tags_id)
   }
+
+
 
   // getFavourites() {
   //   return this.http.get(BASE_URL + "/videos?ids="+ this.favourites.join(','));

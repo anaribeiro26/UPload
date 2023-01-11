@@ -20,10 +20,7 @@ export class PlaylistVideosComponent implements OnInit {
     this.UPload.getPlaylistVideos(this.id).subscribe((videosPlaylist) => {
       this.videosPlaylist = videosPlaylist as VideosPlaylist[];
       const videoArray = this.videosPlaylist;
-      videoArray.length
       console.log(videoArray.length)
     })
   }
-
-
 }

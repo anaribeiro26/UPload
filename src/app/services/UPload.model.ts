@@ -85,6 +85,7 @@ export interface Playlists {
   date: string;
   id: number;
   videos: string;
+  numberOfVideos?: number;
 }
 
 export interface VideosPlaylist {
