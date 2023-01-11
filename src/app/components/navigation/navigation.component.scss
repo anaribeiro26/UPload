@@ -22,6 +22,7 @@
     .menu-item:hover {
       border-left: 2px solid #FFFFFF;
       color: rgba(255, 255, 255, 100%);
+      cursor: pointer;
     }
   }
 
@@ -62,8 +63,8 @@
   color: white;
   font-size: 18px;
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 20px;
+  margin-left: 10px;
   z-index: 10;
 }
 
