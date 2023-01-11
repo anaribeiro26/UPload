@@ -39,6 +39,8 @@ export interface ChannelComments {
   name: string;
   comment: string;
   channel_id: number;
+  id: number;
+  date: string;
 }
 
 export interface Videos {
