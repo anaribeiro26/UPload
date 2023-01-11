@@ -1,12 +1,12 @@
 .content {
-  color: #FFFFFF;
+  color: rgba(255, 255, 255, 75%);;
   display: flex;
- // flex-direction: row;
+  // flex-direction: row;
   border-bottom: 0.5px solid rgba(189, 195, 199, 20%);
   padding-bottom: 10px;
   padding-top: 10px;
 
-    .logo-section {
+  .logo-section {
     // margin-right: 16px;
     //  max-width: 360px;
     //  min-width: 240px;
@@ -75,6 +75,9 @@
     width: 110px;
   }
 }
+
 .content:hover {
-  border-bottom: 1px solid rgba(189, 195, 199, 60%);
+  // border-bottom: 1px solid rgba(189, 195, 199, 60%);
+  color: rgba(255, 255, 255, 100%);
+  cursor: pointer;
 }
