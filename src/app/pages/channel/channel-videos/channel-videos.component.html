@@ -1,4 +1,5 @@
 <div class="uploads">
+  <p class="title">{{title}}</p>
   <div class="videos">
     <div class="outer_box" *ngFor="let v of videos" routerLink="/video/{{v.id}}" routerLinkActive="active">
       <div class="inner_box" title="{{v.title}}">
