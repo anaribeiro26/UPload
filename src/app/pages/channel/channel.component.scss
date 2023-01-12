@@ -1,5 +1,7 @@
 .channels {
   //position: relative;
+ // margin-right: 100px;
+
 
   .channel_info {
     // display: flex;
@@ -14,7 +16,7 @@
    // display: flex;
     //justify-content: center;
     margin-left: 30px;
-    margin-right: 30px;
+   // margin-right: 30px;
 
     .header_image {
       width: 100%;
@@ -53,7 +55,7 @@
   .description {
     margin-left: 30px;
     font-size: 15px;
-    color: #E7E7E7;
+    color: rgba(255, 255, 255, 80%);
     margin-bottom: 2em;
     width: 50%;
   }

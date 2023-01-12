@@ -6,10 +6,11 @@
              [src]="t.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         <div class="details" [innerHTML]="t.duration"></div>
         <p class="tags">
-            <span class="tag" *ngFor="let tag of t.tags.split(',').slice(0, 3)"
-                  routerLink="/tags/{{tag.split(' ').join('')}}"
+            <span class="tag" *ngFor="let tag of t.tags.split(', ').slice(0, 3)"
+                  routerLink="/tags/{{tag}}"
                   routerLinkActive="active"
-            >#{{tag.split(' ').join('')}} </span>
+                  (click)="$event.stopPropagation()"
+            >#{{tag}} </span>
         </p>
       </div>
       <p class="title" [innerHTML]="t.title"></p>
