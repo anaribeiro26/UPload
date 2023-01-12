@@ -37,52 +37,62 @@
 <div class="details-body">
   <div class="container" *ngIf="video">
     <div class="inside-box">
-    <div class="title-box">
-      <div>
-        <h1 class="title">{{video.title}}</h1>
-        <fa-icon class="flag" [icon]="faFlag"></fa-icon>
-      </div>
-      <div class="tags">
-      <p  class="tag-item" *ngFor="let tag of video.tags.split(',').slice(0, 3)"
-           routerLink="/tags/{{tag.split(' ').join('')}}"
-           routerLinkActive="active"
-      >#{{tag.split(' ').join('')}}</p>
-      </div>
-      <div class="video-line">
-        <div class="video">
-          <youtube-player
-            [videoId]="getYoutubeId(video.video)"
-            [height]="450"
-            [width]="420"
-          ></youtube-player>
+      <div class="title-box">
+        <div class="title-container">
+          <h1 class="title">{{video.title}}</h1>
+          <fa-icon class="flag" [icon]="faFlag"></fa-icon>
         </div>
+        <div class="tags">
+          <p class="tag-item" *ngFor="let tag of video.tags.split(',').slice(0, 3)"
+             routerLink="/tags/{{tag.split(' ').join('')}}"
+             routerLinkActive="active"
+          >#{{tag.split(' ').join('')}}</p>
+        </div>
+        <div class="video-line">
+          <div class="video">
+            <youtube-player
+              [videoId]="getYoutubeId(video.video)"
+              [height]="450"
+              [width]="420"
+            ></youtube-player>
+          </div>
 
+        </div>
+        <div class="channel-box">
+          <div class="photo">
+            <img class="logo" [src]="image_url + video.logo">
+          </div>
+          <div class="channel-info">
+            <div class="first-line">
+              <div class="title"><p class="channel-title">{{video.channel}}</p></div>
+              <div class="like-dislike">
+                <fa-icon class="like" [icon]="faThumbsUp"></fa-icon>
+                <span>|</span>
+                <fa-icon class="dislike" [icon]="faThumbsDown"></fa-icon>
+              </div>
+            </div>
+            <div>
+              <p class="date">{{video.date}}</p>
+            </div>
+          </div>
+        </div>
+        <div class="description-box">
+          <div class="description">
+            <p [innerHTML]="video.description"></p>
+          </div>
+        </div>
       </div>
-      <div class="channel-box">
-        <div class="photo">
-          <img class="logo" [src]="image_url + video.logo">
+      <div class="comments">
+        <div class="comments-info">
         </div>
-        <div class="channel-info">
-          <div class="first-line">
-          <div class="title"><p class="channel-title">{{video.channel}}</p></div>
-          <div class="like-dislike">
-            <fa-icon class="like" [icon]="faThumbsUp"></fa-icon>
-            <span>|</span>
-            <fa-icon class="dislike" [icon]="faThumbsDown"></fa-icon>
-          </div>
-          </div>
-          <div>
-          <p class="date">{{video.date}}</p>
-          </div>
+        <div class="submit-button">
+
         </div>
       </div>
-      <div class="description-box">
-        <div class="description">
-          <p [innerHTML]="video.description"></p>
-        </div>
+      <div class="comments">
+        <app-video-comments></app-video-comments>
       </div>
     </div>
-  </div>
   </div>
   <div class="suggested-videos">
     <app-suggested-videos></app-suggested-videos>

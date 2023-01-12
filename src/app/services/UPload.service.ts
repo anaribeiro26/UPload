@@ -1,7 +1,8 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists} from "./UPload.model";
+import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments} from "./UPload.model";
 import {Observable} from "rxjs";
+
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 
@@ -20,6 +21,10 @@ export class UPloadService {
   constructor(private http: HttpClient) {
   }
 
+  getArticles() {
+    return this.http.get(BASE_URL + "/artigos")
+  }
+
   getChannel(id: number) {
     return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
   }
@@ -28,12 +33,20 @@ export class UPloadService {
     return this.http.get(BASE_URL + "/canais")
   }
 
+  getChannelComments(channel_id: number) {
+    return this.http.get<ChannelComments[]>(BASE_URL + "/comentarios/canal/" + channel_id)
+  }
+
   getChannelVideos(channel_id: number) {
     return this.http.get<ChannelVideos[]>(BASE_URL + "/videos/canal/" + channel_id)
   }
 
   getVideos() {
     return this.http.get(BASE_URL + "/videos")
+  }
+
+  getVideoComments(id: number) {
+    return this.http.get<VideoComments[]>(BASE_URL + "/comentarios/video/" + id)
   }
 
   getVideoDetails(id: string) {

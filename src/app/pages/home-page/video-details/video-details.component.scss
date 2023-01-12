@@ -17,19 +17,27 @@
         display: flex;
         flex-direction: column;
 
-        .title {
-          font-style: normal;
-          color: #FAFAFB;
-          margin-bottom: -3.5vh;
-          font-size: 1.2em;
+        .title-container {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          height: 35px;
+
+          .title {
+            font-style: normal;
+            color: #FAFAFB;
+            font-size: 1.2em;
+            margin: 0;
+          }
+
+          .flag {
+            display: flex;
+            flex-direction: row-reverse;
+            color: #92929D;
+            font-size: 1.4em;
+          }
         }
 
-        .flag {
-          display: flex;
-          flex-direction: row-reverse;
-          color: #92929D;
-          font-size: 1.4em;
-        }
 
         .tags {
           color: #0835c9;
@@ -38,7 +46,7 @@
 
 
           .tag-item {
-            padding-right: 1vh
+            margin: 5px 0 10px 0;
           }
         }
 
@@ -55,7 +63,6 @@
           z-index: 1;
           border-radius: 20px 20px;
           width: 100%;
-          margin-top: 1vh;
 
         }
 
