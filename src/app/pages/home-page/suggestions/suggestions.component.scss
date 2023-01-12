@@ -102,6 +102,29 @@
         display: flex;
         justify-content: space-around;
       }
+
+      .box {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        .logo {
+          border-radius: 50%;
+          overflow: hidden;
+          height: 45px;
+          width: 45px;
+          background-color: #1C1C24;
+          margin: 20px 0px 0px 15px;
+          border: 1px solid #FFFFFF;
+          background-color: #1C1C24;
+          cursor: pointer;
+        }
+
+        .title2 {
+          margin: 5px 0px 0px 70px;
+          cursor: pointer;
+        }
+      }
     }
   }
 

@@ -30,12 +30,12 @@ export class HomePageComponent implements OnInit {
 
   }
 
-  changeFavorite(video_id: string) {
-    this.UPload.toggleFavorite(video_id)
+  changeFavorite(id: number) {
+    this.UPload.toggleFavorite(id)
   }
 
-  favourite(video_id: string) {
-    return this.UPload.isFavorite(video_id)
+  favourite(id: number) {
+    return this.UPload.isFavorite(id)
   }
 
   share(txt: string) {

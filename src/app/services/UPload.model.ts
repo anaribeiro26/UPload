@@ -38,7 +38,7 @@ export interface Videos {
   categories: string;
   date: string;
   description: string;
-  id: string;
+  id: number;
   tags: string;
   logo: string;
   video: string;

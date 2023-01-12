@@ -1,6 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Channels, ChannelVideos, VideoDetails, VideosPlaylist, Tags, TagVideos, Playlists} from "./UPload.model";
+import {
+  Channels,
+  ChannelVideos,
+  VideoDetails,
+  VideosPlaylist,
+  Tags,
+  TagVideos,
+  Playlists,
+  Articles, Videos
+} from "./UPload.model";
+import {Observable} from "rxjs";
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 
@@ -10,9 +20,17 @@ const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 
 export class UPloadService {
   favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
-  favourites: number[] = [];
+
 
   constructor(private http: HttpClient) {
+  }
+
+  getArticle(id: number) {
+    return this.http.get<Articles[]>(BASE_URL + "/artigos/" + id)
+  }
+
+  getArticles() {
+    return this.http.get(BASE_URL + "/artigos")
   }
 
   getChannel(id: number) {
@@ -55,12 +73,18 @@ export class UPloadService {
     return this.http.get<TagVideos[]>(BASE_URL + "/videos/tag/" + tags_id)
   }
 
-  // getFavourites() {
-  //   return this.http.get(BASE_URL + "/videos?ids="+ this.favourites.join(','));
-  // }
+  getFavorites() {
+    return new Observable(observer => {
+      this.http.get<Videos[]>(BASE_URL + "/videos").subscribe((videos : Videos[]) => {
+        observer.next(videos.filter((video : Videos) => {
+          return this.favorites.includes(video.id)
+        }))
+      });
+    })
+  }
 
 
-      toggleFavorite(id: string) {
+      toggleFavorite(id: number) {
         if (!this.isFavorite(id)) {
           this.favorites.push(id)
         } else {
@@ -70,7 +94,7 @@ export class UPloadService {
         localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
       }
 
-      isFavorite(id: string): boolean {
+      isFavorite(id: number): boolean {
         return this.favorites.includes(id);
       }
 
