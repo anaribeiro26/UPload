@@ -15,8 +15,7 @@ export class UPloadService {
   videosPlaylist: VideosPlaylist[] = [];
 
 
-  favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
-  favourites: number[] = [];
+  favorites : number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
   constructor(private http: HttpClient) {
   }
@@ -84,7 +83,7 @@ export class UPloadService {
   }
 
 
-      toggleFavorite(id: string) {
+      toggleFavorite(id: number) {
         if (!this.isFavorite(id)) {
           this.favorites.push(id)
         } else {
@@ -94,7 +93,7 @@ export class UPloadService {
         localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
       }
 
-      isFavorite(id: string): boolean {
+      isFavorite(id: number): boolean {
         return this.favorites.includes(id);
       }
 
