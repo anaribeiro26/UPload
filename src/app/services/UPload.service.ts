@@ -1,6 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Channels, ChannelVideos, VideoDetails, VideosPlaylist, Tags, TagVideos} from "./UPload.model";
+import {
+  Channels,
+  ChannelVideos,
+  VideoDetails,
+  VideosPlaylist,
+  Tags,
+  TagVideos, Videos,
+  ChannelComments,
+  VideoComments
+} from "./UPload.model";
+import {Observable} from "rxjs";
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 
@@ -13,10 +23,13 @@ export class UPloadService {
 
   videosPlaylist: VideosPlaylist[] = [];
 
-  favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
-  favourites: number[] = [];
+  favorites : number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
   constructor(private http: HttpClient) {
+  }
+
+  getArticles() {
+    return this.http.get(BASE_URL + "/artigos")
   }
 
   getChannel(id: number) {
@@ -27,12 +40,20 @@ export class UPloadService {
     return this.http.get(BASE_URL + "/canais")
   }
 
+  getChannelComments(channel_id: number) {
+    return this.http.get<ChannelComments[]>(BASE_URL + "/comentarios/canal/" + channel_id)
+  }
+
   getChannelVideos(channel_id: number) {
     return this.http.get<ChannelVideos[]>(BASE_URL + "/videos/canal/" + channel_id)
   }
 
   getVideos() {
     return this.http.get(BASE_URL + "/videos")
+  }
+
+  getVideoComments(id: number) {
+    return this.http.get<VideoComments[]>(BASE_URL + "/comentarios/video/" + id)
   }
 
   getVideoDetails(id: string) {
@@ -62,25 +83,29 @@ export class UPloadService {
     return this.http.get<TagVideos[]>(BASE_URL + "/videos/tag/" + tags_id)
   }
 
+  getFavorites() {
+    return new Observable(observer => {
+      this.http.get<Videos[]>(BASE_URL + "/videos").subscribe((videos : Videos[]) => {
+        observer.next(videos.filter((video : Videos) => {
+          return this.favorites.includes(video.id)
+        }))
+      });
+    })
+  }
 
 
-  // getFavourites() {
-  //   return this.http.get(BASE_URL + "/videos?ids="+ this.favourites.join(','));
-  // }
+  toggleFavorite(id: number) {
+    if (!this.isFavorite(id)) {
+      this.favorites.push(id)
+    } else {
+      let index = this.favorites.indexOf(id);
+      this.favorites.splice(index, 1)
+    }
+    localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
+  }
 
-
-      toggleFavorite(id: string) {
-        if (!this.isFavorite(id)) {
-          this.favorites.push(id)
-        } else {
-          let index = this.favorites.indexOf(id);
-          this.favorites.splice(index, 1)
-        }
-        localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
-      }
-
-      isFavorite(id: string): boolean {
-        return this.favorites.includes(id);
-      }
+  isFavorite(id: number): boolean {
+    return this.favorites.includes(id);
+  }
 
 }
