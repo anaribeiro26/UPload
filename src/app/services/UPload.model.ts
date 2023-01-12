@@ -1,10 +1,12 @@
 export interface Articles {
   title: string;
-  categories: string;
-  categories_id: string;
+  tags: string;
+  links: string;
+  tags_id: number;
   description: string;
+  teaser: string;
   header: string;
-  logo: string;
+  thumbnail: string;
   id: number;
 }
 
@@ -33,6 +35,14 @@ export interface ChannelVideos {
   duration: string;
 }
 
+export interface ChannelComments {
+  name: string;
+  comment: string;
+  channel_id: number;
+  id: number;
+  date: string;
+}
+
 export interface Videos {
   channel: string;
   categories: string;
@@ -46,6 +56,11 @@ export interface Videos {
   duration: string;
   canal_id: string;
   tags_id: string;
+}
+
+export interface VideoComments {
+  name: string;
+  comment: string;
 }
 
 export interface VideoDetails {
@@ -70,6 +85,7 @@ export interface Playlists {
   date: string;
   id: number;
   videos: string;
+  numberOfVideos?: number;
 }
 
 export interface VideosPlaylist {

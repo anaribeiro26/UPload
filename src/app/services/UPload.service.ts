@@ -1,15 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {
-  Channels,
-  ChannelVideos,
-  VideoDetails,
-  VideosPlaylist,
-  Tags,
-  TagVideos,
-  Playlists,
-  Articles, Videos
-} from "./UPload.model";
+import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists} from "./UPload.model";
 import {Observable} from "rxjs";
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
@@ -19,18 +10,14 @@ const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 })
 
 export class UPloadService {
-  favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
+  videosPlaylist: VideosPlaylist[] = [];
+
+
+  favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
+  favourites: number[] = [];
 
   constructor(private http: HttpClient) {
-  }
-
-  getArticle(id: number) {
-    return this.http.get<Articles[]>(BASE_URL + "/artigos/" + id)
-  }
-
-  getArticles() {
-    return this.http.get(BASE_URL + "/artigos")
   }
 
   getChannel(id: number) {
@@ -84,7 +71,7 @@ export class UPloadService {
   }
 
 
-      toggleFavorite(id: number) {
+      toggleFavorite(id: string) {
         if (!this.isFavorite(id)) {
           this.favorites.push(id)
         } else {
@@ -94,7 +81,7 @@ export class UPloadService {
         localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
       }
 
-      isFavorite(id: number): boolean {
+      isFavorite(id: string): boolean {
         return this.favorites.includes(id);
       }
 

@@ -50,11 +50,13 @@
         }
 
         .tags {
-          position: absolute;
           top: 11rem;
           margin-left: 1rem;
           color: #1e75ff;
           font-size: 0.85rem;
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
         }
       }
 

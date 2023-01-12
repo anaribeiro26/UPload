@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {faHouse, faBarsStaggered, faClapperboard, faPlay} from "@fortawesome/free-solid-svg-icons";
+import {faHouse, faBarsStaggered, faBars, faClapperboard, faPlay} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-navigation',
@@ -16,8 +16,9 @@ export class NavigationComponent implements OnInit {
   faBarsStaggered = faBarsStaggered;
   faClapperboard = faClapperboard;
   faPlay = faPlay;
+  faBars = faBars;
 
-  sidebar: boolean = false;
+  sidebar: boolean = true;
 
   constructor() {
   }

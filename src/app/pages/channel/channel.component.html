@@ -1,11 +1,14 @@
 <div class="channels" *ngFor="let c of channels">
-  <img class="header_image" [src]="image_url+c.header">
-  <div class="profile_picture">
-    <img class="logo" [src]="image_url+c.logo">
+  <div class="header">
+    <img alt="header" class="header_image" [src]="image_url+c.header">
   </div>
-  <h4 class="title">{{c.title}}</h4>
- <!-- <p class="description">{{c.description}}</p>-->
+  <div class="channel_info">
+    <div class="picture_section">
+      <img alt="logo" class="logo" [src]="image_url+c.logo">
+    </div>
+    <h4 class="title" title="{{c.title}}">{{c.title}}</h4></div>
+  <!-- <p class="description">{{c.description}}</p>-->
   <p class="description" [innerHTML]="c.description"></p>
 </div>
-<p class="section">Vídeos</p>
 <app-channel-videos *ngFor="let c of channels" [channel_id]="c.id"></app-channel-videos>
+<app-channel-comments *ngFor="let c of channels" [channel_id]="c.id"></app-channel-comments>

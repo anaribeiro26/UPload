@@ -32,9 +32,13 @@ export class PlaylistsComponent implements OnInit {
           }
           prevId = obj.id
         }
+
       )
     })
 
   }
+
+
+
 
 }
