@@ -1,7 +1,8 @@
-<div class="hide-bar" (click)="sidebar=!sidebar" >
-  <fa-icon [icon]="faBars"></fa-icon>
-</div>
-<div class="sidebar" [ngClass]="sidebar ? 'hidden' : 'active'">
+<div class="logo-bar">
+  <div class="mobile"><img alt="logo" src="../../../assets/upload.svg" routerLink="/homepage" routerLinkActive="active"></div>
+  <div class="hide-bar" (click)="sidebar=!sidebar">
+  <fa-icon [icon]="faBars"></fa-icon></div>
+<div class="side-bar" [ngClass]="sidebar ? 'hidden' : 'active'">
   <div class="logo"><img alt="logo" src="../../../assets/upload.svg" routerLink="/homepage" routerLinkActive="active"></div>
   <div class="menu">
     <div class="nav">
@@ -27,4 +28,5 @@
     </div>
   </div>
   </div>
+</div>
 </div>
