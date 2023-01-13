@@ -16,12 +16,19 @@
         </div>
       </a>
     </div>
-    <div class="sugestionThemes">
+    <div class="sugestionThemes" >
       <div class="line2">
         <p>Temáticas sugeridas</p>
         <a routerLink="/articles/">
           <p>VER TODAS</p>
         </a>
+      </div>
+      <div class="tag" *ngFor="let t of artList">
+        <div class="box">
+          <img class="logo" [src]="image_url + t.logo">
+          <h2 class="title2" routerLink="/articles/{{t.id}}" routerLinkActive="active">{{t.title}}</h2>
+
+        </div>
       </div>
     </div>
   </div>

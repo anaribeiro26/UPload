@@ -8,6 +8,7 @@ export interface Articles {
   header: string;
   thumbnail: string;
   id: number;
+  logo : string
 }
 
 export interface Channels {

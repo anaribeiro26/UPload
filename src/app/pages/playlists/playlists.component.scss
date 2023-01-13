@@ -1,5 +1,12 @@
 .uploads {
   color: #FFFFFF;
+  display: flex;
+  flex-wrap: wrap;
+
+
+  .videos {
+    display: flex;
+  }
 
   .box {
     position: relative;
@@ -8,7 +15,7 @@
     border-radius: 20px;
 
     .thumbnail {
-      display: block;
+      //display: block;
       width: 100%;
       height: auto;
       border-radius: 20px;
