@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {Channels} from "../../../services/UPload.model";
 
 @Component({
-  selector: 'app-channels-list',
+  selector: 'app-channel-list',
   templateUrl: './channels-list.component.html',
   styleUrls: ['./channels-list.component.scss']
 })
