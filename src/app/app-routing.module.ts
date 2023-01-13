@@ -14,7 +14,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'articles', component: ArticlesComponent},
   {path: 'channels', component: ChannelsListComponent},
-  {path: 'channels/:id', component: ChannelComponent},
+  {path: 'channel/:id', component: ChannelComponent},
   {path: 'homepage', component: HomePageComponent},
   {path: 'video/:id', component: VideoDetailsComponent},
   {path: 'favourites', component: FavouritesComponent},
