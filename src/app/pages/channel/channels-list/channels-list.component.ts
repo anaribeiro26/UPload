@@ -20,5 +20,19 @@ export class ChannelsListComponent implements OnInit {
     this.UPload.getChannels().subscribe((channelsList) => {
       this.channelsList = channelsList as Channels[];
     })
+    function search_channel() {
+      let input = (<HTMLInputElement>document.getElementById('searchbar')).value.toLowerCase()
+      //input = input.toLowerCase();
+      let x = document.getElementsByClassName('content');
+
+      for (let i = 0; i < x.length; i++) {
+        if (!x[i].innerHTML.toLowerCase().includes(input)) {
+          x[i].setAttribute("style", "display: none;");
+        }
+        else {
+          x[i].setAttribute("style", "display=\"list-item\;");
+        }
+      }
+    }
   }
 }

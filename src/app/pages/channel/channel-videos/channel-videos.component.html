@@ -6,8 +6,7 @@
       <div class="inner_box" title="{{v.title}}">
         <img class="thumbnail" alt="thumbnail"
              [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
-        <div class="details" [innerHTML]="v.duration">
-        </div>
+        <div class="details" [innerHTML]="v.duration"></div>
         <div>
           <p class="tags">
             <span *ngFor="let tag of v.tags.split(',').slice(0, 3)"
