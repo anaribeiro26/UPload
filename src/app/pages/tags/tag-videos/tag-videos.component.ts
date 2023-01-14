@@ -3,11 +3,11 @@ import {UPloadService} from "../../../services/UPload.service";
 import {TagVideos} from "../../../services/UPload.model";
 
 @Component({
-  selector: 'app-tags-videos',
-  templateUrl: './tags-videos.component.html',
-  styleUrls: ['./tags-videos.component.scss']
+  selector: 'app-tag-videos',
+  templateUrl: './tag-videos.component.html',
+  styleUrls: ['./tag-videos.component.scss']
 })
-export class TagsVideosComponent implements OnInit {
+export class TagVideosComponent implements OnInit {
 
   tag_videos: TagVideos[] = [];
 

@@ -1,4 +1,4 @@
-export interface Articles {
+export interface Thematics {
   title: string;
   tags: string;
   links: string;
@@ -102,7 +102,6 @@ export interface VideosPlaylist {
   channel_id: string;
   date: string;
   id: number;
-
 }
 
 export interface Tags {

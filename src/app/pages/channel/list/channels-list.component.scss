@@ -83,3 +83,8 @@
   color: rgba(255, 255, 255, 100%);
   cursor: pointer;
 }
+@media screen and (max-width: 560px) {
+  .description {
+    max-width: 400px;
+  }
+}

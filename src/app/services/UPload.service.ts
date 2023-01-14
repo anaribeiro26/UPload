@@ -1,19 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {
-  Channels,
-  ChannelVideos,
-  VideoDetails,
-  VideosPlaylist,
-  Tags,
-  TagVideos, Videos,
-  ChannelComments,
-  VideoComments
-} from "./UPload.model";
+import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments} from "./UPload.model";
 import {Observable} from "rxjs";
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
-
 
 @Injectable({
   providedIn: 'root'

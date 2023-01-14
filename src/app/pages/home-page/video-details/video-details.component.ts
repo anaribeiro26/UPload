@@ -9,7 +9,7 @@ import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid, faFlag
 //@ts-ignore
 
 @Component({
-  selector: 'app-video-details',
+  selector: 'app-video-page',
   templateUrl: './video-details.component.html',
   styleUrls: ['./video-details.component.scss']
 })

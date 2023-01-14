@@ -9,6 +9,7 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent {
   title = 'UpLoad';
+  //favorites: any = [];
 
   constructor(public translate: TranslateService) {
     translate.addLangs(["en", "pt"]);

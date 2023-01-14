@@ -69,7 +69,8 @@
           justify-content: center;
           height: 24px;
           width: 50px;
-          top: 144px;
+          //top: 144px;
+          margin-top: -40px;
           margin-left: 16px;
           background-color: #171725;
           border-radius: 8px;
@@ -79,7 +80,7 @@
         }
 
         .tags {
-          top: 180px;
+         // top: 180px;
           margin-left: 16px;
           color: #1e75ff;
           font-size: 14px;
