@@ -39,8 +39,8 @@
 
     .title {
       // margin-bottom: 4px;
-      font-size: 1rem;
-      line-height: 1rem;
+      font-size: 16px;
+      line-height: 16px;
       font-weight: 400;
       // max-height: 5.2rem;
       //overflow: hidden;
@@ -53,7 +53,8 @@
 
     .description {
       // word-break: break-word;
-      font-size: 0.9rem;
+      font-size: 14px;
+      max-width: 700px;
       // line-height: 1.8rem;
       // font-weight: 400;
       // max-height: 3.6rem;
@@ -73,6 +74,7 @@
     overflow: hidden;
     height: 110px;
     width: 110px;
+    border: 2px solid rgba(255, 255, 255, 80%);
   }
 }
 
@@ -80,4 +82,9 @@
   // border-bottom: 1px solid rgba(189, 195, 199, 60%);
   color: rgba(255, 255, 255, 100%);
   cursor: pointer;
+}
+@media screen and (max-width: 560px) {
+  .description {
+    max-width: 400px;
+  }
 }

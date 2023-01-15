@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UPloadService} from "../../../services/UPload.service";
-import {ChannelVideos} from "../../../services/UPload.model";
+import {UPloadService} from "../../../../services/UPload.service";
+import {ChannelVideos} from "../../../../services/UPload.model";
 
 @Component({
   selector: 'app-channel-videos',

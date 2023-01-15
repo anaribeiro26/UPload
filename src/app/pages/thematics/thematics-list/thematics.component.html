@@ -1,0 +1,24 @@
+<div class="uploads">
+  <p class="page_title">Artigos de Temáticas</p>
+  <div class="videos">
+    <div *ngFor="let t of thematics" class="video">
+      <div class="outer_box" routerLink="/articles/{{t.id}}" routerLinkActive="active">
+        <div class="inner_box" title="{{t.title}}">
+          <img class="header" alt="header" [src]="image_url + t.header">
+        </div>
+        <div>
+          <p class="tags">
+            <span *ngFor="let tag of t.tags.split(',').slice(0, 3)"
+                  routerLink="/tags/{{tag.split(' ').join('')}}"
+                  routerLinkActive="active"
+            >#{{tag.split(' ').join('')}} </span>
+          </p>
+        </div>
+        <p class="title" [innerHTML]="t.title"></p>
+        <div class="teaser"><p class="article-teaser" [innerHTML]="t.teaser"></p>
+        </div>
+      </div>
+    </div>
+    <div class="outer_box_empty" *ngIf="thematics.length % 2 !== 0"></div>
+  </div>
+</div>

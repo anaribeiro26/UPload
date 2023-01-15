@@ -1,2 +1,6 @@
-<p>favourites works!</p>
+<div class="favorites">
+  <div *ngFor="let f of favorites_list" class="favorite" [routerLink]="['/homepage/']">
+    <p>{{f.title}}</p>
+  </div>
+</div>
 

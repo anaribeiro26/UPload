@@ -1,6 +1,10 @@
 <div class="wrapper">
 <app-navigation></app-navigation>
 <router-outlet></router-outlet>
+  <select #langSelect (change)="changeLang(langSelect.value)">
+    <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
+  </select>
+  <button (click)="getCurrentLang()">Get</button>
 </div>
 
 

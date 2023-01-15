@@ -1,23 +1,12 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {
-  Channels,
-  ChannelVideos,
-  VideoDetails,
-  VideosPlaylist,
-  Tags,
-  TagVideos,
-  ChannelComments,
-  VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse
-} from "./UPload.model";
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
-
-
+import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse} from "./UPload.model";
+import {Observable} from "rxjs";
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 const BASE_URL_FLAGGING = "https://dev-project-upskill-grupo05.pantheonsite.io/entity/flagging"
 let icon = faThumbsUp;
-
 
 
 
@@ -39,8 +28,7 @@ export class UPloadService {
 
   videosPlaylist: VideosPlaylist[] = [];
 
-  favorites = JSON.parse(localStorage.getItem("my_favorites") || "[]")
-  favourites: number[] = [];
+  favorites : number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
   constructor(private http: HttpClient) {
   }
@@ -142,24 +130,28 @@ export class UPloadService {
     return this.http.get<TagVideos[]>(BASE_URL + "/videos/tag/" + tags_id)
   }
 
+  getFavorites() {
+    return new Observable(observer => {
+      this.http.get<Videos[]>(BASE_URL + "/videos").subscribe((videos : Videos[]) => {
+        observer.next(videos.filter((video : Videos) => {
+          return this.favorites.includes(video.id)
+        }))
+      });
+    })
+  }
 
+  toggleFavorite(id: number) {
+    if (!this.isFavorite(id)) {
+      this.favorites.push(id)
+    } else {
+      let index = this.favorites.indexOf(id);
+      this.favorites.splice(index, 1)
+    }
+    localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
+  }
 
-  // getFavourites() {
-  //   return this.http.get(BASE_URL + "/videos?ids="+ this.favourites.join(','));
-  // }
+  isFavorite(id: number): boolean {
+    return this.favorites.includes(id);
+  }
 
-
-      toggleFavorite(id: string) {
-        if (!this.isFavorite(id)) {
-          this.favorites.push(id)
-        } else {
-          let index = this.favorites.indexOf(id);
-          this.favorites.splice(index, 1)
-        }
-        localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
-      }
-
-      isFavorite(id: string): boolean {
-        return this.favorites.includes(id);
-      }
 }

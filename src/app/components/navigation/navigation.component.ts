@@ -20,6 +20,8 @@ export class NavigationComponent implements OnInit {
 
   sidebar: boolean = true;
 
+
+
   constructor() {
   }
 

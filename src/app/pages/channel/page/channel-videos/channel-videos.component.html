@@ -1,12 +1,12 @@
 <div class="uploads">
   <p class="title">{{title}}</p>
   <div class="videos">
-    <div class="outer_box" *ngFor="let v of videos" routerLink="/video/{{v.id}}" routerLinkActive="active">
+    <div class="video" *ngFor="let v of videos" >
+    <div class="outer_box" routerLink="/video/{{v.id}}" routerLinkActive="active">
       <div class="inner_box" title="{{v.title}}">
         <img class="thumbnail" alt="thumbnail"
              [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
-        <div class="details" [innerHTML]="v.duration">
-        </div>
+        <div class="details" [innerHTML]="v.duration"></div>
         <div>
           <p class="tags">
             <span *ngFor="let tag of v.tags.split(',').slice(0, 3)"
@@ -24,4 +24,5 @@
     </div>
     <div class="outer_box_empty" *ngIf="videos.length % 2 !== 0"></div>
   </div>
+</div>
 </div>

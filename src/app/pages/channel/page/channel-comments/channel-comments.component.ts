@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {ChannelComments} from "../../../services/UPload.model";
-import {UPloadService} from "../../../services/UPload.service";
+import {ChannelComments} from "../../../../services/UPload.model";
+import {UPloadService} from "../../../../services/UPload.service";
 
 @Component({
   selector: 'app-channel-comments',

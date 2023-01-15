@@ -1,5 +1,7 @@
+<input id="searchbar" onclick="search_channel()" type="text"
+       name="search" placeholder="Search channel">
 <div class="content" *ngFor="let c of channelsList">
-  <div class="content-section" routerLink="/channels/{{c.id}}">
+  <div class="content-section" routerLink="/channel/{{c.id}}">
     <div class="logo-section">
       <div class="logo-scope"></div>
       <img class="logo" alt="logo" [src]="image_url + c.logo">
