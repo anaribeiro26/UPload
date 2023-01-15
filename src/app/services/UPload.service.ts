@@ -82,7 +82,6 @@ export class UPloadService {
     })
   }
 
-
       toggleFavorite(id: number) {
         if (!this.isFavorite(id)) {
           this.favorites.push(id)

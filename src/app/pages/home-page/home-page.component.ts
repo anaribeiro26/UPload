@@ -41,5 +41,19 @@ export class HomePageComponent implements OnInit {
   share(txt: string) {
     console.log(txt)
   }
+
+  clickShare(myUrl: string) {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Copied link here.',
+        url: myUrl
+      }).then(() => {
+        console.log('Thanks for sharing!');
+        })
+        .catch(error => console.log('Error sharing', error));
+    } else {
+      alert('Share not supported!');
+    }
+  }
 }
 

@@ -37,8 +37,4 @@ export class PlaylistsComponent implements OnInit {
     })
 
   }
-
-
-
-
 }
