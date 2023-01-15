@@ -8,10 +8,18 @@ import {
   Tags,
   TagVideos,
   ChannelComments,
-  VideoComments
+  VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse
 } from "./UPload.model";
+import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
+import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
+
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
+const BASE_URL_FLAGGING = "https://dev-project-upskill-grupo05.pantheonsite.io/entity/flagging"
+let icon = faThumbsUp;
+
+
+
 
 
 @Injectable({
@@ -19,6 +27,15 @@ const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 })
 
 export class UPloadService {
+
+  faThumbsUp = faThumbsUp;
+  faThumbsDown = faThumbsDown;
+  faThumbsDownSolid = faThumbsDownSolid;
+  faThumbsUpSolid = faThumbsUpSolid;
+
+  icon: any = faThumbsUp;
+
+
 
   videosPlaylist: VideosPlaylist[] = [];
 
@@ -52,12 +69,20 @@ export class UPloadService {
     return this.http.get(BASE_URL + "/videos")
   }
 
-  getVideoComments(id: number) {
-    return this.http.get<VideoComments[]>(BASE_URL + "/comentarios/video/" + id)
+  getVideoComments(video_id: string) {
+    return this.http.get<VideoComments[]>(BASE_URL + "/comentarios/video/" + video_id)
   }
 
   getVideoDetails(id: string) {
     return this.http.get<VideoDetails[]>(BASE_URL + "/videos/" + id)
+  }
+
+  getNumberOfLikes(id: string) {
+    return this.http.get<FlagCounter[]>(BASE_URL + "/likes/" + id)
+  }
+
+  getNumberOfDislikes(id: string) {
+    return this.http.get<FlagCounter[]>(BASE_URL + "/dislikes/" + id)
   }
 
   getPlaylist(id: number) {
@@ -72,7 +97,41 @@ export class UPloadService {
     return this.http.get<VideosPlaylist[]>(BASE_URL + "/videos/playlist/" + id)
   }
 
+  likeVideo(id: string) {
+    const body: FlaggingRequest = {
+      entity_id: [id],
+      entity_type: ["media"],
+      flag_id: [
+        {
+          "target_id": "like",
+          "target_type": "flag",
+        }
+      ],
+      uid: ["0"]
+    }
 
+    return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
+  }
+
+  removeLikeOrDislike(id: number) {
+    return this.http.delete(`${BASE_URL_FLAGGING}/${id}`)
+  }
+
+  dislikeVideo(id: string) {
+    const body: FlaggingRequest = {
+      entity_id: [id.toString()],
+      entity_type: ["media"],
+      flag_id: [
+        {
+          "target_id": "dislike",
+          "target_type": "flag",
+        }
+      ],
+      uid: ["0"]
+    }
+
+    return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
+  }
 
 
   getTag(id: number) {
@@ -103,5 +162,4 @@ export class UPloadService {
       isFavorite(id: string): boolean {
         return this.favorites.includes(id);
       }
-
 }

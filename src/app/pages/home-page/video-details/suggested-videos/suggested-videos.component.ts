@@ -15,13 +15,13 @@ export class SuggestedVideosComponent implements OnInit {
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
 
+
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
+  }
+
+  ngOnInit(): void {
     this.UPload.getVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
     })
   }
-
-  ngOnInit(): void {
-  }
-
 }

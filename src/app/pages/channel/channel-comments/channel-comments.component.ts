@@ -21,6 +21,7 @@ export class ChannelCommentsComponent implements OnInit {
   ngOnInit(): void {
     this.UPload.getChannelComments(this.channel_id).subscribe((comments) => {
       this.comments = comments as ChannelComments[];
+      console.log(this.comments)
     })
   }
 
