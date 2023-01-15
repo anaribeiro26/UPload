@@ -27,6 +27,7 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ThematicDetailsComponent } from './pages/thematics/thematic-details/thematic-details/thematic-details.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
