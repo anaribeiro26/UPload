@@ -30,6 +30,7 @@
               <div class="date"><p>Há {{video.date}}</p></div>
             </div>
             <div class="like-dislike">
+              <div></div>
               <fa-icon (click)="handleLike()" class="like"
                        [icon]="isLiked()? faThumbsUpSolid : faThumbsUp"></fa-icon>
               <p>{{video.likes}}</p>
