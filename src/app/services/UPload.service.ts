@@ -2,7 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
-import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse} from "./UPload.model";
+import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse, Thematics, ThematicVideos} from "./UPload.model";
 import {Observable} from "rxjs";
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 const BASE_URL_FLAGGING = "https://dev-project-upskill-grupo05.pantheonsite.io/entity/flagging"
@@ -35,6 +35,14 @@ export class UPloadService {
 
   getArticles() {
     return this.http.get(BASE_URL + "/artigos")
+  }
+
+  getThematic(id: number) {
+    return this.http.get<Thematics[]>(BASE_URL + "/artigos/" + id)
+  }
+
+  getThematicVideos(tags_id: number) {
+    return this.http.get<ThematicVideos[]>(BASE_URL + "/videos/artigo/" + tags_id)
   }
 
   getChannel(id: number) {
