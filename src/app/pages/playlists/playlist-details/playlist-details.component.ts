@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../../services/UPload.service";
 
 @Component({
-  selector: 'app-playlist-details',
+  selector: 'app-playlist-page',
   templateUrl: './playlist-details.component.html',
   styleUrls: ['./playlist-details.component.scss']
 })

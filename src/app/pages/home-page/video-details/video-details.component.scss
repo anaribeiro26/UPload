@@ -3,15 +3,18 @@
   display: flex;
   width: 90%;
   margin: auto;
+  //border: red 1px solid;
 
 
   .container {
     display: flex;
     flex-direction: column;
     width: 72%;
+    //border: red 1px solid;
 
     .inside-box {
       width: 90%;
+      //border: red 1px solid;
 
       .title-box {
         display: flex;
@@ -26,7 +29,7 @@
           .title {
             font-style: normal;
             color: #FAFAFB;
-            font-size: 1.2em;
+            font-size: 22px;
             margin: 0;
           }
 
@@ -34,15 +37,26 @@
             display: flex;
             flex-direction: row-reverse;
             color: #92929D;
-            font-size: 1.4em;
+            font-size: 20px;
+          }
+
+          .flag:hover {
+            font-size: 1.2em;
+            color: blue;
+            transition-timing-function: ease-in-out;
+            cursor: pointer;
+
           }
         }
 
 
         .tags {
-          color: #0835c9;
-          font-size: 1em;
           display: flex;
+
+          a {
+            text-decoration: none;
+            color: #0835c9;
+          }
 
 
           .tag-item {
@@ -58,24 +72,26 @@
       }
 
 
-        .video {
-          overflow: hidden;
-          z-index: 1;
-          border-radius: 20px 20px;
-          width: 100%;
+      .video {
+        overflow: hidden;
+        z-index: 1;
+        border-radius: 20px 20px;
+        width: 100%;
+        //border: red 1px solid;
 
-        }
+      }
 
 
       .channel-box {
         display: flex;
-        margin-top: 2vh;
+        margin-top: 15px;
+        //border: red 1px solid;
 
         .photo {
           display: flex;
           align-content: flex-end;
-          /* justify-content: flex-end; */
           align-items: flex-end;
+          //border: red 1px solid;
         }
 
         .logo {
@@ -85,6 +101,18 @@
           border: 2px solid #FFFFFF;
         }
 
+        .title-like {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex: 1;
+
+        }
+
+        //.second-box {
+        //  border: 2px solid #FFFFFF;
+        //}
+
         .channel-info {
           display: flex;
           flex-direction: column;
@@ -92,37 +120,58 @@
           letter-spacing: 0.1px;
           width: 100%;
           margin-top: inherit;
+          //border: red 1px solid;
 
         }
 
         .channel-title {
           font-style: normal;
           font-weight: 400;
-          font-size: 0.75em;
+          font-size: 15px;
           letter-spacing: 0.1px;
           color: #FAFAFB;
+          //border: red 1px solid;
         }
 
         .date {
           font-style: normal;
           color: #92929D;
-          font-size: 0.95em;
+          font-size: 13px;
+          //border: red 1px solid;
         }
 
         .like-dislike {
           display: flex;
-          justify-content: flex-end;
           color: #FAFAFB;
-          font-size: 1.2em;
+          align-items: center;
+          //border: red 1px solid;
 
           .like {
-            margin-right: 4vh;
+            font-size: 20px;
+          }
+
+          .like:hover {
+            font-size: 1.2em;
+            color: blue;
+            transition-timing-function: ease-in-out;
+            cursor: pointer;
 
           }
 
           .dislike {
-            margin-left: 4vh;
+            margin-left: 20px;
+            font-size: 20px;
           }
+
+          .dislike:hover {
+            font-size: 1.2em;
+            color: blue;
+            transition-timing-function: ease-in-out;
+            cursor: pointer;
+
+          }
+
+
         }
 
         p {
@@ -136,7 +185,8 @@
         width: 100%;
         background: #1C1C24;
         border-radius: 10px;
-        margin-top: 2vh;
+        margin-top: 15px;
+        //border: red 1px solid;
 
         .description {
           width: 92%;
@@ -153,6 +203,10 @@
       }
     }
 
+  }
+
+  .comments {
+    margin-top: 15px;
   }
 
   .suggested-videos {

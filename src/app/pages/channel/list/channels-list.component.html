@@ -1,0 +1,23 @@
+<div class="searchbar"><input id="searchbar" type="text"> !--<[(ngModel)]="searchbar" name="search"-->
+  placeholder="Search channel" />
+<fa-icon [icon]="faMagnifyingGlass"></fa-icon>
+</div>
+<div class="list">
+  <div class="content" *ngFor="let c of channelsList | filter: searchbar">
+    <div class="content-section" routerLink="/channel/{{c.id}}">
+      <div class="logo-section">
+        <div class="logo-scope"></div>
+        <img class="logo" alt="logo" [src]="image_url + c.logo">
+      </div>
+      <div class="info-section">
+        <div class="title">
+          <h4 class="channel-title" [innerHTML]="c.title"></h4>
+        </div>
+        <div class="metadata">
+        </div>
+        <div class="description"><p class="channel-description" [innerHTML]="c.description"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

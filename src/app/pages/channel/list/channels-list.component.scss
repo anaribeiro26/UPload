@@ -1,0 +1,126 @@
+.searchbar {
+ //  margin: 0;
+  padding-bottom: 5px;
+  display: flex;
+
+  input {
+    width: 100%;
+    background-color: #1C1C24;
+    height: 40px;
+    position: fixed;
+    padding-left: 50px;
+    border-bottom: none;
+    font-family: "Space Grotesk";
+    color: rgba(255, 255, 255, 80%);
+    //line-height: 30px;
+  }
+
+  fa-icon {
+    position: fixed;
+    margin-left: 25px;
+    margin-right: 10px;
+    padding-top: 10px;
+    color: white;
+  }
+}
+
+.list {
+  margin-top: 70px;
+
+  .content {;
+    color: rgba(255, 255, 255, 75%);;
+    display: flex;
+    // flex-direction: row;
+    border-bottom: 0.5px solid rgba(189, 195, 199, 20%);
+    padding-bottom: 10px;
+    padding-top: 10px;
+
+    .logo-section {
+      // margin-right: 16px;
+      //  max-width: 360px;
+      //  min-width: 240px;
+      // flex: 1;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      .logo-scope {
+        width: 246px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        flex: none;
+      }
+    }
+
+    .content-section {
+      display: flex;
+    }
+
+    .info-section {
+      flex-direction: row;
+      padding: 0 16px 16px 16px;
+      min-width: 0;
+      justify-content: center;
+      max-width: 800px;
+
+      .title {
+        // margin-bottom: 4px;
+        font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+        // max-height: 5.2rem;
+        //overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: normal;
+        display: flex;
+        // flex-direction: row;
+        align-items: center;
+
+        .channel-title {
+          margin-bottom: 0;
+        }
+      }
+
+      .description {
+        margin-top: 0;
+        // word-break: break-word;
+        font-size: 14px;
+        max-width: 600px;
+        // line-height: 1.8rem;
+        // font-weight: 400;
+        // max-height: 3.6rem;
+        // overflow: hidden;
+        // white-space: nowrap;
+        //text-overflow: ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    img {
+      border-radius: 50%;
+      overflow: hidden;
+      height: 110px;
+      width: 110px;
+      border: 2px solid rgba(255, 255, 255, 80%);
+    }
+  }
+
+  .content:hover {
+    // border-bottom: 1px solid rgba(189, 195, 199, 60%);
+    color: rgba(255, 255, 255, 100%);
+    cursor: pointer;
+  }
+
+  @media screen and (max-width: 560px) {
+    .description {
+      max-width: 400px;
+    }
+  }
+}
