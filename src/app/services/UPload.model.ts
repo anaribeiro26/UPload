@@ -78,6 +78,10 @@ export interface Videos {
 export interface VideoComments {
   name: string;
   comment: string;
+  video_id: number;
+  date: string;
+  id: string;
+
 }
 
 export interface VideoDetails {
@@ -93,7 +97,8 @@ export interface VideoDetails {
   tags_id: string;
   channel: string;
   channel_id: string;
-
+  likes?: string;
+  dislikes?: string;
 }
 
 export interface Playlists {
@@ -141,5 +146,30 @@ export interface TagVideos {
   name: string;
 }
 
+export interface FlagCounter {
+  count: string;
+  id: string;
+  entity_type: string;
+}
+
+export interface FlagInfo {
+  target_id: string;
+  target_type: string;
+}
+
+export interface FlaggingRequest {
+  entity_id: string[];
+  entity_type: string[];
+  flag_id: FlagInfo[];
+  uid: string[];
+}
+
+export interface Flag {
+  value: string;
+}
+
+export interface FlaggingResponse {
+  id: [Flag]
+}
 
 

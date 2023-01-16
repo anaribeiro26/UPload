@@ -29,6 +29,7 @@ import { ThematicDetailsComponent } from './pages/thematics/page/thematic-detail
 import { ThematicVideosComponent } from './pages/thematics/page/thematic-videos/thematic-videos/thematic-videos.component';
 import { FilterPipe } from './pipe/filter.pipe';
 
+
 @NgModule({
   declarations: [
     AppComponent,

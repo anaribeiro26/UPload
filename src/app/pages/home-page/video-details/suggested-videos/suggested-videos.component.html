@@ -1,25 +1,25 @@
-
 <div class="big-box">
-    <div class="container-box">
-      <div class="cel" *ngFor="let video of videos | slice: 0: 2">
-        <div class="box">
-          <div class="card_image">
-            <a routerLink="/video/{{video.id}}" routerLinkActive="active">
-              <img class="small_image" [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
-            </a>
-          </div>
-          <div class="itens">
-            <p class="name" routerLink="/video/{{video.id}}" routerLinkActive="active">{{video.channel}}</p>
-            <a class="title" routerLink="/video/{{video.id}}" routerLinkActive="active">{{video.title}}</a>
-            <p class="date" routerLink="/video/{{video.id}}" routerLinkActive="active">{{video.date}}</p>
-            <p class="duration">{{video.duration}}</p>
-            <a>
+  <div class="container-box">
+    <div class="cel" *ngFor="let video of videos | slice: 0: 2">
+      <div class="box">
+        <div class="card_image">
+          <a routerLink="/video/{{video.id}}" routerLinkActive="active">
+            <img class="small_image"
+                 [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
+          </a>
+        </div>
+        <div class="itens">
+          <p class="name" routerLink="/video/{{video.id}}" routerLinkActive="active">{{video.channel}}</p>
+          <a class="title" routerLink="/video/{{video.id}}" routerLinkActive="active">{{video.title}}</a>
+          <p class="date" routerLink="/video/{{video.id}}" routerLinkActive="active">{{video.date}}</p>
+          <p class="duration">{{video.duration}}</p>
+          <a>
             <img class="logo" [src]="image_url + video.logo" routerLink="/video/{{video.id}}" routerLinkActive="active">
-            </a>
-          </div>
+          </a>
         </div>
       </div>
     </div>
   </div>
+</div>
 
 
