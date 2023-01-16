@@ -5,7 +5,8 @@
         <h2>Canais sugeridos</h2>
       </div>
       <div class="sugestion" *ngFor="let c of channelsList | slice: 0: 5">
-        <div class="option">
+<!--      <div class="sugestion">-->
+      <div class="option">
           <img class="logomark" [src]="image_url + c.logo" routerLink="/channels/{{c.id}}" routerLinkActive="active">
           <h2 class="title" routerLink="/channels/{{c.id}}" routerLinkActive="active">{{c.title}}</h2>
         </div>

@@ -17,15 +17,24 @@ export class SuggestionsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
   ngOnInit(): void {
+
     this.UPload.getChannels().subscribe((channelsList) => {
       this.channelsList = channelsList as Channels[];
     })
 
-
     this.UPload.getArticles().subscribe((artList) => {
       this.artList = artList as Articles[]
-      }
-    )
-  }
+      })
 
+    this.getRandomImage();
+  }
+  getRandomImage() {
+    var randomImage: Channels[] = [];;
+    for (let i=0; i<5; i++) {
+      var ind = Math.floor(Math.random()*randomImage.length);
+      randomImage.push(this.channelsList[ind])
+      console.log('teste 2 ' + this.channelsList[ind])
+    }
+      // console.log('teste' + randomImage)
+  }
 }
