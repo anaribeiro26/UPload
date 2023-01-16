@@ -24,11 +24,7 @@
           <p>VER TODAS</p>
         </a>
       </div>
-<<<<<<< HEAD
-      <div class="tag" *ngFor="let t of artList | slice: 0: 1">
-=======
-      <div class="tag" *ngFor="let t of thematics">
->>>>>>> 325bc0c43cfc7e13e313c311e531b1f6f5f206fe
+      <div class="tag" *ngFor="let t of thematics | slice: 0: 1">
         <div class="box">
           <div class="top">
             <img class="logo" [src]="image_url + t.thumbnail">
