@@ -25,7 +25,7 @@
 }
 
 .list {
-  margin-top: 70px;
+  margin-top: 40px;
 
   .content {;
     color: rgba(255, 255, 255, 75%);;
@@ -34,6 +34,9 @@
     border-bottom: 0.5px solid rgba(189, 195, 199, 20%);
     padding-bottom: 10px;
     padding-top: 10px;
+    //margin-top: 10px;
+    //margin-bottom: 10px;
+
 
     .logo-section {
       // margin-right: 16px;
@@ -117,8 +120,15 @@
     color: rgba(255, 255, 255, 100%);
     cursor: pointer;
   }
+}
+@media screen and (max-width: 560px) {
+  .list {
+    margin-top: 60px;
+    .logo-scope {
+      width: 100%;
+      max-width: 160px;
+    }
 
-  @media screen and (max-width: 560px) {
     .description {
       max-width: 400px;
     }

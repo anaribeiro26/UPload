@@ -16,13 +16,14 @@
   transition: all 0.5s ease-in-out;
 
   .menu {
-    padding-top: 20px;
+   // padding-top: 20px;
 
     .menu-item {
       border-left: 2px solid #1c1c24;
 
       &.active {
         border-left: 2px solid #FFFFFF;
+        color: rgba(255, 255, 255, 100%);
       }
     }
 
@@ -34,7 +35,7 @@
   }
 
   .nav {
-    border-top: 1px solid lightslategray;
+    border-top: 1px solid rgba(255, 255, 255, 10%);
   }
 
   p {
@@ -50,9 +51,13 @@
   .logo {
     display: flex;
     justify-content: center;
+  height: 55px;
+    margin-top: -10px;
 
     img {
-      max-width: 80%;
+      width: 100%;
+      max-width: 150px;
+     // max-width: 80%;
     }
   }
 
@@ -79,30 +84,45 @@
   .logo-bar {
    // padding-top: 100px;
    // position: absolute;
-   // position: absolute;
+    //position: relative;
     position: fixed;
     z-index: 100;
     width: 100%;
-    height: 70px;
+    height: 60px;
   //  height: 60px;
     background-color: #1C1C24;
-    margin: auto;
-    padding: 0;
-    border-bottom: 1px solid lightslategray;
+    //margin: auto;
+  //  padding: 0;
+    //border-bottom: 1px solid lightslategray;
+
 
     .mobile {
+      display: flex;
       background-color: #1C1C24;
-      z-index: 100;
-      display: block;
+     // z-index: 100;
+      //display: block;
+      // position: relative;
+
+      .hide-bar {
+        position: absolute;
+        top: -10px;
+       // position: initial;
+      }
 
       img {
-      //  max-width: 200px;
+       max-width: 200px;
+        margin: auto;
+        display: block;
+        z-index: 100;
       }
     }
 
     .side-bar {
       //  z-index: 100;
       padding-top: 0;
+      &.hidden {
+        left: -220px;
+      }
       // <use xlink:href="#one" />
 
 .mobile_bar {
@@ -137,9 +157,13 @@
   }
 
   .hide-bar {
-    display: block;
-    position: fixed;
-    margin-top: -35px;
+    position: absolute;
+    top: -10px;
+    display: flex;
+    //display: block;
+   // position: fixed;
+    //position: initial;
+   // margin-top: -35px;
   }
 }
 
