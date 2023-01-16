@@ -31,8 +31,10 @@ export class PlaylistsComponent implements OnInit {
           this.playListFilters.push(obj)
           }
           prevId = obj.id
+        this.UPload.getPlaylistVideos(obj.id).subscribe((videosPlaylist) => {
+          obj.numberOfVideos = videosPlaylist.length;
+        })
         }
-
       )
     })
 
