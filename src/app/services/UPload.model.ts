@@ -11,12 +11,28 @@ export interface Thematics {
   logo : string
 }
 
+export interface ThematicVideos {
+  channel: string;
+  id: number;
+  video: string;
+  channel_id: number;
+  categories: string;
+  description: string;
+  tags: string;
+  title: string;
+  logo: string;
+  categories_id: string;
+  tags_id: number;
+  date: string;
+  duration: string;
+}
+
 export interface Channels {
   title: string;
   categories: string;
   categories_id: string;
-  description: string;
   header: string;
+  description: string;
   logo: string;
   id: number;
 }

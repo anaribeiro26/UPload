@@ -10,7 +10,7 @@ import {ChannelComponent} from './pages/channel/page/details/channel.component';
 import {HomePageComponent} from './pages/home-page/home-page.component';
 import {PlaylistsComponent} from './pages/playlists/playlists.component';
 import {FavouritesComponent} from "./pages/favourites/favourites.component";
-import {ThematicsComponent} from './pages/thematics/thematics-list/thematics.component';
+import {ThematicsComponent} from './pages/thematics/list/thematics.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
 import {ChannelVideosComponent} from './pages/channel/page/channel-videos/channel-videos.component';
 import {HttpClientModule, HttpClient} from "@angular/common/http";
@@ -25,7 +25,9 @@ import {SuggestedVideosComponent} from "./pages/home-page/video-details/suggeste
 import {SuggestionsComponent} from "./pages/home-page/suggestions/suggestions.component";
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import { ThematicDetailsComponent } from './pages/thematics/thematic-details/thematic-details/thematic-details.component';
+import { ThematicDetailsComponent } from './pages/thematics/page/thematic-details/thematic-details.component';
+import { ThematicVideosComponent } from './pages/thematics/page/thematic-videos/thematic-videos/thematic-videos.component';
+import { FilterPipe } from './pipe/filter.pipe';
 
 
 @NgModule({
@@ -48,7 +50,9 @@ import { ThematicDetailsComponent } from './pages/thematics/thematic-details/the
     PlaylistVideosComponent,
     SuggestedVideosComponent,
     SuggestionsComponent,
-    ThematicDetailsComponent
+    ThematicDetailsComponent,
+    ThematicVideosComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
