@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TagVideosComponent } from './tags-videos.component';
+import { TagVideosComponent } from './tag-videos.component';
 
 describe('TagsVideosComponent', () => {
   let component: TagVideosComponent;
