@@ -32,7 +32,9 @@ export class VideoDetailsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    const id = this.route.snapshot.params["id"];
+    // const id = this.route.snapshot.params["id"];
+    this.route.params.subscribe((params) => {
+      let id = params['id'];
     this.UPload.getVideoDetails(id).subscribe((video) => {
       this.video = video[0];
 
@@ -51,7 +53,7 @@ export class VideoDetailsComponent implements OnInit {
           video[0].dislikes = counters[0].count;
         }
       })
-    });
+    })});
   }
 
   getYoutubeId(youTubeURL: string) {
