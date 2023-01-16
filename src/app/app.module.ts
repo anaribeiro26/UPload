@@ -29,6 +29,7 @@ import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ThematicDetailsComponent } from './pages/thematics/page/thematic-details/thematic-details.component';
 import { ThematicVideosComponent } from './pages/thematics/page/thematic-videos/thematic-videos/thematic-videos.component';
 import { FilterPipe } from './pipe/filter.pipe';
+import { YoutubePlayerComponent } from "./pages/home-page/video-details/youtube-player/youtube-player.component";
 
 
 @NgModule({
@@ -54,7 +55,8 @@ import { FilterPipe } from './pipe/filter.pipe';
     FavouritesVideosComponent,
     ThematicDetailsComponent,
     ThematicVideosComponent,
-    FilterPipe
+    FilterPipe,
+    YoutubePlayerComponent
   ],
   imports: [
     BrowserModule,

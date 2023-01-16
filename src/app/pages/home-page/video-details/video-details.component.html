@@ -14,11 +14,9 @@
         </div>
         <div class="video-line">
           <div class="video">
-            <youtube-player
-              [videoId]="getYoutubeId(video.video)"
-              [height]="450"
-              [width]="420"
-            ></youtube-player>
+            <app-youtube-player
+              [id]="getYoutubeId(video.video)"
+            ></app-youtube-player>
           </div>
 
         </div>
@@ -29,7 +27,7 @@
           <div class="title-like">
             <div class="second-box">
               <div class="title"><p class="channel-title">{{video.channel}}</p></div>
-              <div class="date"><p>{{video.date}}</p></div>
+              <div class="date"><p>Há {{video.date}}</p></div>
             </div>
             <div class="like-dislike">
               <fa-icon (click)="handleLike()" class="like"
