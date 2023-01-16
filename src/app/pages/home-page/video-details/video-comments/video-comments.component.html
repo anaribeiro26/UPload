@@ -21,9 +21,9 @@
     <div class="first-line">
       <img alt="photo" [src]="url+c.name.replace(' ', '')+set">
         <div class="name-date">
-          <p class="name" [innerHTML]="c.name"></p>
+          <span class="name" [innerHTML]="c.name"></span>
           <span class="ago">há</span>
-          <p class="date" [innerHTML]="c.date" ></p>
+          <span class="date" [innerHTML]="c.date" ></span>
         </div>
     </div>
       <p class="comment" [innerHTML]="c.comment"></p>
