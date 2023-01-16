@@ -54,6 +54,7 @@ export class VideoDetailsComponent implements OnInit {
         }
       })
     })});
+
   }
 
   getYoutubeId(youTubeURL: string) {
