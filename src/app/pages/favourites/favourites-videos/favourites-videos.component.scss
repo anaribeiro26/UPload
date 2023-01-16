@@ -1,0 +1,147 @@
+.header {
+  margin: 50px 0 35px 35px;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  color: #FAFAFB;
+}
+
+.uploads {
+  display: flex;
+  justify-content: center;
+
+  .videos {
+    position: absolute;
+    top: 5em;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding-bottom: 25px;
+
+    .cel {
+      width: 360px;
+      border-radius: 16px;
+      background-color: #1c1c24;
+      position: relative;
+
+      .card_image {
+        width: 360px;
+        height: 176px;
+        object-fit: cover;
+        border-radius: 16px 16px 0 0;
+        overflow: hidden;
+      }
+
+      .small_image {
+        height: 100%;
+        width: 100%;
+        cursor: pointer;
+        left: 0;
+        top: 0;
+        border-radius: 20px 20px 0 0;
+        transition: all linear 0.4s;
+      }
+
+      .small_image:hover {
+        filter: grayscale(70%);
+        transform: scale(1.1);
+      }
+
+      .itens {
+        margin: 20px;
+
+        .name {
+          color: #1E75FF;
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          margin-bottom: 3px;
+        }
+
+        .titleVideo {
+          color: #FAFAFB;
+          font-size: 18px;
+          margin-bottom: 3px;
+        }
+
+        .date {
+          font-size: 14px;
+          letter-spacing: 0.1px;
+          color: #92929D;
+        }
+
+        .duration {
+          display: flex;
+          position: absolute;
+          align-items: center;
+          justify-content: center;
+          height: 24px;
+          width: 48px;
+          top: 120px;
+          margin-left: 16px;
+          background-color: #171725;
+          border-radius: 8px;
+          color: #ffffff;
+          font-size: 12.8px;
+          font-weight: 500;
+        }
+        .logo {
+          border-radius: 50%;
+          overflow: hidden;
+          height: 60px;
+          width: 60px;
+          position: absolute;
+          top: 144px;
+          margin-left: 256px;
+          border: 2px solid #FFFFFF;
+          background-color: #1C1C24;
+          cursor: pointer;
+        }
+        .ng-fa-icon {
+          font-size: 20.8px;
+          color: #92929D;
+          cursor: pointer;
+          position: absolute;
+          top: 280px;
+          margin-left: 256px;
+        }
+        .faIcon {
+          font-size: 20.8px;
+          color: #92929D;
+          cursor: pointer;
+          position: absolute;
+          top: 280px;
+          margin-left: 288px;
+        }
+      }
+    }
+  }
+}
+
+h2 {
+  position: absolute;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.1px;
+  color: #FAFAFB;
+  left: 10px;
+}
+
+p {
+  //position: absolute;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  letter-spacing: 0.1px;
+  color: #FAFAFB;
+  left: 10px;
+  cursor: pointer;
+}
+
+
+
+
+

@@ -1,3 +1,44 @@
-p{
-  color: #adadad;
+.header {
+  margin: 50px 0 35px 35px;
+  font-style: normal;
+  font-size: 16px;
+  letter-spacing: 0.1px;
+  color: #FAFAFB;
+}
+
+.cel {
+  width: 360px;
+  border-radius: 16px;
+  background-color: #1c1c24;
+  position: relative;
+  margin: 0 0 50px 35px;
+
+  .card_image {
+    width: 360px;
+    height: 196px;
+    object-fit: cover;
+    border-radius: 16px 16px 0 0;
+    overflow: hidden;
+
+    .thumbnail {
+      height: 100%;
+      width: 100%;
+      cursor: pointer;
+      left: 0;
+      top: 0;
+      border-radius: 20px 20px 0 0;
+      transition: all linear 0.4s;
+    }
+  }
+
+  .itens {
+    margin: 20px;
+
+    .title {
+      color: #FAFAFB;
+      font-size: 18px;
+      margin-bottom: 3px;
+      cursor: pointer;
+    }
+  }
 }

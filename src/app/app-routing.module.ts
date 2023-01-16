@@ -9,6 +9,7 @@ import {VideoDetailsComponent} from "./pages/home-page/video-details/video-detai
 import {ChannelsListComponent} from "./pages/channel/list/channels-list.component";
 import {TagsComponent} from "./pages/tags/tags.component";
 import {PlaylistDetailsComponent} from "./pages/playlists/playlist-details/playlist-details.component";
+import {FavouritesVideosComponent} from "./pages/favourites/favourites-videos/favourites-videos.component";
 import {ThematicDetailsComponent} from "./pages/thematics/page/thematic-details/thematic-details.component";
 
 const routes: Routes = [
@@ -19,10 +20,10 @@ const routes: Routes = [
   {path: 'channel/:id', component: ChannelComponent},
   {path: 'homepage', component: HomePageComponent},
   {path: 'video/:id', component: VideoDetailsComponent},
-  {path: 'favourites', component: FavouritesComponent},
+  {path: 'playlists/favourites', component: FavouritesVideosComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlists/:id', component: PlaylistDetailsComponent},
-  {path: 'tags/:name', component: TagsComponent}
+  {path: 'tags/:name', component: TagsComponent},
 ];
 
 @NgModule({

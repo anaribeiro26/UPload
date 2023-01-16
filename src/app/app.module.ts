@@ -23,6 +23,7 @@ import {TagVideosComponent} from './pages/tags/tag-videos/tag-videos.component';
 import {PlaylistVideosComponent} from './pages/playlists/playlist-videos/playlist-videos.component';
 import {SuggestedVideosComponent} from "./pages/home-page/video-details/suggested-videos/suggested-videos.component";
 import {SuggestionsComponent} from "./pages/home-page/suggestions/suggestions.component";
+import { FavouritesVideosComponent } from './pages/favourites/favourites-videos/favourites-videos.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import { ThematicDetailsComponent } from './pages/thematics/page/thematic-details/thematic-details.component';
@@ -50,6 +51,7 @@ import { FilterPipe } from './pipe/filter.pipe';
     PlaylistVideosComponent,
     SuggestedVideosComponent,
     SuggestionsComponent,
+    FavouritesVideosComponent,
     ThematicDetailsComponent,
     ThematicVideosComponent,
     FilterPipe

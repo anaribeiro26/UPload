@@ -148,18 +148,20 @@ export class UPloadService {
     })
   }
 
-  toggleFavorite(id: number) {
-    if (!this.isFavorite(id)) {
-      this.favorites.push(id)
-    } else {
-      let index = this.favorites.indexOf(id);
-      this.favorites.splice(index, 1)
-    }
-    localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
-  }
 
-  isFavorite(id: number): boolean {
-    return this.favorites.includes(id);
-  }
+      toggleFavorite(id: number) {
+        if (!this.isFavorite(id)) {
+          this.favorites.push(id)
+        } else {
+          let index = this.favorites.indexOf(id);
+          this.favorites.splice(index, 1)
+        }
+        localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
+      }
+
+      isFavorite(id: number): boolean {
+        return this.favorites.includes(id);
+      }
+
 
 }

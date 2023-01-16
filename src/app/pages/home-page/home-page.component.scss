@@ -28,16 +28,16 @@
         margin-left: 30px;
 
         .cel {
-          width: 22.5rem;
-          border-radius: 1rem;
+          width: 360px;
+          border-radius: 16px;
           background-color: #1c1c24;
           position: relative;
 
           .card_image {
-            width: 22.5rem;
-            height: 11rem;
+            width: 360px;
+            height: 176px;
             object-fit: cover;
-            border-radius: 1rem 1rem 0 0;
+            border-radius: 16px 16px 0 0;
             overflow: hidden;
           }
 
@@ -83,14 +83,14 @@
               position: absolute;
               align-items: center;
               justify-content: center;
-              height: 1.5rem;
-              width: 3rem;
-              top: 7.5rem;
-              margin-left: 1rem;
+              height: 24px;
+              width: 48px;
+              top: 120px;
+              margin-left: 16px;
               background-color: #171725;
-              border-radius: 0.5rem;
+              border-radius: 8px;
               color: #ffffff;
-              font-size: 0.8rem;
+              font-size: 12.8px;
               font-weight: 500;
             }
             .logo {
@@ -99,27 +99,27 @@
               height: 60px;
               width: 60px;
               position: absolute;
-              top: 9rem;
-              margin-left: 16rem;
+              top: 144px;
+              margin-left: 256px;
               border: 2px solid #FFFFFF;
               background-color: #1C1C24;
               cursor: pointer;
             }
             .ng-fa-icon {
-              font-size: 1.3em;
+              font-size: 20.8px;
               color: #92929D;
               cursor: pointer;
               position: absolute;
-              top: 17.5rem;
-              margin-left: 16rem;
+              top: 280px;
+              margin-left: 256px;
             }
             .faIcon {
-              font-size: 1.3em;
+              font-size: 20.8px;
               color: #92929D;
               cursor: pointer;
               position: absolute;
-              top: 17.5rem;
-              margin-left: 18rem;
+              top: 280px;
+              margin-left: 288px;
             }
           }
         }
