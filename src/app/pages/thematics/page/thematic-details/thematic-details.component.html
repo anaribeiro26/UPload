@@ -1,0 +1,11 @@
+<div class="thematic" *ngFor="let t of thematics">
+<div class="header">
+  <img alt="header" class="header_image" [src]="image_url+t.header">
+</div>
+<div class="channel_info">
+  <div class="picture_section">
+    <img alt="logo" class="logo" [src]="image_url+t.thumbnail">
+  </div>
+  <h4 class="title" title="{{t.title}}">{{t.title}}</h4></div>
+<p class="description" [innerHTML]="t.description"></p>
+</div>

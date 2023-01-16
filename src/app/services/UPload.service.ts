@@ -1,6 +1,18 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments} from "./UPload.model";
+import {
+  Channels,
+  ChannelVideos,
+  VideoDetails,
+  Videos,
+  VideosPlaylist,
+  Tags,
+  TagVideos,
+  Playlists,
+  ChannelComments,
+  VideoComments,
+  Thematics, ThematicVideos
+} from "./UPload.model";
 import {Observable} from "rxjs";
 
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
@@ -21,9 +33,17 @@ export class UPloadService {
   getArticles() {
     return this.http.get(BASE_URL + "/artigos")
   }
+  getThematic(id: number) {
+    return this.http.get<Thematics[]>(BASE_URL + "/artigos/" + id)
+  }
+
+ getThematicVideos(tags_id: number) {
+   return this.http.get<ThematicVideos[]>(BASE_URL + "/videos/artigo/" + tags_id)
+ }
 
   getChannel(id: number) {
-    return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
+   return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
+
   }
 
   getChannels() {
@@ -37,6 +57,10 @@ export class UPloadService {
   getChannelVideos(channel_id: number) {
     return this.http.get<ChannelVideos[]>(BASE_URL + "/videos/canal/" + channel_id)
   }
+
+  //public postChannelVideos(channel_id: number) {
+  //  return this.http.post<ChannelComments[]>("https://dev-project-upskill-grupo05.pantheonsite.io/comment" + channel_id)
+  //}
 
   getVideos() {
     return this.http.get(BASE_URL + "/videos")
@@ -61,9 +85,6 @@ export class UPloadService {
   getPlaylistVideos(id: number) {
     return this.http.get<VideosPlaylist[]>(BASE_URL + "/videos/playlist/" + id)
   }
-
-
-
 
   getTag(id: number) {
     return this.http.get<Tags[]>(BASE_URL + "/tags/" + id)
