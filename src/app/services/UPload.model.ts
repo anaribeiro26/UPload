@@ -161,7 +161,7 @@ export interface VideoDetails {
   categories_id: string;
   tags_id: string;
   channel: string;
-  channel_id: string;
+  channel_id: number;
   likes?: string;
   dislikes?: string;
 }

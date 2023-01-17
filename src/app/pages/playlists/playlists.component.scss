@@ -1,9 +1,16 @@
 .header {
-  margin: 50px 0 35px 30px;
-  font-style: normal;
-  font-size: 16px;
-  letter-spacing: 0.1px;
-  color: #FAFAFB;
+  // margin: 50px 0 35px 30px;
+  // font-style: normal;
+  // font-size: 16px;
+  // letter-spacing: 0.1px;
+  // color: #FAFAFB;
+  h1 {
+    margin-left: 30px;
+    margin-top: 30px;
+    color: #ffffff;
+    font-size: 25px;
+    font-weight: 600;
+  }
 }
 
 .uploads {
@@ -43,6 +50,7 @@
         border-radius: 20px 20px 0 0;
         transition: all linear 0.4s;
       }
+
       .itens {
         margin: 5px;
         display: flex;
@@ -58,7 +66,6 @@
       }
     }
   }
-
 
 
   .box {
@@ -91,8 +98,6 @@
       }
     }
   }
-
-
 }
 
 //.outer_box {
