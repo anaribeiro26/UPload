@@ -26,14 +26,14 @@ export class PlaylistsComponent implements OnInit {
       this.playlists = playlists as Playlists[];
 
       let prevId = -1
-      this.playlists.forEach((obj) =>{
-        if (obj.id !== prevId) {
-          this.playListFilters.push(obj)
+      this.playlists.forEach((obj) => {
+          if (obj.id !== prevId) {
+            this.playListFilters.push(obj)
           }
           prevId = obj.id
-        this.UPload.getPlaylistVideos(obj.id).subscribe((videosPlaylist) => {
-          obj.numberOfVideos = videosPlaylist.length;
-        })
+          this.UPload.getPlaylistVideos(obj.id).subscribe((videosPlaylist) => {
+            obj.numberOfVideos = videosPlaylist.length;
+          })
         }
       )
     })

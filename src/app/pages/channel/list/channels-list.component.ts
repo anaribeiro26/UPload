@@ -15,6 +15,7 @@ import {FilterPipe} from "../../../pipe/filter.pipe";
 export class ChannelsListComponent implements OnInit {
   faMagnifyingGlass = faMagnifyingGlass;
   channelsList: Channels[] = [];
+  channelFilters: Channels[] = [];
   searchbar = '';
   // FilterPipe = FilterPipe;
   //searchbar: string;
@@ -28,20 +29,20 @@ export class ChannelsListComponent implements OnInit {
   ngOnInit(): void {
     this.UPload.getChannels().subscribe((channelsList) => {
       this.channelsList = channelsList as Channels[];
-    })
 
-    function channelSearch() {
-      //let input = this.searchbar.value.toLowerCase()
-      let input = (<HTMLInputElement>document.getElementById("searchbar")).value.toLowerCase()
-      let x = document.querySelectorAll('content');
-      for (let i = 0; i < x.length; i++) {
-        if (!x[i].innerHTML.toLowerCase().includes(input)) {
-          x[i].setAttribute("style", "display: none;");
-        } else {
-          x[i].setAttribute("style", "display: list-item;");
-        }
-      }
-    }
+    })
+   // function channelSearch() {
+   //   //let input = this.searchbar.value.toLowerCase()
+   //   let input = (<HTMLInputElement>document.getElementById("searchbar")).value.toLowerCase()
+   //   let x = document.querySelectorAll('content');
+   //   for (let i = 0; i < x.length; i++) {
+   //     if (!x[i].innerHTML.toLowerCase().includes(input)) {
+   //       x[i].setAttribute("style", "display: none;");
+   //     } else {
+   //       x[i].setAttribute("style", "display: list-item;");
+   //     }
+   //   }
+   // }
 
 //function channelSearch() {
 //  //let input = this.searchbar.value.toLowerCase()

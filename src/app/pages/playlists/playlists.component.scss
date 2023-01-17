@@ -28,20 +28,24 @@
     margin-left: 30px;
 
     .cel {
-      width: 360px;
+      width: 340px;
+      //  height: 280px;
+      height: 270px;
       border-radius: 16px;
       background-color: #1c1c24;
       position: relative;
 
       .card_image {
-        width: 360px;
+        margin-bottom: 15px;
+        width: 340px;
         height: 176px;
-        object-fit: cover;
+        // object-fit: cover;
         border-radius: 16px 16px 0 0;
         overflow: hidden;
       }
 
       .small_image {
+        object-fit: cover;
         height: 100%;
         width: 100%;
         cursor: pointer;
@@ -52,16 +56,38 @@
       }
 
       .itens {
-        margin: 5px;
+        // margin: 5px;
+       // height: 75px;
+        height: 55px;
         display: flex;
         cursor: pointer;
+        flex-direction: column;
+        justify-content: center;
+
+        .category {
+          // margin-bottom: 10px;
+          margin-top: 10px;
+
+          p {
+            font-size: 14px;
+          }
+        }
 
         .title {
+          z-index: 100;
           color: #FAFAFB;
           font-size: 18px;
           cursor: pointer;
+          margin-top: 0;
+          margin-bottom: 5px;
           margin-left: 15px;
           margin-right: 15px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 300px;
         }
       }
     }
@@ -69,7 +95,7 @@
 
 
   .box {
-    position: relative;
+    // position: relative;
 
     .play {
       position: absolute;
@@ -79,17 +105,18 @@
       right: 0;
       width: 50%;
       height: 75%;
-      opacity: 0.9;
+      opacity: 0.99;
       //transition: 0.5s ease;
       //background-color: #1C1C24;
       background: -webkit-gradient(linear, left top, left bottom, from(#1C1C24), to(rgba(28, 28, 36, 0.64)));
       cursor: pointer;
+      border-radius: 0 18px 0 0;
 
       .text {
         color: white;
-        font-size: 20px;
+        font-size: 18px;
         position: absolute;
-        top: 50%;
+        top: 65%;
         left: 50%;
         -webkit-transform: translate(-50%, -50%);
         -ms-transform: translate(-50%, -50%);
