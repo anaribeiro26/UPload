@@ -1,4 +1,5 @@
 .channels {
+  margin-top: 5px;
   //position: relative;
 
   .channel_info {
@@ -11,13 +12,14 @@
   }
 
   .header {
-   // display: flex;
+    // display: flex;
     //justify-content: center;
     margin-left: 30px;
     margin-right: 30px;
 
     .header_image {
-      width: 100%;
+      width: 1000px;
+      // width: 100%;
       height: 240px;
       object-fit: cover;
       border-radius: 20px;
@@ -35,16 +37,16 @@
   .logo {
     border-radius: 50%;
     border: 6px solid #FFFFFF;
-    height: 160px;
-    width: 160px;
+    height: 140px;
+    width: 140px;
     margin-right: 60px;
   }
 
   .title {
-   // left: 2.5rem;
+    // left: 2.5rem;
     font-size: 24px;
     color: #FAFAFB;
-  //  margin-left: 30px;
+    //  margin-left: 30px;
     margin-left: 30px;
     margin-bottom: auto;
     margin-top: -16px;
@@ -56,42 +58,96 @@
     font-size: 15px;
     color: rgba(255, 255, 255, 80%);
     margin-bottom: 30px;
-    width: 50%;
+    width: 500px;
   }
-
-  @media screen and (max-width: 560px) {
-    .logo {
-      margin-right: 15px;
-      width: 100px;
-      height: 100px;
-    }
-
-    .title {
-      font-size: 20.8px;
-    }
-
-    .description {
-      width: 80%;
-      font-size: 15px;
-    }
-
+  @media screen and (max-width: 1218px) {
     .header {
       .header_image {
-        height: 160px;
+        width: 940px;
       }
     }
   }
-}
 
-.section {
-  //display: flex;
-  // position: absolute;
-  // top: 22em;
-  //margin-left: 3'px;
-  //color: #ffffff;
-  //font-size: 1.2rem;
-  //font-weight: 600;
-}
+  @media screen and (max-width: 1100px) {
+    .header {
+      .header_image {
+        width: 825px;
+      }
+    }
+  }
+    @media screen and (max-width: 955px) {
+      .logo {
+        width: 130px;
+        height: 130px;
+      }
+      .header {
+        .header_image {
+          width: 690px;
+        }
+      }
+    }
+    @media screen and (max-width: 745px) {
+      .description {
+        width: 400px;
+      }
+      .logo {
+        width: 120px;
+        height: 120px;
+      }
+      .header {
+        .header_image {
+          width: 480px;
+        }
+      }
+    }
+    @media screen and (max-width: 645px) {
+      .description {
+        width: 350px;
+      }
+      .logo {
+        width: 110px;
+        height: 110px;
+      }
+      .header {
+        .header_image {
+          width: 380px;
+        }
+      }
+    }
+
+    @media screen and (max-width: 560px) {
+      .logo {
+        margin-right: 15px;
+        width: 100px;
+        height: 100px;
+      }
+
+      .title {
+        font-size: 20.8px;
+      }
+
+      .description {
+        width: 200px;
+        font-size: 15px;
+      }
+
+      .header {
+        .header_image {
+          height: 160px;
+        }
+      }
+    }
+  }
+
+  .section {
+    //display: flex;
+    // position: absolute;
+    // top: 22em;
+    //margin-left: 3'px;
+    //color: #ffffff;
+    //font-size: 1.2rem;
+    //font-weight: 600;
+  }
 
 /*.channel {
   position: absolute;

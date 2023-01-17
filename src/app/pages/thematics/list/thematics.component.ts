@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Thematics} from "../../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../../services/UPload.service";
@@ -16,8 +16,11 @@ export class ThematicsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.UPload.getArticles().subscribe((thematics) => {
-      this.thematics = thematics as Thematics[];
-    })
+    this.route.params.subscribe(params => {
+      let title = params[' '];
+      this.UPload.getArticles().subscribe((thematics) => {
+        this.thematics = thematics as Thematics[];
+      })
+    });
   }
 }
