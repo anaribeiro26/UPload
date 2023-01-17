@@ -1,5 +1,7 @@
 .big-box {
   display: flex;
+  margin-right: 30px;
+  margin-left: 15px;
 
   h2 {
     //position: absolute;
@@ -26,133 +28,131 @@
 }
 
 
-
-
 .container-box {
-    margin-top: 69px;
+  margin-top: 69px;
 
+  .cel:hover {
+    .small_image {
+      transform: scale(1.1);
+    }
 
-    .cel {
-      width: 19rem;
-      border-radius: 1rem;
-      background-color: #1c1c24;
-      position: relative;
-
-      .card_image {
-        width: 19rem;
-        height: 9.99rem;
-        object-fit: cover;
-        border-radius: 1rem 1rem 0 0;
-        overflow: hidden;
+    .itens {
+      .title {
+        color: rgba(255, 255, 255, 100%);
       }
 
-      .small_image {
-        height: 100%;
-        width: 100%;
-        cursor: pointer;
-        left: 0;
-        top: 0;
-        border-radius: 20px 20px 0 0;
-        transition: all linear 0.4s;
-      }
-
-      .small_image:hover {
-        filter: grayscale(70%);
-        transform: scale(1.1);
-      }
-
-      .itens {
-        margin: 20px;
-        height: 100px;
-
-        .name {
-          color: #1E75FF;
-          font-size: 14px;
-          letter-spacing: 0.1px;
-          // margin-bottom: 3px;
-          margin: 0;
-          padding-top: 15px;
-          // margin-top: 5px;
-        }
-
-        .title {
-          //color: #FAFAFB;
-          color: rgba(255, 255, 255, 90%);
-          font-size: 17px;
-          margin: 0;
-          padding-top: 5px;
-          width: 100%;
-          max-width: 280px;
-          display: -webkit-box;
-          -webkit-line-clamp: 1;
-          -webkit-box-orient: vertical;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          // margin-bottom: 3px;
-          text-decoration: none;
-        }
-
-        .date {
-          display: flex;
-          padding-top: 5px;
-
-          .timestamp, .ago {
-            color: #92929d;
-            font-size: 15px;
-            margin: 0;
-          }
-
-          .ago {
-            margin-right: 6px;
-          }
-        }
-
-        .duration {
-          display: flex;
-          position: absolute;
-          align-items: center;
-          justify-content: center;
-          height: 1.5rem;
-          width: 3rem;
-          top: 7.5rem;
-          margin-left: 1rem;
-          background-color: #171725;
-          border-radius: 0.5rem;
-          color: #ffffff;
-          font-size: 0.8rem;
-          font-weight: 500;
-        }
-
-        .logo {
-          border-radius: 50%;
-          overflow: hidden;
-          height: 59px;
-          width: 60px;
-          position: absolute;
-          top: 8.4rem;
-          margin-left: 13rem;
-          border: 2px solid #FFFFFF;
-          background-color: #1C1C24;
-        }
-
-        .ng-fa-icon {
-          font-size: 1.3em;
-          color: #92929D;
-          cursor: pointer;
-          position: absolute;
-          top: 17.5rem;
-          margin-left: 16rem;
-        }
-
-        .faIcon {
-          font-size: 1.3em;
-          color: #92929D;
-          cursor: pointer;
-          position: absolute;
-          top: 17.5rem;
-          margin-left: 18rem;
+      .date {
+        .timestamp, .ago {
+          color: rgba(255, 255, 255, 100%);
         }
       }
     }
   }
 
+  .cel {
+    width: 19rem;
+    border-radius: 1rem;
+    background-color: #1c1c24;
+    position: relative;
+    cursor: pointer;
+
+
+    .card_image {
+      width: 19rem;
+      height: 9.99rem;
+      object-fit: cover;
+      border-radius: 1rem 1rem 0 0;
+      overflow: hidden;
+    }
+
+    .small_image {
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+      border-radius: 20px 20px 0 0;
+      transition: all linear 0.4s;
+    }
+
+    .itens {
+      margin: 20px;
+      height: 100px;
+
+      .name {
+        color: #1E75FF;
+        font-size: 14px;
+        letter-spacing: 0.1px;
+        // margin-bottom: 3px;
+        margin: 0;
+        padding-top: 15px;
+        // margin-top: 5px;
+      }
+
+      .title {
+        //color: #FAFAFB;
+        color: rgba(255, 255, 255, 80%);
+        font-size: 17px;
+        margin: 0;
+        padding-top: 5px;
+        width: 100%;
+        max-width: 280px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // margin-bottom: 3px;
+        text-decoration: none;
+      }
+
+      .date {
+        display: flex;
+        padding-top: 5px;
+
+        .timestamp, .ago {
+          color: rgba(255, 255, 255, 70%);
+          font-size: 15px;
+          margin: 0;
+        }
+
+        .ago {
+          margin-right: 6px;
+        }
+      }
+
+      .duration {
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+        height: 1.5rem;
+        width: 3rem;
+        top: 7.5rem;
+        margin-left: 1rem;
+        background-color: #171725;
+        border-radius: 0.5rem;
+        color: #ffffff;
+        font-size: 0.8rem;
+        font-weight: 500;
+      }
+
+      .logo {
+        border-radius: 50%;
+        overflow: hidden;
+        height: 59px;
+        width: 60px;
+        position: absolute;
+        top: 8.4rem;
+        margin-left: 13rem;
+        border: 2px solid #FFFFFF;
+        background-color: #1C1C24;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 845px) {
+  .big-box {
+    display: none;
+  }
+}

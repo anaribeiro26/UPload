@@ -126,9 +126,11 @@
               //top: 280px;
               // margin-left: 256px;
             }
+
             fa-icon:hover {
               color: #FFFFFF;
             }
+
             .share-button {
               font-size: 20.8px;
               color: #92929D;
@@ -140,7 +142,7 @@
           }
 
           .name {
-            color: #1E75FF;
+            color: #1e75ff;
             font-size: 14px;
             letter-spacing: 0.1px;
             // margin-bottom: 3px;
@@ -150,7 +152,7 @@
           }
 
           .titleVideo {
-           //color: #FAFAFB;
+            //color: #FAFAFB;
             color: rgba(255, 255, 255, 90%);
             font-size: 17px;
             margin: 0;
@@ -225,7 +227,11 @@
   }
 }
 
-
+@media screen and (max-width: 560px) {
+  .header {
+    padding-top: 35px;
+  }
+}
 
 
 

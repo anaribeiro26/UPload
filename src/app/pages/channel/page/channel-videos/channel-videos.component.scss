@@ -27,7 +27,7 @@
 
     @media screen and (max-width: 560px) {
       .outer_box {
-     //   width: 50%;
+        //   width: 50%;
       }
     }
 
@@ -49,9 +49,10 @@
 
         .timestamp, .ago {
           color: #92929d;
-          font-size: 15px;
+          font-size: 14px;
           margin-top: 0;
         }
+
         .ago {
           margin-right: 6px;
         }
@@ -79,8 +80,9 @@
         }
 
         .tags {
-         // top: 180px;
+          // top: 180px;
           margin-left: 16px;
+          margin-top: 5px;
           color: #1e75ff;
           font-size: 14px;
           white-space: nowrap;
@@ -92,6 +94,9 @@
       .title {
         margin-left: 16px;
         margin-bottom: 5px;
+        margin-top: 8px;
+        // margin-bottom: 6px;
+        margin-right: 25px;
         // margin-bottom: 0.5rem;
         color: #FFFFFF;
         font-size: 16px;
@@ -102,6 +107,7 @@
       }
     }
   }
+
   @media screen and (max-width: 1218px) {
     .videos {
       gap: 30px;

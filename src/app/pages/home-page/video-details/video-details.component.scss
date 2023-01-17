@@ -1,20 +1,21 @@
 
 .details-body {
   display: flex;
-  width: 90%;
-  margin: auto;
+  //width: 90%;
+  // margin: auto;
   //border: red 1px solid;
   margin-top: 30px;
 
 
   .container {
     display: flex;
-    flex-direction: column;
-    width: 72%;
+    padding-left: 30px;
+    //flex-direction: column;
+    //width: 72%;
     //border: red 1px solid;
 
     .inside-box {
-      width: 90%;
+      // width: 90%;
       //border: red 1px solid;
 
       .title-box {
@@ -43,7 +44,7 @@
 
           .flag:hover {
             font-size: 1.2em;
-            color: blue;
+            color: #1e75ff;
             transition-timing-function: ease-in-out;
             cursor: pointer;
 
@@ -56,7 +57,7 @@
 
           a {
             text-decoration: none;
-            color: #0835c9;
+            color: #1e75ff;
           }
 
 
@@ -82,6 +83,12 @@
 
       }
 
+      .channel-box:hover {
+        .channel-title, .date {
+          color: rgba(255, 255, 255, 100%);
+        }
+      }
+
 
       .channel-box {
         display: flex;
@@ -92,14 +99,17 @@
           display: flex;
           align-content: flex-end;
           align-items: flex-end;
+          padding-bottom: 5px;
+          cursor: pointer;
           //border: red 1px solid;
         }
 
         .logo {
           border-radius: 50%;
-          width: 65px;
-          height: 65px;
+          width: 70px;
+          height: 70px;
           border: 2px solid #FFFFFF;
+          //padding-bottom: 5px;
         }
 
         .title-like {
@@ -107,6 +117,17 @@
           justify-content: space-between;
           align-items: center;
           flex: 1;
+
+          .second-box {
+            cursor: pointer;
+          }
+
+          .date {
+            display: flex;
+
+            .ago {
+            }
+          }
 
         }
 
@@ -127,49 +148,74 @@
 
         .channel-title {
           font-style: normal;
-          font-weight: 400;
-          font-size: 15px;
-          letter-spacing: 0.1px;
-          color: #FAFAFB;
+          //font-weight: 400;
+          font-size: 16px;
+          //letter-spacing: 0.1px;
+          color: rgba(255, 255, 255, 80%);
+          padding-bottom: 5px;
           //border: red 1px solid;
         }
 
         .date {
           font-style: normal;
           color: #92929D;
-          font-size: 13px;
+          font-size: 14px;
           //border: red 1px solid;
         }
 
         .like-dislike {
+          padding-right: 10px;
+          padding-bottom: 20px;;
           display: flex;
-          color: #FAFAFB;
           align-items: center;
           //border: red 1px solid;
 
+          .bar {
+            color: rgba(255, 255, 255, 100%);
+          }
+
           .like {
-            font-size: 20px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            color: rgba(255, 255, 255, 70%);
+
+            fa-icon {
+              font-size: 20px;
+            }
+
+            .like_count {
+              margin-left: 8px;
+            }
           }
 
           .like:hover {
             //font-size: 1.2em;
-            color: blue;
+            // color: blue;
+            color: rgba(255, 255, 255, 100%);
             transition-timing-function: ease-in-out;
+          }
+
+          .deslike {
+            color: rgba(255, 255, 255, 70%);
+            display: flex;
+            margin-left: 15px;
             cursor: pointer;
 
+            fa-icon {
+              font-size: 20px;
+              // margin-right: 0;
+            }
+
+            p {
+              margin-left: 8px;
+            }
           }
 
-          .dislike {
-            margin-left: 20px;
-            font-size: 20px;
-          }
-
-          .dislike:hover {
+          .deslike:hover {
             //font-size: 1.2em;
-            color: blue;
-            transition-timing-function: ease-in-out;
-            cursor: pointer;
-
+            color: rgba(255, 255, 255, 100%);
+            // transition-timing-function: ease-in-out;
           }
 
 
@@ -178,12 +224,12 @@
         p {
           margin-top: 1px;
           margin-bottom: 2px;
-          margin-left: 20px;
+          margin-left: 15px;
         }
       }
 
       .description-box {
-        width: 100%;
+        //width: 100%;
         background: #1C1C24;
         border-radius: 10px;
         margin-top: 15px;
@@ -191,15 +237,15 @@
 
         .description {
           width: 92%;
-          font-style: normal;
-          font-weight: 400;
+          // font-style: normal;
+          //font-weight: 400;
           font-size: 14px;
           line-height: 25px;
           text-align: justify;
           letter-spacing: 0.2px;
           color: #FAFAFB;
           margin: auto;
-
+          margin-bottom: -15px;
         }
       }
     }
@@ -325,3 +371,13 @@
 //}
 //
 //
+@media screen and (max-width: 560px) {
+  .details-body {
+    padding-top: 35px;
+    padding-right: 20px;
+
+    .comments {
+      margin-left: -20px;
+    }
+  }
+}
