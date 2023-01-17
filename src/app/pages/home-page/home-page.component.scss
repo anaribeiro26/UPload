@@ -37,6 +37,14 @@
         background-color: #1c1c24;
         position: relative;
 
+        .box:hover {
+          
+          .thumbnail {
+            filter: grayscale(70%);
+            transform: scale(1.1);
+          }
+        }
+
         .box {
           .channel_logo {
             display: flex;
@@ -97,12 +105,12 @@
           .actions {
             display: flex;
             justify-content: flex-end;
-           // padding-left: 80px;
+            // padding-left: 80px;
             padding-right: 5px;
-           width: 84px;
+            width: 84px;
             //width: 165px;
             padding-top: 60px;
-           // padding-right: 20px;
+            // padding-right: 20px;
 
             .ng-fa-icon {
               font-size: 20.8px;
@@ -191,21 +199,21 @@
     // font-weight: 500;
     font-size: 14px;
     //line-height: 21px;
-   // letter-spacing: 0.1px;
+    // letter-spacing: 0.1px;
     color: #FAFAFB;
-   // left: 10px;
+    // left: 10px;
   }
 
   p {
     //position: absolute;
-   // font-style: normal;
+    // font-style: normal;
     // font-weight: 500;
     font-size: 14px;
-  // line-height: 21px;
-  // letter-spacing: 0.1px;
+    // line-height: 21px;
+    // letter-spacing: 0.1px;
     color: #FAFAFB;
-   // left: 10px;
-   // cursor: pointer;
+    // left: 10px;
+    // cursor: pointer;
   }
 }
 

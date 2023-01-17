@@ -16,7 +16,7 @@
     <div class="suggested-thematics">
       <div class=thematic_headline>
         <h2>Temáticas sugeridas</h2>
-          <p routerLink="/articles/">VER TODAS</p>
+          <p routerLink="/thematics/">VER TODAS</p>
       </div>
       <div class="thematic" *ngFor="let t of thematics | slice: 0: 5" routerLink="/articles/{{t.id}}" routerLinkActive="active" [title]="t.title">
         <div class="box">
