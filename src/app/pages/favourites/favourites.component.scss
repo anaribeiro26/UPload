@@ -32,13 +32,14 @@
   }
 
   .itens {
-    margin: 20px;
+    margin: 5px;
+    display: flex;
 
     .title {
       color: #FAFAFB;
       font-size: 18px;
-      margin-bottom: 3px;
       cursor: pointer;
+      margin-left: 15px;
     }
   }
 }
