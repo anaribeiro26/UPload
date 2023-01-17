@@ -5,6 +5,10 @@
   flex-direction: row;
   padding-right: 40px;
 
+  @media screen and (max-width: 1285px) {
+    padding-right: 20px
+  }
+
   @media screen and (max-width: 951px) {
     display: none;
   }
@@ -40,6 +44,7 @@
         h2 {
           margin-left: 20px;
           font-size: 15px;
+          cursor: pointer;
         }
       }
 
@@ -75,6 +80,12 @@
         }
       }
 
+      .channel-section:hover {
+        .channel_title {
+          color: rgba(255, 255, 255, 100%);
+        }
+      }
+
       .channel-section {
         display: flex;
         align-items: flex-end;
@@ -95,6 +106,7 @@
         }
 
         .channel_title {
+          color: rgba(255, 255, 255, 80%);
           //margin: 20px 0 0 60px;
           padding-left: 20px;
           // cursor: pointer;
@@ -111,6 +123,19 @@
       background: #1C1C24;
       border-radius: 15px;
 
+      .thematic:hover {
+        color: #FFFFFF;
+
+        .thematic_info {
+
+          .thematic_title {
+            h2 {
+              color: rgba(255, 255, 255, 100%);
+            }
+          }
+        }
+      }
+
       .thematic {
         color: #92929D;
         cursor: pointer;
@@ -125,13 +150,14 @@
           // margin: 45px 0 0 70px;
 
           .image {
-            margin-bottom: 10px;
+            margin-bottom: 20px;
           }
         }
       }
 
       .thematic_headline {
         //  position: relative;
+        color: rgba(255, 255, 255, 70%);
         width: 100%;
         height: 48px;
         border-radius: 15px 15px 0 0;
@@ -146,6 +172,10 @@
         p {
           cursor: pointer;
         }
+
+        p:hover {
+          color: rgba(255, 255, 255, 100%);
+        }
       }
 
       .top {
@@ -155,14 +185,14 @@
         margin-left: 20px;
 
         .tag {
-         // padding-left: 15px;
+          // padding-left: 15px;
           //padding-left: 42px;
-         // margin-top: -20px;
-         // padding-bottom: 5px;
+          // margin-top: -20px;
+          // padding-bottom: 5px;
           font-size: 14px;
-          padding-left: 49px;
+          padding-left: 53px;
           margin-top: -25px;
-          padding-bottom: 10px;
+          padding-bottom: 15px;
         }
 
         .logo {
@@ -179,7 +209,7 @@
 
         .thematic_info {
           display: flex;
-         // align-items: flex-end;
+          // align-items: flex-end;
           margin-bottom: -10px;
           //align-items: center;
 
@@ -194,6 +224,7 @@
 
             h2 {
               font-size: 16px;
+              color: rgba(255, 255, 255, 80%);
             }
           }
         }

@@ -27,7 +27,7 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
-      gap: 30px;
+      gap: 20px;
       padding-bottom: 25px;
       margin-left: 30px;
 
@@ -38,7 +38,12 @@
         position: relative;
 
         .box:hover {
-          
+          .itens {
+            .titleVideo, .timestamp, .ago, .actions {
+              color: #FFFFFF;
+            }
+          }
+
           .thumbnail {
             filter: grayscale(70%);
             transform: scale(1.1);
@@ -121,7 +126,9 @@
               //top: 280px;
               // margin-left: 256px;
             }
-
+            fa-icon:hover {
+              color: #FFFFFF;
+            }
             .share-button {
               font-size: 20.8px;
               color: #92929D;
@@ -143,7 +150,8 @@
           }
 
           .titleVideo {
-            color: #FAFAFB;
+           //color: #FAFAFB;
+            color: rgba(255, 255, 255, 90%);
             font-size: 17px;
             margin: 0;
             padding-top: 5px;
