@@ -38,6 +38,12 @@ export class VideoDetailsComponent implements OnInit {
     this.UPload.getVideoDetails(id).subscribe((video) => {
       this.video = video[0];
 
+        let word = this.video.date.split(" ");
+        if(word.length > 2) {
+          this.video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+        }
+
+
       this.UPload.getNumberOfLikes(id).subscribe( (counters) => {
         if (counters.length == 0) {
           video[0].likes = "0"

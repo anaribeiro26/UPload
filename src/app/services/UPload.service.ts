@@ -161,7 +161,7 @@ export class UPloadService {
       ],
       "entity_type": [
         {
-          "value": "media"
+          "value": "node"
         }
       ],
       "comment_type": [
@@ -171,15 +171,15 @@ export class UPloadService {
       ],
       "field_name": [
         {
-          "value": "field_comentarios_video"
+          "value": "field_comentarios_canal"
         }
       ],
-      "field_nome_comentario": [
+      "field_nome": [
         {
           "value": name
         }
       ],
-      "field_email_video": [
+      "field_email": [
         {
           "value": email
         }
@@ -192,9 +192,6 @@ export class UPloadService {
       ]
 
     }
-
-
-
     return this.http.post(BASE_URL_COMMENTS, body)
   }
 

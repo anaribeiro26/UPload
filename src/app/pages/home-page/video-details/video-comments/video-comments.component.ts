@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {UPloadService} from "../../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
 import {VideoComments} from "../../../../services/UPload.model";
-import {NgForm} from "@angular/forms";
+
 
 @Component({
   selector: 'app-video-comments',
