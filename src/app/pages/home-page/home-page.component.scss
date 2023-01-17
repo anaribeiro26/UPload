@@ -1,6 +1,7 @@
 
 .header {
-  margin-top: 10px;
+  margin-top: 30px;
+  margin-bottom: 20px;
   //font-style: normal;
   letter-spacing: 0.1px;
   color: #FAFAFB;
@@ -26,7 +27,7 @@
       display: flex;
       justify-content: flex-start;
       flex-wrap: wrap;
-      gap: 35px;
+      gap: 30px;
       padding-bottom: 25px;
       margin-left: 30px;
 
@@ -129,7 +130,7 @@
             letter-spacing: 0.1px;
             // margin-bottom: 3px;
             margin: 0;
-            padding-top: 10px;
+            padding-top: 15px;
             // margin-top: 5px;
           }
 
@@ -137,7 +138,7 @@
             color: #FAFAFB;
             font-size: 17px;
             margin: 0;
-            padding-top: 4px;
+            padding-top: 5px;
             width: 100%;
             max-width: 280px;
             display: -webkit-box;
@@ -150,7 +151,7 @@
 
           .date {
             display: flex;
-            padding-top: 4px;
+            padding-top: 5px;
 
             .timestamp, .ago {
               color: #92929d;
