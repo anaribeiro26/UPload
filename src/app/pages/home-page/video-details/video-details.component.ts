@@ -6,8 +6,9 @@ import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
 import {
   faFlag,
   faThumbsDown as faThumbsDownSolid,
-  faThumbsUp as faThumbsUpSolid
+  faThumbsUp as faThumbsUpSolid,
 } from "@fortawesome/free-solid-svg-icons";
+
 
 
 //@ts-ignore
