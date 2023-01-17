@@ -2,7 +2,24 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
-import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse, Thematics, ThematicVideos} from "./UPload.model";
+import {
+  Channels,
+  ChannelVideos,
+  VideoDetails,
+  Videos,
+  VideosPlaylist,
+  Tags,
+  TagVideos,
+  Playlists,
+  ChannelComments,
+  VideoComments,
+  FlagCounter,
+  FlaggingRequest,
+  FlaggingResponse,
+  Thematics,
+  ThematicVideos,
+  ChannelCommentRequest
+} from "./UPload.model";
 import {Observable} from "rxjs";
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 const BASE_URL_FLAGGING = "https://dev-project-upskill-grupo05.pantheonsite.io/entity/flagging"
@@ -108,6 +125,22 @@ export class UPloadService {
 
     return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
   }
+
+ //annelComment(id: number) {
+ //const body: ChannelCommentRequest = {
+ //  entity_id: [id],
+ //  entity_type: ["node"],
+ //  flag_id: [
+ //    {
+ //      "value": "comment",
+ //      "target_type": "flag",
+ //    }
+ //  ],
+ //  uid: ["0"]
+ //}
+
+ //  return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
+ //}
 
   removeLikeOrDislike(id: number) {
     return this.http.delete(`${BASE_URL_FLAGGING}/${id}`)
