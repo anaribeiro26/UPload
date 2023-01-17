@@ -32,6 +32,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { YoutubePlayerComponent } from "./pages/home-page/video-details/youtube-player/youtube-player.component";
 import {FormsModule} from "@angular/forms";
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -71,7 +73,8 @@ import {FormsModule} from "@angular/forms";
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

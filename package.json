@@ -24,6 +24,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@ngx-translate/core": "^14.0.0",
     "@ngx-translate/http-loader": "^7.0.0",
+    "@vicoders/reactive-form": "^1.0.134",
     "get-video-id": "^3.6.5",
     "ngx-youtube-player": "^12.0.2",
     "rxjs": "~7.5.0",

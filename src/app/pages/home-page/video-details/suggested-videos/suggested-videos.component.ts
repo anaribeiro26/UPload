@@ -15,13 +15,20 @@ export class SuggestedVideosComponent implements OnInit {
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
 
-
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
 
   ngOnInit(): void {
+
     this.UPload.getVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
+      this.videos.forEach(video => {
+        let word = video.date.replace('atrás', '').split(" ");
+        if (word.length > 2) {
+          video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+        }
+      })
     })
+
   }
 }

@@ -1,33 +1,39 @@
 <div class="inputs">
-  <form>
+<!--  <form [formGroup]="form" (ngSubmit)="handleCommentFormSubmit(comment.value)">-->
+  <form #userPost ="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value)" >
   <div class="first-box">
     <div class="logo">
       <img alt="photo" [src]="url+random+set">
     </div>
     <div class="name-email">
-      <input type="text" id="name" placeholder="Nome">
-      <input type="email" id="email" placeholder="E-mail">
+      <input type="text" name="name" id="name" placeholder="Nome" ngModel>
+      <input type="email" name="email" id="email" placeholder="E-mail" ngModel>
     </div>
   </div>
   <div class="message">
-    <input type="text" id="message" placeholder="Mensagem">
+    <input type="text" name="message" id="message" placeholder="Mensagem" ngModel>
   </div>
   <div class="submit-button">
-    <button type='submit'>Submeter Comentário</button>
+    <button type="submit">Submeter Comentário</button>
   </div>
   </form>
 
-  <div class="comments" *ngFor="let c of videoComments">
-    <div class="first-line">
-      <img alt="photo" [src]="url+c.name.replace(' ', '')+set">
-        <div class="name-date">
-          <span class="name" [innerHTML]="c.name"></span>
-          <span class="ago">Há</span>
-          <span class="date" [innerHTML]="c.date" ></span>
-        </div>
+  <div class="comment" *ngFor="let c of videoComments">
+    <div class="photo">
+      <img alt="user photo" [src]="url+c.name.replace(' ', '')+set">
     </div>
-      <p class="comment" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')">"</p>
+    <div class="content">
+      <div class="data">
+        <div class="user">
+          <p class="name" [innerHTML]="c.name"></p>
+        </div>
+        <div class="timestamp">
+          <span class="ago">há</span>
+          <span class="date" [innerHTML]="c.date"></span>
+        </div>
+      </div>
+      <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
+    </div>
   </div>
 </div>
-
 

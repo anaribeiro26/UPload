@@ -3,6 +3,7 @@ import {UPloadService} from "../../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
 import {VideoComments} from "../../../../services/UPload.model";
 
+
 @Component({
   selector: 'app-video-comments',
   templateUrl: './video-comments.component.html',
@@ -26,4 +27,13 @@ export class VideoCommentsComponent implements OnInit {
     })
   }
 
+  handleCommentFormSubmit(data: {name: string, email: string, message: string}) {
+    console.log(data)
+    this.UPload.commentVideo(parseInt(this.video_id), data.name, data.email, data.message).subscribe((response) =>
+      console.log(response)
+    )
+  }
+
 }
+
+

@@ -6,8 +6,9 @@ import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
 import {
   faFlag,
   faThumbsDown as faThumbsDownSolid,
-  faThumbsUp as faThumbsUpSolid
+  faThumbsUp as faThumbsUpSolid,
 } from "@fortawesome/free-solid-svg-icons";
+
 
 
 //@ts-ignore
@@ -37,6 +38,12 @@ export class VideoDetailsComponent implements OnInit {
       let id = params['id'];
     this.UPload.getVideoDetails(id).subscribe((video) => {
       this.video = video[0];
+
+        let word = this.video.date.split(" ");
+        if(word.length > 2) {
+          this.video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+        }
+
 
       this.UPload.getNumberOfLikes(id).subscribe( (counters) => {
         if (counters.length == 0) {

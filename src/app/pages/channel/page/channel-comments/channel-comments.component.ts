@@ -25,5 +25,12 @@ export class ChannelCommentsComponent implements OnInit {
     })
   }
 
+  handleCommentFormSubmit(data: {name: string, email: string, message: string}) {
+    console.log(data)
+    this.UPload.commentChannel(this.channel_id, data.name, data.email, data.message).subscribe((response) =>
+      console.log(response)
+    )
+  }
+
 }
 
