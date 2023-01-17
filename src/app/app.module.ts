@@ -30,6 +30,7 @@ import { ThematicDetailsComponent } from './pages/thematics/page/thematic-detail
 import { ThematicVideosComponent } from './pages/thematics/page/thematic-videos/thematic-videos/thematic-videos.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { YoutubePlayerComponent } from "./pages/home-page/video-details/youtube-player/youtube-player.component";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -70,7 +71,8 @@ import { YoutubePlayerComponent } from "./pages/home-page/video-details/youtube-
         useFactory: HttpLoaderFactory,
         deps: [HttpClient]
       }
-    })
+    }),
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

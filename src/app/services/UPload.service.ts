@@ -2,13 +2,29 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
-import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Tags, TagVideos, Playlists, ChannelComments, VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse, Thematics, ThematicVideos} from "./UPload.model";
+import {
+  Channels,
+  ChannelVideos,
+  VideoDetails,
+  Videos,
+  VideosPlaylist,
+  Tags,
+  TagVideos,
+  Playlists,
+  ChannelComments,
+  VideoComments,
+  FlagCounter,
+  FlaggingRequest,
+  FlaggingResponse,
+  Thematics,
+  ThematicVideos
+} from "./UPload.model";
 import {Observable} from "rxjs";
+
 const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
 const BASE_URL_FLAGGING = "https://dev-project-upskill-grupo05.pantheonsite.io/entity/flagging"
+const BASE_URL_COMMENTS = "https://dev-project-upskill-grupo05.pantheonsite.io/comment"
 let icon = faThumbsUp;
-
-
 
 
 @Injectable({
@@ -25,10 +41,9 @@ export class UPloadService {
   icon: any = faThumbsUp;
 
 
-
   videosPlaylist: VideosPlaylist[] = [];
 
-  favorites : number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
+  favorites: number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
   constructor(private http: HttpClient) {
   }
@@ -93,6 +108,96 @@ export class UPloadService {
     return this.http.get<VideosPlaylist[]>(BASE_URL + "/videos/playlist/" + id)
   }
 
+  commentVideo(id: number, name: string, email: string, message: string) {
+    const body = {
+      "entity_id": [
+        {
+          "target_id": id
+        }
+      ],
+      "entity_type": [
+        {
+          "value": "media"
+        }
+      ],
+      "comment_type": [
+        {
+          "target_id": "video_comments"
+        }
+      ],
+      "field_name": [
+        {
+          "value": "field_comentarios_video"
+        }
+      ],
+      "field_nome_comentario": [
+        {
+          "value": name
+        }
+      ],
+      "field_email_video": [
+        {
+          "value": email
+        }
+      ],
+      "comment_body": [
+        {
+          "value": message,
+          "format": "plain_text"
+        }
+      ]
+
+    }
+
+    return this.http.post(BASE_URL_COMMENTS, body)
+  }
+
+  commentChannel (id: number, name: string, email: string, message: string) {
+    const body = {
+      "entity_id": [
+        {
+          "target_id": id
+        }
+      ],
+      "entity_type": [
+        {
+          "value": "media"
+        }
+      ],
+      "comment_type": [
+        {
+          "target_id": "channel_comments"
+        }
+      ],
+      "field_name": [
+        {
+          "value": "field_comentarios_video"
+        }
+      ],
+      "field_nome_comentario": [
+        {
+          "value": name
+        }
+      ],
+      "field_email_video": [
+        {
+          "value": email
+        }
+      ],
+      "comment_body": [
+        {
+          "value": message,
+          "format": "plain_text"
+        }
+      ]
+
+    }
+
+
+
+    return this.http.post(BASE_URL_COMMENTS, body)
+  }
+
   likeVideo(id: string) {
     const body: FlaggingRequest = {
       entity_id: [id],
@@ -140,8 +245,8 @@ export class UPloadService {
 
   getFavorites() {
     return new Observable(observer => {
-      this.http.get<Videos[]>(BASE_URL + "/videos").subscribe((videos : Videos[]) => {
-        observer.next(videos.filter((video : Videos) => {
+      this.http.get<Videos[]>(BASE_URL + "/videos").subscribe((videos: Videos[]) => {
+        observer.next(videos.filter((video: Videos) => {
           return this.favorites.includes(video.id)
         }))
       });
@@ -149,19 +254,19 @@ export class UPloadService {
   }
 
 
-      toggleFavorite(id: number) {
-        if (!this.isFavorite(id)) {
-          this.favorites.push(id)
-        } else {
-          let index = this.favorites.indexOf(id);
-          this.favorites.splice(index, 1)
-        }
-        localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
-      }
+  toggleFavorite(id: number) {
+    if (!this.isFavorite(id)) {
+      this.favorites.push(id)
+    } else {
+      let index = this.favorites.indexOf(id);
+      this.favorites.splice(index, 1)
+    }
+    localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
+  }
 
-      isFavorite(id: number): boolean {
-        return this.favorites.includes(id);
-      }
+  isFavorite(id: number): boolean {
+    return this.favorites.includes(id);
+  }
 
 
 }

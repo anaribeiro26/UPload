@@ -1,19 +1,20 @@
 <div class="inputs">
-  <form>
+<!--  <form [formGroup]="form" (ngSubmit)="handleCommentFormSubmit(comment.value)">-->
+  <form #userPost ="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value)" >
   <div class="first-box">
     <div class="logo">
       <img alt="photo" [src]="url+random+set">
     </div>
     <div class="name-email">
-      <input type="text" id="name" placeholder="Nome">
-      <input type="email" id="email" placeholder="E-mail">
+      <input type="text" name="name" id="name" placeholder="Nome" ngModel>
+      <input type="email" name="email" id="email" placeholder="E-mail" ngModel>
     </div>
   </div>
   <div class="message">
-    <input type="text" id="message" placeholder="Mensagem">
+    <input type="text" name="message" id="message" placeholder="Mensagem" ngModel>
   </div>
   <div class="submit-button">
-    <button type='submit'>Submeter Comentário</button>
+    <button type="submit">Submeter Comentário</button>
   </div>
   </form>
 
