@@ -26,6 +26,12 @@ export class HomePageComponent implements OnInit {
 
     this.UPload.getVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
+      this.videos.forEach(video => {
+        let word = video.date.replace('atrás', '').split(" ");
+        if(word.length > 2) {
+          video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+        }
+      })
     })
 
   }

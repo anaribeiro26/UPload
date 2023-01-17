@@ -1,5 +1,5 @@
 .header {
-  margin: 50px 0 35px 35px;
+  margin: 50px 0 35px 30px;
   font-style: normal;
   font-size: 16px;
   letter-spacing: 0.1px;
@@ -8,16 +8,18 @@
 
 .uploads {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+  margin-left: 30px;
 
   .videos {
-    position: absolute;
+    //position: absolute;
     top: 5em;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     flex-wrap: wrap;
     gap: 20px;
     padding-bottom: 25px;
+
 
     .cel {
       width: 360px;

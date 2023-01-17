@@ -1,34 +1,44 @@
-  <div class="header">
-    <h1>Últimos Vídeos</h1>
-  </div>
-  <div class="body">
-    <div class="container">
-      <div class="row">
-        <div class="cel" *ngFor="let v of videos">
-          <div class="box">
-            <div class="card_image">
-              <a routerLink="/video/{{v.id}}" routerLinkActive="active">
-                <img class="small_image" [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
-              </a>
+<div class="header">
+  <h1>Últimos Vídeos</h1>
+</div>
+<div class="body">
+  <div class="container">
+    <div class="row">
+      <div class="cel" *ngFor="let v of videos" routerLink="/video/{{v.id}}" routerLinkActive="active">
+        <div class="box">
+          <div class="card_image">
+            <a>
+              <img class="thumbnail" alt="thumbnail"
+                   [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
+            </a>
+            <div class="channel_logo"><img class="logo" alt="logo" [src]="image_url + v.logo">
             </div>
-            <div class="itens">
-              <p class="name" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.channel}}</p>
-              <p class="titleVideo" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.title}}</p>
-              <p class="date" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.date}}</p>
-              <p class="duration">{{v.duration}}</p>
-              <img class="logo" [src]="image_url + v.logo" routerLink="/video/{{v.id}}" routerLinkActive="active">
+          </div>
+          <div class="itens">
+            <div class="video_info">
+            <p class="name" [innerHTML]="v.channel"></p>
+            <p class="titleVideo" [innerHTML]="v.title"></p>
+            <div class="date">
+              <p class="ago">há</p>
+              <p class="timestamp" [innerHTML]="v.date"></p>
+            </div>
+            <p class="duration" [innerHTML]="v.duration"></p>
+            </div>
+            <div class="actions">
               <div class="bookmark" (click)="changeFavorite(v.id)">
                 <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
               </div>
-<!--              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>-->
-              <fa-icon class="faIcon" [icon]="faShare" (click)="clickShare(v.video)"></fa-icon>
-
+              <div class="share">
+                <!--              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>-->
+                <fa-icon class="share-button" [icon]="faShare" (click)="clickShare(v.video)"></fa-icon>
+            </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    <app-suggestions></app-suggestions>
   </div>
+  <app-suggestions></app-suggestions>
+</div>
 
 

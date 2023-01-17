@@ -33,6 +33,7 @@ import { YoutubePlayerComponent } from "./pages/home-page/video-details/youtube-
 import {FormsModule} from "@angular/forms";
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,6 +65,7 @@ import {FormsModule} from "@angular/forms";
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    FormsModule,
     NgxYoutubePlayerModule.forRoot(),
     TranslateModule.forRoot({
       loader: {

@@ -17,7 +17,8 @@ import {
   FlaggingRequest,
   FlaggingResponse,
   Thematics,
-  ThematicVideos
+  ThematicVideos,
+  ChannelCommentRequest
 } from "./UPload.model";
 import {Observable} from "rxjs";
 
@@ -210,6 +211,22 @@ export class UPloadService {
 
     return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
   }
+
+ //annelComment(id: number) {
+ //const body: ChannelCommentRequest = {
+ //  entity_id: [id],
+ //  entity_type: ["node"],
+ //  flag_id: [
+ //    {
+ //      "value": "comment",
+ //      "target_type": "flag",
+ //    }
+ //  ],
+ //  uid: ["0"]
+ //}
+
+ //  return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
+ //}
 
   removeLikeOrDislike(id: number) {
     return this.http.delete(`${BASE_URL_FLAGGING}/${id}`)

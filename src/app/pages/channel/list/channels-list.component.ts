@@ -5,6 +5,18 @@ import {ElementRef, ViewChild} from "@angular/core";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {Channels} from "../../../services/UPload.model";
 import {FilterPipe} from "../../../pipe/filter.pipe";
+export function channelSearch() {
+  //let input = this.searchbar.value.toLowerCase()
+  let input = (<HTMLInputElement>document.getElementById("searchbar")).value.toLowerCase()
+  let x = document.querySelectorAll('content');
+  for (let i = 0; i < x.length; i++) {
+    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+      x[i].setAttribute("style", "display: none;");
+    } else {
+      x[i].setAttribute("style", "display: list-item;");
+    }
+  }
+}
 
 @Component({
   selector: 'app-channel-list',
@@ -29,18 +41,18 @@ export class ChannelsListComponent implements OnInit {
       this.channelsList = channelsList as Channels[];
     })
 
- //function channelSearch() {
- //  //let input = this.searchbar.value.toLowerCase()
- //  let input = (<HTMLInputElement>document.getElementById("searchbar")).value.toLowerCase()
- //  let x = document.querySelectorAll('content');
- //  for (let i = 0; i < x.length; i++) {
- //    if (!x[i].innerHTML.toLowerCase().includes(input)) {
- //      x[i].setAttribute("style", "display: none;");
- //    } else {
- //      x[i].setAttribute("style", "display: list-item;");
- //    }
- //  }
- //}
+//function channelSearch() {
+//  //let input = this.searchbar.value.toLowerCase()
+//  let input = (<HTMLInputElement>document.getElementById("searchbar")).value.toLowerCase()
+//  let x = document.querySelectorAll('content');
+//  for (let i = 0; i < x.length; i++) {
+//    if (!x[i].innerHTML.toLowerCase().includes(input)) {
+//      x[i].setAttribute("style", "display: none;");
+//    } else {
+//      x[i].setAttribute("style", "display: list-item;");
+//    }
+//  }
+//}
 
    //function channelSearch() {
    //  let input = (<HTMLInputElement>document.getElementById('searchbar')).value.toLowerCase()

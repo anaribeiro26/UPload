@@ -1,11 +1,15 @@
 
-.header{
-  margin-top: 10px;
-  font-style: normal;
-  font-size: 16px;
+.header {
+  margin-top: 30px;
+  margin-bottom: 20px;
+  //font-style: normal;
   letter-spacing: 0.1px;
   color: #FAFAFB;
-  margin-left: 20px;
+  margin-left: 30px;
+
+  h1 {
+    font-size: 24px;
+  }
 }
 
 .body {
@@ -13,142 +17,213 @@
   width: 100%;
   display: flex;
 
-    .container {
+  .container {
+    display: flex;
+    //justify-content: center;
+    margin-left: 0;
+
+    .row {
+      //top: 30em;
       display: flex;
-      //justify-content: center;
-      margin-left: 0px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 25px;
+      margin-left: 30px;
 
-      .row {
-        //top: 30em;
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 35px;
-        padding-bottom: 25px;
-        margin-left: 30px;
+      .cel {
+        width: 340px;
+        border-radius: 16px;
+        background-color: #1c1c24;
+        position: relative;
 
-        .cel {
-          width: 360px;
-          border-radius: 16px;
-          background-color: #1c1c24;
-          position: relative;
-
-          .card_image {
-            width: 360px;
-            height: 176px;
-            object-fit: cover;
-            border-radius: 16px 16px 0 0;
-            overflow: hidden;
+        .box:hover {
+          .itens {
+            .titleVideo, .timestamp, .ago, .actions {
+              color: #FFFFFF;
+            }
           }
 
-          .small_image {
-            height: 100%;
-            width: 100%;
-            cursor: pointer;
-            left: 0;
-            top: 0;
-            border-radius: 20px 20px 0 0;
-            transition: all linear 0.4s;
-          }
-
-          .small_image:hover {
+          .thumbnail {
             filter: grayscale(70%);
             transform: scale(1.1);
           }
+        }
 
-          .itens {
-            margin: 20px;
+        .box {
+          .channel_logo {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-evenly;
+            padding-right: 20px;
 
-            .name {
-              color: #1E75FF;
-              font-size: 14px;
-              letter-spacing: 0.1px;
-              margin-bottom: 3px;
-            }
-
-            .titleVideo {
-              color: #FAFAFB;
-              font-size: 18px;
-              margin-bottom: 3px;
-            }
-
-            .date {
-              font-size: 14px;
-              letter-spacing: 0.1px;
-              color: #92929D;
-            }
-
-            .duration {
-              display: flex;
-              position: absolute;
-              align-items: center;
-              justify-content: center;
-              height: 24px;
-              width: 48px;
-              top: 120px;
-              margin-left: 16px;
-              background-color: #171725;
-              border-radius: 8px;
-              color: #ffffff;
-              font-size: 12.8px;
-              font-weight: 500;
-            }
             .logo {
+              border: 3px solid #FFFFFF;
               border-radius: 50%;
-              overflow: hidden;
+              // overflow: hidden;
               height: 60px;
               width: 60px;
+              // z-index: 100;
               position: absolute;
-              top: 144px;
-              margin-left: 256px;
-              border: 2px solid #FFFFFF;
-              background-color: #1C1C24;
-              cursor: pointer;
+              //top: 144px;
+              //margin-left: 256px;
+              //border: 2px solid #FFFFFF;
+              //background-color: #1C1C24;
+              //cursor: pointer;
             }
+          }
+        }
+
+        .card_image {
+          width: 340px;
+          height: 176px;
+          object-fit: cover;
+          border-radius: 16px 16px 0 0;
+          overflow: hidden;
+        }
+
+        .thumbnail {
+          height: 100%;
+          width: 100%;
+          cursor: pointer;
+          left: 0;
+          top: 0;
+          border-radius: 20px 20px 0 0;
+          object-fit: cover;
+          transition: all linear 0.4s;
+        }
+
+        .small_image:hover {
+          filter: grayscale(70%);
+          transform: scale(1.1);
+        }
+
+        .itens {
+          //margin: 20px;
+          margin-left: 16px;
+          height: 100px;
+          display: flex;
+          justify-content: space-between;
+          //align-items: center;
+
+          .actions {
+            display: flex;
+            justify-content: flex-end;
+            // padding-left: 80px;
+            padding-right: 5px;
+            width: 84px;
+            //width: 165px;
+            padding-top: 60px;
+            // padding-right: 20px;
+
             .ng-fa-icon {
               font-size: 20.8px;
               color: #92929D;
               cursor: pointer;
-              position: absolute;
-              top: 280px;
-              margin-left: 256px;
+              padding-right: 15px;
+              // position: absolute;
+              //top: 280px;
+              // margin-left: 256px;
             }
-            .faIcon {
+            fa-icon:hover {
+              color: #FFFFFF;
+            }
+            .share-button {
               font-size: 20.8px;
               color: #92929D;
               cursor: pointer;
-              position: absolute;
-              top: 280px;
-              margin-left: 288px;
+              // position: absolute;
+              // top: 280px;
+              //  margin-left: 288px;
             }
           }
+
+          .name {
+            color: #1E75FF;
+            font-size: 14px;
+            letter-spacing: 0.1px;
+            // margin-bottom: 3px;
+            margin: 0;
+            padding-top: 15px;
+            // margin-top: 5px;
+          }
+
+          .titleVideo {
+           //color: #FAFAFB;
+            color: rgba(255, 255, 255, 90%);
+            font-size: 17px;
+            margin: 0;
+            padding-top: 5px;
+            width: 100%;
+            max-width: 280px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            // margin-bottom: 3px;
+          }
+
+          .date {
+            display: flex;
+            padding-top: 5px;
+
+            .timestamp, .ago {
+              color: #92929d;
+              font-size: 15px;
+              margin: 0;
+            }
+
+            .ago {
+              margin-right: 6px;
+            }
+          }
+
+          .duration {
+            display: flex;
+            position: absolute;
+            align-items: center;
+            justify-content: center;
+            height: 24px;
+            width: 48px;
+            top: 120px;
+            margin-left: 16px;
+            background-color: #171725;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 12.8px;
+            //  font-weight: 500;
+          }
+
         }
       }
     }
-
-    h2 {
-      position: absolute;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 21px;
-      letter-spacing: 0.1px;
-      color: #FAFAFB;
-      left: 10px;
-    }
-
-    p {
-      //position: absolute;
-      font-style: normal;
-      font-weight: 500;
-      font-size: 14px;
-      line-height: 21px;
-      letter-spacing: 0.1px;
-      color: #FAFAFB;
-      left: 10px;
-      cursor: pointer;
-    }
   }
+
+  h2 {
+    //position: absolute;
+    //font-style: normal;
+    // font-weight: 500;
+    font-size: 14px;
+    //line-height: 21px;
+    // letter-spacing: 0.1px;
+    color: #FAFAFB;
+    // left: 10px;
+  }
+
+  p {
+    //position: absolute;
+    // font-style: normal;
+    // font-weight: 500;
+    font-size: 14px;
+    // line-height: 21px;
+    // letter-spacing: 0.1px;
+    color: #FAFAFB;
+    // left: 10px;
+    // cursor: pointer;
+  }
+}
 
 
 

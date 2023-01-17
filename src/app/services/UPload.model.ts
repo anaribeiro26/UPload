@@ -81,7 +81,72 @@ export interface VideoComments {
   video_id: number;
   date: string;
   id: string;
+}
 
+export interface  EntityID {
+  target_id: number;
+}
+
+export interface  EntityType {
+  value: string;
+}
+
+export interface  CommentType {
+  target_id: string;
+}
+
+export interface  VideoCommentMachineName {
+  value: string;
+}
+
+export interface  ChannelCommentMachineName {
+  value: string;
+}
+
+export interface  VideoCommentUsername {
+  value: string;
+}
+
+export interface  ChannelCommentUsername {
+  value: string;
+}
+
+export interface VideoCommentBody {
+  value: string;
+  format: string;
+}
+
+export interface  ChannelCommentBody {
+  value: string;
+  format: string;
+}
+
+export interface VideoCommentRequest {
+  entity_id: EntityID[];
+  entity_type: EntityType[];
+  comment_type: CommentType[];
+  field_name: VideoCommentMachineName[];
+  field_nome_comentario: VideoCommentUsername[];
+  field_email_video: VideoCommentUsername[];
+  comment_body: VideoCommentBody[];
+}
+
+export interface ChannelCommentRequest {
+  entity_id: EntityID[];
+  entity_type: EntityType[];
+  comment_type: CommentType[];
+  field_name: ChannelCommentMachineName[];
+  field_nome: ChannelCommentUsername[];
+  field_email: ChannelCommentUsername[];
+  comment_body: ChannelCommentBody[];
+}
+
+export interface Comment {
+  value: string;
+}
+
+export interface CommentResponse {
+  id: [Comment]
 }
 
 export interface VideoDetails {

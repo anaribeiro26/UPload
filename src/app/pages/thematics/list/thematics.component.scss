@@ -36,7 +36,7 @@ uploads {
 
     .title {
       margin-left: 16px;
-     // margin-bottom: 5px;
+      // margin-bottom: 5px;
       margin-bottom: 0;
       //margin-top: 0;
       margin-top: -5px;
@@ -48,8 +48,9 @@ uploads {
       overflow: hidden;
       text-overflow: ellipsis;
     }
+
     .tags {
-     // top: 140px;
+      // top: 140px;
       margin-left: 16px;
       color: #1e75ff;
       font-size: 14px;
@@ -82,9 +83,9 @@ uploads {
   }
 
 
-.article-teaser {
-  margin-top: 5px;
-}
+  .article-teaser {
+    margin-top: 5px;
+  }
 
   .inner_box {
     height: 200px;
@@ -106,12 +107,41 @@ uploads {
       font-weight: 500;
     }
   }
-  }
+}
 
+@media screen and (max-width: 1218px) {
+  .videos {
+    gap: 30px;
+
+    .video {
+      margin-right: 30px;
+    }
+  }
+}
+//
+//@media screen and (max-width: 956px) {
+//  .videos {
+//    gap: 20px;
+//
+//    .outer_box {
+//      width: 240px;
+//      height: 228px;
+//    }
+//
+//    .header {
+//      width: 238px;
+//    }
+//
+//    .inner_box {
+//      height: 150px;
+//
+//    }
+//  }
+//}
 
 @media screen and (max-width: 560px) {
   .uploads {
-    padding-top: 30px;
+    padding-top: 35px;
   }
 }
 
