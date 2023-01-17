@@ -9,48 +9,129 @@
   }
 
   .form {
-    display: flex;
+    //display: flex;
     width: 100%;
-    max-width: 700px;
+    height: 100%;
+    max-width: 970px;
+    max-height: 80px;
 
-    img {
-      width: 60px;
-      height: 60px;
-      border-radius: 30px;
+    .form-box {
+      display: flex;
+
+      .random_photo {
+        padding-right: 7px;
+
+
+        img {
+          width: 60px;
+          height: 60px;
+          border-radius: 30px;
+        }
+      }
+
+      .inputs {
+        margin-left: 10px;
+        width: 100%;
+
+        input {
+          width: 100%;
+        }
+
+        input[type="email"] {
+          margin-left: 10px;
+        }
+
+        input[type="text"], input[type="email"] {
+          background-color: #13131A;
+          border: none;
+          border-bottom: 2px solid rgba(255, 255, 255, 70%);
+          // margin-right: 5px;
+          margin-bottom: 5px;
+          padding-bottom: 10px;
+          color: white;
+          //margin-top: 5px;
+        }
+
+        input[type="text"]:hover, input[type="email"]:hover {
+          border-bottom: 2px solid rgba(255, 255, 255, 100%);
+        }
+
+
+        .user_data {
+          display: flex;
+        }
+
+
+      }
+
     }
 
-    .button {
-      border: none;
-      color: white;
-      padding: 20px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      margin: 4px 2px;
-      border-radius: 50%;
-    }
-
-    .inputs {
-      margin-left: 10px;
+    .submit-button {
+      padding-top: 10px;
+      margin-top: 0;
+      display: flex;
+      justify-content: flex-end;
+      //margin-left: 50px;
+      padding-left: 20px;
       width: 100%;
 
-      input {
-        width: 100%;
-      }
-
-      input[type="text"], input[type="email"]{
+      button {
+        // width: 30%;
+        width: 180px;
+        border-radius: 14px;
+        color: rgba(255, 255, 255, 70%);
         background-color: #13131A;
-        border: none;
-        border-bottom: 2px solid #FFFFFF;
-        margin-right: 5px;
+        border: 1px solid rgba(255, 255, 255, 70%);
+        // border-radius: 30px;
+        padding-top: 7px;
+        padding-bottom: 7px;
       }
 
-      .user_data {
-        display: flex;
+      button:hover {
+        color: rgba(255, 255, 255, 100%);
+        border: 1px solid rgba(255, 255, 255, 100%);
+        cursor: pointer;
       }
+    }
+  }
+  @media screen and (max-width: 1218px) {
+    .form {
+      max-width: 700px;
+    }
+  }
 
+  @media screen and (max-width: 940px) {
+    .form {
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+  }
 
+//@media screen and (max-width: 885px) {
+//  .form {
+//    max-width: 550px;
+//    margin-bottom: 40px;
+//  }
+//}
+
+ //@media screen and (max-width: 790px) {
+ //  .form {
+ //    max-width: 450px;
+ //    margin-bottom: 40px;
+ //  }
+ //}
+
+  @media screen and (max-width: 500px) {
+    .form {
+      max-width: 350px;
+      margin-bottom: 40px;
+
+      .submit-button {
+        button {
+          width: 125px;
+          font-size: 11px;
+        }
+      }
     }
   }
 
@@ -60,7 +141,7 @@
     margin-top: 20px;
 
     .photo {
-      padding-right: 10px;
+      padding-right: 7px;
 
       img {
         width: 60px;
@@ -102,3 +183,4 @@
     }
   }
 }
+
