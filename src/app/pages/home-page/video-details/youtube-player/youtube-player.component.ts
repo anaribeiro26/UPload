@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {IPlayerOutputs, IPlayerSize} from "ngx-youtube-player/lib/models";
+
 
 @Component({
   selector: 'app-youtube-player',
@@ -10,6 +12,8 @@ import {Component, Input} from '@angular/core';
         (change)="onStateChange($event)"
         [height]="450"
         [width]="420"
+        [playerVars] = "{ modestbranding: 0, controls: 0, disablekb: 0, rel: 0, showinfo: 0 }"
+
       ></youtube-player>
     </div>
   `,
@@ -21,9 +25,18 @@ export class YoutubePlayerComponent {
   player: YT.Player | undefined;
   @Input() id: string = "";
 
+
+
+  playerReady(player: YT.Player) {
+    this.player = player;
+    console.log("player instance", player);
+  }
+
+
   savePlayer(player: YT.Player) {
     this.player = player;
     console.log('player instance', player);
+
   }
 
   ngOnChanges() {
@@ -35,4 +48,6 @@ export class YoutubePlayerComponent {
   onStateChange(event: YT.PlayerEvent) {
     console.log('player state', event);
   }
+
+
 }

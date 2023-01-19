@@ -32,7 +32,43 @@ export class VideoCommentsComponent implements OnInit {
     this.UPload.commentVideo(parseInt(this.video_id), data.name, data.email, data.message).subscribe((response) =>
       console.log(response)
     )
+    // const nameInput = data.name.valueOf()
+    // console.log(nameInput)
+    // const emailInput = data.email.valueOf()
+    // const messageInput = data.message.valueOf()
+    //
+    // if (nameInput.length < 2 || emailInput.length < 2 || messageInput.length < 2) {
+    //   alert("ERROR");
+    // }
   }
+
+
+
+  // startGame() {
+  //   const nameInput = $("#playerOneInput").val();
+  //   const playerTwoName = $("#playerTwoInput").val();
+  //
+  //   sessionStorage.setItem("playerOne", playerOneName);
+  //   sessionStorage.setItem("playerTwo", playerTwoName);
+  //   if(validatePlayersName(playerOneName, playerTwoName)) {
+  //     location.href = "game.html";
+  //   }
+  // }
+  //
+  //   validatePlayersName (playerOneName, playerTwoName) {
+  //   if (playerOneName.length < 2 || playerTwoName.length < 2){
+  //     showError();
+  //     return false
+  //   }
+  //   return true
+  // }
+  //
+  //   showError() {
+  //   const toast = new bootstrap.Toast($("#errorToast"));
+  //   toast.show();
+  // }
+  //
+
 
 }
 
