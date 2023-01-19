@@ -46,6 +46,7 @@ export class UPloadService {
 
   favorites: number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
+
   constructor(private http: HttpClient) {
   }
 
