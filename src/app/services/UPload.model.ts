@@ -8,7 +8,7 @@ export interface Thematics {
   header: string;
   thumbnail: string;
   id: number;
-Ad  logo: string
+  logo: string
 }
 
 export interface ThematicVideos {
