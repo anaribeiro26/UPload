@@ -132,10 +132,22 @@
               color: #FFFFFF;
             }
 
+            .share-button:hover {
+              color: #FFFFFF;
+            }
+
             .share-button {
               height: 20px;
               cursor: pointer;
               padding-right: 15px;
+              color: #FFFFFF;
+              // position: absolute;
+              // top: 280px;
+              //  margin-left: 288px;
+            }
+
+            .share-button {
+             // background-image: ../../../assets/ic_Share.svg;
               // position: absolute;
               // top: 280px;
               //  margin-left: 288px;
@@ -177,7 +189,7 @@
             .timestamp, .ago {
               color: #92929d;
               // font-size: 14px;
-              font-size: 12px;
+              font-size: 13px;
               margin: 0;
             }
 
