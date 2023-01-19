@@ -20,12 +20,25 @@
     gap: 20px;
     padding-bottom: 25px;
 
+    .cel:hover {
+      .small_image {
+        //filter: grayscale(70%);
+        transform: scale(1.05);
+      }
+
+      .itens {
+        .video_title {
+          color: rgba(255, 255, 255, 100%);
+        }
+      }
+    }
 
     .cel {
       width: 360px;
       border-radius: 16px;
       background-color: #1c1c24;
       position: relative;
+      cursor: pointer;
 
       .card_image {
         width: 360px;
@@ -38,16 +51,10 @@
       .small_image {
         height: 100%;
         width: 100%;
-        cursor: pointer;
         left: 0;
         top: 0;
         border-radius: 20px 20px 0 0;
         transition: all linear 0.4s;
-      }
-
-      .small_image:hover {
-        filter: grayscale(70%);
-        transform: scale(1.1);
       }
 
       .itens {
@@ -60,8 +67,8 @@
           margin-bottom: 3px;
         }
 
-        .titleVideo {
-          color: #FAFAFB;
+        .video_title {
+          color: rgba(255, 255, 255, 80%);
           font-size: 18px;
           margin-bottom: 3px;
         }
@@ -87,6 +94,11 @@
           font-size: 12.8px;
           font-weight: 500;
         }
+
+        .logo:hover {
+          transform: scale(1.03);
+        }
+
         .logo {
           border-radius: 50%;
           overflow: hidden;
@@ -97,23 +109,6 @@
           margin-left: 256px;
           border: 2px solid #FFFFFF;
           background-color: #1C1C24;
-          cursor: pointer;
-        }
-        .ng-fa-icon {
-          font-size: 20.8px;
-          color: #92929D;
-          cursor: pointer;
-          position: absolute;
-          top: 280px;
-          margin-left: 256px;
-        }
-        .faIcon {
-          font-size: 20.8px;
-          color: #92929D;
-          cursor: pointer;
-          position: absolute;
-          top: 280px;
-          margin-left: 288px;
         }
       }
     }

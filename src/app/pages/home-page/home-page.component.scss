@@ -31,24 +31,29 @@
       padding-bottom: 25px;
       margin-left: 30px;
 
+      .cel:hover {
+        .itens {
+          .titleVideo {
+            color: #FFFFFF;
+          }
+
+          .small_image {
+            //filter: grayscale(70%);
+            transform: scale(1.05);
+          }
+        }
+
+        .thumbnail {
+          //filter: grayscale(70%);
+          transform: scale(1.05);
+        }
+      }
+
       .cel {
         width: 340px;
         border-radius: 16px;
         background-color: #1c1c24;
         position: relative;
-
-        .box:hover {
-          .itens {
-            .titleVideo, .timestamp, .ago, .actions {
-              color: #FFFFFF;
-            }
-          }
-
-          .thumbnail {
-            filter: grayscale(70%);
-            transform: scale(1.1);
-          }
-        }
 
         .box {
           .channel_logo {
@@ -77,7 +82,8 @@
 
         .card_image {
           width: 340px;
-          height: 176px;
+          // height: 176px;
+          height: 160px;
           object-fit: cover;
           border-radius: 16px 16px 0 0;
           overflow: hidden;
@@ -94,11 +100,6 @@
           transition: all linear 0.4s;
         }
 
-        .small_image:hover {
-          filter: grayscale(70%);
-          transform: scale(1.1);
-        }
-
         .itens {
           //margin: 20px;
           margin-left: 16px;
@@ -111,7 +112,7 @@
             display: flex;
             justify-content: flex-end;
             // padding-left: 80px;
-            padding-right: 4px;
+            padding-right: 5px;
             width: 84px;
             //width: 165px;
             padding-top: 65px;
@@ -121,7 +122,7 @@
               font-size: 18px;
               color: #92929D;
               cursor: pointer;
-              padding-right: 15px;
+              padding-right: 12px;
               // position: absolute;
               //top: 280px;
               // margin-left: 256px;
@@ -132,9 +133,9 @@
             }
 
             .share-button {
-              font-size: 18px;
-              color: #92929D;
+              height: 20px;
               cursor: pointer;
+              padding-right: 15px;
               // position: absolute;
               // top: 280px;
               //  margin-left: 288px;
@@ -143,20 +144,22 @@
 
           .name {
             color: #1e75ff;
-            font-size: 14px;
+            font-size: 13px;
             letter-spacing: 0.1px;
             // margin-bottom: 3px;
             margin: 0;
-            padding-top: 15px;
+            padding-top: 10px;
+            //padding-top: 15px;
             // margin-top: 5px;
           }
 
           .titleVideo {
             //color: #FAFAFB;
             color: rgba(255, 255, 255, 90%);
-            font-size: 17px;
+            // font-size: 17px;
+            font-size: 15px;
             margin: 0;
-            padding-top: 5px;
+            padding-top: 8px;
             width: 100%;
             max-width: 280px;
             display: -webkit-box;
@@ -169,11 +172,12 @@
 
           .date {
             display: flex;
-            padding-top: 5px;
+            padding-top: 10px;
 
             .timestamp, .ago {
               color: #92929d;
-              font-size: 14px;
+              // font-size: 14px;
+              font-size: 12px;
               margin: 0;
             }
 
@@ -187,14 +191,15 @@
             position: absolute;
             align-items: center;
             justify-content: center;
-            height: 24px;
-            width: 48px;
+            height: 20px;
+            width: 50px;
             top: 120px;
-            margin-left: 16px;
-            background-color: #171725;
-            border-radius: 8px;
+            // top: 110px;
+            //margin-left: 16px;
+            background-color: #1c1c24;
+            border-radius: 4px;
             color: #ffffff;
-            font-size: 12.8px;
+            font-size: 11px;
             //  font-weight: 500;
           }
 

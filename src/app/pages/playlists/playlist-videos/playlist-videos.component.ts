@@ -21,6 +21,12 @@ export class PlaylistVideosComponent implements OnInit {
       this.videosPlaylist = videosPlaylist as VideosPlaylist[];
       const videoArray = this.videosPlaylist;
       console.log(videoArray.length)
+      this.videosPlaylist.forEach(video => {
+        let word = video.date.split(" ");
+        if(word.length > 2) {
+          video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+        }
+      })
     })
   }
 }

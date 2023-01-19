@@ -3,22 +3,20 @@
 </div>
 <div class="uploads">
   <div class="videos">
-    <div class="cel" *ngFor="let v of videosPlaylist" routerLink="/video/{{v.id}}" routerLinkActive="active">
+    <div class="cel" *ngFor="let v of videosPlaylist" routerLink="/video/{{v.video_id}}" routerLinkActive="active">
       <div class="box">
         <div class="card_image">
-          <a [routerLink]="['/video/']" routerLinkActive="active">
-        <img class="small_image"
-             [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
-          </a>
+          <img class="small_image"
+               [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         </div>
         <div class="itens">
-          <p class="name" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.channel}}</p>
-          <p class="titleVideo" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.title}}</p>
-          <p class="date" routerLink="/video/{{v.id}}" routerLinkActive="active">{{v.date}}</p>
+          <p class="name">{{v.channel}}</p>
+          <p class="titleVideo">{{v.title}}</p>
+          <p class="date">há {{v.date}}</p>
           <p class="duration">{{v.duration}}</p>
-<!--          <img class="logo" [src]="image_url + v.logo" routerLink="/video/{{v.id}}" routerLinkActive="active">-->
+          <!--          <img class="logo" [src]="image_url + v.logo" routerLink="/video/{{v.id}}" routerLinkActive="active">-->
         </div>
-
+      </div>
+    </div>
   </div>
 </div>
-  </div>

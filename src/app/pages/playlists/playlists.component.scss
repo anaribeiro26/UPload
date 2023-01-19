@@ -9,7 +9,7 @@
     margin-top: 30px;
     color: #ffffff;
     font-size: 25px;
-    font-weight: 600;
+   // font-weight: 600;
   }
 }
 
@@ -19,7 +19,7 @@
 
   .videos {
     //position: absolute;
-    top: 5em;
+    //top: 5em;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -30,7 +30,8 @@
     .cel {
       width: 340px;
       //  height: 280px;
-      height: 270px;
+      //height: 270px;
+      height: 255px;
       border-radius: 16px;
       background-color: #1c1c24;
       position: relative;
@@ -48,7 +49,6 @@
         object-fit: cover;
         height: 100%;
         width: 100%;
-        cursor: pointer;
         left: 0;
         top: 0;
         border-radius: 20px 20px 0 0;
@@ -57,8 +57,9 @@
 
       .itens {
         // margin: 5px;
-       // height: 75px;
-        height: 55px;
+        // height: 75px;
+        margin-top: -10px;
+        height: 65px;
         display: flex;
         cursor: pointer;
         flex-direction: column;
@@ -66,7 +67,7 @@
 
         .category {
           // margin-bottom: 10px;
-          margin-top: 10px;
+          //margin-top: 10px;
 
           p {
             font-size: 14px;
@@ -78,7 +79,8 @@
           color: #FAFAFB;
           font-size: 18px;
           cursor: pointer;
-          margin-top: 0;
+          margin-top: 5px;
+          //margin-bottom: 10px;
           margin-bottom: 5px;
           margin-left: 15px;
           margin-right: 15px;
@@ -103,8 +105,11 @@
       bottom: 0;
       //left: 15.7rem;
       right: 0;
-      width: 50%;
-      height: 75%;
+      //width: 50%;
+      //width: 30%;
+      //height: 75%;
+      height: 176px;
+      width: 100px;
       opacity: 0.99;
       //transition: 0.5s ease;
       //background-color: #1C1C24;

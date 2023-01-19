@@ -25,17 +25,15 @@
     <div class="cel" *ngFor="let f of favorites_list" routerLink="/video/{{f.id}}" routerLinkActive="active">
       <div class="box">
         <div class="card_image">
-          <a [routerLink]="['/video/']" routerLinkActive="active">
-            <img class="small_image"
+          <img class="small_image"
                [src]="f.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
-          </a>
         </div>
         <div class="itens">
-          <p class="name" routerLink="/video/{{f.id}}" routerLinkActive="active">{{f.channel}}</p>
-          <p class="titleVideo" routerLink="/video/{{f.id}}" routerLinkActive="active">{{f.title}}</p>
-          <p class="date" routerLink="/video/{{f.id}}" routerLinkActive="active">{{f.date}}</p>
-          <p class="duration">{{f.duration}}</p>
-          <img class="logo" [src]="image_url + f.logo" routerLink="/video/{{f.id}}" routerLinkActive="active">
+          <p class="name" routerLink="/channels/{{f.channel_id}}" [innerHTML]="f.channel"></p>
+          <p class="video_title" [innerHTML]="f.title"></p>
+          <p class="date">há {{f.date}}</p>
+          <p class="duration" [innerHTML]="f.duration"></p>
+          <img class="logo" [src]="image_url + f.logo" routerLink="/channels/{{f.channel_id}}">
         </div>
       </div>
     </div>
