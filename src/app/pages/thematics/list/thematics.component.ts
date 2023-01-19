@@ -16,11 +16,11 @@ export class ThematicsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      let title = params[' '];
-      this.UPload.getArticles().subscribe((thematics) => {
-        this.thematics = thematics as Thematics[];
-      })
-    });
+    this.UPload.getArticles().subscribe((thematics) => {
+      this.thematics = (thematics as Thematics[]).map((thematic : Thematics) => {
+        return {...thematic, title: thematic.title.replace(/\s/g, '-')}
+      });
+
+    })
   }
 }

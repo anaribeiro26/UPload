@@ -15,7 +15,7 @@ import {ThematicDetailsComponent} from "./pages/thematics/page/thematic-details/
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'thematics', component: ThematicsComponent},
-  {path: 'thematics/:title'.replace(' ', ''), component: ThematicDetailsComponent},
+  {path: 'thematics/:title', component: ThematicDetailsComponent},
   {path: 'channels', component: ChannelsListComponent},
   {path: 'channels/:id', component: ChannelComponent},
   {path: 'homepage', component: HomePageComponent},

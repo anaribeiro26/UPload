@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UPloadService} from "../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
+import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-favourites',
@@ -8,7 +9,9 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./favourites.component.scss']
 })
 export class FavouritesComponent implements OnInit {
+  faStar = faStar;
   favorites_list: any[] = [];
+
   image_url = '/maxresdefault.jpg';
 
   constructor(private route: ActivatedRoute, private video: UPloadService) {
@@ -17,6 +20,6 @@ export class FavouritesComponent implements OnInit {
   ngOnInit(): void {
     this.video.getFavorites().subscribe((favorites) => {
      this.favorites_list = <any[]>favorites;
-   });
+    });
   }
 }

@@ -18,6 +18,12 @@ export class FavouritesVideosComponent implements OnInit {
   ngOnInit(): void {
     this.video.getFavorites().subscribe((favorites) => {
       this.favorites_list = <any[]>favorites;
+      this.favorites_list.forEach(video => {
+        let word = video.date.replace('atrás', '').split(" ");
+        if(word.length > 2) {
+          video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+        }
+      })
     });
   }
 

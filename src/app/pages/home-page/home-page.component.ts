@@ -17,7 +17,7 @@ export class HomePageComponent implements OnInit {
   imageUrl = '/maxresdefault.jpg'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
-  faShare = faShareNodes;
+  //faShare = faShareNodes;
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 

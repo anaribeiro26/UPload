@@ -1,6 +1,6 @@
 <div class="favorites" *ngIf="favorites_list.length > 0">
   <div class="header">
-    <h1>Favoritos</h1>
+    <h1 routerLink="/playlists/favourites" routerLinkActive="active">Favoritos</h1>
   </div>
   <div class="videos">
     <div class="cel" routerLink="/playlists/favourites" routerLinkActive="active">
@@ -12,6 +12,9 @@
         <div class="itens">
           <p class="title">Vídeos Favoritos</p>
         </div>
+      <div class="play">
+        <fa-icon class="star" [icon]="faStar"></fa-icon>
+      </div>
       </div>
     </div>
   </div>

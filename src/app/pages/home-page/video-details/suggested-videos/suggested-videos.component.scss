@@ -40,12 +40,6 @@
       .title {
         color: rgba(255, 255, 255, 100%);
       }
-
-      .date {
-        .timestamp, .ago {
-          color: rgba(255, 255, 255, 100%);
-        }
-      }
     }
   }
 
@@ -77,6 +71,7 @@
     .itens {
       margin: 20px;
       height: 100px;
+      margin-top: 5px;
 
       .name {
         color: #1E75FF;
@@ -109,10 +104,16 @@
         display: flex;
         padding-top: 5px;
 
+
         .timestamp, .ago {
           color: rgba(255, 255, 255, 70%);
           font-size: 15px;
           margin: 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .ago {

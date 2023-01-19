@@ -20,39 +20,52 @@
     gap: 20px;
     padding-bottom: 25px;
 
+    .cel:hover {
+      .small_image {
+       // filter: grayscale(70%);
+        transform: scale(1.1);
+      }
+
+      .itens {
+        .titleVideo {
+          color: rgba(255, 255, 255, 100%);
+        }
+      }
+    }
 
     .cel {
-      width: 360px;
-      height: 375px;
+      width: 340px;
+      height: 270px;
+      //height: 255px;
+      //height: 375px;
       border-radius: 16px;
       background-color: #1c1c24;
       position: relative;
 
       .card_image {
-        width: 360px;
-        height: 230px;
+        margin-bottom: 15px;
+        width: 340px;
+        height: 176px;
         object-fit: cover;
         border-radius: 16px 16px 0 0;
         overflow: hidden;
       }
 
       .small_image {
+        object-fit: cover;
         height: 100%;
         width: 100%;
-        cursor: pointer;
         left: 0;
         top: 0;
         border-radius: 20px 20px 0 0;
         transition: all linear 0.4s;
       }
 
-      .small_image:hover {
-        filter: grayscale(70%);
-        transform: scale(1.1);
-      }
 
       .itens {
-        margin: 20px;
+        //margin: 20px;
+        margin-top: -5px;
+        margin-left: 16px;
 
         .name {
           color: #1E75FF;
@@ -62,15 +75,23 @@
         }
 
         .titleVideo {
-          color: #FAFAFB;
-          font-size: 18px;
+          color: rgba(255, 255, 255, 80%);
+          font-size: 16px;
           margin-bottom: 3px;
+          margin-top: 5px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          width: 300px;
         }
 
         .date {
           font-size: 14px;
           letter-spacing: 0.1px;
           color: #92929D;
+          margin-top: 0;
         }
 
         .duration {
@@ -80,8 +101,9 @@
           justify-content: center;
           height: 24px;
           width: 48px;
-          top: 150px;
-          margin-left: 16px;
+          //top: 150px;
+          top: 130px;
+          //margin-left: 16px;
           background-color: #171725;
           border-radius: 8px;
           color: #ffffff;
