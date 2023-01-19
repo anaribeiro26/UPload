@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ChannelComments} from "../../../../services/UPload.model";
 import {UPloadService} from "../../../../services/UPload.service";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-channel-comments',
@@ -25,11 +26,45 @@ export class ChannelCommentsComponent implements OnInit {
     })
   }
 
-  handleCommentFormSubmit(data: {name: string, email: string, message: string}) {
+  handleCommentFormSubmit(data: { name: string; email: string; message: string }, userPost: NgForm){
+
     console.log(data)
-    this.UPload.commentChannel(this.channel_id, data.name, data.email, data.message).subscribe((response) =>
-      console.log(response)
-    )
+    const nameInput = data.name.valueOf()
+    console.log(nameInput)
+    const emailInput = data.email.valueOf()
+    const messageInput = data.message.valueOf()
+
+
+    if (this.reloadPage(nameInput, emailInput, messageInput)) {
+      this.UPload.commentChannel(this.channel_id, data.name, data.email, data.message).subscribe((response) => {
+        this.comments.unshift({
+          name: data.name,
+          comment: data.message,
+          id: parseInt("0"),
+          channel_id: this.channel_id,
+          date: "0 segundos"
+        })
+        userPost.form.reset();
+      })
+    } else {
+      this.errorMessage();
+    }
+
+  }
+
+
+
+  // @ts-ignore
+  reloadPage(nameInput, emailInput, messageInput) {
+    if (nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2 ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  errorMessage() {
+    alert('erro')
   }
 
 }

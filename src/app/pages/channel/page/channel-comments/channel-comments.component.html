@@ -1,7 +1,7 @@
 <div class="comments">
   <h4 class="title">{{title}}</h4>
   <div class="form">
-    <form #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value)">
+    <form #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
       <div class="form-box">
         <div class="random_photo">
           <img alt="photo" [src]="url+random+set">
