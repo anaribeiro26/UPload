@@ -8,7 +8,7 @@ export interface Thematics {
   header: string;
   thumbnail: string;
   id: number;
-  logo : string
+Ad  logo: string
 }
 
 export interface ThematicVideos {
@@ -83,31 +83,31 @@ export interface VideoComments {
   id: string;
 }
 
-export interface  EntityID {
+export interface EntityID {
   target_id: number;
 }
 
-export interface  EntityType {
+export interface EntityType {
   value: string;
 }
 
-export interface  CommentType {
+export interface CommentType {
   target_id: string;
 }
 
-export interface  VideoCommentMachineName {
+export interface VideoCommentMachineName {
   value: string;
 }
 
-export interface  ChannelCommentMachineName {
+export interface ChannelCommentMachineName {
   value: string;
 }
 
-export interface  VideoCommentUsername {
+export interface VideoCommentUsername {
   value: string;
 }
 
-export interface  ChannelCommentUsername {
+export interface ChannelCommentUsername {
   value: string;
 }
 
@@ -116,7 +116,7 @@ export interface VideoCommentBody {
   format: string;
 }
 
-export interface  ChannelCommentBody {
+export interface ChannelCommentBody {
   value: string;
   format: string;
 }
@@ -177,6 +177,7 @@ export interface Playlists {
 
 export interface VideosPlaylist {
   video: string;
+  video_id: string;
   channel: string;
   category: string;
   description: string;
