@@ -26,6 +26,8 @@ export class VideoDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let result = 4 + 5 + "1";
+    console.log(result);
 
     // const id = this.route.snapshot.params["id"];
     this.route.params.subscribe((params) => {
@@ -138,6 +140,7 @@ export class VideoDetailsComponent implements OnInit {
       }
     }
   }
+
 
   isLiked(): boolean {
     if (this.video !== undefined) {
