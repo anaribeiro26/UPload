@@ -6,10 +6,10 @@
   padding-right: 40px;
 
   @media screen and (max-width: 1285px) {
-    padding-right: 20px
+    padding-right: 15px
   }
 
-  @media screen and (max-width: 951px) {
+  @media screen and (max-width: 941px) {
     display: none;
   }
 
@@ -22,7 +22,7 @@
       //position: relative;
       width: 304px;
       //height: 416px;
-      margin-bottom: 20px;
+      margin-bottom: 30px;
       //left: 62rem;
       //top: 36px;
       background: #1C1C24;
@@ -124,7 +124,7 @@
       border-radius: 15px;
 
       .thematic:hover {
-        color: #FFFFFF;
+       // color: #FFFFFF;
 
         .thematic_info {
 
@@ -189,10 +189,15 @@
           //padding-left: 42px;
           // margin-top: -20px;
           // padding-bottom: 5px;
-          font-size: 14px;
-          padding-left: 53px;
-          margin-top: -25px;
-          padding-bottom: 15px;
+         font-size: 13px;
+         // padding-left: 53px;
+          padding-left: 56px;
+         // margin-top: -35px;
+         // margin-bottom: 15px;
+        }
+
+        span:hover {
+        color: rgba(255, 255, 255, 100%);
         }
 
         .logo {
@@ -209,6 +214,7 @@
 
         .thematic_info {
           display: flex;
+          height: 45px;
           // align-items: flex-end;
           margin-bottom: -10px;
           //align-items: center;
@@ -225,6 +231,12 @@
             h2 {
               font-size: 16px;
               color: rgba(255, 255, 255, 80%);
+              width: 205px;
+              display: -webkit-box;
+              -webkit-line-clamp: 1;
+              -webkit-box-orient: vertical;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
           }
         }
@@ -233,6 +245,7 @@
       .image {
         display: flex;
         justify-content: center;
+        margin-top: 7px;
 
         .header {
           //width: 90%;
