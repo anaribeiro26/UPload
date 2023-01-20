@@ -7,18 +7,15 @@
           <fa-icon class="flag" [icon]="faFlag"></fa-icon>
         </div>
         <div class="tags">
-          <a class="tag-item" *ngFor="let tag of video.tags.split(',').slice(0, 3)"
+          <span class="tag-item" *ngFor="let tag of video.tags.split(',').slice(0, 3)"
              routerLink="/tags/{{tag.split(' ').join('')}}"
              routerLinkActive="active"
-          >#{{tag.split(' ').join('')}}</a>
+          >#{{tag.split(' ').join('')}} </span>
         </div>
         <div class="video-line">
           <div class="video">
             <app-youtube-player controls="0"
-                                [id]="getYoutubeId(video.video)"
-            ></app-youtube-player>
-          </div>
-
+                                [id]="getYoutubeId(video.video)"></app-youtube-player></div>
         </div>
         <div class="channel-box" title="{{video.channel}}">
           <div class="photo" routerLink="/channels/{{video.channel_id}}">
@@ -55,8 +52,8 @@
         <app-video-comments [video_id]="video.id"></app-video-comments>
       </div>
     </div>
-  </div>
   <div class="suggested-videos">
-    <app-suggested-videos></app-suggested-videos>
+    <app-suggested-videos [id]="video.id"></app-suggested-videos>
+  </div>
   </div>
 </div>

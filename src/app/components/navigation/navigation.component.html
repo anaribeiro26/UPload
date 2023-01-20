@@ -3,7 +3,8 @@
   <div class="mobile"><img alt="logo" src="../../../assets/upload.svg" routerLink="/homepage" routerLinkActive="active">
     <div class="hide-bar" (click)="sidebar=!sidebar">
       <fa-icon [icon]="faBars"></fa-icon></div>
-  </div></div>
+  </div>
+  </div>
 <div class="side-bar" [ngClass]="sidebar ? 'hidden' : 'active'">
  <div class="mobile_bar"></div>
   <div class="logo"><img alt="logo" src="../../../assets/upload.svg" routerLink="/homepage" routerLinkActive="active"></div>
@@ -26,8 +27,12 @@
       <p class="title">{{fourth_item}}</p>
     </div>
     <div class="tags">
-      <p>TAGS</p>
-      <div class="user_tags"></div>
+      <p class="tags_title">TAGS</p>
+      <div class="tag">
+      <span class="user_tags" routerLink="/tags/{{t.name}}" *ngFor="let t of tags | slice: 0: 6">
+        <p [innerHTML]="t.name"> </p>
+      </span>
+      </div>
     </div>
   </div>
   </div>

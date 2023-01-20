@@ -16,7 +16,7 @@ export class ThematicsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.UPload.getArticles().subscribe((thematics) => {
+    this.UPload.getThematics().subscribe((thematics) => {
       this.thematics = (thematics as Thematics[]).map((thematic : Thematics) => {
         return {...thematic, title: thematic.title.replace(/\s/g, '-')}
       });

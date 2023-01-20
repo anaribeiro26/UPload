@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {UPloadService} from "../../../../services/UPload.service"
-import {ActivatedRoute} from "@angular/router";
-import {Videos} from "../../../../services/UPload.model";
+import {Component, Input, OnInit} from '@angular/core';
+import {UPloadService} from "../../../services/UPload.service"
+import {Videos} from "../../../services/UPload.model";
 
 @Component({
   selector: 'app-suggested-videos',
@@ -9,18 +8,19 @@ import {Videos} from "../../../../services/UPload.model";
   styleUrls: ['./suggested-videos.component.scss']
 })
 export class SuggestedVideosComponent implements OnInit {
+  @Input() id!: string;
 
   videos: Videos[] | undefined = [];
   imageUrl = '/maxresdefault.jpg';
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
 
-  constructor(private route: ActivatedRoute, private UPload: UPloadService) {
+  constructor(private UPload: UPloadService) {
   }
 
   ngOnInit(): void {
 
-    this.UPload.getVideos().subscribe((videos) => {
+    this.UPload.getSuggestedVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
       this.videos.forEach(video => {
         let word = video.date.replace('atrás', '').split(" ");

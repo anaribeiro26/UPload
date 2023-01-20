@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UPloadService} from "../../../../services/UPload.service";
+import {UPloadService} from "../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
-import {VideoComments} from "../../../../services/UPload.model";
+import {VideoComments} from "../../../services/UPload.model";
 
 
 @Component({

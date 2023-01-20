@@ -71,7 +71,7 @@ export interface Videos {
   video: string;
   title: string;
   duration: string;
-  canal_id: string;
+  channel_id: string;
   tags_id: string;
 }
 

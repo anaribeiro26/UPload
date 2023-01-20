@@ -18,11 +18,11 @@ export class SuggestionsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.UPload.getChannels().subscribe((channelsList) => {
+    this.UPload.getSuggestedChannels().subscribe((channelsList) => {
       this.channelsList = channelsList as Channels[];
     })
 
-    this.UPload.getArticles().subscribe((thematics) => {
+    this.UPload.getThematics().subscribe((thematics) => {
       this.thematics = thematics as Thematics[]
       }
     )
