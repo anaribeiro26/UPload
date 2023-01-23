@@ -32,7 +32,8 @@
           </div>
         </div>
         <div class="play">
-          <div class="text">{{p.numberOfVideos}} vídeos</div>
+          <div class="text">{{p.numberOfVideos}} vídeo<span *ngIf="p.numberOfVideos">
+            <span *ngIf="p.numberOfVideos > 1">s</span></span></div>
         </div>
       </div>
 

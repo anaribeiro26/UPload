@@ -1,15 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {UPloadService} from "../../../services/UPload.service";
-import {VideoDetails} from "../../../services/UPload.model";
+import {UPloadService} from "../../services/UPload.service";
+import {VideoDetails} from "../../services/UPload.model";
 import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
-import {
-  faFlag,
-  faThumbsDown as faThumbsDownSolid,
-  faThumbsUp as faThumbsUpSolid,
-} from "@fortawesome/free-solid-svg-icons";
-
-
+import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid} from "@fortawesome/free-solid-svg-icons";
 
 //@ts-ignore
 
@@ -63,8 +57,8 @@ export class VideoDetailsComponent implements OnInit {
           video[0].dislikes = counters[0].count;
         }
       })
-    })});
-
+    })
+    });
   }
 
   getYoutubeId(youTubeURL: string) {
@@ -189,9 +183,6 @@ export class VideoDetailsComponent implements OnInit {
     }
   }
 }
-
-
-
 
 
 

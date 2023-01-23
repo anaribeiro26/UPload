@@ -16,10 +16,13 @@
   transition: all 0.5s ease-in-out;
 
   .menu {
+
    // padding-top: 20px;
 
     .menu-item {
       border-left: 2px solid #1c1c24;
+     //height: 40px;
+     //padding-bottom: 60px;
 
       &.active {
         border-left: 2px solid #FFFFFF;
@@ -62,10 +65,40 @@
   }
 
   .tags {
-    p {
-      padding: 16px;
+//    display: block;
+
+    .tags_title {
+      width: 200px;
+      padding-top: 10px;
+      padding-left: 16px;
+      //padding: 16px;
       font-size: 13px;
       color: rgba(255, 255, 255, 70%);
+    }
+    .tag {
+      margin-left: 20px;
+
+      .user_tags:hover {
+        cursor: pointer;
+        border: solid 2px rgba(255, 255, 255, 50%);
+        color: rgba(255, 255, 255, 100%);
+      }
+
+      .user_tags {
+        // display: flex;
+        margin-right: 5px;
+        border: solid 2px rgba(255, 255, 255, 10%);
+        border-radius: 5px;
+        padding-left: 6px;
+        padding-right: 6px;
+        padding-bottom: 4px;
+
+        p {
+          font-size: 13px;
+          margin-bottom: 5px;
+          //margin: 0;
+        }
+      }
     }
   }
 }

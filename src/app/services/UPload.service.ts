@@ -1,4 +1,4 @@
-import {Injectable} from '@angular/core';
+import {Injectable, Input} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
@@ -41,7 +41,6 @@ export class UPloadService {
 
   icon: any = faThumbsUp;
 
-
   videosPlaylist: VideosPlaylist[] = [];
 
   favorites: number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
@@ -50,7 +49,7 @@ export class UPloadService {
   constructor(private http: HttpClient) {
   }
 
-  getArticles() {
+  getThematics() {
     return this.http.get(BASE_URL + "/artigos")
   }
 
@@ -62,6 +61,16 @@ export class UPloadService {
     return this.http.get<ThematicVideos[]>(BASE_URL + "/videos/artigo/" + tags_id)
   }
 
+ //getThematicVideos() {
+ //  return new Observable(observer => {
+ //    this.http.get<ThematicVideos[]>(BASE_URL + "/videos").subscribe((videos: Videos[]) => {
+ //      observer.next(videos.filter((video: Videos) => {
+ //        return this.favorites.includes(video.id)
+ //      }))
+ //    });
+ //  })
+ //}
+
   getChannel(id: number) {
     return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
   }
@@ -70,12 +79,20 @@ export class UPloadService {
     return this.http.get(BASE_URL + "/canais")
   }
 
+  getSuggestedChannels() {
+    return this.http.get(BASE_URL + "/canais/sugeridos")
+  }
+
   getChannelComments(channel_id: number) {
     return this.http.get<ChannelComments[]>(BASE_URL + "/comentarios/canal/" + channel_id)
   }
 
   getChannelVideos(channel_id: number) {
     return this.http.get<ChannelVideos[]>(BASE_URL + "/videos/canal/" + channel_id)
+  }
+
+  getSuggestedVideos() {
+    return this.http.get(BASE_URL + "/videos/sugeridos")
   }
 
   getVideos() {
@@ -226,7 +243,6 @@ export class UPloadService {
  //  ],
  //  uid: ["0"]
  //}
-
  //  return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
  //}
 
@@ -246,13 +262,15 @@ export class UPloadService {
       ],
       uid: ["0"]
     }
-
     return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
   }
 
+  getSuggestedTags() {
+    return this.http.get<Tags[]>(BASE_URL + "/tags/sugeridas")
+  }
 
-  getTag(id: number) {
-    return this.http.get<Tags[]>(BASE_URL + "/tags/" + id)
+  getTag(name: string) {
+    return this.http.get<Tags[]>(BASE_URL + "/tags/" + name)
   }
 
   getTagVideos(tags_id: number) {

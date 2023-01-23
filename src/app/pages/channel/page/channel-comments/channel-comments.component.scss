@@ -60,10 +60,7 @@
         .user_data {
           display: flex;
         }
-
-
       }
-
     }
 
     .submit-button {
@@ -149,6 +146,7 @@
       .timestamp {
         display: flex;
         color: rgba(116, 116, 123, 1);
+        font-size: 14px;
 
         .ago {
           margin-right: 5px;
@@ -170,6 +168,8 @@
         margin-right: auto;
         margin-top: auto;
         margin-bottom: auto;
+        font-size: 14px;
+
       }
     }
   }

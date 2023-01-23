@@ -1,0 +1,30 @@
+ <div class="sidebar">
+    <div class="suggested-thematics">
+      <div class=thematic_headline>
+        <h2>Temáticas sugeridas</h2>
+        <p routerLink="/thematics/">VER TODAS</p>
+      </div>
+      <div class="thematic" *ngFor="let t of thematics | slice: 0: 3" routerLink="/articles/{{t.id}}"
+           routerLinkActive="active" [title]="t.title">
+        <div class="box">
+          <div class="top">
+            <div class="thematic_info">
+              <div class="thematic_thumbnail">
+                <img class="logo" alt="logo" [src]="image_url + t.thumbnail">
+              </div>
+              <div class="thematic_title">
+                <h2 [innerHTML]="t.title"></h2>
+              </div>
+            </div>
+           <a class="tag"><span *ngFor="let tag of t.tags.split(',').slice(0, 3)"
+                 routerLink="/tags/{{tag.split(' ').join('')}}"
+                 routerLinkActive="active"
+            >#{{tag.split(' ').join('')}} </span></a>
+          </div>
+          <div class="image">
+            <img class="header" alt="header" [src]="image_url + t.header">
+          </div>
+        </div>
+      </div>
+  </div>
+</div>

@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {faHouse, faBarsStaggered, faBars, faClapperboard, faPlay} from "@fortawesome/free-solid-svg-icons";
+import {Tags} from "../../services/UPload.model";
+import {UPloadService} from "../../services/UPload.service";
 
 @Component({
   selector: 'app-navigation',
@@ -20,11 +22,14 @@ export class NavigationComponent implements OnInit {
 
   sidebar: boolean = true;
 
+  tags: Tags[] | undefined = [];
 
-
-  constructor() {
+  constructor(private UPload: UPloadService) {
   }
 
-  ngOnInit(): void {
+    ngOnInit(): void {
+      this.UPload.getSuggestedTags().subscribe((tags) => {
+        this.tags = tags as Tags[];
+      })
+    }
   }
-}

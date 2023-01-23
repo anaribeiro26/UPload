@@ -23,12 +23,13 @@
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
-    gap: 20px;
-    padding-bottom: 25px;
+    gap: 25px;
+    padding-bottom: 20px;
     margin-left: 30px;
 
     .cel {
-      width: 340px;
+      //width: 340px;
+      width: 312px;
       //  height: 280px;
       //height: 270px;
       height: 255px;
@@ -38,7 +39,8 @@
 
       .card_image {
         margin-bottom: 15px;
-        width: 340px;
+       // width: 340px;
+        width: 312px;
         height: 176px;
         // object-fit: cover;
         border-radius: 16px 16px 0 0;
