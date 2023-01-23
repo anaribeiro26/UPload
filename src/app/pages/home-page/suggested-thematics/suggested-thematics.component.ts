@@ -5,22 +5,17 @@ import {Channels} from "../../../services/UPload.model";
 import {Thematics} from "../../../services/UPload.model";
 
 @Component({
-  selector: 'app-suggestions',
-  templateUrl: './suggestions.component.html',
-  styleUrls: ['./suggestions.component.scss']
+  selector: 'app-suggested-thematics',
+  templateUrl: './suggested-thematics.component.html',
+  styleUrls: ['./suggested-thematics.component.scss']
 })
-export class SuggestionsComponent implements OnInit {
-  channelsList: Channels[] = [];
+export class SuggestedThematicsComponent implements OnInit {
   thematics: Thematics[] = [];
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io"
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
   ngOnInit(): void {
-
-    this.UPload.getSuggestedChannels().subscribe((channelsList) => {
-      this.channelsList = channelsList as Channels[];
-    })
 
     this.UPload.getThematics().subscribe((thematics) => {
       this.thematics = thematics as Thematics[]

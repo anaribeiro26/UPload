@@ -22,18 +22,34 @@
 </div>
 <div class="uploads">
   <div class="videos">
-    <div class="cel" *ngFor="let f of favorites_list" routerLink="/video/{{f.id}}" routerLinkActive="active">
+    <div class="cel" *ngFor="let f of favorites_list">
       <div class="box">
-        <div class="card_image">
+        <div class="card_image" routerLink="/video/{{f.id}}" routerLinkActive="active">
           <img class="small_image"
                [src]="f.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
         </div>
         <div class="itens">
           <p class="name" routerLink="/channels/{{f.channel_id}}" [innerHTML]="f.channel"></p>
-          <p class="video_title" [innerHTML]="f.title"></p>
+          <p class="video_title" routerLink="/video/{{f.id}}" routerLinkActive="active" [innerHTML]="f.title"></p>
+          <div class="timestamp_actions">
+          <div class="timestamp" routerLink="/video/{{f.id}}" routerLinkActive="active">
           <p class="date">há {{f.date}}</p>
+          </div>
+          <div class="actions">
+            <div class="bookmark" (click)="changeFavorite(f.id)">
+              <fa-icon [icon]="favourite(f.id)? faBookmarkSolid : faBookmark"></fa-icon>
+            </div>
+            <div class="share">
+              <!--              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>-->
+              <!--<fa-icon class="share-button" [icon]="faShare" (click)="clickShare(v.video)"></fa-icon>-->
+              <img class="share-button" src="../../../assets/ic_Share.svg" (click)="clickShare(f.video)">
+            </div>
+          </div>
+          </div>
           <p class="duration" [innerHTML]="f.duration"></p>
+          <div class="logo-section">
           <img class="logo" [src]="image_url + f.logo" routerLink="/channels/{{f.channel_id}}">
+        </div>
         </div>
       </div>
     </div>

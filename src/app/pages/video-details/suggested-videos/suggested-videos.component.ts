@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UPloadService} from "../../../services/UPload.service"
 import {Videos} from "../../../services/UPload.model";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-suggested-videos',
@@ -8,14 +9,14 @@ import {Videos} from "../../../services/UPload.model";
   styleUrls: ['./suggested-videos.component.scss']
 })
 export class SuggestedVideosComponent implements OnInit {
-  @Input() id!: string;
+ // @Input() id!: number;
 
   videos: Videos[] | undefined = [];
   imageUrl = '/maxresdefault.jpg';
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
 
-  constructor(private UPload: UPloadService) {
+  constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
 
   ngOnInit(): void {

@@ -3,7 +3,7 @@ import {UPloadService} from "../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
 import {Videos} from "../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
-import {faBookmark as faBookmarkSolid, faShareNodes} from "@fortawesome/free-solid-svg-icons";
+import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
 
 @Component({

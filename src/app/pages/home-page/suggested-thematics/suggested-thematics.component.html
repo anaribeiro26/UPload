@@ -1,25 +1,10 @@
-<div class="suggestions">
-  <div class="sidebar">
-    <div class="sugested-channels">
-      <div class="headline">
-        <h2 routerLink="/channels/">Canais sugeridos</h2>
-      </div>
-      <div class="sugestion" *ngFor="let c of channelsList | slice: 0: 5">
-        <!--      <div class="sugestion">-->
-        <div class="channel-section">
-          <img class="logo" alt="logo" [src]="image_url + c.logo" routerLink="/channels/{{c.id}}"
-               routerLinkActive="active">
-          <h2 class="channel_title" routerLink="/channels/{{c.id}}" routerLinkActive="active">{{c.title}}</h2>
-        </div>
-      </div>
-      <div class="more" routerLink="/channels/">MOSTRAR MAIS</div>
-    </div>
+ <div class="sidebar">
     <div class="suggested-thematics">
       <div class=thematic_headline>
         <h2>Temáticas sugeridas</h2>
         <p routerLink="/thematics/">VER TODAS</p>
       </div>
-      <div class="thematic" *ngFor="let t of thematics | slice: 0: 5" routerLink="/articles/{{t.id}}"
+      <div class="thematic" *ngFor="let t of thematics | slice: 0: 3" routerLink="/articles/{{t.id}}"
            routerLinkActive="active" [title]="t.title">
         <div class="box">
           <div class="top">
@@ -41,6 +26,5 @@
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
