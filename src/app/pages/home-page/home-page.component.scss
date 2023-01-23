@@ -22,17 +22,17 @@
     width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
-    padding-right: 40px;
+  padding-right: 30px;
   }
 
   @media screen and (max-width: 1285px) {
-    .sugestions {
-      padding-right: 15px
+    .suggestions {
+      padding-right: 25px;
     }
   }
 
   @media screen and (max-width: 941px) {
-    .sugestions {
+    .suggestions {
       display: none;
     }
   }
