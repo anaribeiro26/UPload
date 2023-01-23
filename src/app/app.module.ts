@@ -13,7 +13,7 @@ import {FavouritesComponent} from "./pages/favourites/favourites.component";
 import {ThematicsComponent} from './pages/thematics/list/thematics.component';
 import {NavigationComponent} from './components/navigation/navigation.component';
 import {ChannelVideosComponent} from './pages/channel/page/channel-videos/channel-videos.component';
-import {HttpClientModule, HttpClient} from "@angular/common/http";
+import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from "@angular/common/http";
 import {PlaylistDetailsComponent} from './pages/playlists/playlist-details/playlist-details.component';
 import {ChannelsListComponent} from './pages/channel/list/channels-list.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
@@ -76,7 +76,13 @@ import { SuggestedChannelsComponent } from './pages/home-page/suggested-channels
     }),
     FormsModule
   ],
-  providers: [],
+  providers: [
+   //{
+   //  provide: HTTP_INTERCEPTORS,
+   //  useClass: LanguageInterceptor,
+   //  multi: true
+   //}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

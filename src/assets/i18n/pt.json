@@ -1,12 +1,29 @@
 {
   "upload": {
+    "language_pt": "Português",
+    "language_en": "Inglês",
+    "nav_homepage": "Início",
+    "nav_channels": "Canais",
+    "nav_thematics": "Temáticas",
+    "nav_playlists": "Playlists",
     "homepage_title": "Últimos Vídeos",
     "channel_suggestion": "Canais Sugeridos",
     "article_suggestion": "Temáticas Sugeridas",
+    "show_all": "VER TODAS",
+    "show_more": "MOSTRAR MAIS",
     "video_suggestion": "Suggested Vídeos",
-    "articles_title": "Temáticas",
+    "articles_title": "Artigos de Temáticas",
+    "favorites_headline": "Vídeos Favoritos",
+    "favorites_title": "Favoritos",
+    "favorite_video": "vídeo",
+    "tags_title": "Vídeos relacionados pela tag:",
     "channel_section_1": "Vídeos",
-    "channel_section_2": "Comentários",
-    "comment_button": "Submeter Comentário"
+    "comment_section": "Comentários",
+    "comment_name": "Nome",
+    "comment_message": "Mensagem",
+    "comment_button": "Submeter Comentário",
+    "time_ago": "",
+    "timestamp": "há ",
+    "and": "e"
   }
 }

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../services/UPload.service";
+import {TranslateService} from "@ngx-translate/core";
 import {VideoDetails} from "../../services/UPload.model";
 import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
 import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid} from "@fortawesome/free-solid-svg-icons";
@@ -15,6 +16,7 @@ import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid
 export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
+  and:any;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   faThumbsUp = faThumbsUp;
   faThumbsDown = faThumbsDown;
@@ -22,25 +24,24 @@ export class VideoDetailsComponent implements OnInit {
   faThumbsUpSolid = faThumbsUpSolid;
   faFlag = faFlag;
 
-  constructor(private route: ActivatedRoute, private UPload: UPloadService) {
+  constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) {
   }
 
   ngOnInit(): void {
-    let result = 4 + 5 + "1";
-    console.log(result);
 
-    // const id = this.route.snapshot.params["id"];
     this.route.params.subscribe((params) => {
       let id = params['id'];
     this.UPload.getVideoDetails(id).subscribe((video) => {
       this.video = video[0];
 
+     this.translate.get('upload.and').subscribe(and => {
+       this.and = (and);
+     });
 
-        let word = this.video.date.split(" ");
-        if(word.length > 2) {
-          this.video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+      let word = this.video.date.split(" ");
+      if(word.length > 2) {
+          this.video.date = `${word[0]} ${word[1]} ${this.and} ${word[2]} ${word[3]}`
         }
-
 
       this.UPload.getNumberOfLikes(id).subscribe( (counters) => {
         if (counters.length == 0) {

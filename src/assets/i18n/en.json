@@ -1,12 +1,29 @@
 {
   "upload": {
+    "language_pt": "Portuguese",
+    "language_en": "English",
+    "nav_homepage": "Homepage",
+    "nav_channels": "Channels",
+    "nav_thematics": "Thematics",
+    "nav_playlists": "Playlists",
     "homepage_title": "Latest Videos",
     "channel_suggestion": "Suggested Channels",
     "article_suggestion": "Suggested Thematics",
+    "show_all": "SHOW ALL",
+    "show_more": "SHOW MORE",
     "video_suggestion": "Suggested Videos",
     "articles_title": "Thematics",
+    "favorites_headline": "Favorited Videos",
+    "favorites_title": "Favorites",
+    "favorite_video": "video",
+    "tags_title": "Videos grouped by tag:",
     "channel_section_1": "Videos",
-    "channel_section_2": "Comments",
-    "comment_button": "Submit Comment"
+    "comment_section": "Comments",
+    "comment_name": "Name",
+    "comment_message": "Message",
+    "comment_button": "Submit Comment",
+    "time_ago": "ago",
+    "timestamp": "",
+    "and": "and"
   }
 }

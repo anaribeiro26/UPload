@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Playlists} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../services/UPload.service";
-import {PlaylistVideosComponent} from "./playlist-videos/playlist-videos.component";
 
 @Component({
   selector: 'app-playlists',
@@ -11,11 +10,9 @@ import {PlaylistVideosComponent} from "./playlist-videos/playlist-videos.compone
 })
 export class PlaylistsComponent implements OnInit {
   playlists: Playlists[] = [];
-
   playListFilters: Playlists[] = [];
-
+  and: any;
   image_url = '/maxresdefault.jpg';
-
   // videosArray: number
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {

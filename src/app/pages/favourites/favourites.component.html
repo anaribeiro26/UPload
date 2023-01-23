@@ -1,20 +1,20 @@
 <div class="favorites" *ngIf="favorites_list.length > 0">
   <div class="header">
-    <h1 routerLink="/playlists/favourites" routerLinkActive="active">Favoritos</h1>
+    <h1 routerLink="/playlists/favourites" routerLinkActive="active">{{'upload.favorites_title' | translate}}</h1>
   </div>
   <div class="videos">
     <div class="cel" routerLink="/playlists/favourites" routerLinkActive="active">
       <div class="box">
         <div class="card_image">
-            <img class="thumbnail"
-                 [src]="favorites_list[0].video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+          <img class="thumbnail" alt="logo"
+               [src]="favorites_list[0].video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         </div>
         <div class="itens">
-          <p class="title">Vídeos Favoritos</p>
+          <p class="title">{{'upload.favorites_headline' | translate}}</p>
         </div>
-      <div class="play">
-        <fa-icon class="star" [icon]="faStar"></fa-icon>
-      </div>
+        <div class="play">
+          <fa-icon class="star" [icon]="faStar"></fa-icon>
+        </div>
       </div>
     </div>
   </div>

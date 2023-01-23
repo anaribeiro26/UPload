@@ -1,5 +1,5 @@
 <div class="header">
-  <h1>Últimos Vídeos</h1>
+  <h1>{{'upload.homepage_title' | translate}}</h1>
 </div>
 <div class="body">
   <div class="container">
@@ -17,7 +17,7 @@
               <p class="name" routerLinkActive="active" [innerHTML]="v.channel"></p>
               <p class="titleVideo" routerLink="/video/{{v.id}}" routerLinkActive="active" [innerHTML]="v.title"></p>
               <div class="date">
-                <p class="ago">há</p>
+                <p class="ago">{{'upload.timestamp' | translate}}</p>
                 <p class="timestamp" [innerHTML]="v.date"></p>
               </div>
               <p class="duration" [innerHTML]="v.duration"></p>
@@ -29,7 +29,7 @@
               <div class="share">
                 <!--              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>-->
                 <!--<fa-icon class="share-button" [icon]="faShare" (click)="clickShare(v.video)"></fa-icon>-->
-               <img class="share-button" src="../../../assets/ic_Share.svg" (click)="clickShare(v.video)">
+               <img class="share-button" alt="share" src="../../../assets/ic_Share.svg" (click)="clickShare(v.video)">
               </div>
             </div>
           </div>

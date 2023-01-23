@@ -1,8 +1,8 @@
  <div class="sidebar">
     <div class="suggested-thematics">
       <div class=thematic_headline>
-        <h2>Temáticas sugeridas</h2>
-        <p routerLink="/thematics/">VER TODAS</p>
+        <h2>{{'upload.article_suggestion' | translate}}</h2>
+        <p routerLink="/thematics/">{{'upload.show_all' | translate}}</p>
       </div>
       <div class="thematic" *ngFor="let t of thematics | slice: 0: 3" routerLink="/articles/{{t.id}}"
            routerLinkActive="active" [title]="t.title">
