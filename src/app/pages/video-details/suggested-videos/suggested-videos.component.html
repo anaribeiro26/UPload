@@ -3,19 +3,19 @@
     <div class="cel" *ngFor="let video of videos | slice: 0: 2">
       <div class="box" routerLink="/video/{{video.id}}" routerLinkActive="active" title="{{video.title}}">
         <div class="card_image">
-          <img class="small_image"
+          <img class="small_image" alt="thumbnail"
                [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
         </div>
         <div class="itens">
           <p class="name">{{video.channel}}</p>
           <a class="title">{{video.title}}</a>
           <div class="date">
-            <p class="ago">há</p>
+            <p class="ago">{{'upload.timestamp' | translate}}</p>
             <p class="timestamp" [innerHTML]="video.date"></p>
           </div>
           <p class="duration">{{video.duration}}</p>
           <a>
-            <img class="logo" [src]="image_url + video.logo">
+            <img class="logo" alt="logo" [src]="image_url + video.logo">
           </a>
         </div>
       </div>

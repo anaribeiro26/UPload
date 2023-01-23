@@ -1,18 +1,18 @@
 <div class="header">
-  <h1>Playlists</h1>
+  <h1>{{'upload.nav_playlists' | translate}}</h1>
 </div>
 <div class="uploads">
   <div class="videos">
     <div class="cel" *ngFor="let v of videosPlaylist" routerLink="/video/{{v.video_id}}" routerLinkActive="active">
       <div class="box">
         <div class="card_image">
-          <img class="small_image"
+          <img class="small_image" alt="thumbnail"
                [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         </div>
         <div class="itens">
           <p class="name">{{v.channel}}</p>
           <p class="titleVideo">{{v.title}}</p>
-          <p class="date">há {{v.date}}</p>
+          <p class="date">{{'upload.timestamp' | translate}} {{v.date}}</p>
           <p class="duration">{{v.duration}}</p>
           <!--          <img class="logo" [src]="image_url + v.logo" routerLink="/video/{{v.id}}" routerLinkActive="active">-->
         </div>

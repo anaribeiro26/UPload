@@ -9,25 +9,31 @@ import {TranslateService} from "@ngx-translate/core";
 })
 export class AppComponent {
   title = 'UpLoad';
-  selectLang: string = "";
-  TransLang: string[] = [];
-
+  //selectLang: string = ""
+  //TransLang: any[] = [];
+  lang: any;
+ // TransLang: string[] = [];
 //favorites: any = [];
 
 constructor(public translate: TranslateService, public form: FormsModule) {
   translate.setDefaultLang("pt");
   translate.addLangs(["en", "pt"]);
-  translate.use("pt");
+  translate.use(localStorage.getItem('lang') || 'pt');
 }
 
-setTransLanguage(){
-  this.translate.use(this.selectLang);
+setTransLanguage(lang: any){
+localStorage.setItem('lang', lang);
+window.location.reload();
+
 }
-getTransLanguage(){
-  this.TransLang=this.translate.getLangs();
-}
+
+//getTransLanguage(){
+  //this.TransLang=[...this.translate.getLangs()];
+  //this.TransLang=this.translate.getLangs();
+//}
 ngOnInit(){
-  this.getTransLanguage();
+ // this.getTransLanguage();
+  this.lang = localStorage.getItem('lang') || 'pt';
 }
     //  let browserLang = translate.getBrowserLang();
     // // translate.use(browserLang.match(/pt|en/) ? browserLang : 'pt');

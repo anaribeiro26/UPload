@@ -22,7 +22,15 @@ import {
 } from "./UPload.model";
 import {Observable} from "rxjs";
 
-const BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io/api"
+let prefix: any;
+let lang = localStorage.getItem('lang') || 'pt'
+if (lang == 'pt') {
+  prefix = "/pt-pt/api";
+} else {
+  prefix = "/en/api";
+}
+
+let BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io"
 const BASE_URL_FLAGGING = "https://dev-project-upskill-grupo05.pantheonsite.io/entity/flagging"
 const BASE_URL_COMMENTS = "https://dev-project-upskill-grupo05.pantheonsite.io/comment"
 let icon = faThumbsUp;
@@ -50,37 +58,37 @@ export class UPloadService {
   }
 
   getThematics() {
-    return this.http.get(BASE_URL + "/artigos")
+    return this.http.get(BASE_URL + prefix + "/artigos")
   }
 
   getThematic(id: number) {
-    return this.http.get<Thematics[]>(BASE_URL + "/artigos/" + id)
+    return this.http.get<Thematics[]>(BASE_URL + prefix + "/artigos/" + id)
   }
 
   getThematicVideos(tags_id: number) {
     return this.http.get<ThematicVideos[]>(BASE_URL + "/videos/artigo/" + tags_id)
   }
 
- //getThematicVideos() {
- //  return new Observable(observer => {
- //    this.http.get<ThematicVideos[]>(BASE_URL + "/videos").subscribe((videos: Videos[]) => {
- //      observer.next(videos.filter((video: Videos) => {
- //        return this.favorites.includes(video.id)
- //      }))
- //    });
- //  })
- //}
+  //getThematicVideos() {
+  //  return new Observable(observer => {
+  //    this.http.get<ThematicVideos[]>(BASE_URL + "/videos").subscribe((videos: Videos[]) => {
+  //      observer.next(videos.filter((video: Videos) => {
+  //        return this.favorites.includes(video.id)
+  //      }))
+  //    });
+  //  })
+  //}
 
   getChannel(id: number) {
-    return this.http.get<Channels[]>(BASE_URL + "/canais/" + id)
+    return this.http.get<Channels[]>(BASE_URL + prefix + "/canais/" + id)
   }
 
   getChannels() {
-    return this.http.get(BASE_URL + "/canais")
+    return this.http.get(BASE_URL + prefix + "/canais")
   }
 
   getSuggestedChannels() {
-    return this.http.get(BASE_URL + "/canais/sugeridos")
+    return this.http.get(BASE_URL + prefix + "/canais/sugeridos")
   }
 
   getChannelComments(channel_id: number) {
@@ -88,15 +96,15 @@ export class UPloadService {
   }
 
   getChannelVideos(channel_id: number) {
-    return this.http.get<ChannelVideos[]>(BASE_URL + "/videos/canal/" + channel_id)
+    return this.http.get<ChannelVideos[]>(BASE_URL + prefix + "/videos/canal/" + channel_id)
   }
 
   getSuggestedVideos() {
-    return this.http.get(BASE_URL + "/videos/sugeridos")
+    return this.http.get(BASE_URL + prefix + "/videos/sugeridos")
   }
 
   getVideos() {
-    return this.http.get(BASE_URL + "/videos")
+    return this.http.get(BASE_URL + prefix + "/videos")
   }
 
   getVideoComments(video_id: string) {
@@ -104,7 +112,7 @@ export class UPloadService {
   }
 
   getVideoDetails(id: string) {
-    return this.http.get<VideoDetails[]>(BASE_URL + "/videos/" + id)
+    return this.http.get<VideoDetails[]>(BASE_URL + prefix + "/videos/" + id)
   }
 
   getNumberOfLikes(id: string) {
@@ -116,15 +124,53 @@ export class UPloadService {
   }
 
   getPlaylist(id: number) {
-    return this.http.get(BASE_URL + "/playlists/" + id)
+    return this.http.get(BASE_URL + prefix + "/playlists/" + id)
   }
 
   getPlaylists() {
-    return this.http.get(BASE_URL + "/playlists")
+    return this.http.get(BASE_URL + prefix + "/playlists")
   }
 
   getPlaylistVideos(id: number) {
-    return this.http.get<VideosPlaylist[]>(BASE_URL + "/videos/playlist/" + id)
+    return this.http.get<VideosPlaylist[]>(BASE_URL + prefix + "/videos/playlist/" + id)
+
+  }
+
+  getSuggestedTags() {
+    return this.http.get<Tags[]>(BASE_URL + prefix + "/tags/sugeridas")
+  }
+
+  getTag(name: string) {
+    return this.http.get<Tags[]>(BASE_URL + prefix + "/tags/" + name)
+  }
+
+  getTagVideos(tags_id: number) {
+    return this.http.get<TagVideos[]>(BASE_URL + prefix + "/videos/tag/" + tags_id)
+  }
+
+  getFavorites() {
+    return new Observable(observer => {
+      this.http.get<Videos[]>(BASE_URL + prefix + "/videos").subscribe((videos: Videos[]) => {
+        observer.next(videos.filter((video: Videos) => {
+          return this.favorites.includes(video.id)
+        }))
+      });
+    })
+  }
+
+
+  toggleFavorite(id: number) {
+    if (!this.isFavorite(id)) {
+      this.favorites.push(id)
+    } else {
+      let index = this.favorites.indexOf(id);
+      this.favorites.splice(index, 1)
+    }
+    localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
+  }
+
+  isFavorite(id: number): boolean {
+    return this.favorites.includes(id);
   }
 
   commentVideo(id: number, name: string, email: string, message: string) {
@@ -171,7 +217,7 @@ export class UPloadService {
     return this.http.post(BASE_URL_COMMENTS, body)
   }
 
-  commentChannel (id: number, name: string, email: string, message: string) {
+  commentChannel(id: number, name: string, email: string, message: string) {
     const body = {
       "entity_id": [
         {
@@ -231,20 +277,20 @@ export class UPloadService {
     return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
   }
 
- //annelComment(id: number) {
- //const body: ChannelCommentRequest = {
- //  entity_id: [id],
- //  entity_type: ["node"],
- //  flag_id: [
- //    {
- //      "value": "comment",
- //      "target_type": "flag",
- //    }
- //  ],
- //  uid: ["0"]
- //}
- //  return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
- //}
+  //annelComment(id: number) {
+  //const body: ChannelCommentRequest = {
+  //  entity_id: [id],
+  //  entity_type: ["node"],
+  //  flag_id: [
+  //    {
+  //      "value": "comment",
+  //      "target_type": "flag",
+  //    }
+  //  ],
+  //  uid: ["0"]
+  //}
+  //  return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
+  //}
 
   removeLikeOrDislike(id: number) {
     return this.http.delete(`${BASE_URL_FLAGGING}/${id}`)
@@ -264,43 +310,5 @@ export class UPloadService {
     }
     return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
   }
-
-  getSuggestedTags() {
-    return this.http.get<Tags[]>(BASE_URL + "/tags/sugeridas")
-  }
-
-  getTag(name: string) {
-    return this.http.get<Tags[]>(BASE_URL + "/tags/" + name)
-  }
-
-  getTagVideos(tags_id: number) {
-    return this.http.get<TagVideos[]>(BASE_URL + "/videos/tag/" + tags_id)
-  }
-
-  getFavorites() {
-    return new Observable(observer => {
-      this.http.get<Videos[]>(BASE_URL + "/videos").subscribe((videos: Videos[]) => {
-        observer.next(videos.filter((video: Videos) => {
-          return this.favorites.includes(video.id)
-        }))
-      });
-    })
-  }
-
-
-  toggleFavorite(id: number) {
-    if (!this.isFavorite(id)) {
-      this.favorites.push(id)
-    } else {
-      let index = this.favorites.indexOf(id);
-      this.favorites.splice(index, 1)
-    }
-    localStorage.setItem("my_favorites", JSON.stringify(this.favorites));
-  }
-
-  isFavorite(id: number): boolean {
-    return this.favorites.includes(id);
-  }
-
 
 }

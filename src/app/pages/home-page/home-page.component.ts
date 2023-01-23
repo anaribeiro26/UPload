@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UPloadService} from "../../services/UPload.service";
+import {TranslateService} from "@ngx-translate/core";
 import {ActivatedRoute} from "@angular/router";
 import {Videos} from "../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
@@ -12,28 +13,32 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./home-page.component.scss']
 })
 export class HomePageComponent implements OnInit {
+
   videos: Videos[] | undefined = [];
+  and: any;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   imageUrl = '/maxresdefault.jpg'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
   //faShare = faShareNodes;
 
-  constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
+  constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) { }
 
 
   ngOnInit(): void {
 
     this.UPload.getVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
+      this.translate.get('upload.and').subscribe(and => {
+        this.and = (and);
+      });
       this.videos.forEach(video => {
         let word = video.date.replace('atrás', '').split(" ");
         if(word.length > 2) {
-          video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+          video.date = `${word[0]} ${word[1]} ${this.and} ${word[2]} ${word[3]}`
         }
       })
     })
-
   }
 
   changeFavorite(id: number) {

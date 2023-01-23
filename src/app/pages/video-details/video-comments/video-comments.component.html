@@ -1,5 +1,5 @@
 <div class="comments">
-  <h4 class="title">{{title}}</h4>
+  <h4 class="title">{{'upload.comment_section' | translate}}</h4>
   <!--  <form [formGroup]="form" (ngSubmit)="handleCommentFormSubmit(comment.value)">-->
   <div class="form">
     <form #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
@@ -9,14 +9,14 @@
         </div>
         <div class="inputs">
           <div class="user_data">
-            <input type="text" name="name" id="name" placeholder="Nome" ngModel>
+            <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}" ngModel>
             <input type="email" name="email" id="email" placeholder="E-mail" ngModel>
           </div>
-          <input type="text" name="message" id="message" placeholder="Mensagem" ngModel>
+          <input type="text" name="message" id="message" placeholder="{{'upload.comment_message' | translate}}" ngModel>
         </div>
       </div>
       <div class="submit-button">
-        <button type="submit">Submeter Comentário</button>
+        <button type="submit">{{'upload.comment_button' | translate}}</button>
       </div>
     </form>
   </div>
@@ -30,7 +30,7 @@
           <p class="name" [innerHTML]="c.name"></p>
         </div>
         <div class="timestamp">
-          <span class="ago">há</span>
+          <span class="ago">{{'upload.timestamp' | translate}}</span>
           <span class="date" [innerHTML]="c.date"></span>
         </div>
       </div>

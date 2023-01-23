@@ -1,7 +1,7 @@
  <div class="sidebar">
     <div class="suggested-channels">
   <div class="headline">
-    <h2 routerLink="/channels/">Canais sugeridos</h2>
+    <h2 routerLink="/channels/">{{'upload.channel_suggestion' | translate}}</h2>
   </div>
   <div class="sugestion" *ngFor="let c of channelsList | slice: 0: 5">
     <!--      <div class="sugestion">-->
@@ -11,6 +11,6 @@
       <h2 class="channel_title" routerLink="/channels/{{c.id}}" routerLinkActive="active">{{c.title}}</h2>
     </div>
   </div>
-  <div class="more" routerLink="/channels/">MOSTRAR MAIS</div>
+  <div class="more" routerLink="/channels/">{{'upload.show_more' | translate}}</div>
 </div>
   </div>

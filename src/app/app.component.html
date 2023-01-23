@@ -1,9 +1,10 @@
 <div class="wrapper">
+  <select class=”form-control” (change)="setTransLanguage($any($event.target).value)">
+    <option class=”form-control”  value="pt" [selected]="lang == 'pt'">{{'upload.language_pt' | translate}}</option>
+    <option class=”form-control” value="en" [selected]="lang == 'en'">{{'upload.language_en' | translate}}</option>
+  </select>
 <app-navigation></app-navigation>
 <router-outlet></router-outlet>
- <!--<select class=”form-control” [(ngModel)]=”selectLang” name=”selectLang” (change)=”setTransLanguage()”>
-   <option *ngFor=”let lang of TransLang” value=”{{lang}}”>{{ lang }}</option>
- </select>-->
 </div>
 
 
