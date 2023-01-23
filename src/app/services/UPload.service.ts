@@ -92,7 +92,7 @@ export class UPloadService {
   }
 
   getChannelComments(channel_id: number) {
-    return this.http.get<ChannelComments[]>(BASE_URL + "/comentarios/canal/" + channel_id)
+    return this.http.get<ChannelComments[]>(BASE_URL + prefix + "/comentarios/canal/" + channel_id)
   }
 
   getChannelVideos(channel_id: number) {
@@ -108,7 +108,7 @@ export class UPloadService {
   }
 
   getVideoComments(video_id: string) {
-    return this.http.get<VideoComments[]>(BASE_URL + "/comentarios/video/" + video_id)
+    return this.http.get<VideoComments[]>(BASE_URL + prefix + "/comentarios/video/" + video_id)
   }
 
   getVideoDetails(id: string) {
@@ -116,11 +116,11 @@ export class UPloadService {
   }
 
   getNumberOfLikes(id: string) {
-    return this.http.get<FlagCounter[]>(BASE_URL + "/likes/" + id)
+    return this.http.get<FlagCounter[]>(BASE_URL + prefix + "/likes/" + id)
   }
 
   getNumberOfDislikes(id: string) {
-    return this.http.get<FlagCounter[]>(BASE_URL + "/dislikes/" + id)
+    return this.http.get<FlagCounter[]>(BASE_URL + prefix + "/dislikes/" + id)
   }
 
   getPlaylist(id: number) {
