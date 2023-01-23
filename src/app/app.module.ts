@@ -22,7 +22,7 @@ import {TagsComponent} from './pages/tags/tags.component';
 import {TagVideosComponent} from './pages/tags/tag-videos/tag-videos.component';
 import {PlaylistVideosComponent} from './pages/playlists/playlist-videos/playlist-videos.component';
 import {SuggestedVideosComponent} from "./pages/video-details/suggested-videos/suggested-videos.component";
-import {SuggestionsComponent} from "./pages/home-page/suggestions/suggestions.component";
+import {SuggestedThematicsComponent} from "./pages/home-page/suggested-thematics/suggested-thematics.component";
 import { FavouritesVideosComponent } from './pages/favourites/favourites-videos/favourites-videos.component';
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
@@ -31,6 +31,7 @@ import { ThematicVideosComponent } from './pages/thematics/page/thematic-videos/
 import { FilterPipe } from './pipe/filter.pipe';
 import { YoutubePlayerComponent } from "./pages/video-details/youtube-player/youtube-player.component";
 import {FormsModule} from "@angular/forms";
+import { SuggestedChannelsComponent } from './pages/home-page/suggested-channels/suggested-channels/suggested-channels.component';
 
 @NgModule({
   declarations: [
@@ -51,12 +52,13 @@ import {FormsModule} from "@angular/forms";
     TagVideosComponent,
     PlaylistVideosComponent,
     SuggestedVideosComponent,
-    SuggestionsComponent,
+    SuggestedThematicsComponent,
     FavouritesVideosComponent,
     ThematicDetailsComponent,
     ThematicVideosComponent,
     FilterPipe,
-    YoutubePlayerComponent
+    YoutubePlayerComponent,
+    SuggestedChannelsComponent
   ],
   imports: [
     BrowserModule,
