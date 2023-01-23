@@ -121,15 +121,7 @@ export interface ChannelCommentBody {
   format: string;
 }
 
-export interface VideoCommentRequest {
-  entity_id: EntityID[];
-  entity_type: EntityType[];
-  comment_type: CommentType[];
-  field_name: VideoCommentMachineName[];
-  field_nome_comentario: VideoCommentUsername[];
-  field_email_video: VideoCommentUsername[];
-  comment_body: VideoCommentBody[];
-}
+
 
 export interface ChannelCommentRequest {
   entity_id: EntityID[];

@@ -20,9 +20,18 @@ export class VideoCommentsComponent implements OnInit {
   @Input() video_id!: string;
 
 
-  constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
+  constructor(private route: ActivatedRoute, private UPload: UPloadService) {
+  }
 
   ngOnInit(): void {
+    this.loadVideoComments(this.video_id)
+  }
+
+  ngOnChanges(): void {
+    this.loadVideoComments(this.video_id)
+  }
+
+  loadVideoComments(id: string) {
     this.UPload.getVideoComments(this.video_id).subscribe((videoComments) => {
       this.videoComments = videoComments as VideoComments[];
     })
@@ -54,14 +63,9 @@ export class VideoCommentsComponent implements OnInit {
   }
 
 
-
   // @ts-ignore
   reloadPage(nameInput, emailInput, messageInput) {
-    if (nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2 ) {
-      return true
-    } else {
-      return false
-    }
+    return nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2;
   }
 
   errorMessage() {
