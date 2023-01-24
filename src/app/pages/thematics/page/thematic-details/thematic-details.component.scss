@@ -56,11 +56,11 @@
 
     h3 {
       &.title {
-margin-top: 5px;
+        margin-top: 10px;
         margin-left: 30px;
         margin-bottom: auto;
         color: #FAFAFB;
-        font-size: 14px;
+        font-size: 15px;
       }
     }
 
@@ -139,13 +139,16 @@ margin-top: 5px;
     }
 
     .description {
-      width: 200px;
+      width: 70%;
+    //  width: 200px;
       font-size: 15px;
     }
 
     .header {
+      margin-top: 80px;
       .header_image {
         height: 160px;
+        width: 100%;
       }
     }
   }

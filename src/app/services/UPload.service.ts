@@ -26,8 +26,10 @@ let prefix: any;
 let lang = localStorage.getItem('lang') || 'pt'
 if (lang == 'pt') {
   prefix = "/pt-pt/api";
-} else {
+} else if (lang == 'en') {
   prefix = "/en/api";
+} else {
+  prefix = "/pt-pt/api";
 }
 
 let BASE_URL = "https://dev-project-upskill-grupo05.pantheonsite.io"
@@ -46,10 +48,8 @@ export class UPloadService {
   faThumbsDown = faThumbsDown;
   faThumbsDownSolid = faThumbsDownSolid;
   faThumbsUpSolid = faThumbsUpSolid;
-
   icon: any = faThumbsUp;
-
-  videosPlaylist: VideosPlaylist[] = [];
+  //videosPlaylist: VideosPlaylist[] = [];
 
   favorites: number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
@@ -65,8 +65,8 @@ export class UPloadService {
     return this.http.get<Thematics[]>(BASE_URL + prefix + "/artigos/" + id)
   }
 
-  getThematicVideos(tags_id: number) {
-    return this.http.get<ThematicVideos[]>(BASE_URL + "/videos/artigo/" + tags_id)
+  getThematicVideos(tags_id: any) {
+    return this.http.get<ThematicVideos[]>(BASE_URL + prefix + "/videos/artigo/" + tags_id)
   }
 
   //getThematicVideos() {

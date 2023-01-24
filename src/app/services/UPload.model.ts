@@ -2,7 +2,7 @@ export interface Thematics {
   title: string;
   tags: string;
   links: string;
-  tags_id: number;
+  tags_id: string;
   description: string;
   teaser: string;
   header: string;

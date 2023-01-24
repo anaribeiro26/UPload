@@ -20,7 +20,6 @@ export class ThematicsComponent implements OnInit {
       this.thematics = (thematics as Thematics[]).map((thematic : Thematics) => {
         return {...thematic, title: thematic.title.replace(/\s/g, '-')}
       });
-
     })
   }
 }
