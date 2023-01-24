@@ -63,8 +63,8 @@ export class VideoCommentsComponent implements OnInit {
   }
 
 
-  // @ts-ignore
-  reloadPage(nameInput, emailInput, messageInput) {
+
+  reloadPage(nameInput: string, emailInput: string, messageInput: string) {
     return nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2;
   }
 
