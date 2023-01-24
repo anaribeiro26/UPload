@@ -56,6 +56,10 @@
         align-items: center;
         justify-content: center;
         flex: none;
+
+        img {
+         object-fit: cover;
+        }
       }
     }
 
@@ -124,7 +128,8 @@
 }
 @media screen and (max-width: 560px) {
   .list {
-    margin-top: 60px;
+    margin-top: 80px;
+
     .logo-scope {
       width: 100%;
       max-width: 160px;

@@ -2,10 +2,10 @@
 .header {
   margin-top: 30px;
   margin-bottom: 20px;
-  //font-style: normal;
+  margin-left: 30px;
   letter-spacing: 0.1px;
   color: #FAFAFB;
-  margin-left: 30px;
+
 
   h1 {
     font-size: 24px;
@@ -22,7 +22,7 @@
     width: 100%;
     flex-wrap: wrap;
     flex-direction: row;
-  padding-right: 30px;
+    padding-right: 30px;
   }
 
   @media screen and (max-width: 1285px) {
@@ -74,6 +74,7 @@
         border-radius: 16px;
         background-color: #1c1c24;
         position: relative;
+        cursor: pointer;
 
         .box {
           .channel_logo {
@@ -208,6 +209,11 @@
           .date {
             display: flex;
             padding-top: 10px;
+            span {
+              &.ago {
+                margin-left: 5px;
+              }
+            }
 
             .timestamp, .ago {
               color: #92929d;
@@ -217,7 +223,7 @@
             }
 
             .ago {
-              margin-right: 6px;
+              margin-right: 4px;
             }
           }
 
