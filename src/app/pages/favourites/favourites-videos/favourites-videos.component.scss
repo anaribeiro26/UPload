@@ -1,203 +1,240 @@
 .header {
-  margin: 50px 0 35px 30px;
-  font-style: normal;
-  font-size: 16px;
+  margin-left: 30px;
+  margin-top: 30px;
   letter-spacing: 0.1px;
   color: #FAFAFB;
+
+  h1 {
+    font-size: 24px;
+  }
 }
 
-.uploads {
-  display: flex;
-  justify-content: flex-start;
-  margin-left: 30px;
+@media screen and (max-width: 560px) {
+  .header {
+    margin-top: 86px;
+  }
+}
 
-  .videos {
-    //position: absolute;
-    top: 5em;
+  .no_favorites {
+    font-size: 16px;
+    color: #FAFAFB;
+    margin-left: 30px;
+    margin-top: 0;
+  }
+
+  .uploads {
     display: flex;
     justify-content: flex-start;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding-bottom: 25px;
+    margin-left: 30px;
 
-    .cel:hover {
-      .small_image {
-        //filter: grayscale(70%);
-        transform: scale(1.05);
-      }
+    .videos {
+      display: flex;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding-bottom: 25px;
 
-      .itens {
-        .video_title {
-          color: rgba(255, 255, 255, 100%);
+      .cel:hover {
+        .small_image {
+          transform: scale(1.05);
+        }
+
+        .itens {
+          .video_title {
+            color: rgba(255, 255, 255, 100%);
+          }
         }
       }
-    }
 
-    .cel {
-      width: 340px;
-      border-radius: 16px;
-      background-color: #1c1c24;
-      position: relative;
-      cursor: pointer;
-
-      .card_image {
+      .cel {
         width: 340px;
-        height: 176px;
-        object-fit: cover;
-        border-radius: 16px 16px 0 0;
-        overflow: hidden;
-      }
+        border-radius: 16px;
+        background-color: #1c1c24;
+        position: relative;
+        cursor: pointer;
 
-      .small_image {
-        height: 100%;
-        width: 100%;
-        left: 0;
-        top: 0;
-        border-radius: 20px 20px 0 0;
-        transition: all linear 0.4s;
-      }
+        .card_image {
+          width: 340px;
+          height: 160px;
+          border-radius: 16px 16px 0 0;
+          overflow: hidden;
 
-      .itens {
-        margin-right: 20px;
-        margin-left: 20px;
-        margin-top: 20px;
-        margin-bottom: 5px;
-
-        .timestamp_actions {
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-
-          .actions {
-            padding-left: 40px;
+          .logo-section {
             display: flex;
-            // justify-content: flex-end;
-            // padding-left: 80px;
-            // padding-right: 5px;
-            width: 84px;
-            //width: 165px;
-            // padding-top: 65px;
-            // padding-right: 20px;
+            flex-direction: column;
+            align-items: flex-end;
+            justify-content: space-evenly;
+            padding-right: 20px;
 
-            .ng-fa-icon {
-              font-size: 18px;
-              color: #92929D;
+            .logo:hover {
+              transform: scale(1.03);
+            }
+
+            .logo {
+              border: 3px solid #FFFFFF;
+              border-radius: 50%;
               cursor: pointer;
-              padding-right: 12px;
-              // position: absolute;
-              //top: 280px;
-              // margin-left: 256px;
+              // overflow: hidden;
+              height: 60px;
+              width: 60px;
+              // z-index: 100;
+              position: absolute;
+              object-fit: cover;
             }
-
-            fa-icon:hover {
-              color: #FFFFFF;
-            }
-
-            .share-button:hover {
-              color: #FFFFFF;
-            }
-
-            .share-button {
-              height: 20px;
-              cursor: pointer;
-              padding-right: 15px;
-              color: #FFFFFF;
-              // position: absolute;
-              // top: 280px;
-              //  margin-left: 288px;
-            }
-
-            .share-button {
-              // background-image: ../../../assets/ic_Share.svg;
-              // position: absolute;
-              // top: 280px;
-              //  margin-left: 288px;
-            }
-          }
-
-          .date {
-            font-size: 14px;
-            letter-spacing: 0.1px;
-            color: #92929D;
           }
         }
 
-        .name {
-          color: #1E75FF;
-          font-size: 14px;
-          letter-spacing: 0.1px;
-          margin-bottom: 3px;
+        .small_image {
+          object-fit: cover;
+          height: 100%;
+          width: 100%;
+          left: 0;
+          top: 0;
+          border-radius: 20px 20px 0 0;
+          transition: all linear 0.4s;
         }
 
-        .video_title {
-          color: rgba(255, 255, 255, 80%);
-          font-size: 18px;
-          //margin-bottom: 3px;
-          margin-bottom: 0;
-          margin-top: 0;
-        }
-
-        .duration {
-          display: flex;
-          position: absolute;
-          align-items: center;
-          justify-content: center;
-          height: 24px;
-          width: 48px;
-          top: 120px;
+        .itens {
+          margin-right: 20px;
+          //margin-left: 20px;
+          //margin-top: 20px;
           margin-left: 16px;
-          background-color: #171725;
-          border-radius: 8px;
-          color: #ffffff;
-          font-size: 12.8px;
-          font-weight: 500;
-        }
+          height: 100px;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          margin-bottom: 5px;
 
-        .logo-section {
+          .timestamp_actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-          .logo:hover {
-            transform: scale(1.03);
+            .date {
+              font-size: 13px;
+              letter-spacing: 0.1px;
+              color: #92929D;
+              //padding-top: 8px;
+              padding-bottom: 15px;
+
+              span {
+                &.ago {
+                  margin-right: 5px;
+                }
+              }
+            }
+
+            .actions {
+              display: flex;
+              justify-content: flex-end;
+              margin-right: -15px;
+              margin-bottom: 7px;
+             // padding-right: 5px;
+              width: 84px;
+              //width: 165px;
+             // padding-top: 5px;
+            // padding-left: 80px;
+             // display: flex;
+             // // justify-content: flex-end;
+             // // padding-left: 80px;
+             // // padding-right: 5px;
+             // width: 84px;
+              //width: 165px;
+              // padding-top: 65px;
+              // padding-right: 20px;
+
+              .ng-fa-icon {
+                font-size: 18px;
+                color: #92929D;
+                cursor: pointer;
+                padding-right: 12px;
+                // position: absolute;
+                //top: 280px;
+                // margin-left: 256px;
+              }
+
+              fa-icon:hover {
+                color: #FFFFFF;
+              }
+
+              .share-button:hover {
+                color: #FFFFFF;
+              }
+
+              .share-button {
+                height: 20px;
+                cursor: pointer;
+                padding-right: 15px;
+                color: #FFFFFF;
+                // position: absolute;
+                // top: 280px;
+                //  margin-left: 288px;
+              }
+
+              .share-button {
+                // background-image: ../../../assets/ic_Share.svg;
+                // position: absolute;
+                // top: 280px;
+                //  margin-left: 288px;
+              }
+            }
           }
 
-          .logo {
-            border-radius: 50%;
+          .name {
+          color: #1E75FF;
+         //  font-size: 14px;
+         //  letter-spacing: 0.1px;
+         //  margin-bottom: 5px;
+         //  margin-top: 6px;
+            font-size: 13px;
+            letter-spacing: 0.1px;
+            cursor: pointer;
+            margin: 0;
+            padding-top: 15px;
+          }
+
+          .video_title {
+          // color: rgba(255, 255, 255, 80%);
+          // font-size: 18px;
+          // //margin-bottom: 3px;
+          // margin-bottom: 0;
+          // margin-top: 0;
+            color: rgba(255, 255, 255, 70%);
+            cursor: pointer;
+            // font-size: 17px;
+            font-size: 16px;
+            margin-bottom: 0;
+            margin-top: 0;
+           // padding-top: 4px;
+            width: 100%;
+            max-width: 280px;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
             overflow: hidden;
-            height: 60px;
-            width: 60px;
+            text-overflow: ellipsis;
+          }
+
+          .duration {
+            display: flex;
             position: absolute;
-            top: 144px;
-            margin-left: 240px;
-            border: 2px solid #FFFFFF;
-            background-color: #1C1C24;
+            align-items: center;
+            justify-content: center;
+            height: 20px;
+            width: 50px;
+            top: 120px;
+            // top: 110px;
+            //margin-left: 16px;
+            background-color: #1c1c24;
+            border-radius: 5px;
+            color: #ffffff;
+            font-size: 11px;
+            //  font-weight: 500;
           }
         }
       }
     }
   }
-}
-
-h2 {
-  position: absolute;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: 0.1px;
-  color: #FAFAFB;
-  left: 10px;
-}
-
-p {
-  //position: absolute;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 21px;
-  letter-spacing: 0.1px;
-  color: #FAFAFB;
-  left: 10px;
-  cursor: pointer;
-}
 
 
 

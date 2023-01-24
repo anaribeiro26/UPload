@@ -13,6 +13,7 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 export class FavouritesVideosComponent implements OnInit {
   favorites_list: any[] = [];
   and: any;
+  lang = localStorage.getItem('lang') || 'pt'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";

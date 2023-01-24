@@ -16,6 +16,7 @@
     "favorites_headline": "Vídeos Favoritos",
     "favorites_title": "Favoritos",
     "favorite_video": "vídeo",
+    "no_favorites": "Ainda não existem vídeos favoritos.",
     "tags_title": "Vídeos relacionados pela tag:",
     "channel_section_1": "Vídeos",
     "comment_section": "Comentários",
@@ -23,7 +24,7 @@
     "comment_message": "Mensagem",
     "comment_button": "Submeter Comentário",
     "time_ago": "",
-    "timestamp": "há ",
+    "timestamp": "há",
     "and": "e"
   }
 }
