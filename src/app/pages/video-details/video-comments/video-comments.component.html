@@ -10,7 +10,8 @@
         <div class="inputs">
           <div class="user_data">
             <div class="box_error">
-              <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}" formControlName="name" ngModel>
+              <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}"
+                     formControlName="name" ngModel>
               <div class="erro"
                    *ngIf="meuFormGroup.get('name')?.errors?.['required'] && meuFormGroup.get('name')?.touched">Campo
                 obrigatório
@@ -20,24 +21,29 @@
                 campo deve ter no mínimo 2 caractéres
               </div>
             </div>
-            <input type="email" name="email" id="email" placeholder="Email" formControlName="email" ngModel>
-            <div class="erro"
-                 *ngIf="meuFormGroup.get('email')?.errors?.['required'] && meuFormGroup.get('email')?.touched">Campo
+            <div class="box_error">
+              <input type="email" name="email" id="email" placeholder="Email" formControlName="email" ngModel>
+              <div class="erro"
+                   *ngIf="meuFormGroup.get('email')?.errors?.['required'] && meuFormGroup.get('email')?.touched">Campo
+                obrigatório
+              </div>
+              <div class="erro"
+                   *ngIf="meuFormGroup.get('email')?.errors?.['email'] && meuFormGroup.get('email')?.touched">Formato de
+                email incorreto
+              </div>
+            </div>
+          </div>
+          <div class="message_error">
+            <textarea id="message" placeholder="{{'upload.comment_message' | translate}}" formControlName="comment"
+                      ngModel></textarea>
+            <div class="erro_message"
+                 *ngIf="meuFormGroup.get('comment')?.errors?.['required'] && meuFormGroup.get('comment')?.touched">Campo
               obrigatório
             </div>
-            <div class="erro"
-                 *ngIf="meuFormGroup.get('email')?.errors?.['email'] && meuFormGroup.get('email')?.touched">Formato de
-              email incorreto
+            <div class="erro_message"
+                 *ngIf="meuFormGroup.get('comment')?.errors?.['minlength'] && meuFormGroup.get('comment')?.touched">Este
+              campo deve ter no mínimo 2 caractéres
             </div>
-          </div>
-          <textarea id="message" placeholder="{{'upload.comment_message' | translate}}" formControlName="comment" ngModel></textarea>
-          <div class="erro"
-               *ngIf="meuFormGroup.get('comment')?.errors?.['required'] && meuFormGroup.get('comment')?.touched">Campo
-            obrigatório
-          </div>
-          <div class="erro"
-               *ngIf="meuFormGroup.get('comment')?.errors?.['minlength'] && meuFormGroup.get('comment')?.touched">Este
-            campo deve ter no mínimo 2 caractéres
           </div>
         </div>
       </div>
