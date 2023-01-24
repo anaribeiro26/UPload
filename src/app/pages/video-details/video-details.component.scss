@@ -49,14 +49,14 @@
           .flag {
             display: flex;
             flex-direction: row-reverse;
-            color: #92929D;
+            color: rgba(255, 255, 255, 70%);
             font-size: 20px;
             margin-left: 2px;
           }
 
           .flag:hover {
             font-size: 1.2em;
-            color: #1e75ff;
+            color: rgba(255, 255, 255, 100%);
             transition-timing-function: ease-in-out;
             cursor: pointer;
 
@@ -77,6 +77,7 @@
             // margin: 5px 0 10px 0;
             margin-top: 10px;
             margin-bottom: 10px;
+            margin-right: 5px;
             text-decoration: none;
             color: #1e75ff;
             cursor: pointer;

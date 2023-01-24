@@ -12,6 +12,7 @@ export class ChannelVideosComponent implements OnInit {
 
   videos: ChannelVideos[] = [];
   and:any;
+  lang = localStorage.getItem('lang') || 'pt'
   image_url = '/hqdefault.jpg';
   @Input() channel_id!: number;
 

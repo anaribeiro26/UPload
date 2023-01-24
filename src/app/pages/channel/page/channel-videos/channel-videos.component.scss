@@ -54,7 +54,13 @@
         }
 
         .ago {
-          margin-right: 6px;
+          margin-right: 4px;
+        }
+
+        span {
+          &.ago {
+            margin-left: 5px;
+          }
         }
       }
 

@@ -1,9 +1,11 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UPloadService} from "../../../services/UPload.service"
+import {TranslateService} from "@ngx-translate/core";
 import {Videos} from "../../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {VideoDetails} from "../../../services/UPload.model";
-
+import {faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-suggested-videos',
@@ -12,14 +14,17 @@ import {VideoDetails} from "../../../services/UPload.model";
 })
 export class SuggestedVideosComponent implements OnInit {
   videos: Videos[] | undefined = [];
+  and: any;
+  lang = localStorage.getItem('lang') || 'pt'
   imageUrl = '/maxresdefault.jpg';
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+  faBookmarkSolid = faBookmarkSolid;
+  faBookmark = faBookmark;
   @Input() mainVideoTags: string | undefined;
   mainVideoTagsList: string[] = [];
   video: VideoDetails | undefined;
 
-
-  constructor(private route: ActivatedRoute, private UPload: UPloadService) {
+  constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) {
   }
 
   ngOnInit(): void {
@@ -43,6 +48,9 @@ export class SuggestedVideosComponent implements OnInit {
   loadSuggestedVideos() {
     this.UPload.getSuggestedVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
+      this.translate.get('upload.and').subscribe(and => {
+        this.and = (and);
+      });
 
       console.log("Antes de filtrar => " + this.videos.length)
       console.log("Tags do video principal: " + this.mainVideoTags)
@@ -63,9 +71,35 @@ export class SuggestedVideosComponent implements OnInit {
       this.videos.forEach(video => {
         let word = video.date.replace('atrás', '').split(" ");
         if (word.length > 2) {
-          video.date = `${word[0]} ${word[1]} e ${word[2]} ${word[3]}`
+          video.date = `${word[0]} ${word[1]} ${this.and} ${word[2]} ${word[3]}`
         }
       })
     })
+  }
+
+  changeFavorite(id: number) {
+    this.UPload.toggleFavorite(id)
+  }
+
+  favourite(id: number) {
+    return this.UPload.isFavorite(id)
+  }
+
+  share(txt: string) {
+    console.log(txt)
+  }
+
+  clickShare(myUrl: string) {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Copied link here.',
+        url: myUrl
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+        .catch(error => console.log('Error sharing', error));
+    } else {
+      alert('Share not supported!');
+    }
   }
 }

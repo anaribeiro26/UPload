@@ -18,8 +18,8 @@
       </div>
       <p class="title" [innerHTML]="v.title"></p>
       <div class="date">
-        <p class="ago">{{'upload.timestamp' | translate}}</p>
-        <p class="timestamp" [innerHTML]="v.date"></p>
+        <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
+        <p class="timestamp" [innerHTML]="v.date"></p><span class="ago" *ngIf="lang=='en'"> {{'upload.time_ago' | translate}}</span>
       </div>
     </div>
     <div class="outer_box_empty" *ngIf="videos.length % 2 !== 0"></div>
