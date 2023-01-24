@@ -17,8 +17,8 @@
               <p class="name" routerLinkActive="active" [innerHTML]="v.channel"></p>
               <p class="titleVideo" routerLink="/video/{{v.id}}" routerLinkActive="active" [innerHTML]="v.title"></p>
               <div class="date">
-                <p class="ago">{{'upload.timestamp' | translate}}</p>
-                <p class="timestamp" [innerHTML]="v.date"></p>
+                <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
+                <p class="timestamp" [innerHTML]="v.date"></p><span class="ago"> {{'upload.time_ago' | translate}}</span>
               </div>
               <p class="duration" [innerHTML]="v.duration"></p>
             </div>

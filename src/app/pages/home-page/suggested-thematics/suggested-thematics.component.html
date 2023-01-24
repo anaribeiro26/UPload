@@ -4,7 +4,7 @@
         <h2>{{'upload.article_suggestion' | translate}}</h2>
         <p routerLink="/thematics/">{{'upload.show_all' | translate}}</p>
       </div>
-      <div class="thematic" *ngFor="let t of thematics | slice: 0: 3" routerLink="/articles/{{t.id}}"
+      <div class="thematic" *ngFor="let t of thematics | slice: 0: 3" routerLink="/thematics/{{t.title}}"
            routerLinkActive="active" [title]="t.title">
         <div class="box">
           <div class="top">

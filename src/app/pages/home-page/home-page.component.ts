@@ -16,6 +16,7 @@ export class HomePageComponent implements OnInit {
 
   videos: Videos[] | undefined = [];
   and: any;
+  lang = localStorage.getItem('lang') || 'pt'
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   imageUrl = '/maxresdefault.jpg'
   faBookmarkSolid = faBookmarkSolid;
@@ -26,7 +27,6 @@ export class HomePageComponent implements OnInit {
 
 
   ngOnInit(): void {
-
     this.UPload.getVideos().subscribe((videos) => {
       this.videos = videos as Videos[];
       this.translate.get('upload.and').subscribe(and => {
