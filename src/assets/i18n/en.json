@@ -16,13 +16,14 @@
     "favorites_headline": "Favorited Videos",
     "favorites_title": "Favorites",
     "favorite_video": "video",
+    "no_favorites": "There aren't any favorited videos yet.",
     "tags_title": "Videos grouped by tag:",
     "channel_section_1": "Videos",
     "comment_section": "Comments",
     "comment_name": "Name",
     "comment_message": "Message",
     "comment_button": "Submit Comment",
-    "time_ago": "ago",
+    "time_ago": " ago",
     "timestamp": "",
     "and": "and"
   }

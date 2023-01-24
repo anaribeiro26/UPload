@@ -20,6 +20,7 @@
 <div class="header">
   <h1>{{'upload.favorites_headline' | translate}}</h1>
 </div>
+<div class="no_favorites" *ngIf="favorites_list.length===0">{{'upload.no_favorites' | translate}}</div>
 <div class="uploads">
   <div class="videos">
     <div class="cel" *ngFor="let f of favorites_list">
@@ -27,13 +28,16 @@
         <div class="card_image" routerLink="/video/{{f.id}}" routerLinkActive="active">
           <img class="small_image" alt="thumbnail"
                [src]="f.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
+          <div class="logo-section"><img class="logo" alt="logo" [src]="image_url + f.logo" routerLink="/channels/{{f.channel_id}}">
+          </div>
         </div>
         <div class="itens">
           <p class="name" routerLink="/channels/{{f.channel_id}}" [innerHTML]="f.channel"></p>
           <p class="video_title" routerLink="/video/{{f.id}}" routerLinkActive="active" [innerHTML]="f.title"></p>
           <div class="timestamp_actions">
-          <div class="timestamp" routerLink="/video/{{f.id}}" routerLinkActive="active">
-          <p class="date">{{'upload.timestamp' | translate}} {{f.date}}</p>
+          <div class="date" routerLink="/video/{{f.id}}" routerLinkActive="active">
+            <span class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</span>
+            <span class="timestamp" [innerHTML]="f.date"></span>
           </div>
           <div class="actions">
             <div class="bookmark" (click)="changeFavorite(f.id)">
@@ -47,9 +51,6 @@
           </div>
           </div>
           <p class="duration" [innerHTML]="f.duration"></p>
-          <div class="logo-section">
-          <img class="logo" alt="logo" [src]="image_url + f.logo" routerLink="/channels/{{f.channel_id}}">
-        </div>
         </div>
       </div>
     </div>
