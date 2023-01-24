@@ -37,7 +37,7 @@
           <div class="timestamp_actions">
           <div class="date" routerLink="/video/{{f.id}}" routerLinkActive="active">
             <span class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</span>
-            <span class="timestamp" [innerHTML]="f.date"></span>
+            <span class="timestamp" [innerHTML]="f.date"></span><span class="ago"> {{'upload.time_ago' | translate}}</span>
           </div>
           <div class="actions">
             <div class="bookmark" (click)="changeFavorite(f.id)">

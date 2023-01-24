@@ -11,6 +11,7 @@ import {VideosPlaylist} from "../../../services/UPload.model";
 export class PlaylistVideosComponent implements OnInit {
   videosPlaylist: VideosPlaylist[] = [];
   and: any;
+  lang = localStorage.getItem('lang') || 'pt'
   image_url = '/hqdefault.jpg'
   @Input() id!: number;
 

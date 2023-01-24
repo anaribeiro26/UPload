@@ -1,4 +1,5 @@
-<!--<div class="playlist" *ngFor="let p of playlistDetails">-->
-<!--&lt;!&ndash;  <p [innerHTML]="p.title"></p>&ndash;&gt;-->
-<!--</div>-->
-<app-playlist-videos *ngFor="let p of playlistDetails | slice: 0: 1" [id]="p.id"></app-playlist-videos>
+<div class="playlist" *ngFor="let p of playlistDetails">
+<p></p>
+<p [innerHTML]="p.title"></p>
+  <app-playlist-videos *ngFor="let p of playlistDetails" [id]="p.id"></app-playlist-videos>
+</div>

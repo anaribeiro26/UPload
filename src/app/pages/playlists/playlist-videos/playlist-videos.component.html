@@ -12,7 +12,10 @@
         <div class="itens">
           <p class="name">{{v.channel}}</p>
           <p class="titleVideo">{{v.title}}</p>
-          <p class="date">{{'upload.timestamp' | translate}} {{v.date}}</p>
+          <div class="date">
+          <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
+          <p class="timestamp" [innerHTML]="v.date"></p><span *ngIf="lang=='en'" class="ago"> {{'upload.time_ago' | translate}}</span>
+          </div>
           <p class="duration">{{v.duration}}</p>
           <!--          <img class="logo" [src]="image_url + v.logo" routerLink="/video/{{v.id}}" routerLinkActive="active">-->
         </div>
