@@ -21,7 +21,8 @@ thematics: Thematics[] = [];
       let title = params['title'];
       this.UPload.getThematic(title).subscribe((thematics) => {
       this.thematics = (thematics as Thematics[]).map((thematics : Thematics) => {
-        return {...thematics, title: thematics.title.replace(/\s/g, ' ')}
+        return {...thematics, title: thematics.title.replace(/\s/g, ' '),
+          thematics, tags_id: thematics.tags_id.replace(/\s/g, '')}
     });
     })
   })

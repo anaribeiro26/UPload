@@ -18,7 +18,7 @@
     "favorite_video": "video",
     "no_favorites": "There aren't any favorited videos yet.",
     "tags_title": "Videos grouped by tag:",
-    "channel_section_1": "Videos",
+    "video_section": "Videos",
     "comment_section": "Comments",
     "comment_name": "Name",
     "comment_message": "Message",

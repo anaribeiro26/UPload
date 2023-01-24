@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UPloadService} from "../../../../../services/UPload.service";
-import {ThematicVideos} from "../../../../../services/UPload.model";
+import {Thematics, ThematicVideos} from "../../../../../services/UPload.model";
 
 @Component({
   selector: 'app-thematic-videos',
@@ -10,7 +10,7 @@ import {ThematicVideos} from "../../../../../services/UPload.model";
 export class ThematicVideosComponent implements OnInit {
   thematic_videos: ThematicVideos[] = [];
   image_url = '/hqdefault.jpg';
-  @Input() id!: number;
+  @Input() tags_id!: any;
 
   title = "Artigo de Temática"
 
@@ -18,7 +18,7 @@ export class ThematicVideosComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.UPload.getThematicVideos(this.id).subscribe((thematic_videos) => {
+    this.UPload.getThematicVideos(this.tags_id).subscribe((thematic_videos) => {
       this.thematic_videos = thematic_videos as ThematicVideos[];
       this.thematic_videos.forEach(video => {
         let word = video.date.split(" ");
