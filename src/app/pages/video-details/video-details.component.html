@@ -56,7 +56,7 @@
     <div class="suggested-videos">
     </div>
   </div>
-  <div class="suggested-videos">
-    <app-suggested-videos></app-suggested-videos>
+  <div class="suggested-videos" *ngIf="video">
+    <app-suggested-videos [mainVideoTags]="video.tags"></app-suggested-videos>
   </div>
 </div>

@@ -4,7 +4,11 @@ import {UPloadService} from "../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
 import {VideoDetails} from "../../services/UPload.model";
 import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
-import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFlag,
+  faThumbsDown as faThumbsDownSolid,
+  faThumbsUp as faThumbsUpSolid
+} from "@fortawesome/free-solid-svg-icons";
 
 //@ts-ignore
 
@@ -16,7 +20,7 @@ import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid
 export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
-  and:any;
+  and: any;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   faThumbsUp = faThumbsUp;
   faThumbsDown = faThumbsDown;
@@ -31,34 +35,34 @@ export class VideoDetailsComponent implements OnInit {
 
     this.route.params.subscribe((params) => {
       let id = params['id'];
-    this.UPload.getVideoDetails(id).subscribe((video) => {
-      this.video = video[0];
+      this.UPload.getVideoDetails(id).subscribe((video) => {
+        this.video = video[0];
 
-     this.translate.get('upload.and').subscribe(and => {
-       this.and = (and);
-     });
+        this.translate.get('upload.and').subscribe(and => {
+          this.and = (and);
+        });
 
-      let word = this.video.date.split(" ");
-      if(word.length > 2) {
+        let word = this.video.date.split(" ");
+        if (word.length > 2) {
           this.video.date = `${word[0]} ${word[1]} ${this.and} ${word[2]} ${word[3]}`
         }
 
-      this.UPload.getNumberOfLikes(id).subscribe( (counters) => {
-        if (counters.length == 0) {
-          video[0].likes = "0"
-        } else {
-          video[0].likes = counters[0].count;
-        }
-      })
+        this.UPload.getNumberOfLikes(id).subscribe((counters) => {
+          if (counters.length == 0) {
+            video[0].likes = "0"
+          } else {
+            video[0].likes = counters[0].count;
+          }
+        })
 
-      this.UPload.getNumberOfDislikes(id).subscribe( (counters) => {
-        if (counters.length == 0) {
-          video[0].dislikes = "0"
-        } else {
-          video[0].dislikes = counters[0].count;
-        }
+        this.UPload.getNumberOfDislikes(id).subscribe((counters) => {
+          if (counters.length == 0) {
+            video[0].dislikes = "0"
+          } else {
+            video[0].dislikes = counters[0].count;
+          }
+        })
       })
-    })
     });
   }
 
@@ -88,7 +92,7 @@ export class VideoDetailsComponent implements OnInit {
 
       if (!isDisliked) {
         if (this.video !== undefined) {
-          this.UPload.likeVideo(this.video.id).subscribe( (response) => {
+          this.UPload.likeVideo(this.video.id).subscribe((response) => {
             if (this.video !== undefined) {
               localStorage.setItem(`isLiked${this.video.id}`, "true");
               localStorage.setItem(`likeId${this.video.id}`, response.id[0].value)
@@ -126,7 +130,7 @@ export class VideoDetailsComponent implements OnInit {
 
       if (!isLiked) {
         if (this.video !== undefined) {
-          this.UPload.dislikeVideo(this.video.id).subscribe( (response) => {
+          this.UPload.dislikeVideo(this.video.id).subscribe((response) => {
             if (this.video !== undefined) {
               localStorage.setItem(`isDisliked${this.video.id}`, "true");
               localStorage.setItem(`dislikeId${this.video.id}`, response.id[0].value)

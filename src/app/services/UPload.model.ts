@@ -78,6 +78,9 @@ export interface Videos {
 export interface VideoComments {
   name: string;
   comment: string;
+
+  email: string;
+
   video_id: number;
   date: string;
   id: string;
@@ -95,26 +98,17 @@ export interface CommentType {
   target_id: string;
 }
 
-export interface VideoCommentMachineName {
-  value: string;
-}
 
 export interface ChannelCommentMachineName {
   value: string;
 }
 
-export interface VideoCommentUsername {
-  value: string;
-}
+
 
 export interface ChannelCommentUsername {
   value: string;
 }
 
-export interface VideoCommentBody {
-  value: string;
-  format: string;
-}
 
 export interface ChannelCommentBody {
   value: string;
@@ -137,9 +131,6 @@ export interface Comment {
   value: string;
 }
 
-export interface CommentResponse {
-  id: [Comment]
-}
 
 export interface VideoDetails {
   id: string;
@@ -229,4 +220,6 @@ export interface Flag {
 export interface FlaggingResponse {
   id: [Flag]
 }
+
+
 
