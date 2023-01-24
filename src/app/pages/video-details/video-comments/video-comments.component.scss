@@ -44,6 +44,7 @@
             .erro {
               color: red;
               display: flex;
+              font-size: 11px;
             }
           }
         }
@@ -336,6 +337,10 @@
   //  }
   //
   //}
+.comment-box{
+
+  margin-top: 30px;
+}
 
   .comment {
     display: flex;

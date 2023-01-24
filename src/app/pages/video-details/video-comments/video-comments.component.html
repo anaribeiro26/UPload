@@ -12,10 +12,10 @@
             <div class="box_error">
               <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}"
                      formControlName="name" ngModel>
-              <div class="erro"
+              <div class="error"
                    *ngIf="meuFormGroup.get('name')?.errors?.['required'] && meuFormGroup.get('name')?.touched">{{'upload.no_name_value' | translate}}
               </div>
-              <div class="erro"
+              <div class="error"
                    *ngIf="meuFormGroup.get('name')?.errors?.['minlength'] && meuFormGroup.get('name')?.touched">{{'upload.minimum_name' | translate}}
               </div>
             </div>
@@ -46,21 +46,23 @@
       </div>
     </form>
   </div>
-  <div class="comment" *ngFor="let c of videoComments">
-    <div class="photo">
-      <img alt="user photo" [src]="url+c.name.replace(' ', '')+set">
-    </div>
-    <div class="content">
-      <div class="user_data">
-        <div class="user">
-          <p class="name" [innerHTML]="c.name"></p>
-        </div>
-        <div class="timestamp">
-          <span class="ago">{{'upload.timestamp' | translate}}</span>
-          <span class="date" [innerHTML]="c.date"></span>
-        </div>
+  <div class="comment-box">
+    <div class="comment" *ngFor="let c of videoComments">
+      <div class="photo">
+        <img alt="user photo" [src]="url+c.name.replace(' ', '')+set">
       </div>
-      <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
+      <div class="content">
+        <div class="user_data">
+          <div class="user">
+            <p class="name" [innerHTML]="c.name"></p>
+          </div>
+          <div class="timestamp">
+            <span class="ago">{{'upload.timestamp' | translate}}</span>
+            <span class="date" [innerHTML]="c.date"></span>
+          </div>
+        </div>
+        <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
+      </div>
     </div>
   </div>
 </div>
