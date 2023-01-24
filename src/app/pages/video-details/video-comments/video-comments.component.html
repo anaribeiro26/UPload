@@ -1,5 +1,5 @@
 <div class="comments">
-  <h4 class="title">{{title}}</h4>
+  <h4 class="title">{{'upload.comment_section' | translate}}</h4>
   <!--  <form [formGroup]="form" (ngSubmit)="handleCommentFormSubmit(comment.value)">-->
   <div class="form">
     <form [formGroup]="meuFormGroup" #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
@@ -10,7 +10,7 @@
         <div class="inputs">
           <div class="user_data">
             <div class="box_error">
-              <input type="text" name="name" id="name" placeholder="Nome" formControlName="name" ngModel>
+              <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}" formControlName="name" ngModel>
               <div class="erro"
                    *ngIf="meuFormGroup.get('name')?.errors?.['required'] && meuFormGroup.get('name')?.touched">Campo
                 obrigatório
@@ -30,7 +30,7 @@
               email incorreto
             </div>
           </div>
-          <textarea id="message" placeholder="Mensagem" formControlName="comment" ngModel></textarea>
+          <textarea id="message" placeholder="{{'upload.comment_message' | translate}}" formControlName="comment" ngModel></textarea>
           <div class="erro"
                *ngIf="meuFormGroup.get('comment')?.errors?.['required'] && meuFormGroup.get('comment')?.touched">Campo
             obrigatório
@@ -42,7 +42,7 @@
         </div>
       </div>
       <div class="submit-button">
-        <button type="submit">Submeter Comentário</button>
+        <button type="submit" [disabled]="!meuFormGroup.valid">{{'upload.comment_button' | translate}}</button>
       </div>
     </form>
   </div>
@@ -56,7 +56,7 @@
           <p class="name" [innerHTML]="c.name"></p>
         </div>
         <div class="timestamp">
-          <span class="ago">há</span>
+          <span class="ago">{{'upload.timestamp' | translate}}</span>
           <span class="date" [innerHTML]="c.date"></span>
         </div>
       </div>

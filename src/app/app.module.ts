@@ -30,7 +30,7 @@ import { ThematicDetailsComponent } from './pages/thematics/page/thematic-detail
 import { ThematicVideosComponent } from './pages/thematics/page/thematic-videos/thematic-videos/thematic-videos.component';
 import { FilterPipe } from './pipe/filter.pipe';
 import { YoutubePlayerComponent } from "./pages/video-details/youtube-player/youtube-player.component";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SuggestedChannelsComponent } from './pages/home-page/suggested-channels/suggested-channels/suggested-channels.component';
 
 @NgModule({
@@ -65,6 +65,7 @@ import { SuggestedChannelsComponent } from './pages/home-page/suggested-channels
     AppRoutingModule,
     HttpClientModule,
     FontAwesomeModule,
+    ReactiveFormsModule,
     FormsModule,
     NgxYoutubePlayerModule.forRoot(),
     TranslateModule.forRoot({
