@@ -78,6 +78,9 @@ export interface Videos {
 export interface VideoComments {
   name: string;
   comment: string;
+
+  email: string;
+
   video_id: number;
   date: string;
   id: string;
@@ -217,4 +220,6 @@ export interface Flag {
 export interface FlaggingResponse {
   id: [Flag]
 }
+
+
 
