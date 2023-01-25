@@ -13,7 +13,6 @@ thematics: Thematics[] = [];
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   @Input() tags!: string;
 
-
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
   ngOnInit(): void {
