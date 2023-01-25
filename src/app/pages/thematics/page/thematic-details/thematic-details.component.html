@@ -7,7 +7,7 @@
       <img alt="logo" class="logo" [src]="image_url+t.thumbnail">
     </div>
       <h3 class="title" title="{{t.title.replace('-', ' ')}}">{{t.title.replace('-', ' ')}}</h3>
-      <h5 class="title"> ○ {{'upload.article_title' | translate}}</h5></div>
+      <h5 class="title">○ {{'upload.article_title' | translate}}</h5></div>
   <p class="description" [innerHTML]="t.description"></p>
   <app-thematic-videos [tags_id]="t.tags_id"></app-thematic-videos>
 </div>
