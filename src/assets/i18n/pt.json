@@ -32,6 +32,7 @@
     "minimum_message": "A mensagem deve ter no mínimo 2 caracteres",
     "no_email_value": "O campo Email é de preenchimento obrigatório",
     "email_format": "O formato do email não é válido",
+    "report_comment": "Denunciar Comentário",
     "time_ago": "",
     "timestamp": "há",
     "and": "e"

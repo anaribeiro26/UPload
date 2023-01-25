@@ -32,6 +32,7 @@
     "no_message_value": "Please enter a message",
     "no_email_value": "Please enter your email address",
     "email_format": "An email address should contain a single @",
+   "report_comment": "Report Comment",
     "time_ago": " ago",
     "timestamp": "",
     "and": "and"
