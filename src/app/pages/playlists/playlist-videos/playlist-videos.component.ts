@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {UPloadService} from "../../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
 import {VideosPlaylist} from "../../../services/UPload.model";
+import {faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-playlist-videos',
@@ -12,6 +14,8 @@ export class PlaylistVideosComponent implements OnInit {
   videosPlaylist: VideosPlaylist[] = [];
   and: any;
   lang = localStorage.getItem('lang') || 'pt'
+  faBookmarkSolid = faBookmarkSolid;
+  faBookmark = faBookmark;
   image_url = '/hqdefault.jpg'
   @Input() id!: number;
 
@@ -33,5 +37,31 @@ export class PlaylistVideosComponent implements OnInit {
         }
       })
     })
+  }
+
+  changeFavorite(id: number) {
+    this.UPload.toggleFavorite(id)
+  }
+
+  favourite(id: number) {
+    return this.UPload.isFavorite(id)
+  }
+
+  share(txt: string) {
+    console.log(txt)
+  }
+
+  clickShare(myUrl: string) {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Copied link here.',
+        url: myUrl
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+        .catch(error => console.log('Error sharing', error));
+    } else {
+      alert('Share not supported!');
+    }
   }
 }

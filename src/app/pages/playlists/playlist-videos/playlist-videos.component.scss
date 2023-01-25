@@ -26,7 +26,7 @@
     }
 
     .cel {
-      width: 340px;
+      width: 320px;
       height: 270px;
       //height: 255px;
       //height: 375px;
@@ -36,7 +36,7 @@
 
       .card_image {
         margin-bottom: 15px;
-        width: 340px;
+        width: 320px;
         height: 176px;
         object-fit: cover;
         border-radius: 16px 16px 0 0;
@@ -53,27 +53,31 @@
         transition: all linear 0.4s;
       }
 
-
       .itens {
         //margin: 20px;
         margin-top: -5px;
         margin-left: 16px;
 
-        .date {
-          margin-top: 10px;
-          font-size: 13px;
-          letter-spacing: 0.1px;
-          color: #92929D;
-          //padding-top: 8px;
-          padding-bottom: 55px;
+        .date_share {
+          display: flex;
+          justify-content: space-between;
 
-          .ago {
-            display: inline;
-            margin-right: 5px;
-          }
+          .date {
+            margin-top: 10px;
+            font-size: 13px;
+            letter-spacing: 0.1px;
+            color: #92929D;
+            //padding-top: 8px;
+            //padding-bottom: 55px;
 
-          .timestamp {
-            display: inline;
+            .ago {
+              display: inline;
+              margin-right: 5px;
+            }
+
+            .timestamp {
+              display: inline;
+            }
           }
         }
 
@@ -89,12 +93,12 @@
           font-size: 16px;
           margin-bottom: 3px;
           margin-top: 10px;
+         margin-right: 50px;
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
-          width: 300px;
         }
 
         .duration {
@@ -111,7 +115,7 @@
           border-radius: 8px;
           color: #ffffff;
           font-size: 12.8px;
-          font-weight: 500;
+        //  font-weight: 500;
         }
 
         .logo {
@@ -126,7 +130,51 @@
           background-color: #1C1C24;
           cursor: pointer;
         }
+        .actions {
+          display: flex;
+          justify-content: flex-end;
+          align-items: flex-end;
+          margin-right: 7px;
+          // padding-left: 80px;
+         //padding-right: 5px;
+         //width: 84px;
+         ////width: 165px;
+         //padding-top: 65px;
+          // padding-right: 20px;
 
+          .ng-fa-icon {
+            font-size: 18px;
+            color: #92929D;
+            cursor: pointer;
+            padding-right: 10px;
+            // position: absolute;
+            //top: 280px;
+            // margin-left: 256px;
+          }
+
+          fa-icon:hover {
+            color: #FFFFFF;
+          }
+
+          .share:hover {
+            background-image: url("../../../../assets/ic_ShareWhite.svg");
+          }
+
+          .share {
+            background-image: url("../../../../assets/ic_Share.svg");
+            background-size: cover;
+            //height: 26px;
+            cursor: pointer;
+            // padding-right: 24px;
+            // padding-bottom: 5px;
+            height: 23px;
+            margin-right: 5px;
+            padding-right: 23px;
+            // position: absolute;
+            // top: 280px;
+            //  margin-left: 288px;
+          }
+        }
       }
     }
   }
