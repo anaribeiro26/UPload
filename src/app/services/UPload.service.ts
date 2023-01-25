@@ -1,4 +1,4 @@
-import {Injectable, Input} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
@@ -18,7 +18,6 @@ import {
   FlaggingResponse,
   Thematics,
   ThematicVideos,
-  ChannelCommentRequest
 } from "./UPload.model";
 import {Observable} from "rxjs";
 
@@ -217,6 +216,24 @@ export class UPloadService {
     return this.http.post(BASE_URL_COMMENTS, body)
   }
 
+  reportChannelComment(id: number) {
+    const body =
+      {
+
+        "entity_id":[id],
+
+        "entity_type":["comment"],
+
+        "flag_id":[{"target_id": "comment_report","target_type": "flag"}],
+
+        "uid": ["0"]
+
+      }
+
+      return this.http.post(BASE_URL_FLAGGING, body)
+  }
+
+
   commentChannel(id: number, name: string, email: string, message: string) {
     const body = {
       "entity_id": [
@@ -277,20 +294,6 @@ export class UPloadService {
     return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
   }
 
-  //annelComment(id: number) {
-  //const body: ChannelCommentRequest = {
-  //  entity_id: [id],
-  //  entity_type: ["node"],
-  //  flag_id: [
-  //    {
-  //      "value": "comment",
-  //      "target_type": "flag",
-  //    }
-  //  ],
-  //  uid: ["0"]
-  //}
-  //  return this.http.post<FlaggingResponse>(BASE_URL_FLAGGING, body)
-  //}
 
   removeLikeOrDislike(id: number) {
     return this.http.delete(`${BASE_URL_FLAGGING}/${id}`)

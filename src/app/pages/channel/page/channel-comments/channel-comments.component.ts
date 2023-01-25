@@ -2,6 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ChannelComments} from "../../../../services/UPload.model";
 import {UPloadService} from "../../../../services/UPload.service";
 import {NgForm} from "@angular/forms";
+import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-channel-comments',
@@ -15,6 +16,8 @@ export class ChannelCommentsComponent implements OnInit {
   set = "?set=set4&bgset=bg2"
   random = (Math.random() + 1).toString(36).substring(7);
   @Input() channel_id!: number;
+  faFlag = faFlag;
+
 
   constructor(private UPload: UPloadService) {
   }
@@ -49,7 +52,12 @@ export class ChannelCommentsComponent implements OnInit {
     } else {
       this.errorMessage();
     }
+  }
 
+  handleReport(id: number) {
+    this.UPload.reportChannelComment(id).subscribe();
+    console.log(id)
+    alert("denúncia enviada!")
   }
 
 

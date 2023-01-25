@@ -28,12 +28,16 @@
         <div class="user">
           <p class="name" [innerHTML]="c.name"></p>
         </div>
+        <p>{{c.id}}</p>
         <div class="timestamp">
           <span class="ago">{{'upload.timestamp' | translate}}</span>
           <span class="date" [innerHTML]="c.date"></span>
         </div>
       </div>
       <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
+      <div class="report">
+        <p class="report-comment">Denunciar comentário <fa-icon (click)="handleReport(c.id)" class="flag" [icon]="faFlag"></fa-icon></p>
+      </div>
     </div>
   </div>
 </div>
