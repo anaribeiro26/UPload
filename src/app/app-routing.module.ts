@@ -11,6 +11,7 @@ import {TagsComponent} from "./pages/tags/tags.component";
 import {PlaylistDetailsComponent} from "./pages/playlists/playlist-details/playlist-details.component";
 import {FavouritesVideosComponent} from "./pages/favourites/favourites-videos/favourites-videos.component";
 import {ThematicDetailsComponent} from "./pages/thematics/page/thematic-details/thematic-details.component";
+import {CategoriesComponent} from "./pages/categories/categories.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlists/:id', component: PlaylistDetailsComponent},
   {path: 'tags/:name', component: TagsComponent},
+  {path: 'categories/:name', component: CategoriesComponent},
 ];
 
 @NgModule({
