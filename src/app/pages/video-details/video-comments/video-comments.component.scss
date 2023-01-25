@@ -120,6 +120,22 @@
       }
 
     }
+    .report {
+      display: flex;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 70%);
+
+      .report-comment {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .flag:hover {
+        color: rgba(255, 255, 255, 100%);
+        transition-timing-function: ease-in-out;
+        cursor: pointer;
+      }
+    }
 
 
     .submit-button {
