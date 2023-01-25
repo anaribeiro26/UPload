@@ -1,17 +1,43 @@
 <div class="comments">
-  <h4 class="title">{{'upload.comment_section' | translate}}</h4>
+  <h4 class="title">{{comments.length}} {{'upload.comment_section' | translate}}</h4>
   <div class="form">
-    <form #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
+    <form [formGroup]="meuFormGroup" #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
       <div class="form-box">
         <div class="random_photo">
           <img alt="photo" [src]="url+random+set">
         </div>
         <div class="inputs">
-          <div class="user_data">
-            <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}" ngModel>
-            <input type="email" name="email" id="email" placeholder="E-mail" ngModel>
+          <div class="use_data">
+            <div class="box_error">
+              <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}"
+                     formControlName="name" ngModel>
+              <div class="error"
+                   *ngIf="meuFormGroup.get('name')?.errors?.['required'] && meuFormGroup.get('name')?.touched">{{'upload.no_name_value' | translate}}
+              </div>
+              <div class="error"
+                   *ngIf="meuFormGroup.get('name')?.errors?.['minlength'] && meuFormGroup.get('name')?.touched">{{'upload.minimum_name' | translate}}
+              </div>
+            </div>
+            <div class="box_error">
+              <input type="email" name="email" id="email" placeholder="Email" formControlName="email" ngModel>
+              <div class="error-email"
+                   *ngIf="meuFormGroup.get('email')?.errors?.['required'] && meuFormGroup.get('email')?.touched">{{'upload.no_email_value' | translate}}
+              </div>
+              <div class="error-email"
+                   *ngIf="meuFormGroup.get('email')?.errors?.['email'] && meuFormGroup.get('email')?.touched">{{'upload.email_format' | translate}}
+              </div>
+            </div>
           </div>
-          <input type="text" name="message" id="message" placeholder="{{'upload.comment_message' | translate}}" ngModel>
+          <div class="message_error">
+            <textarea id="message" placeholder="{{'upload.comment_message' | translate}}" formControlName="comment"
+                      ngModel></textarea>
+            <div class="erro_message"
+                 *ngIf="meuFormGroup.get('comment')?.errors?.['required'] && meuFormGroup.get('comment')?.touched">{{'upload.no_message_value' | translate}}
+            </div>
+            <div class="erro_message"
+                 *ngIf="meuFormGroup.get('comment')?.errors?.['minlength'] && meuFormGroup.get('comment')?.touched">{{'upload.minimum_message' | translate}}
+            </div>
+          </div>
         </div>
       </div>
       <div class="submit-button">

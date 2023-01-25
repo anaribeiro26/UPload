@@ -21,7 +21,6 @@
       .random_photo {
         padding-right: 7px;
 
-
         img {
           width: 60px;
           height: 60px;
@@ -33,17 +32,33 @@
         margin-left: 10px;
         width: 100%;
 
+        .use_data {
+          display: flex;
+          width: 100%;
+
+          .box_error {
+            display: flex;
+            flex-wrap: wrap;
+            width: 50%;
+
+            .error {
+              color: red;
+              display: flex;
+              font-size: 11px;
+            }
+
+            .error-email {
+              color: red;
+              display: flex;
+              font-size: 11px;
+              margin-left: 10px;
+            }
+          }
+        }
+
         input {
           width: 100%;
         }
-
-        input[type="email"]:focus, input[type="email"]:active, input[type="text"]:focus, input[type="text"]:active {
-          background-color: #13131A;
-          background: transparent;
-          -webkit-box-shadow: 0 0 0 30px #13131A inset;
-          -webkit-text-fill-color: #FFFFFF;
-        }
-
 
         input[type="email"] {
           margin-left: 10px;
@@ -64,16 +79,41 @@
           border-bottom: 2px solid rgba(255, 255, 255, 100%);
         }
 
-
-        .user_data {
+        .message_error {
           display: flex;
+          flex-wrap: wrap;
+          font-size: 11px;
+
+          textarea {
+            font-family: "Space Grotesk";
+            width: 100%;
+            background-color: #13131A;
+            border: none;
+            border-bottom: 2px solid rgba(255, 255, 255, 70%);
+            // margin-right: 5px;
+            //margin-bottom: 15px;
+            color: white;
+            resize: none;
+          }
+
+          textarea:hover {
+            border-bottom: 2px solid rgba(255, 255, 255, 100%);
+          }
+
+          .erro_message {
+            color: red;
+            display: flex;
+            //margin-bottom: 20px;
+            font-size: 11px;
+
+          }
         }
       }
     }
 
     .submit-button {
       padding-top: 10px;
-      margin-top: 0;
+      //margin-top: 0;
       display: flex;
       justify-content: flex-end;
       //margin-left: 50px;
@@ -99,6 +139,7 @@
       }
     }
   }
+
   @media screen and (max-width: 1218px) {
     .form {
       max-width: 700px;
@@ -112,28 +153,19 @@
     }
   }
 
-//@media screen and (max-width: 885px) {
-//  .form {
-//    max-width: 550px;
-//    margin-bottom: 40px;
-//  }
-//}
+  //@media screen and (max-width: 885px) {
+  //  .form {
+  //    max-width: 550px;
+  //    margin-bottom: 40px;
+  //  }
+  //}
 
- //@media screen and (max-width: 790px) {
- //  .form {
- //    max-width: 450px;
- //    margin-bottom: 40px;
- //  }
- //}
-  .comment:hover {
-    .content {
-      .user_data {
-        .report {
-          display: flex;
-        }
-      }
-    }
-  }
+  //@media screen and (max-width: 790px) {
+  //  .form {
+  //    max-width: 450px;
+  //    margin-bottom: 40px;
+  //  }
+  //}
 
   .comment {
     display: flex;
@@ -158,78 +190,15 @@
       .user_data {
         display: flex;
         align-items: baseline;
-
-        .report {
-          display: none;
-          margin-left: 10px;
-          font-size: 13px;
-          color: rgba(255, 255, 255, 70%);
-
-          .report-comment {
-            margin-top: 0;
-            margin-bottom: 0;
-          }
-
-          .report-comment:hover {
-            color: rgba(255, 255, 255, 100%);
-            transition-timing-function: ease-in-out;
-            cursor: pointer;
-          }
-        }
-      }
-      #snackbar {
-        visibility: hidden; /* Hidden by default. Visible on click */
-        min-width: 200px; /* Set a default minimum width */
-        margin-left: -125px; /* Divide value of min-width by 2 */
-        background-color: #0b2e09; /* Black background color */
-        color: #fff; /* White text color */
-        text-align: center; /* Centered text */
-        border-radius: 10px; /* Rounded borders */
-        padding: 12px; /* Padding */
-        position: fixed; /* Sit on top of the screen */
-        z-index: 1; /* Add a z-index if needed */
-        left: 50%; /* Center the snackbar */
-        bottom: 30px; /* 30px from the bottom */
-      }
-
-      #snackbar.show {
-        visibility: visible; /* Show the snackbar */
-        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-        However, delay the fade out process for 2.5 seconds */
-        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
-        animation: fadein 0.5s, fadeout 0.5s 2.5s;
-      }
-      @-webkit-keyframes fadein {
-        from {bottom: 0; opacity: 0;}
-        to {bottom: 30px; opacity: 1;}
-      }
-
-      @keyframes fadein {
-        from {bottom: 0; opacity: 0;}
-        to {bottom: 30px; opacity: 1;}
-      }
-
-      @-webkit-keyframes fadeout {
-        from {bottom: 30px; opacity: 1;}
-        to {bottom: 0; opacity: 0;}
-      }
-
-      @keyframes fadeout {
-        from {bottom: 30px; opacity: 1;}
-        to {bottom: 0; opacity: 0;}
       }
 
       .timestamp {
         display: flex;
         color: rgba(116, 116, 123, 1);
         font-size: 14px;
-        margin-left: 10px;
 
         .ago {
-         // margin-left: 5px;
-        }
-
-        .date {
+          margin-right: 5px;
           margin-left: 5px;
         }
       }
@@ -258,8 +227,6 @@
 @media screen and (max-width: 500px) {
   .comments {
     padding-right: 35px;
-
-
 
     .form {
       max-width: 350px;
