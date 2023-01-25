@@ -11,6 +11,7 @@ import {faFlag} from "@fortawesome/free-solid-svg-icons";
 })
 export class ChannelCommentsComponent implements OnInit {
   comments: ChannelComments[] = [];
+  lang = localStorage.getItem('lang') || 'pt'
   title = "Comentários"
   url = "https://robohash.org/";
   set = "?set=set4&bgset=bg2"
@@ -59,8 +60,6 @@ export class ChannelCommentsComponent implements OnInit {
     console.log(id)
     alert("denúncia enviada!")
   }
-
-
 
   // @ts-ignore
   reloadPage(nameInput, emailInput, messageInput) {

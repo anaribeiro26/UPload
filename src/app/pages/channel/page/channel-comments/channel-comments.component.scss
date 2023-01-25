@@ -149,9 +149,10 @@
       .report-comment {
         margin-top: 0;
         margin-bottom: 0;
+        cursor: pointer;
       }
 
-      .flag:hover {
+      .report-comment:hover {
         color: rgba(255, 255, 255, 100%);
         transition-timing-function: ease-in-out;
         cursor: pointer;
@@ -174,7 +175,10 @@
         font-size: 14px;
 
         .ago {
-          margin-right: 5px;
+          margin-left: 5px;
+        }
+
+        .date {
           margin-left: 5px;
         }
       }
