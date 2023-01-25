@@ -4,7 +4,7 @@
       <div class="title-box">
         <div class="title-container">
           <h1 class="title">{{video.title}}</h1>
-          <fa-icon class="flag" [icon]="faFlag"></fa-icon>
+          <fa-icon class="flag" [icon]="faFlag" (click)="handleReport(video.id)"></fa-icon>
         </div>
         <div class="tags">
           <span class="tag-item" *ngFor="let tag of video.tags.split(',').slice(0, 3)"

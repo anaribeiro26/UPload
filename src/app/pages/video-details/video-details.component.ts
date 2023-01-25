@@ -187,6 +187,12 @@ export class VideoDetailsComponent implements OnInit {
       return -1;
     }
   }
+
+  handleReport(id: string) {
+    this.UPload.reportVideo(id).subscribe();
+    console.log(id)
+    alert("denúncia enviada!")
+  }
 }
 
 
