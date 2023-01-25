@@ -39,7 +39,7 @@ export interface Channels {
 
 export interface ChannelVideos {
   channel: string;
-  id: string;
+  id: number;
   video: string;
   channel_id: number;
   categories: string;
