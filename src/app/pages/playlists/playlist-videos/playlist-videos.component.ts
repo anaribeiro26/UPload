@@ -17,7 +17,7 @@ export class PlaylistVideosComponent implements OnInit {
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
   image_url = '/hqdefault.jpg'
-  @Input() id!: number;
+  @Input() id!: any;
 
   constructor(private UPload: UPloadService, private translate: TranslateService) {
   }

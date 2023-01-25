@@ -16,9 +16,11 @@ export class PlaylistDetailsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    let id = this.route.snapshot.params['id'];
-    this.UPload.getPlaylist(id).subscribe((playlistDetails) => {
-      this.playlistDetails = playlistDetails as Playlists[];
+    let title = this.route.snapshot.params['title'];
+    this.UPload.getPlaylist(title).subscribe((playlistDetails) => {
+      this.playlistDetails = (playlistDetails as Playlists[]).map((playlists : Playlists) => {
+        return {...playlists, title: playlists.title.replace(/\s/g, ' ')}
+      });
     })
   }
 }

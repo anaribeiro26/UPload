@@ -11,6 +11,7 @@ import {UPloadService} from "../../../services/UPload.service";
 export class ThematicsComponent implements OnInit {
   thematics: Thematics[] = [];
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+  currentTitle: any;
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
@@ -18,6 +19,7 @@ export class ThematicsComponent implements OnInit {
   ngOnInit(): void {
     this.UPload.getThematics().subscribe((thematics) => {
       this.thematics = (thematics as Thematics[]).map((thematic : Thematics) => {
+        this.currentTitle = thematic.title;
         return {...thematic, title: thematic.title.replace(/\s/g, '-')}
       });
     })
