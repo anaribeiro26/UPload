@@ -15,8 +15,8 @@
       </div>
       <p class="title" [innerHTML]="t.title"></p>
       <div class="date">
-        <p class="ago">{{'upload.timestamp' | translate}}</p>
-        <p class="timestamp" [innerHTML]="t.date"></p>
+        <p class="ago" *ngIf="lang =='pt'" >{{'upload.timestamp' | translate}}</p>
+        <p class="timestamp" [innerHTML]="t.date"></p><span *ngIf="lang=='en'" class="ago"> {{'upload.time_ago' | translate}}</span>
       </div>
     </div>
   </div>

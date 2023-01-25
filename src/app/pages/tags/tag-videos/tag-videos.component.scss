@@ -32,22 +32,27 @@
         border-radius: 16px 16px 0 0;
       }
 
-      .ago {
-        margin-left: 16px;
-      }
-
-      .timestamp, .ago {
-        color: #92929d;
-        font-size: 15px;
-        margin-top: 0;
-      }
-
       .date {
+        color: #92929d;
         display: flex;
-      }
+        font-size: 15px;
+        margin-left: 16px;
 
-      .ago {
-        margin-right: 6px;
+        span {
+          &.ago {
+            margin-left: 5px;
+          }
+        }
+
+        p {
+          &.ago {
+            margin-right: 5px;
+          }
+        }
+
+        .timestamp, .ago {
+          margin-top: 0;
+        }
       }
 
       .inner_box {

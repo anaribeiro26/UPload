@@ -12,6 +12,7 @@ export class TagVideosComponent implements OnInit {
 
   tag_videos: TaxonomyVideos[] = [];
   and:any;
+  lang = localStorage.getItem('lang') || 'pt'
   @Input() tags_id!: number;
   image_url = '/hqdefault.jpg'
 
