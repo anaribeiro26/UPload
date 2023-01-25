@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Tags} from "../../services/UPload.model";
+import {Taxonomies} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../services/UPload.service";
 
@@ -10,7 +10,7 @@ import {UPloadService} from "../../services/UPload.service";
 })
 export class TagsComponent implements OnInit {
 
-  tags: Tags[] = [];
+  tags: Taxonomies[] = [];
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }
@@ -19,7 +19,7 @@ export class TagsComponent implements OnInit {
     this.route.params.subscribe(params => {
       let name = params['name'];
       this.UPload.getTag(name).subscribe((tags) => {
-        this.tags = tags as Tags[];
+        this.tags = tags as Taxonomies[];
       })
     });
   }
