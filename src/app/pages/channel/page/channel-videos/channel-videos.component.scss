@@ -25,43 +25,103 @@
       cursor: pointer;
     }
 
-    @media screen and (max-width: 560px) {
-      .outer_box {
-        //   width: 50%;
-      }
-    }
+    //@media screen and (max-width: 560px) {
+    //  .outer_box {
+    //    //   width: 50%;
+    //  }
+    //}
 
     .outer_box {
       width: 312px;
       border-radius: 16px;
       background-color: #1c1c24;
 
+      .date_action {
+        display: flex;
+        justify-content: space-between;
+
+        .actions {
+          display: flex;
+          margin-right: 5px;
+          justify-content: flex-end;
+          //margin-right: -15px;
+          margin-bottom: 7px;
+          // padding-right: 5px;
+          width: 84px;
+          //width: 165px;
+          // padding-top: 5px;
+          // padding-left: 80px;
+          // display: flex;
+          // // justify-content: flex-end;
+          // // padding-left: 80px;
+          // // padding-right: 5px;
+          // width: 84px;
+          //width: 165px;
+          // padding-top: 65px;
+          // padding-right: 20px;
+
+          .ng-fa-icon {
+            font-size: 18px;
+            color: #92929D;
+            cursor: pointer;
+            padding-right: 10px;
+            // position: absolute;
+            //top: 280px;
+            // margin-left: 256px;
+          }
+
+          fa-icon:hover {
+            color: #FFFFFF;
+          }
+
+          .share:hover {
+            background-image: url("../../../../../assets/ic_ShareWhite.svg");
+          }
+
+          .share {
+            background-image: url("../../../../../assets/ic_Share.svg");
+            background-size: cover;
+            //height: 26px;
+            cursor: pointer;
+            // padding-right: 24px;
+            // padding-bottom: 5px;
+            height: 23px;
+            margin-right: 9px;
+            padding-right: 23px;
+            padding-bottom: 12px;
+            // position: absolute;
+            // top: 280px;
+            //  margin-left: 288px;
+          }
+        }
+
+        .date {
+          display: flex;
+          margin-left: 16px;
+
+          .timestamp, .ago {
+            color: #92929d;
+            font-size: 14px;
+            margin-top: 0;
+          }
+
+          .ago {
+            margin-right: 4px;
+          }
+
+          span {
+            &.ago {
+              margin-left: 5px;
+            }
+          }
+        }
+      }
+
       .thumbnail {
         height: 180px;
         width: 310px;
         object-fit: cover;
         border-radius: 16px 16px 0 0;
-      }
-
-      .date {
-        display: flex;
-        margin-left: 16px;
-
-        .timestamp, .ago {
-          color: #92929d;
-          font-size: 14px;
-          margin-top: 0;
-        }
-
-        .ago {
-          margin-right: 4px;
-        }
-
-        span {
-          &.ago {
-            margin-left: 5px;
-          }
-        }
       }
 
       .inner_box {
@@ -99,12 +159,12 @@
 
       .title {
         margin-left: 16px;
-       // margin-bottom: 5px;
-       // margin-top: 8px;
+        // margin-bottom: 5px;
+        // margin-top: 8px;
         margin-bottom: 10px;
         margin-top: 15px;
         // margin-bottom: 6px;
-        margin-right: 25px;
+        margin-right: 50px;
         // margin-bottom: 0.5rem;
         color: #FFFFFF;
         font-size: 16px;

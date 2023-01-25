@@ -17,12 +17,24 @@
         </div>
       </div>
       <p class="title" [innerHTML]="v.title"></p>
+      <div class="date_action">
       <div class="date">
         <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
         <p class="timestamp" [innerHTML]="v.date"></p><span class="ago" *ngIf="lang=='en'"> {{'upload.time_ago' | translate}}</span>
       </div>
+      <div class="actions">
+        <div class="bookmark" (click)="changeFavorite(v.id)">
+          <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
+        </div>
+        <div class="share" alt="share" (click)="clickShare(v.video)">
+          <!--              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>-->
+          <!--<fa-icon class="share-button" [icon]="faShare" (click)="clickShare(v.video)"></fa-icon>-->
+          <!--  <img class="share-button" alt="share" src="../../../assets/ic_Share.svg" (click)="clickShare(v.video)">-->
+        </div>
+      </div>
     </div>
     <div class="outer_box_empty" *ngIf="videos.length % 2 !== 0"></div>
   </div>
+</div>
 </div>
 </div>
