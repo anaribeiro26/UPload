@@ -11,6 +11,7 @@ import {TranslateService} from "@ngx-translate/core";
 export class CategoryVideosComponent implements OnInit {
   category_videos: TaxonomyVideos[] = [];
   and:any;
+  lang = localStorage.getItem('lang') || 'pt'
   @Input() category_id!: number;
   image_url = '/hqdefault.jpg'
 
