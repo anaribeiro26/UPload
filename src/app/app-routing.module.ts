@@ -23,7 +23,7 @@ const routes: Routes = [
   {path: 'video/:id', component: VideoDetailsComponent},
   {path: 'playlists/favourites', component: FavouritesVideosComponent},
   {path: 'playlists', component: PlaylistsComponent},
-  {path: 'playlists/:id', component: PlaylistDetailsComponent},
+  {path: 'playlists/:title', component: PlaylistDetailsComponent},
   {path: 'tags/:name', component: TagsComponent},
   {path: 'categories/:name', component: CategoriesComponent},
 ];
