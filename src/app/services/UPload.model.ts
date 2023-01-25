@@ -174,12 +174,12 @@ export interface VideosPlaylist {
   id: number;
 }
 
-export interface Tags {
+export interface Taxonomies {
   name: string;
   id: number;
 }
 
-export interface TagVideos {
+export interface TaxonomyVideos {
   channel: string;
   video_id: number;
   videos: string;

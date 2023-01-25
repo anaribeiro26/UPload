@@ -8,8 +8,8 @@ import {
   VideoDetails,
   Videos,
   VideosPlaylist,
-  Tags,
-  TagVideos,
+  Taxonomies,
+  TaxonomyVideos,
   Playlists,
   ChannelComments,
   VideoComments,
@@ -140,15 +140,23 @@ export class UPloadService {
   }
 
   getSuggestedTags() {
-    return this.http.get<Tags[]>(BASE_URL + prefix + "/tags/sugeridas")
+    return this.http.get<Taxonomies[]>(BASE_URL + prefix + "/tags/sugeridas")
   }
 
   getTag(name: string) {
-    return this.http.get<Tags[]>(BASE_URL + prefix + "/tags/" + name)
+    return this.http.get<Taxonomies[]>(BASE_URL + prefix + "/tags/" + name)
   }
 
   getTagVideos(tags_id: number) {
-    return this.http.get<TagVideos[]>(BASE_URL + prefix + "/videos/tag/" + tags_id)
+    return this.http.get<TaxonomyVideos[]>(BASE_URL + prefix + "/videos/tag/" + tags_id)
+  }
+
+  getCategory(name: string) {
+    return this.http.get<Taxonomies[]>(BASE_URL + prefix + "/categorias/" + name)
+  }
+
+  getCategoryVideos(category_id: number) {
+    return this.http.get<TaxonomyVideos[]>(BASE_URL + prefix + "/videos/categoria/" + category_id)
   }
 
   getFavorites() {
