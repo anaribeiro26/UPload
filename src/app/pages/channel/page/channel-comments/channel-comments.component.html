@@ -33,10 +33,10 @@
           <span class="date" [innerHTML]="c.date"></span><span class="ago" *ngIf="lang=='en'"> {{'upload.time_ago' | translate}}</span>
         </div>
         <div class="report">
-          <p class="report-comment">{{'upload.report_comment' | translate}} <fa-icon (click)="handleReport(c.id)" class="flag" [icon]="faFlag"></fa-icon></p>
+          <p (click)="handleReport(c.id)" class="report-comment">{{'upload.report_comment' | translate}} <fa-icon class="flag" [icon]="faFlag"></fa-icon></p>
         </div>
       </div>
-      <div id="snackbar">Sua denúncia foi enviada!</div>
+      <div id="snackbar">A sua denúncia foi enviada!</div>
       <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
     </div>
   </div>
