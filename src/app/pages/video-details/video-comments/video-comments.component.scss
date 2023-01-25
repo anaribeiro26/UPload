@@ -355,9 +355,9 @@
 
   .comment:hover {
     .content {
-    .report {
-      display: flex;
-    }
+      .report {
+        display: flex;
+      }
     }
   }
 
@@ -397,10 +397,10 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        margin-left: 10px;
+        // margin-left: 10px;
 
         .ago {
-        //  margin-left: 10px;
+          //  margin-left: 10px;
         }
 
         .date {
@@ -409,14 +409,19 @@
         }
       }
 
-      .name {
-        margin-bottom: 8px;
-        font-weight: 600;
+      .user {
+        //width: min-content;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+
+        .name {
+          margin-bottom: 8px;
+          margin-right: 10px;
+          font-weight: 600;
+        }
       }
 
       .textfield {
@@ -434,8 +439,14 @@
         .report-comment {
           margin-top: 0;
           margin-bottom: 0;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
       }
+
       .report:hover {
         color: rgba(255, 255, 255, 100%);
         transition-timing-function: ease-in-out;
@@ -456,6 +467,7 @@
         left: 50%; /* Center the snackbar */
         bottom: 30px; /* 30px from the bottom */
       }
+
       #snackbar.show {
         visibility: visible; /* Show the snackbar */
         /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
@@ -463,24 +475,49 @@
         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
         animation: fadein 0.5s, fadeout 0.5s 2.5s;
       }
+
       @-webkit-keyframes fadein {
-        from {bottom: 0; opacity: 0;}
-        to {bottom: 30px; opacity: 1;}
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
       }
 
       @keyframes fadein {
-        from {bottom: 0; opacity: 0;}
-        to {bottom: 30px; opacity: 1;}
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
       }
 
       @-webkit-keyframes fadeout {
-        from {bottom: 30px; opacity: 1;}
-        to {bottom: 0; opacity: 0;}
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
       }
 
       @keyframes fadeout {
-        from {bottom: 30px; opacity: 1;}
-        to {bottom: 0; opacity: 0;}
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
       }
 
     }
