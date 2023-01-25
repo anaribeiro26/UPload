@@ -133,6 +133,23 @@
       }
     }
 
+    .report {
+      display: flex;
+      font-size: 13px;
+      color: #0a6fb4;
+
+      .report-comment {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .flag:hover {
+        color: rgba(255, 255, 255, 100%);
+        transition-timing-function: ease-in-out;
+        cursor: pointer;
+      }
+    }
+
     .content {
       display: flex;
       flex-direction: column;
@@ -178,6 +195,8 @@
 @media screen and (max-width: 500px) {
   .comments {
     padding-right: 35px;
+
+
 
     .form {
       max-width: 350px;
