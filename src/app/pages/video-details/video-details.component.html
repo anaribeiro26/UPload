@@ -28,16 +28,13 @@
               <div class="date"><p>{{'upload.timestamp' | translate}} {{video.date}}</p></div>
             </div>
             <div class="like-dislike">
-              <div class="like">
-                <fa-icon (click)="handleLike()"
-                         [icon]="isLiked()? faThumbsUpSolid : faThumbsUp"></fa-icon>
+              <div class="like" (click)="handleLike()">
+                <fa-icon [icon]="isLiked()? faThumbsUpSolid : faThumbsUp"></fa-icon>
                 <p class="like_count">{{video.likes}}</p>
               </div>
               <p class="bar">|</p>
-              <div class="dislike">
-                <!--              <div>|</div>-->
-                <fa-icon (click)="handleDislike()"
-                         [icon]="isDisliked()? faThumbsDownSolid : faThumbsDown"></fa-icon>
+              <div class="dislike" (click)="handleDislike()">
+                <fa-icon [icon]="isDisliked()? faThumbsDownSolid : faThumbsDown"></fa-icon>
                 <p>{{video.dislikes}}</p>
               </div>
             </div>

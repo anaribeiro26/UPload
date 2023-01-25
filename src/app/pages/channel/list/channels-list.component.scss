@@ -72,7 +72,7 @@
       padding: 0 16px 16px 16px;
       min-width: 0;
       justify-content: center;
-      max-width: 800px;
+     // max-width: 800px;
 
       .title {
         // margin-bottom: 4px;
@@ -93,10 +93,11 @@
       }
 
       .description {
+        width: 90%;
         margin-top: 0;
         // word-break: break-word;
         font-size: 14px;
-        max-width: 600px;
+      //  max-width: 600px;
         // line-height: 1.8rem;
         // font-weight: 400;
         // max-height: 3.6rem;
@@ -135,8 +136,6 @@
       max-width: 160px;
     }
 
-    .description {
-      max-width: 400px;
-    }
+
   }
 }
