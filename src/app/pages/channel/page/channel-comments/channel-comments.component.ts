@@ -3,6 +3,7 @@ import {ChannelComments} from "../../../../services/UPload.model";
 import {UPloadService} from "../../../../services/UPload.service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {NgForm} from "@angular/forms";
+import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-channel-comments',
@@ -12,11 +13,13 @@ import {NgForm} from "@angular/forms";
 export class ChannelCommentsComponent implements OnInit {
   meuFormGroup: FormGroup;
   comments: ChannelComments[] = [];
+  lang = localStorage.getItem('lang') || 'pt'
   title = "Comentários"
   url = "https://robohash.org/";
   set = "?set=set4&bgset=bg2"
   random = (Math.random() + 1).toString(36).substring(7);
   @Input() channel_id!: number;
+  faFlag = faFlag;
 
   constructor(private UPload: UPloadService, private formBuilder: FormBuilder) {
     this.meuFormGroup = this.formBuilder.group({
@@ -66,6 +69,15 @@ export class ChannelCommentsComponent implements OnInit {
     } else {
       this.errorMessage();
     }
+  }
+
+  handleReport(id: number) {
+    this.UPload.reportChannelComment(id).subscribe();
+    console.log(id)
+
+    let toast: any = document.getElementById("snackbar");
+    toast.className = "show";
+    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
   }
 
   // @ts-ignore

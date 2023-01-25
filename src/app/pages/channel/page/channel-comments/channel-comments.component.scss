@@ -60,6 +60,13 @@
           width: 100%;
         }
 
+        input[type="email"]:focus, input[type="email"]:active, input[type="text"]:focus, input[type="text"]:active {
+          background-color: #13131A;
+          background: transparent;
+          -webkit-box-shadow: 0 0 0 30px #13131A inset;
+          -webkit-text-fill-color: #FFFFFF;
+        }
+
         input[type="email"] {
           margin-left: 10px;
         }
@@ -167,6 +174,16 @@
   //  }
   //}
 
+  .comment:hover {
+    .content {
+      .user_data {
+        .report {
+          display: flex;
+        }
+      }
+    }
+  }
+
   .comment {
     display: flex;
     align-items: center;
@@ -190,15 +207,103 @@
       .user_data {
         display: flex;
         align-items: baseline;
+
+        .report {
+          display: none;
+          margin-left: 10px;
+          font-size: 13px;
+          color: rgba(255, 255, 255, 70%);
+
+          .report-comment {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          .report-comment:hover {
+            color: rgba(255, 255, 255, 100%);
+            transition-timing-function: ease-in-out;
+            cursor: pointer;
+          }
+        }
+      }
+
+      #snackbar {
+        visibility: hidden; /* Hidden by default. Visible on click */
+        min-width: 200px; /* Set a default minimum width */
+        margin-left: -125px; /* Divide value of min-width by 2 */
+        background-color: #0b2e09; /* Black background color */
+        color: #fff; /* White text color */
+        text-align: center; /* Centered text */
+        border-radius: 10px; /* Rounded borders */
+        padding: 12px; /* Padding */
+        position: fixed; /* Sit on top of the screen */
+        z-index: 1; /* Add a z-index if needed */
+        left: 50%; /* Center the snackbar */
+        bottom: 30px; /* 30px from the bottom */
+      }
+
+      #snackbar.show {
+        visibility: visible; /* Show the snackbar */
+        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+        However, delay the fade out process for 2.5 seconds */
+        -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      }
+
+      @-webkit-keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadein {
+        from {
+          bottom: 0;
+          opacity: 0;
+        }
+        to {
+          bottom: 30px;
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeout {
+        from {
+          bottom: 30px;
+          opacity: 1;
+        }
+        to {
+          bottom: 0;
+          opacity: 0;
+        }
       }
 
       .timestamp {
         display: flex;
         color: rgba(116, 116, 123, 1);
         font-size: 14px;
+        margin-left: 10px;
 
         .ago {
-          margin-right: 5px;
+          // margin-left: 5px;
+        }
+        .date {
           margin-left: 5px;
         }
       }
