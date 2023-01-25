@@ -32,6 +32,8 @@ import { FilterPipe } from './pipe/filter.pipe';
 import { YoutubePlayerComponent } from "./pages/video-details/youtube-player/youtube-player.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { SuggestedChannelsComponent } from './pages/home-page/suggested-channels/suggested-channels/suggested-channels.component';
+import { CategoriesComponent } from './pages/categories//categories.component';
+import { CategoryVideosComponent } from './pages/categories/category-videos/category-videos.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { SuggestedChannelsComponent } from './pages/home-page/suggested-channels
     ThematicVideosComponent,
     FilterPipe,
     YoutubePlayerComponent,
-    SuggestedChannelsComponent
+    SuggestedChannelsComponent,
+    CategoriesComponent,
+    CategoryVideosComponent
   ],
   imports: [
     BrowserModule,
