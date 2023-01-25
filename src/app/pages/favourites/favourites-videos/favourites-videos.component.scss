@@ -147,7 +147,7 @@
                 font-size: 18px;
                 color: #92929D;
                 cursor: pointer;
-                padding-right: 12px;
+                padding-right: 10px;
                 // position: absolute;
                 //top: 280px;
                 // margin-left: 256px;
@@ -157,26 +157,32 @@
                 color: #FFFFFF;
               }
 
-              .share-button:hover {
-                color: #FFFFFF;
+              .share:hover {
+                background-image: url("../../../../assets/ic_ShareWhite.svg");
               }
 
-              .share-button {
-                height: 20px;
+              .share {
+                background-image: url("../../../../assets/ic_Share.svg");
+                background-size: cover;
+                height: 26px;
                 cursor: pointer;
-                padding-right: 15px;
-                color: #FFFFFF;
+                // padding-right: 24px;
+                // padding-bottom: 5px;
+                height: 23px;
+                margin-right: 9px;
+                padding-right: 23px;
+                padding-bottom: 12px;
                 // position: absolute;
                 // top: 280px;
                 //  margin-left: 288px;
               }
 
-              .share-button {
-                // background-image: ../../../assets/ic_Share.svg;
-                // position: absolute;
-                // top: 280px;
-                //  margin-left: 288px;
-              }
+             // .share-button {
+             //   // background-image: ../../../assets/ic_Share.svg;
+             //   // position: absolute;
+             //   // top: 280px;
+             //   //  margin-left: 288px;
+             // }
             }
           }
 
