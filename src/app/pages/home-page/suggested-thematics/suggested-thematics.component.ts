@@ -17,7 +17,7 @@ export class SuggestedThematicsComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.UPload.getThematics().subscribe((thematics) => {
+    this.UPload.getSuggestedThematics().subscribe((thematics) => {
       this.thematics = thematics as Thematics[]
       }
     )

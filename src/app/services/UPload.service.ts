@@ -69,6 +69,10 @@ export class UPloadService {
     return this.http.get<ThematicVideos[]>(BASE_URL + prefix + "/videos/artigo/" + tags_id)
   }
 
+  getSuggestedThematics() {
+    return this.http.get(BASE_URL + prefix + "/artigos/aleatorios")
+  }
+
   //getThematicVideos() {
   //  return new Observable(observer => {
   //    this.http.get<ThematicVideos[]>(BASE_URL + "/videos").subscribe((videos: Videos[]) => {
