@@ -1,7 +1,7 @@
-<div class="playlist" *ngFor="let p of playlistDetails | slice: 0: 1">
-  <div class="header">
+<div class="playlist-page">
+  <div class="playlist" *ngFor="let p of playlistDetails | slice: 0: 1">
     <h1 [innerHTML]="p.title"></h1>
-    <h5>○ {{'upload.playlist_title' | translate}}</h5>
+    <p>○ {{'upload.playlist_title' | translate}}</p>
   </div>
 </div>
 <app-playlist-videos *ngFor="let p of playlistDetails | slice: 0: 1" [id]="p.id"></app-playlist-videos>

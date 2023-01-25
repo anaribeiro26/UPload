@@ -20,18 +20,18 @@
 <div class="uploads">
   <div class="videos">
     <div class="cel" *ngFor="let p of playListFilters">
-      <div class="box" title="{{p.title}}" routerLink="/playlists/{{p.id}}" routerLinkActive="active">
-        <div class="card_image">
+      <div class="box" title="{{p.title}}">
+        <div class="card_image" routerLink="/playlists/{{p.id}}" routerLinkActive="active">
           <img class="small_image" alt="thumbnail"
                [src]="p.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         </div>
         <div class="itens">
-          <p class="title">{{p.title}}</p>
+          <p class="title" id="video-title" routerLink="/playlists/{{p.id}}" routerLinkActive="active">{{p.title}}</p>
           <div class="category">
-            <p class="title">{{p.category}}</p>
+            <p class="title" routerLink="/categories/{{p.category}}" routerLinkActive="active">{{p.category}}</p>
           </div>
         </div>
-        <div class="play">
+        <div class="play" routerLink="/playlists/{{p.id}}" routerLinkActive="active">
           <div class="text">{{p.numberOfVideos}} {{'upload.favorite_video' | translate}}<span *ngIf="p.numberOfVideos">
             <span *ngIf="p.numberOfVideos > 1">s</span></span></div>
         </div>
