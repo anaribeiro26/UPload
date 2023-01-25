@@ -90,7 +90,7 @@ export class VideoCommentsComponent implements OnInit {
   }
 
   handleReport(id: string) {
-    this.UPload.reportChannelComment(parseInt(id)).subscribe();
+    this.UPload.reportVideoComment(parseInt(id)).subscribe();
     console.log(id)
     alert("denúncia enviada!")
   }
