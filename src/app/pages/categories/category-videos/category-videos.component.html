@@ -1,0 +1,23 @@
+<div class="uploads">
+  <div class="videos">
+    <div class="outer_box" *ngFor="let c of category_videos" routerLink="/video/{{c.video_id}}" routerLinkActive="active">
+      <div class="inner_box" title="{{c.title}}">
+        <img alt="thumbnail" class="thumbnail"
+             [src]="c.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+        <div class="details" [innerHTML]="c.duration"></div>
+        <p class="tags">
+            <span class="tag" *ngFor="let tag of c.tags.split(', ').slice(0, 3)"
+                  routerLink="/tags/{{tag}}"
+                  routerLinkActive="active"
+                  (click)="$event.stopPropagation()"
+            >#{{tag}} </span>
+        </p>
+      </div>
+      <p class="title" [innerHTML]="c.title"></p>
+      <div class="date">
+        <p class="ago">{{'upload.timestamp' | translate}}</p>
+        <p class="timestamp" [innerHTML]="c.date"></p>
+      </div>
+    </div>
+  </div>
+</div>
