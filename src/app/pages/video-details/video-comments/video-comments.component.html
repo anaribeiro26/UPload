@@ -57,14 +57,14 @@
             <p class="name" [innerHTML]="c.name"></p>
           </div>
           <div class="timestamp">
-            <span class="ago">{{'upload.timestamp' | translate}}</span>
-            <span class="date" [innerHTML]="c.date"></span>
+            <span class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</span>
+            <span class="date" [innerHTML]="c.date"></span><span *ngIf="lang=='en'">{{'upload.time_ago' | translate}}</span>
           </div>
         </div>
         <div>
           <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
           <div class="report">
-            <p class="report-comment">Denunciar comentário <fa-icon (click)="handleReport(c.id)" class="flag" [icon]="faFlag"></fa-icon></p>
+            <p class="report-comment">{{'upload.report_comment' | translate}} <fa-icon (click)="handleReport(c.id)" class="flag" [icon]="faFlag"></fa-icon></p>
           </div>
         </div>
       </div>

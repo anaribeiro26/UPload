@@ -82,10 +82,9 @@
         }
 
 
-        input[type="text"]:hover, input[type="email"]:hover{
+        input[type="text"]:hover, input[type="email"]:hover {
           border-bottom: 2px solid rgba(255, 255, 255, 100%);
         }
-
 
 
         .message_error {
@@ -120,6 +119,7 @@
       }
 
     }
+
     .report {
       display: flex;
       font-size: 13px;
@@ -368,7 +368,7 @@
   //  }
   //
   //}
-  .comment-box{
+  .comment-box {
     margin-top: 70px;
   }
 
@@ -410,8 +410,12 @@
         text-overflow: ellipsis;
 
         .ago {
-          margin-right: 5px;
           margin-left: 5px;
+        }
+
+        .date {
+          margin-left: 5px;
+
         }
       }
 

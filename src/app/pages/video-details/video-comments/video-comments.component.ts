@@ -14,6 +14,7 @@ import {faFlag} from "@fortawesome/free-solid-svg-icons";
 export class VideoCommentsComponent implements OnInit {
   meuFormGroup: FormGroup;
   videoComments: VideoComments[] = [];
+  lang = localStorage.getItem('lang') || 'pt'
   title = "Comentários"
   url = "https://robohash.org/";
   set = "?set=set4&bgset=bg2";
