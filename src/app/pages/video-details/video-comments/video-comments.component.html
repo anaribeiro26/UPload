@@ -1,5 +1,5 @@
 <div class="comments">
-  <h4 class="title">{{'upload.comment_section' | translate}}</h4>
+  <h4 class="title">{{videoComments.length}} {{'upload.comment_section' | translate}}</h4>
   <!--  <form [formGroup]="form" (ngSubmit)="handleCommentFormSubmit(comment.value)">-->
   <div class="form">
     <form [formGroup]="meuFormGroup" #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
