@@ -1,16 +1,16 @@
 <div class="big-box">
   <div class="container-box">
     <div class="cel" *ngFor="let video of videos | slice: 0: 2">
-      <div class="box" routerLink="/video/{{video.id}}" routerLinkActive="active" title="{{video.title}}">
-        <div class="card_image">
+      <div class="box" title="{{video.title}}">
+        <div class="card_image" routerLink="/video/{{video.id}}" routerLinkActive="active" >
           <img class="small_image" alt="thumbnail"
                [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
         </div>
         <div class="itens">
-          <p class="name">{{video.channel}}</p>
-          <a class="title">{{video.title}}</a>
+          <p class="name" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" [innerHTML]="video.channel"></p>
+          <a class="title" routerLink="/video/{{video.id}}" routerLinkActive="active" >{{video.title}}</a>
           <div class="ago_actions">
-            <div class="date">
+            <div class="date"  routerLink="/video/{{video.id}}" routerLinkActive="active">
               <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
               <p class="timestamp" [innerHTML]="video.date"></p><span
               class="ago"> {{'upload.time_ago' | translate}}</span>
@@ -20,12 +20,10 @@
               <div class="bookmark" (click)="changeFavorite(video.id)">
                 <fa-icon [icon]="favourite(video.id)? faBookmarkSolid : faBookmark"></fa-icon>
               </div>
-              <div class="share" alt="share" (click)="clickShare(video.video)"></div>
+              <div class="share" (click)="clickShare(video.video)"></div>
             </div>
           </div>
-          <a>
-            <img class="logo" alt="logo" [src]="image_url + video.logo">
-          </a>
+            <img class="logo" alt="logo" [src]="image_url + video.logo" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" >
         </div>
       </div>
     </div>
