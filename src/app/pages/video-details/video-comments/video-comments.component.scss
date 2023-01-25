@@ -117,26 +117,7 @@
           }
         }
       }
-
     }
-
-    .report {
-      display: flex;
-      font-size: 13px;
-      color: rgba(255, 255, 255, 70%);
-
-      .report-comment {
-        margin-top: 0;
-        margin-bottom: 0;
-      }
-
-      .flag:hover {
-        color: rgba(255, 255, 255, 100%);
-        transition-timing-function: ease-in-out;
-        cursor: pointer;
-      }
-    }
-
 
     .submit-button {
       padding-top: 10px;
@@ -372,6 +353,14 @@
     margin-top: 70px;
   }
 
+  .comment:hover {
+    .content {
+    .report {
+      display: flex;
+    }
+    }
+  }
+
   .comment {
     display: flex;
     align-items: center;
@@ -408,9 +397,10 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
+        margin-left: 10px;
 
         .ago {
-          margin-left: 5px;
+        //  margin-left: 10px;
         }
 
         .date {
@@ -433,6 +423,23 @@
         margin-right: auto;
         margin-top: auto;
         margin-bottom: auto;
+      }
+
+      .report {
+        display: none;
+        margin-left: 10px;
+        font-size: 13px;
+        color: rgba(255, 255, 255, 70%);
+
+        .report-comment {
+          margin-top: 0;
+          margin-bottom: 0;
+        }
+      }
+      .report:hover {
+        color: rgba(255, 255, 255, 100%);
+        transition-timing-function: ease-in-out;
+        cursor: pointer;
       }
     }
   }

@@ -125,6 +125,15 @@
  //    margin-bottom: 40px;
  //  }
  //}
+  .comment:hover {
+    .content {
+      .user_data {
+        .report {
+          display: flex;
+        }
+      }
+    }
+  }
 
   .comment {
     display: flex;
@@ -141,24 +150,6 @@
       }
     }
 
-    .report {
-      display: flex;
-      font-size: 13px;
-      color: #0a6fb4;
-
-      .report-comment {
-        margin-top: 0;
-        margin-bottom: 0;
-        cursor: pointer;
-      }
-
-      .report-comment:hover {
-        color: rgba(255, 255, 255, 100%);
-        transition-timing-function: ease-in-out;
-        cursor: pointer;
-      }
-    }
-
     .content {
       display: flex;
       flex-direction: column;
@@ -167,15 +158,34 @@
       .user_data {
         display: flex;
         align-items: baseline;
+
+        .report {
+          display: none;
+          margin-left: 10px;
+          font-size: 13px;
+          color: rgba(255, 255, 255, 70%);
+
+          .report-comment {
+            margin-top: 0;
+            margin-bottom: 0;
+          }
+
+          .report:hover {
+            color: rgba(255, 255, 255, 100%);
+            transition-timing-function: ease-in-out;
+            cursor: pointer;
+          }
+        }
       }
 
       .timestamp {
         display: flex;
         color: rgba(116, 116, 123, 1);
         font-size: 14px;
+        margin-left: 10px;
 
         .ago {
-          margin-left: 5px;
+         // margin-left: 5px;
         }
 
         .date {
