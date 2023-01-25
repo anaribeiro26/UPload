@@ -21,10 +21,10 @@
             </div>
             <div class="box_error">
               <input type="email" name="email" id="email" placeholder="Email" formControlName="email" ngModel>
-              <div class="erro"
+              <div class="error"
                    *ngIf="meuFormGroup.get('email')?.errors?.['required'] && meuFormGroup.get('email')?.touched">{{'upload.no_email_value' | translate}}
               </div>
-              <div class="erro"
+              <div class="error"
                    *ngIf="meuFormGroup.get('email')?.errors?.['email'] && meuFormGroup.get('email')?.touched">{{'upload.email_format' | translate}}
               </div>
             </div>
