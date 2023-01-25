@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ChannelComments} from "../../../../services/UPload.model";
 import {UPloadService} from "../../../../services/UPload.service";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {NgForm} from "@angular/forms";
 import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
@@ -10,6 +11,7 @@ import {faFlag} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./channel-comments.component.scss']
 })
 export class ChannelCommentsComponent implements OnInit {
+  meuFormGroup: FormGroup;
   comments: ChannelComments[] = [];
   lang = localStorage.getItem('lang') || 'pt'
   title = "Comentários"
@@ -19,8 +21,22 @@ export class ChannelCommentsComponent implements OnInit {
   @Input() channel_id!: number;
   faFlag = faFlag;
 
-
-  constructor(private UPload: UPloadService) {
+  constructor(private UPload: UPloadService, private formBuilder: FormBuilder) {
+    this.meuFormGroup = this.formBuilder.group({
+      name: ['', [
+        Validators.required,
+        Validators.minLength(2)]],
+      comment: ['', [
+        Validators.required,
+        Validators.minLength(2)]],
+      email: ['', [
+        Validators.required,
+        Validators.email
+      ]],
+      id: "0",
+      channel_id:this.channel_id,
+      date: "0 segundos"
+    });
   }
 
   ngOnInit(): void {
@@ -30,20 +46,20 @@ export class ChannelCommentsComponent implements OnInit {
     })
   }
 
-  handleCommentFormSubmit(data: { name: string; email: string; message: string }, userPost: NgForm){
+  handleCommentFormSubmit(data: { name: string; email: string; comment: string }, userPost: any){
 
     console.log(data)
     const nameInput = data.name.valueOf()
     console.log(nameInput)
     const emailInput = data.email.valueOf()
-    const messageInput = data.message.valueOf()
+    const messageInput = data.comment.valueOf()
 
 
     if (this.reloadPage(nameInput, emailInput, messageInput)) {
-      this.UPload.commentChannel(this.channel_id, data.name, data.email, data.message).subscribe((response) => {
+      this.UPload.commentChannel(this.channel_id, data.name, data.email, data.comment).subscribe((response) => {
         this.comments.unshift({
           name: data.name,
-          comment: data.message,
+          comment: data.comment,
           id: parseInt("0"),
           channel_id: this.channel_id,
           date: "0 segundos"
@@ -66,16 +82,11 @@ export class ChannelCommentsComponent implements OnInit {
 
   // @ts-ignore
   reloadPage(nameInput, emailInput, messageInput) {
-    if (nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2 ) {
-      return true
-    } else {
-      return false
-    }
+    return  nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2
   }
 
   errorMessage() {
     alert('erro')
   }
-
 }
 
