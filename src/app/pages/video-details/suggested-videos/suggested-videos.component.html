@@ -10,16 +10,17 @@
           <p class="name">{{video.channel}}</p>
           <a class="title">{{video.title}}</a>
           <div class="ago_actions">
-          <div class="date">
-            <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
-            <p class="timestamp" [innerHTML]="video.date"></p><span class="ago"> {{'upload.time_ago' | translate}}</span>
-          </div>
-          <p class="duration">{{video.duration}}</p>
-          <div class="actions">
-            <div class="bookmark" (click)="changeFavorite(video.id)">
-              <fa-icon [icon]="favourite(video.id)? faBookmarkSolid : faBookmark"></fa-icon>
+            <div class="date">
+              <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
+              <p class="timestamp" [innerHTML]="video.date"></p><span
+              class="ago"> {{'upload.time_ago' | translate}}</span>
             </div>
-            <div class="share" alt="share" (click)="clickShare(video.video)"></div>
+            <p class="duration">{{video.duration}}</p>
+            <div class="actions">
+              <div class="bookmark" (click)="changeFavorite(video.id)">
+                <fa-icon [icon]="favourite(video.id)? faBookmarkSolid : faBookmark"></fa-icon>
+              </div>
+              <div class="share" alt="share" (click)="clickShare(video.video)"></div>
             </div>
           </div>
           <a>

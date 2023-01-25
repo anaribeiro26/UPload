@@ -23,6 +23,10 @@ export class SuggestedVideosComponent implements OnInit {
   @Input() mainVideoTags: string | undefined;
   mainVideoTagsList: string[] = [];
   video: VideoDetails | undefined;
+  // random = [Math.floor(Math.random()*this.videos.length)];
+  Math: any;
+
+
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) {
   }
@@ -77,6 +81,7 @@ export class SuggestedVideosComponent implements OnInit {
     })
   }
 
+
   changeFavorite(id: number) {
     this.UPload.toggleFavorite(id)
   }
@@ -102,4 +107,5 @@ export class SuggestedVideosComponent implements OnInit {
       alert('Share not supported!');
     }
   }
+
 }
