@@ -58,7 +58,10 @@ export class ChannelCommentsComponent implements OnInit {
   handleReport(id: number) {
     this.UPload.reportChannelComment(id).subscribe();
     console.log(id)
-    alert("denúncia enviada!")
+
+    let toast: any = document.getElementById("snackbar");
+    toast.className = "show";
+    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
   }
 
   // @ts-ignore

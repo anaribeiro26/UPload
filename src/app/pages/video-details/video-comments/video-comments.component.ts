@@ -93,7 +93,12 @@ export class VideoCommentsComponent implements OnInit {
   handleReport(id: string) {
     this.UPload.reportVideoComment(parseInt(id)).subscribe();
     console.log(id)
-    alert("denúncia enviada!")
+
+
+    let toast: any = document.getElementById("snackbar");
+    toast.className = "show";
+    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+
   }
 }
 

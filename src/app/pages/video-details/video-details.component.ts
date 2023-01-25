@@ -191,7 +191,10 @@ export class VideoDetailsComponent implements OnInit {
   handleReport(id: string) {
     this.UPload.reportVideo(id).subscribe();
     console.log(id)
-    alert("denúncia enviada!")
+
+    let toast: any = document.getElementById("snackbar");
+    toast.className = "show";
+    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
   }
 }
 
