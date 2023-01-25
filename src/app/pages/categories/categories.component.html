@@ -1,0 +1,8 @@
+<div class="category-page">
+  <div class="category" *ngFor="let c of categories">
+    <h1 [innerHTML]="c.name"></h1>
+    <p>○ {{'upload.category_title' | translate}}</p>
+  </div>
+</div>
+<app-category-videos *ngFor="let c of categories" [category_id]="c.id"></app-category-videos>
+

@@ -1,0 +1,25 @@
+.category-page {
+  display: flex;
+  align-items: center;
+  margin-left: 30px;
+  margin-top: 13px;
+  //justify-content: center;
+
+  .category {
+    h1 {
+      color: #FAFAFB;
+      font-size: 25px;
+      margin-bottom: 0;
+    }
+
+    p {
+      color: #FAFAFB;
+      font-size: 15px;
+    }
+  }
+}
+@media screen and (max-width: 560px) {
+  .category-page {
+    padding-top: 40px;
+  }
+}
