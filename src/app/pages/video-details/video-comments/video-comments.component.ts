@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {VideoComments} from "../../../services/UPload.model";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import {NgForm} from "@angular/forms";
+import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-video-comments',
@@ -18,6 +19,7 @@ export class VideoCommentsComponent implements OnInit {
   set = "?set=set4&bgset=bg2";
   random = (Math.random() + 1).toString(36).substring(7);
   @Input() video_id!: string;
+  faFlag = faFlag;
 
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private formBuilder: FormBuilder) {
@@ -85,6 +87,12 @@ export class VideoCommentsComponent implements OnInit {
 
   errorMessage() {
     alert('erro')
+  }
+
+  handleReport(id: string) {
+    this.UPload.reportChannelComment(parseInt(id)).subscribe();
+    console.log(id)
+    alert("denúncia enviada!")
   }
 }
 

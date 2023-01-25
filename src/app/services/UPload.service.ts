@@ -237,6 +237,24 @@ export class UPloadService {
       return this.http.post(BASE_URL_FLAGGING, body)
   }
 
+
+  reportVideoComment(id: number) {
+    const body =
+      {
+
+        "entity_id":[id],
+
+        "entity_type":["comment"],
+
+        "flag_id":[{"target_id": "comment_report","target_type": "flag"}],
+
+        "uid": ["0"]
+
+      }
+
+    return this.http.post(BASE_URL_FLAGGING, body)
+  }
+
   reportVideo(id: string) {
     const body =
       {

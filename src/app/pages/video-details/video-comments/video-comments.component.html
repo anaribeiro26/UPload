@@ -61,7 +61,12 @@
             <span class="date" [innerHTML]="c.date"></span>
           </div>
         </div>
-        <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
+        <div>
+          <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
+          <div class="report">
+            <p class="report-comment">Denunciar comentário <fa-icon (click)="handleReport(c.id)" class="flag" [icon]="faFlag"></fa-icon></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
