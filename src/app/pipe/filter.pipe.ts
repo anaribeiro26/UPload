@@ -1,21 +1,17 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
-  name: 'filter'
+  name: 'replaceAll'
 })
 export class FilterPipe implements PipeTransform {
 
- transform(items: any[], searchText: string): any[] {
-      if (!items) {
-        return [];
-      }
-      if (!searchText) {
-        return items;
-      }
-      searchText = searchText.toLocaleLowerCase();
+  transform(value: string, strToReplace: string, replacementStr: string): string {
 
-      return items.filter(it => {
-        return it.toLocaleLowerCase().includes(searchText);
-      });
+    if(!value || ! strToReplace || ! replacementStr)
+    {
+      return value;
     }
+
+    return value.replace(new RegExp(strToReplace, 'g'), replacementStr);
   }
+}
