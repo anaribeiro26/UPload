@@ -56,7 +56,7 @@
         </div>
         <div class="timestamp">
           <span class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</span>
-          <span class="date" [innerHTML]="c.date"></span><span class="ago" *ngIf="lang=='en'"> {{'upload.time_ago' | translate}}</span>
+          <span class="date" [innerHTML]="c.date"></span><span class="ago" id="ago_en" *ngIf="lang=='en'"> {{'upload.time_ago' | translate}}</span>
         </div>
         <div class="report">
           <p (click)="handleReport(c.id)" class="report-comment">{{'upload.report_comment' | translate}} <fa-icon class="flag" [icon]="faFlag"></fa-icon></p>

@@ -39,6 +39,11 @@
             display: flex;
             flex-wrap: wrap;
             width: 50%;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
 
             .error {
               color: red;
@@ -91,6 +96,11 @@
           display: flex;
           flex-wrap: wrap;
           font-size: 11px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
 
           textarea {
             font-family: "Space Grotesk";
