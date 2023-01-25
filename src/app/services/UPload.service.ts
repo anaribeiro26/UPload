@@ -82,8 +82,8 @@ export class UPloadService {
   //  })
   //}
 
-  getChannel(id: number) {
-    return this.http.get<Channels[]>(BASE_URL + prefix + "/canais/" + id)
+  getChannel(title: string) {
+    return this.http.get<Channels[]>(BASE_URL + prefix + "/canais/" + title)
   }
 
   getChannels() {
