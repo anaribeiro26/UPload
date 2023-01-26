@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UPloadService} from "../../../../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
-import {Thematics, ThematicVideos} from "../../../../../services/UPload.model";
+import {ThematicVideos} from "../../../../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
@@ -26,7 +26,9 @@ export class ThematicVideosComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getThematicVideos(this.tags_id).subscribe((thematic_videos) => {
-      this.thematic_videos = thematic_videos as ThematicVideos[];
+      this.thematic_videos = (thematic_videos as ThematicVideos[]).map((video : ThematicVideos) => {
+        return {...video, title: video.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });

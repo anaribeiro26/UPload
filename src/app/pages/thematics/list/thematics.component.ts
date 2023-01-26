@@ -11,7 +11,7 @@ import {FilterPipe} from "../../../pipe/filter.pipe";
 })
 export class ThematicsComponent implements OnInit {
   thematics: Thematics[] = [];
-  FilterPipe = FilterPipe;
+  FilterPipe = FilterPipe
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   currentTitle: any;
 
@@ -20,13 +20,9 @@ export class ThematicsComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getThematics().subscribe((thematics) => {
-    //this.thematics = (thematics as Thematics[]).map((thematic : Thematics) => {
-    //    return {...thematic, title: this.currentTitle = thematic.title}
-    //  });
       this.thematics = (thematics as Thematics[]).map((thematic : Thematics) => {
         return {...thematic, title: thematic.title.replace(/\s/g, '-')}
       });
-      console.log(this.thematics)
     })
   }
 }

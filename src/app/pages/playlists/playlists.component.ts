@@ -12,7 +12,6 @@ export class PlaylistsComponent implements OnInit {
   playlists: Playlists[] = [];
   playListFilters: Playlists[] = [];
   and: any;
-  currentTitle: any;
   image_url = '/maxresdefault.jpg';
   // videosArray: number
 
@@ -22,7 +21,6 @@ export class PlaylistsComponent implements OnInit {
   ngOnInit(): void {
     this.UPload.getPlaylists().subscribe((playlists) => {
       this.playlists = (playlists as Playlists[]).map((playlists : Playlists) => {
-        this.currentTitle = playlists.title;
         return {...playlists, title: playlists.title.replace(/\s/g, '-')}
       });
 

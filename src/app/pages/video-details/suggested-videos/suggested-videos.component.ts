@@ -51,7 +51,9 @@ export class SuggestedVideosComponent implements OnInit {
 
   loadSuggestedVideos() {
     this.UPload.getSuggestedVideos().subscribe((videos) => {
-      this.videos = videos as Videos[];
+      this.videos = (videos as Videos[]).map((video : Videos) => {
+        return {...video, title: video.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });

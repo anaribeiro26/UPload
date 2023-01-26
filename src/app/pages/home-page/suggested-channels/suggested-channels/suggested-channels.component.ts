@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UPloadService} from "../../../../services/UPload.service";
-import {Channels} from "../../../../services/UPload.model";
+import {Channels, Videos} from "../../../../services/UPload.model";
 
 @Component({
   selector: 'app-suggested-channels',
@@ -15,7 +15,9 @@ export class SuggestedChannelsComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getSuggestedChannels().subscribe((channelsList) => {
-      this.channelsList = channelsList as Channels[];
+      this.channelsList = (channelsList as Channels[]).map((channel : Channels) => {
+        return {...channel, title: channel.title.replace(/\s/g, '-')}
+      });
     })
 
   }

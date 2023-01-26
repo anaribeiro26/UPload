@@ -2,6 +2,8 @@ import {Component, Input, OnInit} from '@angular/core';
 import {UPloadService} from "../../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
 import {TaxonomyVideos} from "../../../services/UPload.model";
+import {faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-tag-videos',
@@ -15,13 +17,17 @@ export class TagVideosComponent implements OnInit {
   lang = localStorage.getItem('lang') || 'pt'
   @Input() tags_id!: number;
   image_url = '/hqdefault.jpg'
+  faBookmarkSolid = faBookmarkSolid;
+  faBookmark = faBookmark;
 
   constructor(private UPload: UPloadService, private translate: TranslateService) {
   }
 
   ngOnInit(): void {
     this.UPload.getTagVideos(this.tags_id).subscribe((tag_videos) => {
-      this.tag_videos = tag_videos as TaxonomyVideos[];
+      this.tag_videos = (tag_videos as TaxonomyVideos[]).map((video : TaxonomyVideos) => {
+        return {...video, title: video.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });
@@ -32,5 +38,31 @@ export class TagVideosComponent implements OnInit {
         }
       })
     })
+  }
+
+  changeFavorite(id: number) {
+    this.UPload.toggleFavorite(id)
+  }
+
+  favourite(id: number) {
+    return this.UPload.isFavorite(id)
+  }
+
+  share(txt: string) {
+    console.log(txt)
+  }
+
+  clickShare(myUrl: string) {
+    if (navigator.share) {
+      navigator.share({
+        title: 'Copied link here.',
+        url: myUrl
+      }).then(() => {
+        console.log('Thanks for sharing!');
+      })
+        .catch(error => console.log('Error sharing', error));
+    } else {
+      alert('Share not supported!');
+    }
   }
 }

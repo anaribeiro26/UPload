@@ -13,7 +13,7 @@ import {
 //@ts-ignore
 
 @Component({
-  selector: 'app-video-page',
+  selector: 'app-video-details',
   templateUrl: './video-details.component.html',
   styleUrls: ['./video-details.component.scss']
 })
@@ -21,6 +21,7 @@ export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
   and: any;
+  title: any;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   faThumbsUp = faThumbsUp;
   faThumbsDown = faThumbsDown;
@@ -36,8 +37,8 @@ export class VideoDetailsComponent implements OnInit {
     this.route.params.subscribe((params) => {
       let id = params['id'];
       this.UPload.getVideoDetails(id).subscribe((video) => {
-        this.video = video[0];
-
+        this.video = video[0]
+        this.title = video[0].title.replace(/\s/g, '-')
         this.translate.get('upload.and').subscribe(and => {
           this.and = (and);
         });

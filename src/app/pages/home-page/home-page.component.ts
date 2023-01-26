@@ -6,9 +6,8 @@ import {Videos} from "../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
-
 @Component({
-  selector: 'app-home-page',
+  selector: 'app-home-details',
   templateUrl: './home-page.component.html',
   styleUrls: ['./home-page.component.scss']
 })
@@ -28,7 +27,9 @@ export class HomePageComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getVideos().subscribe((videos) => {
-      this.videos = videos as Videos[];
+      this.videos = (videos as Videos[]).map((videos : Videos) => {
+        return {...videos, title: videos.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });

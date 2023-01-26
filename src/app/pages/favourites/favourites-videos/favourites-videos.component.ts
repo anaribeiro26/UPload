@@ -4,6 +4,7 @@ import {TranslateService} from "@ngx-translate/core";
 import {ActivatedRoute} from "@angular/router";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
+import {Videos} from "../../../services/UPload.model";
 
 @Component({
   selector: 'app-favourites-videos',
@@ -11,7 +12,7 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./favourites-videos.component.scss']
 })
 export class FavouritesVideosComponent implements OnInit {
-  favorites_list: any[] = [];
+  favorites_list: Videos[] = [];
   and: any;
   lang = localStorage.getItem('lang') || 'pt'
   faBookmarkSolid = faBookmarkSolid;
@@ -22,8 +23,10 @@ export class FavouritesVideosComponent implements OnInit {
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) { }
 
   ngOnInit(): void {
-    this.UPload.getFavorites().subscribe((favorites) => {
-      this.favorites_list = <any[]>favorites;
+    this.UPload.getFavorites().subscribe((favorites_list) => {
+      this.favorites_list = (favorites_list as Videos[]).map((videos : Videos) => {
+        return {...videos, title: videos.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });

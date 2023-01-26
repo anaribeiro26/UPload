@@ -24,7 +24,9 @@ export class PlaylistVideosComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getPlaylistVideos(this.id).subscribe((videosPlaylist) => {
-      this.videosPlaylist = videosPlaylist as VideosPlaylist[];
+      this.videosPlaylist = (videosPlaylist as VideosPlaylist[]).map((video : VideosPlaylist) => {
+        return {...video, title: video.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });
