@@ -2,7 +2,7 @@
   <p class="page_title">{{'upload.articles_title' | translate}}</p>
   <div class="videos">
     <div *ngFor="let t of thematics" class="video">
-      <div class="outer_box" routerLink="/thematics/{{t.title}}" routerLinkActive="active">
+      <div class="outer_box" routerLink="/thematic/{{t.title}}" routerLinkActive="active">
         <div class="inner_box" title="{{t.title}}">
           <img class="header" alt="header" [src]="image_url + t.header">
         </div>

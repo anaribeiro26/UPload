@@ -1,13 +1,14 @@
 <div class="thematics" *ngFor="let t of thematics">
-  <div class="header">
+  <div class="header" title="{{t.title}}">
     <img alt="header" class="header_image" [src]="image_url+t.header">
   </div>
-  <div class="thematic_info">
+  <div class="thematic_info" title="{{t.title}}">
     <div class="picture_section">
       <img alt="logo" class="logo" [src]="image_url+t.thumbnail">
     </div>
-      <h3 class="title" title="{{t.title.replace('-', ' ')}}">{{t.title.replace('-', ' ')}}</h3>
-      <h5 class="title">○ {{'upload.article_title' | translate}}</h5></div>
+      <h3 class="title" [innerHTML]="t.title"></h3>
+      <h5 class="title">○ {{'upload.article_title' | translate}}</h5>
+  </div>
   <p class="description" [innerHTML]="t.description"></p>
   <app-thematic-videos [tags_id]="t.tags_id"></app-thematic-videos>
 </div>

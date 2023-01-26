@@ -2,8 +2,8 @@
   <p class="title">{{'upload.video_section' | translate}}</p>
   <div class="videos">
     <div class="video" *ngFor="let v of thematic_videos" >
-      <div class="outer_box" routerLink="/video/{{v.id}}" routerLinkActive="active">
-        <div class="inner_box" title="{{v.title}}">
+      <div class="outer_box">
+        <div class="inner_box" routerLink="/video/{{v.title}}" routerLinkActive="active" title="{{v.title | replaceAll : '-' : ' '}}">
           <img class="thumbnail" alt="thumbnail"
                [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
           <p class="duration" [innerHTML]="v.duration"></p>
@@ -16,9 +16,9 @@
             </p>
           </div>
         </div>
-        <p class="title" [innerHTML]="v.title"></p>
+        <p class="title" routerLink="/video/{{v.title}}" routerLinkActive="active" [innerHTML]="v.title | replaceAll : '-' : ' '"></p>
         <div class="date_actions">
-        <div class="date">
+        <div class="date" routerLink="/video/{{v.title}}" routerLinkActive="active">
           <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
           <p class="timestamp" [innerHTML]="v.date"></p><span class="ago" *ngIf="lang=='en'">{{'upload.time_ago' | translate}}</span>
         </div>
