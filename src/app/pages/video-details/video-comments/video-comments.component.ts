@@ -3,7 +3,6 @@ import {UPloadService} from "../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
 import {VideoComments} from "../../../services/UPload.model";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import {NgForm} from "@angular/forms";
 import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -83,7 +82,7 @@ export class VideoCommentsComponent implements OnInit {
 
   // @ts-ignore
   reloadPage(nameInput, emailInput, messageInput) {
-   return  nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2
+    return  nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2
   }
 
   errorMessage() {
@@ -101,52 +100,3 @@ export class VideoCommentsComponent implements OnInit {
 
   }
 }
-
-
-
-
-  // handleCommentFormSubmit(data: { name: string; email: string; message: string }, userPost: NgForm) {
-  //   console.log(data)
-  //   const nameInput = data.name.valueOf()
-  //   console.log(nameInput)
-  //   const emailInput = data.email.valueOf()
-  //   const messageInput = data.message.valueOf()
-  //
-  //   if (this.reloadPage(nameInput, emailInput, messageInput)) {
-  //     this.UPload.commentVideo(parseInt(this.video_id), data.name, data.email, data.message).subscribe((response) => {
-  //       this.videoComments.unshift({
-  //         name: data.name,
-  //         comment: data.message,
-  //
-  //         email: data.email,
-  //
-  //         id: "0",
-  //         video_id: parseInt(this.video_id),
-  //         date: "0 segundos"
-  //       })
-  //       userPost.form.reset();
-  //     })
-  //   } else {
-  //     this.errorMessage();
-  //   }
-  //
-  // }
-
-
-
-//   // @ts-ignore
-//   reloadPage(nameInput, emailInput, messageInput) {
-//     if (nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2 ) {
-//       return true
-//     } else {
-//       return false
-//     }
-//   }
-//
-//   errorMessage() {
-//     alert('erro')
-//   }
-//
-// }
-
-

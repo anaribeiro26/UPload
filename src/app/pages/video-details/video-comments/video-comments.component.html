@@ -63,6 +63,10 @@
             <p  (click)="handleReport(c.id)" class="report-comment">{{'upload.report_comment' | translate}} <fa-icon class="flag" [icon]="faFlag"></fa-icon></p>
           </div>
           <div id="snackbar">A sua denúncia foi enviada!</div>
+<!--          <div id="confirm-box">-->
+<!--            <button class="yes">Sim</button>-->
+<!--            <button class="no">Não</button>-->
+<!--          </div>-->
         </div>
         <div>
           <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>

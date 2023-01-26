@@ -35,6 +35,7 @@ export class VideoDetailsComponent implements OnInit {
       this.UPload.getVideoDetails(title).subscribe((video) => {
         this.video = video[0];
         this.id = video[0].id;
+
         this.translate.get('upload.and').subscribe(and => {
           this.and = (and);
         });

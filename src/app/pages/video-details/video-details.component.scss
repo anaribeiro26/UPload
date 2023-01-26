@@ -313,15 +313,20 @@
         //border: red 1px solid;
 
         .description {
-          //width: 92%;
-          // font-style: normal;
-          //font-weight: 400;
+          width: 98%;
+          font-weight: 400;
           font-size: 14px;
           line-height: 15px;
-          //text-align: justify;
+          text-align: justify;
           letter-spacing: 0.2px;
           color: #FAFAFB;
           margin: auto;
+          font-family: 'Poppins';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 14px;
+          line-height: 25px;
+          /* or 179% */
           // margin-bottom: -15px;
 
           p {
