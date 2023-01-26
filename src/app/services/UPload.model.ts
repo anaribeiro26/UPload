@@ -160,7 +160,7 @@ export interface Playlists {
 
 export interface VideosPlaylist {
   video: string;
-  video_id: string;
+  id: number;
   channel: string;
   category: string;
   description: string;
@@ -171,7 +171,7 @@ export interface VideosPlaylist {
   tags_id: string;
   channel_id: string;
   date: string;
-  id: number;
+  playlist_id: number;
 }
 
 export interface Taxonomies {
@@ -181,7 +181,7 @@ export interface Taxonomies {
 
 export interface TaxonomyVideos {
   channel: string;
-  video_id: number;
+  id: number;
   videos: string;
   channel_id: number;
   categories: string;
