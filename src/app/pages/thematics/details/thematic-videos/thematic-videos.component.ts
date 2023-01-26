@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UPloadService} from "../../../../../services/UPload.service";
+import {UPloadService} from "../../../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
-import {ThematicVideos} from "../../../../../services/UPload.model";
+import {ThematicVideos} from "../../../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
