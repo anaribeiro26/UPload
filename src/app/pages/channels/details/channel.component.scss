@@ -116,27 +116,29 @@
     }
 
     @media screen and (max-width: 560px) {
-      .logo {
-        margin-right: 15px;
-        width: 100px;
-        height: 100px;
-      }
+      .channels {
+        .logo {
+          margin-right: 15px;
+          width: 100px;
+          height: 100px;
+        }
 
-      .title {
-        font-size: 20.8px;
-      }
+        .title {
+          font-size: 20.8px;
+          margin-top: 0;
+        }
 
-      .description {
-        width: 200px;
-        font-size: 15px;
+        .description {
+          width: 200px;
+          font-size: 15px;
+        }
       }
-
+    }
       //.header {
       //  .header_image {
       //    height: 160px;
       //  }
       //}
-    }
 
 
   .section {
