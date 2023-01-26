@@ -76,8 +76,6 @@ export class VideoCommentsComponent implements OnInit {
         })
         userPost.form.reset();
       })
-    } else {
-      this.errorMessage();
     }
   }
 
@@ -86,67 +84,21 @@ export class VideoCommentsComponent implements OnInit {
    return  nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2
   }
 
-  errorMessage() {
-    alert('erro')
-  }
-
   handleReport(id: string) {
     this.UPload.reportVideoComment(parseInt(id)).subscribe();
     console.log(id)
 
 
-    let toast: any = document.getElementById("snackbar");
-    toast.className = "show";
-    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-
+    let result: any = confirm("Deseja prosseguir com a sua denúncia?");
+    if ( result == true ) {
+      // @ts-ignore
+      document.getElementById("snackbar").innerHTML = "A sua denúncia foi enviada!";
+      let toast: any = document.getElementById("snackbar");
+      toast.className = "show";
+      setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    } else {
+      // @ts-ignore
+      document.getElementById("snackbar").innerHTML = "NÃO";
+    }
   }
-}
-
-
-
-
-  // handleCommentFormSubmit(data: { name: string; email: string; message: string }, userPost: NgForm) {
-  //   console.log(data)
-  //   const nameInput = data.name.valueOf()
-  //   console.log(nameInput)
-  //   const emailInput = data.email.valueOf()
-  //   const messageInput = data.message.valueOf()
-  //
-  //   if (this.reloadPage(nameInput, emailInput, messageInput)) {
-  //     this.UPload.commentVideo(parseInt(this.video_id), data.name, data.email, data.message).subscribe((response) => {
-  //       this.videoComments.unshift({
-  //         name: data.name,
-  //         comment: data.message,
-  //
-  //         email: data.email,
-  //
-  //         id: "0",
-  //         video_id: parseInt(this.video_id),
-  //         date: "0 segundos"
-  //       })
-  //       userPost.form.reset();
-  //     })
-  //   } else {
-  //     this.errorMessage();
-  //   }
-  //
-  // }
-
-
-
-//   // @ts-ignore
-//   reloadPage(nameInput, emailInput, messageInput) {
-//     if (nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2 ) {
-//       return true
-//     } else {
-//       return false
-//     }
-//   }
-//
-//   errorMessage() {
-//     alert('erro')
-//   }
-//
-// }
-
-
+  }
