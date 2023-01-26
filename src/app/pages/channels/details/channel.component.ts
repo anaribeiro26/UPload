@@ -4,7 +4,7 @@ import {UPloadService} from "../../../services/UPload.service";
 import {Channels} from "../../../services/UPload.model";
 
 @Component({
-  selector: 'app-channel',
+  selector: 'app-channels',
   templateUrl: './channel.component.html',
   styleUrls: ['./channel.component.scss']
 })
