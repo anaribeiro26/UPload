@@ -1,7 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {ThematicsComponent} from "./pages/thematics/list/thematics.component";
-import {ChannelComponent} from "./pages/channel/page/details/channel.component";
+import {ChannelComponent} from "./pages/channel/details/channel.component";
 import {FavouritesComponent} from "./pages/favourites/favourites.component";
 import {HomePageComponent} from "./pages/home-page/home-page.component";
 import {PlaylistsComponent} from "./pages/playlists/playlists.component";
@@ -16,16 +16,16 @@ import {CategoriesComponent} from "./pages/categories/categories.component";
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'thematics', component: ThematicsComponent},
-  {path: 'thematics/:title', component: ThematicDetailsComponent},
+  {path: 'thematic/:title', component: ThematicDetailsComponent},
   {path: 'channels', component: ChannelsListComponent},
-  {path: 'channels/:title', component: ChannelComponent},
+  {path: 'channel/:title', component: ChannelComponent},
   {path: 'homepage', component: HomePageComponent},
   {path: 'video/:id', component: VideoDetailsComponent},
-  {path: 'playlists/favourites', component: FavouritesVideosComponent},
+  {path: 'playlist/favourites', component: FavouritesVideosComponent},
   {path: 'playlists', component: PlaylistsComponent},
-  {path: 'playlists/:title', component: PlaylistDetailsComponent},
+  {path: 'playlist/:title', component: PlaylistDetailsComponent},
   {path: 'tags/:name', component: TagsComponent},
-  {path: 'categories/:name', component: CategoriesComponent},
+  {path: 'category/:name', component: CategoriesComponent},
 ];
 
 @NgModule({
