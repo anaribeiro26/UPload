@@ -7,11 +7,11 @@ import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
-  selector: 'app-home-details',
-  templateUrl: './home-page.component.html',
-  styleUrls: ['./home-page.component.scss']
+  selector: 'app-homepage',
+  templateUrl: './homepage.component.html',
+  styleUrls: ['./homepage.component.scss']
 })
-export class HomePageComponent implements OnInit {
+export class HomepageComponent implements OnInit {
 
   videos: Videos[] | undefined = [];
   and: any;
