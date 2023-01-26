@@ -4,8 +4,10 @@
     <div class="video" *ngFor="let v of thematic_videos" >
       <div class="outer_box">
         <div class="inner_box" routerLink="/video/{{v.title}}" routerLinkActive="active" title="{{v.title | replaceAll : '-' : ' '}}">
+        <div class="image">
           <img class="thumbnail" alt="thumbnail"
                [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+        </div>
           <p class="duration" [innerHTML]="v.duration"></p>
           <div>
             <p class="tags">
