@@ -3,7 +3,7 @@
   <div class="headline">
     <h2 routerLink="/channels/">{{'upload.channel_suggestion' | translate}}</h2>
   </div>
-  <div class="sugestion" *ngFor="let c of channelsList | slice: 0: 5">
+  <div class="suggestion" *ngFor="let c of channelsList | slice: 0: 5">
     <!--      <div class="sugestion">-->
     <div class="channel-section" title="{{c.title | replaceAll : '-' : ' '}}">
       <img class="logo" alt="logo" [src]="image_url + c.logo" routerLink="/channel/{{c.title}}"
