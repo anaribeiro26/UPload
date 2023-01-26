@@ -17,7 +17,7 @@ const routes: Routes = [
   {path: 'thematics', component: ThematicsComponent},
   {path: 'thematic/:title', component: ThematicDetailsComponent},
   {path: 'channels', component: ChannelsListComponent},
-  {path: 'channels/:title', component: ChannelComponent},
+  {path: 'channel/:title', component: ChannelComponent},
   {path: 'homepage', component: HomepageComponent},
   {path: 'video/:title', component: VideoDetailsComponent},
   {path: 'playlist/favourites', component: FavouriteVideosComponent},
