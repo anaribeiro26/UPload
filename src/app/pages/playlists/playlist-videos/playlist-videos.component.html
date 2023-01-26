@@ -1,16 +1,16 @@
 <div class="uploads">
   <div class="videos">
-    <div class="cel" *ngFor="let v of videosPlaylist" routerLink="/video/{{v.video_id}}" routerLinkActive="active">
+    <div class="cel" *ngFor="let v of videosPlaylist" title="{{v.title | replaceAll : '-' : ' '}}">
       <div class="box">
-        <div class="card_image">
+        <div class="card_image" routerLink="/video/{{v.title}}" routerLinkActive="active">
           <img class="small_image" alt="thumbnail"
                [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         </div>
         <div class="itens">
-          <p class="name">{{v.channel}}</p>
-          <p class="titleVideo">{{v.title}}</p>
+          <p class="name"  routerLink="/channel/{{v.channel}}" routerLinkActive="active" [innerHTML]="v.channel"></p>
+          <p class="titleVideo" routerLink="/video/{{v.title}}" routerLinkActive="active" [innerHTML]="v.title | replaceAll : '-' : ' '"></p>
           <div class="date_share">
-          <div class="date">
+          <div class="date" routerLink="/video/{{v.title}}" routerLinkActive="active">
           <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
           <p class="timestamp" [innerHTML]="v.date"></p><span *ngIf="lang=='en'" class="ago"> {{'upload.time_ago' | translate}}</span>
           </div>
@@ -20,7 +20,7 @@
           <div class="bookmark" (click)="changeFavorite(v.id)">
             <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
           </div>
-          <div class="share" alt="share" (click)="clickShare(v.video)"></div>
+          <div class="share" (click)="clickShare(v.video)"></div>
          </div>
         </div>
         </div>

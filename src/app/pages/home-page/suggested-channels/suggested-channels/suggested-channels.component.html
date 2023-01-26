@@ -5,10 +5,10 @@
   </div>
   <div class="sugestion" *ngFor="let c of channelsList | slice: 0: 5">
     <!--      <div class="sugestion">-->
-    <div class="channel-section">
-      <img class="logo" alt="logo" [src]="image_url + c.logo" routerLink="/channels/{{c.id}}"
+    <div class="channel-section" title="{{c.title | replaceAll : '-' : ' '}}">
+      <img class="logo" alt="logo" [src]="image_url + c.logo" routerLink="/channel/{{c.title}}"
            routerLinkActive="active">
-      <h2 class="channel_title" routerLink="/channels/{{c.id}}" routerLinkActive="active">{{c.title}}</h2>
+      <h2 class="channel_title" routerLink="/channel/{{c.title}}" routerLinkActive="active">{{c.title | replaceAll : '-' : ' '}}</h2>
     </div>
   </div>
   <div class="more" routerLink="/channels/">{{'upload.show_more' | translate}}</div>

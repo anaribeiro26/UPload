@@ -3,7 +3,7 @@
 <!--    <div class="outer_box" *ngFor="let p of playlists" routerLink="/playlists/{{p.id}}" routerLinkActive="active">-->
 <!--       <img class="thumbnail"-->
 <!--             [src]="p.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>-->
-<!--        <div class="page" [innerHTML]="v.duration">-->
+<!--        <div class="details" [innerHTML]="v.duration">-->
 <!--        </div>-->
 <!--      <p class="title" title="{{p.title}}" [innerHTML]="p.title"></p>-->
 <!--      <p class="timestamp" [innerHTML]="p.date"> atrás</p>-->
@@ -20,19 +20,19 @@
 <div class="uploads">
   <div class="videos">
     <div class="cel" *ngFor="let p of playListFilters">
-      <div class="box" title="{{currentTitle}}">
-        <div class="card_image" routerLink="/playlists/{{p.title}}" routerLinkActive="active">
-          <img class="small_image" alt="thumbnail"
+      <div class="box" title="{{p.title  | replaceAll : '-' : ' '}}">
+        <div class="card_image" routerLink="/playlist/{{p.title}}" routerLinkActive="active">
+          <img class="thumbnail" alt="thumbnail"
                [src]="p.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
         </div>
         <div class="itens">
          <!-- <p class="title" id="video-title" routerLink="/playlists/{{p.title}}" routerLinkActive="active">{{currentTitle}}</p>-->
-          <p class="title" id="video-title" routerLink="/playlists/{{p.title}}" routerLinkActive="active">{{p.title}}</p>
+          <p class="title" id="video-title" routerLink="/playlist/{{p.title}}" routerLinkActive="active">{{p.title | replaceAll : '-' : ' '}}</p>
           <div class="category">
-            <p class="title" routerLink="/categories/{{p.category}}" routerLinkActive="active" [innerHTML]="p.category"></p>
+            <p class="title" routerLink="/category/{{p.category}}" routerLinkActive="active" [innerHTML]="p.category"></p>
           </div>
         </div>
-        <div class="play" routerLink="/playlists/{{p.title}}" routerLinkActive="active">
+        <div class="play" routerLink="/playlist/{{p.title}}" routerLinkActive="active">
           <div class="text">{{p.numberOfVideos}} {{'upload.favorite_video' | translate}}<span *ngIf="p.numberOfVideos">
             <span *ngIf="p.numberOfVideos > 1">s</span></span></div>
         </div>

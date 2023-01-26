@@ -4,8 +4,8 @@
         <h2>{{'upload.article_suggestion' | translate}}</h2>
         <p routerLink="/thematics/">{{'upload.show_all' | translate}}</p>
       </div>
-      <div class="thematic" *ngFor="let t of thematics | slice: 0: 3" routerLink="/thematics/{{t.title}}"
-           routerLinkActive="active" [title]="t.title">
+      <div class="thematic" *ngFor="let t of thematics | slice: 0: 3" routerLink="/thematic/{{t.title}}"
+           routerLinkActive="active" [title]="t.title | replaceAll : '-' : ' '">
         <div class="box">
           <div class="top">
             <div class="thematic_info">
@@ -13,7 +13,7 @@
                 <img class="logo" alt="logo" [src]="image_url + t.thumbnail">
               </div>
               <div class="thematic_title">
-                <h2 [innerHTML]="t.title"></h2>
+                <h2 [innerHTML]="t.title | replaceAll : '-' : ' '"></h2>
               </div>
             </div>
            <a class="tag"><span *ngFor="let tag of t.tags.split(',').slice(0, 3)"

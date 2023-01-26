@@ -1,16 +1,16 @@
 <div class="big-box">
   <div class="container-box">
     <div class="cel" *ngFor="let video of videos | slice: 0: 2">
-      <div class="box" title="{{video.title}}">
-        <div class="card_image" routerLink="/video/{{video.id}}" routerLinkActive="active" >
+      <div class="box" title="{{video.title | replaceAll : '-' : ' '}}">
+        <div class="card_image" routerLink="/video/{{video.title}}" routerLinkActive="active" >
           <img class="small_image" alt="thumbnail"
                [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
         </div>
         <div class="itens">
           <p class="name" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" [innerHTML]="video.channel"></p>
-          <a class="title" routerLink="/video/{{video.id}}" routerLinkActive="active" >{{video.title}}</a>
+          <a class="title" routerLink="/video/{{video.title}}" routerLinkActive="active" [innerHTML]="video.title | replaceAll : '-' : ' '"></a>
           <div class="ago_actions">
-            <div class="date"  routerLink="/video/{{video.id}}" routerLinkActive="active">
+            <div class="date"  routerLink="/video/{{video.title}}" routerLinkActive="active">
               <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
               <p class="timestamp" [innerHTML]="video.date"></p><span
               class="ago"> {{'upload.time_ago' | translate}}</span>
