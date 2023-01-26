@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Thematics} from "../../../../services/UPload.model";
-import {UPloadService} from "../../../../services/UPload.service";
+import {Thematics} from "../../../services/UPload.model";
+import {UPloadService} from "../../../services/UPload.service";
 
 @Component({
   selector: 'app-details',
