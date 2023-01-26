@@ -20,7 +20,6 @@ export class ChannelsListComponent implements OnInit {
   // FilterPipe = FilterPipe;
   //searchbar: string;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
-  currentTitle: any;
 
   // @ViewChild('searchbar', { static: true }) public searchbar: ElementRef;
 
@@ -30,7 +29,7 @@ export class ChannelsListComponent implements OnInit {
   ngOnInit(): void {
     this.UPload.getChannels().subscribe((channelsList) => {
       this.channelsList = (channelsList as Channels[]).map((channel : Channels) => {
-            return {...channel, title: this.currentTitle = channel.title}
+        return {...channel, title: channel.title.replace(/\s/g, '-')}
           });
      // this.channelsList.forEach(thematic => {
      //  this.currentTitle = thematic.title;
