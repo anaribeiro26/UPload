@@ -114,8 +114,8 @@ export class UPloadService {
     return this.http.get<VideoComments[]>(BASE_URL + prefix + "/comentarios/video/" + video_id)
   }
 
-  getVideoDetails(id: string) {
-    return this.http.get<VideoDetails[]>(BASE_URL + prefix + "/videos/" + id)
+  getVideoDetails(title: string) {
+    return this.http.get<VideoDetails[]>(BASE_URL + prefix + "/videos/" + title)
   }
 
   getNumberOfLikes(id: string) {
