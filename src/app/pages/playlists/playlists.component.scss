@@ -48,7 +48,7 @@
         overflow: hidden;
       }
 
-      .small_image {
+      .thumbnail {
         object-fit: cover;
         height: 100%;
         width: 100%;
@@ -103,6 +103,9 @@
     }
 
     .cel:hover {
+      .thumbnail {
+        transform: scale(1.05);
+      }
       .itens {
         .title {
           &#video-title {
@@ -110,9 +113,12 @@
           }
         }
       }
+        .box {
+          .text {
+            color: rgba(255, 255, 255, 100%);
+          }
+      }
     }
-  }
-
 
   .box {
     // position: relative;
@@ -135,7 +141,7 @@
       border-radius: 0 18px 0 0;
 
       .text {
-        color: white;
+        color: rgba(255, 255, 255, 70%);
         font-size: 18px;
         position: absolute;
         top: 65%;
@@ -148,7 +154,7 @@
     }
   }
 }
-
+}
 //.outer_box {
 //
 //}

@@ -106,8 +106,14 @@
 
 
         .tags {
-          display: flex;
-
+         // display: flex;
+          margin-top: 5px;
+          margin-bottom: 5px;
+          display: -webkit-box;
+          -webkit-line-clamp: 1;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          text-overflow: ellipsis;
           //a {
           //  text-decoration: none;
           //  color: #1e75ff;
@@ -122,6 +128,7 @@
             text-decoration: none;
             color: #1e75ff;
             cursor: pointer;
+
           }
         }
 

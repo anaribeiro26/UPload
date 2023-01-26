@@ -22,7 +22,7 @@ uploads {
     .inner_box {
       //  color: rgba(255, 255, 255, 100%);
       .header {
-        //transform: scale(1.02);
+        transform: scale(1.05);
       }
     }
   }
@@ -81,6 +81,7 @@ uploads {
     }
 
     .tags {
+      margin-top: 10px;
       // top: 140px;
       margin-left: 16px;
       color: #1e75ff;
@@ -88,15 +89,7 @@ uploads {
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
-      margin-top: 0;
     }
-  }
-
-  .header {
-    height: 180px;
-    width: 310px;
-    //object-fit: cover;
-    border-radius: 16px 16px 0 0;
   }
 
   .article-teaser {
@@ -104,8 +97,18 @@ uploads {
   }
 
   .inner_box {
-    height: 200px;
+    height: 180px;
+    width: 310px;
+    overflow: hidden;
+    border-radius: 16px 16px 0 0;
     //position: relative;
+
+    .header {
+      height: 100%;
+      width: 100%;
+      //object-fit: cover;
+      border-radius: 16px 16px 0 0;
+    }
 
     .details {
       display: flex;
@@ -190,7 +193,7 @@ uploads {
 //        height: 200px;
 //        position: relative;
 //
-//        .page {
+//        .details {
 //          display: flex;
 //          position: absolute;
 //          align-items: center;

@@ -32,26 +32,76 @@
         border-radius: 16px 16px 0 0;
       }
 
-      .date {
-        color: #92929d;
+      .date_actions {
+        padding-top: 5px;
         display: flex;
-        font-size: 15px;
-        margin-left: 16px;
+        justify-content: space-between;
 
-        span {
-          &.ago {
-            margin-left: 5px;
+        .date {
+          color: #92929d;
+          display: flex;
+          font-size: 15px;
+          margin-left: 16px;
+
+          span {
+            &.ago {
+              margin-left: 5px;
+            }
+          }
+
+          p {
+            &.ago {
+              margin-right: 5px;
+            }
+          }
+
+          .timestamp, .ago {
+            margin-top: 0;
           }
         }
+        .actions {
+          display: flex;
+          justify-content: flex-end;
+          // padding-left: 80px;
+          padding-right: 10px;
+          width: 84px;
+          //width: 165px;
+          //padding-top: 65px;
+          // padding-right: 20px;
 
-        p {
-          &.ago {
+          .ng-fa-icon {
+            font-size: 18px;
+            color: #92929D;
+            cursor: pointer;
+            padding-right: 10px;
+            // position: absolute;
+            //top: 280px;
+            // margin-left: 256px;
+          }
+
+          fa-icon:hover {
+            color: #FFFFFF;
+          }
+
+          .share:hover {
+            background-image: url("../../../../assets/ic_ShareWhite.svg");
+          }
+
+          .share {
+            background-image: url("../../../../assets/ic_Share.svg");
+            background-size: cover;
+            height: 26px;
+            cursor: pointer;
+            // padding-right: 24px;
+            // padding-bottom: 5px;
+            height: 23px;
             margin-right: 5px;
+            padding-right: 23px;
+            padding-bottom: 12px;
+            // position: absolute;
+            // top: 280px;
+            //  margin-left: 288px;
           }
-        }
-
-        .timestamp, .ago {
-          margin-top: 0;
         }
       }
 
@@ -59,24 +109,27 @@
         height: 200px;
         position: relative;
 
-        .details {
+        .duration {
+          margin-left: 16px;
           display: flex;
           position: absolute;
           align-items: center;
           justify-content: center;
-          height: 24px;
+          height: 20px;
           width: 50px;
-          top: 144px;
-          margin-left: 16px;
-          background-color: #171725;
-          border-radius: 8px;
+          top: 150px;
+          // top: 110px;
+          //margin-left: 16px;
+          background-color: #1c1c24;
+          border-radius: 5px;
           color: #ffffff;
-          font-size: 13px;
-          font-weight: 500;
+          font-size: 11px;
+          //  font-weight: 500;
         }
 
         .tags {
-          top: 180px;
+          margin-top: 5px;
+         // top: 170px;
           //margin-top: 5px;
           margin-left: 16px;
           color: #1e75ff;
@@ -91,6 +144,7 @@
         margin-left: 16px;
         margin-bottom: 5px;
         margin-right: 25px;
+        margin-top: 10px;
         color: #FFFFFF;
         font-size: 16px;
         font-weight: 400;
