@@ -26,7 +26,9 @@ export class ChannelVideosComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getChannelVideos(this.channel_id).subscribe((videos) => {
-      this.videos = videos as ChannelVideos[];
+      this.videos = (videos as ChannelVideos[]).map((video : ChannelVideos) => {
+        return {...video, title: video.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });

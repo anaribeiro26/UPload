@@ -21,17 +21,25 @@
       width: 312px;
     }
 
-    .outer_box:hover {
-      cursor: pointer;
-    }
-
     //@media screen and (max-width: 560px) {
     //  .outer_box {
     //    //   width: 50%;
     //  }
     //}
 
+    .outer_box:hover {
+      .title {
+        color: rgba(255, 255, 255, 100%);
+      }
+      .image {
+        .thumbnail {
+          transform: scale(1.05);
+        }
+      }
+    }
+
     .outer_box {
+      cursor: pointer;
       width: 312px;
       border-radius: 16px;
       background-color: #1c1c24;
@@ -117,32 +125,41 @@
         }
       }
 
-      .thumbnail {
-        height: 180px;
-        width: 310px;
-        object-fit: cover;
-        border-radius: 16px 16px 0 0;
-      }
-
       .inner_box {
         height: 200px;
         position: relative;
 
-        .details {
+        .image {
+          height: 180px;
+          width: 309px;
+          overflow: hidden;
+          border-radius: 20px 20px 0 0;
+
+          .thumbnail {
+            scale: 1.05;
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+          }
+        }
+
+        .duration {
+          margin-left: 16px;
           display: flex;
           position: absolute;
           align-items: center;
           justify-content: center;
-          height: 24px;
+          height: 20px;
           width: 50px;
-          //top: 144px;
-          margin-top: -40px;
-          margin-left: 16px;
-          background-color: #171725;
-          border-radius: 8px;
+          top: 150px;
+          // top: 110px;
+          //margin-left: 16px;
+          background-color: #1c1c24;
+          border-radius: 5px;
           color: #ffffff;
-          font-size: 13px;
-          font-weight: 500;
+          font-size: 11px;
+          //  font-weight: 500;
         }
 
         .tags {
@@ -166,7 +183,7 @@
         // margin-bottom: 6px;
         margin-right: 50px;
         // margin-bottom: 0.5rem;
-        color: #FFFFFF;
+        color: rgba(255, 255, 255, 70%);
         font-size: 16px;
         font-weight: 400;
         white-space: nowrap;
