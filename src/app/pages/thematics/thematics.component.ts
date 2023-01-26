@@ -1,17 +1,18 @@
 import {Component, OnInit} from '@angular/core';
-import {Thematics} from "../../../services/UPload.model";
+import {Thematics} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
-import {UPloadService} from "../../../services/UPload.service";
-import {FilterPipe} from "../../../pipe/filter.pipe";
+import {UPloadService} from "../../services/UPload.service";
+import {replaceAllPipe} from "../../pipe/replaceAll.pipe";
 
 @Component({
   selector: 'app-thematics',
   templateUrl: './thematics.component.html',
   styleUrls: ['./thematics.component.scss']
 })
+
 export class ThematicsComponent implements OnInit {
   thematics: Thematics[] = [];
-  FilterPipe = FilterPipe
+  replaceAllPipe = replaceAllPipe;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   currentTitle: any;
 

@@ -1,13 +1,12 @@
 import {Component, OnInit} from '@angular/core';
 import {UPloadService} from "../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
-import {ElementRef, ViewChild} from "@angular/core";
+import {ElementRef} from "@angular/core";
 import {faMagnifyingGlass} from "@fortawesome/free-solid-svg-icons";
 import {Channels} from "../../../services/UPload.model";
-import {FilterPipe} from "../../../pipe/filter.pipe";
 
 @Component({
-  selector: 'app-channel-list',
+  selector: 'app-channels-list',
   templateUrl: './channels-list.component.html',
   styleUrls: ['./channels-list.component.scss']
 })

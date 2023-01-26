@@ -3,7 +3,7 @@ import {Pipe, PipeTransform} from '@angular/core';
 @Pipe({
   name: 'replaceAll'
 })
-export class FilterPipe implements PipeTransform {
+export class replaceAllPipe implements PipeTransform {
 
   transform(value: string, strToReplace: string, replacementStr: string): string {
 

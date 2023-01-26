@@ -60,22 +60,9 @@
         background: rgba(103, 101, 101, 0.2);
         font-size: 12px;
         cursor: pointer;
-
-        .letter {
-          //  position: absolute;
-          //display: flex;
-          //align-items: center;
-          //justify-content: center;
-          // top: -0.3rem;
-          left: 104px;
-          font-size: 14px;
-          line-height: 21px;
-          color: #FAFAFB;
-          width: 100%;
-        }
       }
 
-      .sugestion {
+      .suggestion {
 
         .channel-section:hover {
           .channel_title {

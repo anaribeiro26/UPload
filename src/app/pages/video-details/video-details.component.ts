@@ -4,11 +4,7 @@ import {UPloadService} from "../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
 import {VideoDetails} from "../../services/UPload.model";
 import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
-import {
-  faFlag,
-  faThumbsDown as faThumbsDownSolid,
-  faThumbsUp as faThumbsUpSolid
-} from "@fortawesome/free-solid-svg-icons";
+import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid} from "@fortawesome/free-solid-svg-icons";
 
 //@ts-ignore
 
@@ -21,7 +17,7 @@ export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
   and: any;
-  title: any;
+  id: any;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   faThumbsUp = faThumbsUp;
   faThumbsDown = faThumbsDown;
@@ -35,10 +31,11 @@ export class VideoDetailsComponent implements OnInit {
   ngOnInit(): void {
 
     this.route.params.subscribe((params) => {
-      let id = params['id'];
-      this.UPload.getVideoDetails(id).subscribe((video) => {
-        this.video = video[0]
-        // this.title = video[0].title.replace(/\s/g, '-')
+      let title = params['title'];
+      this.UPload.getVideoDetails(title).subscribe((video) => {
+        this.video = video[0];
+        this.id = video[0].id;
+
         this.translate.get('upload.and').subscribe(and => {
           this.and = (and);
         });
@@ -48,7 +45,7 @@ export class VideoDetailsComponent implements OnInit {
           this.video.date = `${word[0]} ${word[1]} ${this.and} ${word[2]} ${word[3]}`
         }
 
-        this.UPload.getNumberOfLikes(id).subscribe((counters) => {
+        this.UPload.getNumberOfLikes(this.id).subscribe((counters) => {
           if (counters.length == 0) {
             video[0].likes = "0"
           } else {
@@ -56,7 +53,7 @@ export class VideoDetailsComponent implements OnInit {
           }
         })
 
-        this.UPload.getNumberOfDislikes(id).subscribe((counters) => {
+        this.UPload.getNumberOfDislikes(this.id).subscribe((counters) => {
           if (counters.length == 0) {
             video[0].dislikes = "0"
           } else {

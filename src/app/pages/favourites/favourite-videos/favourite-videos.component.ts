@@ -7,11 +7,11 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 import {Videos} from "../../../services/UPload.model";
 
 @Component({
-  selector: 'app-favourites-videos',
-  templateUrl: './favourites-videos.component.html',
-  styleUrls: ['./favourites-videos.component.scss']
+  selector: 'app-favourite-videos',
+  templateUrl: './favourite-videos.component.html',
+  styleUrls: ['./favourite-videos.component.scss']
 })
-export class FavouritesVideosComponent implements OnInit {
+export class FavouriteVideosComponent implements OnInit {
   favorites_list: Videos[] = [];
   and: any;
   lang = localStorage.getItem('lang') || 'pt'

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {UPloadService} from "../../../../services/UPload.service";
-import {Channels, Videos} from "../../../../services/UPload.model";
+import {UPloadService} from "../../../services/UPload.service";
+import {Channels} from "../../../services/UPload.model";
 
 @Component({
   selector: 'app-suggested-channels',

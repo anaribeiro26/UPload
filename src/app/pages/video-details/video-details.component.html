@@ -5,7 +5,7 @@
         <div class="title-container">
           <h1 class="title">{{video.title}}</h1>
           <fa-icon class="flag" [icon]="faFlag" (click)="handleReport(video.id)"></fa-icon>
-          <div id="snackbar">A sua denúncia foi enviada!</div>
+          <div id="snackbar">{{'upload.report_message' | translate}}</div>
         </div>
         <div class="tags">
           <span class="tag-item" *ngFor="let tag of video.tags.split(',').slice(0, 3)"
