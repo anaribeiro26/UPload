@@ -4,11 +4,7 @@ import {UPloadService} from "../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
 import {VideoDetails} from "../../services/UPload.model";
 import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
-import {
-  faFlag,
-  faThumbsDown as faThumbsDownSolid,
-  faThumbsUp as faThumbsUpSolid
-} from "@fortawesome/free-solid-svg-icons";
+import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid} from "@fortawesome/free-solid-svg-icons";
 
 //@ts-ignore
 
@@ -21,7 +17,6 @@ export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
   and: any;
-  title: any;
   id: any;
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   faThumbsUp = faThumbsUp;
