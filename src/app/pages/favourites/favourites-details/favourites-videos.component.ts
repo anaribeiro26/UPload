@@ -7,7 +7,7 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 import {Videos} from "../../../services/UPload.model";
 
 @Component({
-  selector: 'app-favourites-videos',
+  selector: 'app-favourites-details',
   templateUrl: './favourites-videos.component.html',
   styleUrls: ['./favourites-videos.component.scss']
 })
