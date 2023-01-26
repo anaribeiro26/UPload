@@ -3,7 +3,6 @@ import {UPloadService} from "../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
 import {VideoComments} from "../../../services/UPload.model";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import {NgForm} from "@angular/forms";
 import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -76,12 +75,18 @@ export class VideoCommentsComponent implements OnInit {
         })
         userPost.form.reset();
       })
+    } else {
+      this.errorMessage();
     }
   }
 
   // @ts-ignore
   reloadPage(nameInput, emailInput, messageInput) {
-   return  nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2
+    return  nameInput.length > 2 && emailInput.length > 2 && messageInput.length > 2
+  }
+
+  errorMessage() {
+    alert('erro')
   }
 
   handleReport(id: string) {
@@ -89,16 +94,9 @@ export class VideoCommentsComponent implements OnInit {
     console.log(id)
 
 
-    let result: any = confirm("Deseja prosseguir com a sua denúncia?");
-    if ( result == true ) {
-      // @ts-ignore
-      document.getElementById("snackbar").innerHTML = "A sua denúncia foi enviada!";
-      let toast: any = document.getElementById("snackbar");
-      toast.className = "show";
-      setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-    } else {
-      // @ts-ignore
-      document.getElementById("snackbar").innerHTML = "NÃO";
-    }
+    let toast: any = document.getElementById("snackbar");
+    toast.className = "show";
+    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+
   }
-  }
+}
