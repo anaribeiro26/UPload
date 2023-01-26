@@ -4,7 +4,7 @@ import {Thematics} from "../../../../services/UPload.model";
 import {UPloadService} from "../../../../services/UPload.service";
 
 @Component({
-  selector: 'app-page',
+  selector: 'app-details',
   templateUrl: './thematic-details.component.html',
   styleUrls: ['./thematic-details.component.scss']
 })
@@ -19,10 +19,11 @@ thematics: Thematics[] = [];
     this.route.params.subscribe(params => {
       let title = params['title'];
       this.UPload.getThematic(title).subscribe((thematics) => {
-      this.thematics = (thematics as Thematics[]).map((thematics : Thematics) => {
-        return {...thematics, title: thematics.title.replace(/\s/g, ' '),
-          thematics, tags_id: thematics.tags_id.replace(/\s/g, '')}
-    });
+      this.thematics = thematics as Thematics[];
+     // ).map((thematics : Thematics) => {
+   //     return {...thematics, title: thematics.title.replace(/\s/g, ' '),
+   //       thematics, tags_id: thematics.tags_id.replace(/\s/g, '')}
+   // });
     })
   })
   }

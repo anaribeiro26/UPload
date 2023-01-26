@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {UPloadService} from "../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
-import {Channels} from "../../../services/UPload.model";
 import {Thematics} from "../../../services/UPload.model";
 
 @Component({
@@ -18,7 +17,9 @@ export class SuggestedThematicsComponent implements OnInit {
   ngOnInit(): void {
 
     this.UPload.getSuggestedThematics().subscribe((thematics) => {
-      this.thematics = thematics as Thematics[]
+      this.thematics = (thematics as Thematics[]).map((thematic : Thematics) => {
+        return {...thematic, title: thematic.title.replace(/\s/g, '-')}
+      });
       }
     )
   }
