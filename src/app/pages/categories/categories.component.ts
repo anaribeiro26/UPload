@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {Taxonomies} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../services/UPload.service";
+import {Taxonomies} from "../../services/UPload.model";
 
 @Component({
   selector: 'app-categories',
@@ -9,7 +9,6 @@ import {UPloadService} from "../../services/UPload.service";
   styleUrls: ['./categories.component.scss']
 })
 export class CategoriesComponent implements OnInit {
-
   categories: Taxonomies[] = [];
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {

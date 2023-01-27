@@ -11,17 +11,20 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./channel-videos.component.scss']
 })
 export class ChannelVideosComponent implements OnInit {
-
-  videos: ChannelVideos[] = [];
-  and: any;
-  lang = localStorage.getItem('lang') || 'pt'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
-  image_url = '/hqdefault.jpg';
+
+  videos: ChannelVideos[] = [];
+
   @Input() channel_id!: number;
 
-  constructor(private UPload: UPloadService, private translate: TranslateService) {
+  and: any;
 
+  lang = localStorage.getItem('lang') || 'pt';
+
+  suffix_url = '/hqdefault.jpg';
+
+  constructor(private UPload: UPloadService, private translate: TranslateService) {
   }
 
   ngOnInit(): void {

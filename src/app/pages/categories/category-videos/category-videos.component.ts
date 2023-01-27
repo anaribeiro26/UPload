@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {TaxonomyVideos} from "../../../services/UPload.model";
 import {UPloadService} from "../../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
+import {TaxonomyVideos} from "../../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 
@@ -11,13 +11,18 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./category-videos.component.scss']
 })
 export class CategoryVideosComponent implements OnInit {
-  category_videos: TaxonomyVideos[] = [];
-  and:any;
-  lang = localStorage.getItem('lang') || 'pt'
-  @Input() category_id!: number;
-  image_url = '/hqdefault.jpg'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
+
+  category_videos: TaxonomyVideos[] = [];
+
+  @Input() category_id!: number;
+
+  and:any;
+
+  lang = localStorage.getItem('lang') || 'pt'
+
+  suffix_url = '/hqdefault.jpg'
 
   constructor(private UPload: UPloadService, private translate: TranslateService) {
   }

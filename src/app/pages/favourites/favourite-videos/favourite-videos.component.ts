@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
-import {ActivatedRoute} from "@angular/router";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
 import {Videos} from "../../../services/UPload.model";
@@ -12,13 +12,17 @@ import {Videos} from "../../../services/UPload.model";
   styleUrls: ['./favourite-videos.component.scss']
 })
 export class FavouriteVideosComponent implements OnInit {
-  favorites_list: Videos[] = [];
-  and: any;
-  lang = localStorage.getItem('lang') || 'pt'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
-  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
-  imageUrl = '/maxresdefault.jpg'
+
+  favorites_list: Videos[] = [];
+
+  and: any;
+
+  lang = localStorage.getItem('lang') || 'pt'
+
+  prefix_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+  suffix_url = '/maxresdefault.jpg'
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) { }
 
