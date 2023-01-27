@@ -4,25 +4,26 @@
       <div class="box">
         <div class="card_image" routerLink="/video/{{v.title}}" routerLinkActive="active">
           <img class="small_image" alt="thumbnail"
-               [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+               [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
         </div>
         <div class="itens">
-          <p class="name"  routerLink="/channel/{{v.channel}}" routerLinkActive="active" [innerHTML]="v.channel"></p>
-          <p class="titleVideo" routerLink="/video/{{v.title}}" routerLinkActive="active" [innerHTML]="v.title | replaceAll : '-' : ' '"></p>
+          <p class="name" routerLink="/channel/{{v.channel}}" routerLinkActive="active" [innerHTML]="v.channel"></p>
+          <p class="titleVideo" routerLink="/video/{{v.title}}" routerLinkActive="active"
+             [innerHTML]="v.title | replaceAll : '-' : ' '"></p>
           <div class="date_share">
-          <div class="date" routerLink="/video/{{v.title}}" routerLinkActive="active">
-          <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
-          <p class="timestamp" [innerHTML]="v.date"></p><span *ngIf="lang=='en'" class="ago"> {{'upload.time_ago' | translate}}</span>
+            <div class="date" routerLink="/video/{{v.title}}" routerLinkActive="active">
+              <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
+              <p class="timestamp" [innerHTML]="v.date"></p><span *ngIf="lang=='en'"
+                                                                  class="ago"> {{'upload.time_ago' | translate}}</span>
+            </div>
+            <p class="duration">{{v.duration}}</p>
+            <div class="actions">
+              <div class="bookmark" (click)="changeFavorite(v.id)">
+                <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
+              </div>
+              <div class="share" (click)="clickShare(v.video)"></div>
+            </div>
           </div>
-          <p class="duration">{{v.duration}}</p>
-          <!--          <img class="logo" [src]="image_url + v.logo" routerLink="/video/{{v.id}}" routerLinkActive="active">-->
-        <div class="actions">
-          <div class="bookmark" (click)="changeFavorite(v.id)">
-            <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
-          </div>
-          <div class="share" (click)="clickShare(v.video)"></div>
-         </div>
-        </div>
         </div>
       </div>
     </div>

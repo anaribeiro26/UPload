@@ -7,7 +7,6 @@
       <img alt="logo" class="logo" [src]="image_url+c.logo">
     </div>
     <h4 class="title" title="{{c.title | replaceAll : '-' : ' '}}">{{c.title | replaceAll : '-' : ' '}}</h4></div>
-  <!-- <p class="description">{{c.description}}</p>-->
   <p class="description" [innerHTML]="c.description"></p>
 </div>
 <app-channel-videos *ngFor="let c of channels" [channel_id]="c.id"></app-channel-videos>

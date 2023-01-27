@@ -1,16 +1,16 @@
- <div class="sidebar">
-    <div class="suggested-channels">
-  <div class="headline">
-    <h2 routerLink="/channels/">{{'upload.channel_suggestion' | translate}}</h2>
-  </div>
-  <div class="suggestion" *ngFor="let c of channelsList | slice: 0: 5">
-    <!--      <div class="sugestion">-->
-    <div class="channel-section" title="{{c.title | replaceAll : '-' : ' '}}">
-      <img class="logo" alt="logo" [src]="image_url + c.logo" routerLink="/channel/{{c.title}}"
-           routerLinkActive="active">
-      <h2 class="channel_title" routerLink="/channel/{{c.title}}" routerLinkActive="active">{{c.title | replaceAll : '-' : ' '}}</h2>
+<div class="sidebar">
+  <div class="suggested-channels">
+    <div class="headline">
+      <h2 routerLink="/channels/">{{'upload.channel_suggestion' | translate}}</h2>
     </div>
+    <div class="suggestion" *ngFor="let c of channelsList | slice: 0: 5">
+      <div class="channel-section" title="{{c.title | replaceAll : '-' : ' '}}">
+        <img class="logo" alt="logo" [src]="image_url + c.logo" routerLink="/channel/{{c.title}}"
+             routerLinkActive="active">
+        <h2 class="channel_title" routerLink="/channel/{{c.title}}"
+            routerLinkActive="active">{{c.title | replaceAll : '-' : ' '}}</h2>
+      </div>
+    </div>
+    <div class="more" routerLink="/channels/">{{'upload.show_more' | translate}}</div>
   </div>
-  <div class="more" routerLink="/channels/">{{'upload.show_more' | translate}}</div>
 </div>
-  </div>

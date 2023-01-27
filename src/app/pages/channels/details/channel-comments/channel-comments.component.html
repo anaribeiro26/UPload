@@ -1,7 +1,7 @@
 <div class="comments">
   <h4 class="title">{{comments.length}} {{'upload.comment_section' | translate}}</h4>
   <div class="form">
-    <form [formGroup]="meuFormGroup" #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
+    <form [formGroup]="myFormGroup" #userPost="ngForm" (ngSubmit)="handleCommentFormSubmit(userPost.value, userPost)">
       <div class="form-box">
         <div class="random_photo">
           <img alt="photo" [src]="url+random+set">
@@ -12,30 +12,30 @@
               <input type="text" name="name" id="name" placeholder="{{'upload.comment_name' | translate}}"
                      formControlName="name" ngModel>
               <div class="error"
-                   *ngIf="meuFormGroup.get('name')?.errors?.['required'] && meuFormGroup.get('name')?.touched">{{'upload.no_name_value' | translate}}
+                   *ngIf="myFormGroup.get('name')?.errors?.['required'] && myFormGroup.get('name')?.touched">{{'upload.no_name_value' | translate}}
               </div>
               <div class="error"
-                   *ngIf="meuFormGroup.get('name')?.errors?.['minlength'] && meuFormGroup.get('name')?.touched">{{'upload.minimum_name' | translate}}
+                   *ngIf="myFormGroup.get('name')?.errors?.['minlength'] && myFormGroup.get('name')?.touched">{{'upload.minimum_name' | translate}}
               </div>
             </div>
             <div class="box_error">
               <input type="email" name="email" id="email" placeholder="Email" formControlName="email" ngModel>
               <div class="error-email"
-                   *ngIf="meuFormGroup.get('email')?.errors?.['required'] && meuFormGroup.get('email')?.touched">{{'upload.no_email_value' | translate}}
+                   *ngIf="myFormGroup.get('email')?.errors?.['required'] && myFormGroup.get('email')?.touched">{{'upload.no_email_value' | translate}}
               </div>
               <div class="error-email"
-                   *ngIf="meuFormGroup.get('email')?.errors?.['email'] && meuFormGroup.get('email')?.touched">{{'upload.email_format' | translate}}
+                   *ngIf="myFormGroup.get('email')?.errors?.['email'] && myFormGroup.get('email')?.touched">{{'upload.email_format' | translate}}
               </div>
             </div>
           </div>
           <div class="message_error">
             <textarea id="message" placeholder="{{'upload.comment_message' | translate}}" formControlName="comment"
                       ngModel></textarea>
-            <div class="erro_message"
-                 *ngIf="meuFormGroup.get('comment')?.errors?.['required'] && meuFormGroup.get('comment')?.touched">{{'upload.no_message_value' | translate}}
+            <div class="error_message"
+                 *ngIf="myFormGroup.get('comment')?.errors?.['required'] && myFormGroup.get('comment')?.touched">{{'upload.no_message_value' | translate}}
             </div>
-            <div class="erro_message"
-                 *ngIf="meuFormGroup.get('comment')?.errors?.['minlength'] && meuFormGroup.get('comment')?.touched">{{'upload.minimum_message' | translate}}
+            <div class="error_message"
+                 *ngIf="myFormGroup.get('comment')?.errors?.['minlength'] && myFormGroup.get('comment')?.touched">{{'upload.minimum_message' | translate}}
             </div>
           </div>
         </div>
@@ -62,7 +62,7 @@
           <p (click)="handleReport(c.id)" class="report-comment">{{'upload.report_comment' | translate}} <fa-icon class="flag" [icon]="faFlag"></fa-icon></p>
         </div>
       </div>
-      <div id="snackbar">A sua denúncia foi enviada!</div>
+      <div id="snackbar">{{'upload.report_message' | translate }}</div>
       <p class="textfield" [innerHTML]="c.comment.replace('&nbsp;', '').replace('<p>', '<span>')"></p>
     </div>
   </div>

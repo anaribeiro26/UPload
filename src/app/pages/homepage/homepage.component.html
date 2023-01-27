@@ -8,8 +8,8 @@
         <div class="box">
           <div class="card_image" routerLink="/video/{{v.title}}" routerLinkActive="active">
             <img class="thumbnail" alt="thumbnail"
-                 [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
-            <div class="channel_logo"><img class="logo" alt="logo" [src]="image_url + v.logo">
+                 [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
+            <div class="channel_logo"><img class="logo" alt="logo" [src]="prefix_url + v.logo">
             </div>
           </div>
           <div class="itens">
@@ -28,10 +28,7 @@
               <div class="bookmark" (click)="changeFavorite(v.id)">
                 <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
               </div>
-              <div class="share" alt="share" (click)="clickShare(v.video)"></div>
-              <!--              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>-->
-              <!--<fa-icon class="share-button" [icon]="faShare" (click)="clickShare(v.video)"></fa-icon>-->
-              <!-- <img class="share-button" alt="share" src="../../../assets/ic_Share.svg" (click)="clickShare(v.video)"> -->
+              <div class="share" (click)="clickShare(v.video)"></div>
             </div>
           </div>
         </div>

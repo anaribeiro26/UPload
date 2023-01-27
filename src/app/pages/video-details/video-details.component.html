@@ -15,13 +15,12 @@
         </div>
         <div class="video-line">
           <div class="video">
-            <app-youtube-player controls="0"
-                                [id]="getYoutubeId(video.video)"></app-youtube-player>
+            <app-youtube-player [id]="getYoutubeId(video.video)"></app-youtube-player>
           </div>
         </div>
         <div class="channel-box" title="{{video.channel}}">
           <div class="photo" routerLink="/channels/{{video.channel_id}}">
-            <img class="logo" alt="video" [src]="image_url + video.logo">
+            <img class="logo" alt="video" [src]="prefix_url + video.logo">
           </div>
           <div class="title-like">
             <div class="second-box" routerLink="/channels/{{video.channel_id}}">

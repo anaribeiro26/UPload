@@ -6,7 +6,7 @@
       <div class="inner_box" routerLink="/video/{{v.title}}" routerLinkActive="active" title="{{v.title | replaceAll : '-' : ' '}}">
        <div class="image">
         <img class="thumbnail" alt="thumbnail"
-             [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+             [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
        </div>
          <div class="duration" [innerHTML]="v.duration"></div>
         <div>
@@ -18,9 +18,9 @@
           </p>
         </div>
       </div>
-      <p class="title"routerLink="/video/{{v.title}}" routerLinkActive="active" [innerHTML]="v.title | replaceAll : '-' : ' '"></p>
+      <p class="title" routerLink="/video/{{v.title}}" routerLinkActive="active" [innerHTML]="v.title | replaceAll : '-' : ' '"></p>
       <div class="date_action">
-      <div class="date"routerLink="/video/{{v.title}}" routerLinkActive="active">
+      <div class="date" routerLink="/video/{{v.title}}" routerLinkActive="active">
         <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
         <p class="timestamp" [innerHTML]="v.date"></p><span class="ago" *ngIf="lang=='en'"> {{'upload.time_ago' | translate}}</span>
       </div>
@@ -29,10 +29,7 @@
           <fa-icon [icon]="favourite(v.id)? faBookmarkSolid : faBookmark"></fa-icon>
         </div>
         <div class="share" (click)="clickShare(v.video)">
-          <!--              <fa-icon class="faIcon" [icon]="faShare" (click)="share(v.video)"></fa-icon>-->
-          <!--<fa-icon class="share-button" [icon]="faShare" (click)="clickShare(v.video)"></fa-icon>-->
-          <!--  <img class="share-button" alt="share" src="../../../assets/ic_Share.svg" (click)="clickShare(v.video)">-->
-        </div>
+           </div>
       </div>
     </div>
     <div class="outer_box_empty" *ngIf="videos.length % 2 !== 0"></div>

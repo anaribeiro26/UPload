@@ -4,7 +4,7 @@
       <div class="inner_box" routerLink="/video/{{c.title}}" routerLinkActive="active" title="{{c.title}}">
         <div class="image">
         <img alt="thumbnail" class="thumbnail"
-             [src]="c.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+             [src]="c.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
         </div>
         <div class="duration" [innerHTML]="c.duration"></div>
         <p class="tags">

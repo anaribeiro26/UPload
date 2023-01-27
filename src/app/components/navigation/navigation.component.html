@@ -27,7 +27,7 @@
       <p class="title">{{'upload.nav_playlists' | translate}}</p>
     </div>
     <div class="tags">
-      <p class="tags_title">TAGS</p>
+      <p class="tags_title">{{'upload.nav_tags' | translate}}</p>
       <div class="tag">
       <span class="user_tags" routerLink="/tags/{{t.name}}" *ngFor="let t of tags | slice: 0: 6">
         <p [innerHTML]="t.name"> </p>

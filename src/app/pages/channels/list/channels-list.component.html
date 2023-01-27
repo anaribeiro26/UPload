@@ -1,7 +1,3 @@
-<!--<div class="searchbar"><input id="searchbar" type="text" name="search"
-                              placeholder="Search channels" [(ngModel)]="searchbar" (ngModelChange)="channelSearch()"/>
-<fa-icon [icon]="faMagnifyingGlass"></fa-icon>
-</div>-->
 <div class="list">
   <div class="content" *ngFor="let c of channelsList">
     <div class="content-section" title="{{c.title | replaceAll : '-' : ' '}}" routerLink="/channel/{{c.title}}">

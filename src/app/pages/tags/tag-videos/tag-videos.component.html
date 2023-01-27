@@ -3,7 +3,7 @@
     <div class="outer_box" *ngFor="let t of tag_videos" routerLink="/video/{{t.title}}" routerLinkActive="active">
       <div class="inner_box" title="{{t.title | replaceAll : '-' : ' '}}">
         <img alt="thumbnail" class="thumbnail"
-             [src]="t.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + image_url"/>
+             [src]="t.videos.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
         <div class="duration" [innerHTML]="t.duration"></div>
         <p class="tags">
             <span class="tag" *ngFor="let tag of t.tags.split(', ').slice(0, 3)"

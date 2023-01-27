@@ -4,7 +4,7 @@
       <div class="box" title="{{video.title | replaceAll : '-' : ' '}}">
         <div class="card_image" routerLink="/video/{{video.title}}" routerLinkActive="active" >
           <img class="small_image" alt="thumbnail"
-               [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + imageUrl"/>
+               [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
         </div>
         <div class="itens">
           <p class="name" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" [innerHTML]="video.channel"></p>
@@ -23,7 +23,7 @@
               <div class="share" (click)="clickShare(video.video)"></div>
             </div>
           </div>
-            <img class="logo" alt="logo" [src]="image_url + video.logo" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" >
+            <img class="logo" alt="logo" [src]="prefix_url + video.logo" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" >
         </div>
       </div>
     </div>
