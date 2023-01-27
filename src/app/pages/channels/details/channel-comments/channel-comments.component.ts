@@ -2,7 +2,6 @@ import {Component, Input, OnInit} from '@angular/core';
 import {ChannelComments} from "../../../../services/UPload.model";
 import {UPloadService} from "../../../../services/UPload.service";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import {NgForm} from "@angular/forms";
 import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -11,18 +10,22 @@ import {faFlag} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./channel-comments.component.scss']
 })
 export class ChannelCommentsComponent implements OnInit {
-  meuFormGroup: FormGroup;
+  faFlag = faFlag;
+  myFormGroup: FormGroup;
+
   comments: ChannelComments[] = [];
+
+  @Input() channel_id!: number;
+
   lang = localStorage.getItem('lang') || 'pt'
+
   title = "Comentários"
   url = "https://robohash.org/";
   set = "?set=set4&bgset=bg2"
   random = (Math.random() + 1).toString(36).substring(7);
-  @Input() channel_id!: number;
-  faFlag = faFlag;
 
   constructor(private UPload: UPloadService, private formBuilder: FormBuilder) {
-    this.meuFormGroup = this.formBuilder.group({
+    this.myFormGroup = this.formBuilder.group({
       name: ['', [
         Validators.required,
         Validators.minLength(2)]],

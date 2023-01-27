@@ -9,7 +9,8 @@ import {Channels} from "../../../services/UPload.model";
 })
 export class SuggestedChannelsComponent implements OnInit {
   channelsList: Channels[] = [];
-  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io"
+
+  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
   constructor(private UPload: UPloadService) { }
 
