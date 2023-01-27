@@ -1,13 +1,9 @@
 .uploads {
   display: flex;
-  //justify-content: center;
 
   .videos {
     margin-left: 30px;
-    // position: absolute;
-    // top: 80px;
     display: flex;
-    //   justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     padding-bottom: 25px;
@@ -24,6 +20,7 @@
       .title {
         color: rgba(255, 255, 255, 100%);
       }
+
       .thumbnail {
         transform: scale(1.05);
       }
@@ -44,7 +41,7 @@
         .thumbnail {
           height: 100%;
           width: 100%;
-        scale: (1.07);
+          scale: (1.07);
           object-fit: cover;
           border-radius: 16px 16px 0 0;
         }
@@ -78,24 +75,18 @@
             margin-top: 0;
           }
         }
+
         .actions {
           display: flex;
           justify-content: flex-end;
-          // padding-left: 80px;
           padding-right: 10px;
           width: 84px;
-          //width: 165px;
-         // padding-top: 65px;
-          // padding-right: 20px;
 
           .ng-fa-icon {
             font-size: 18px;
             color: #92929D;
             cursor: pointer;
             padding-right: 10px;
-            // position: absolute;
-            //top: 280px;
-            // margin-left: 256px;
           }
 
           fa-icon:hover {
@@ -109,20 +100,15 @@
           .share {
             background-image: url("../../../../assets/ic_Share.svg");
             background-size: cover;
-            height: 26px;
             cursor: pointer;
-            // padding-right: 24px;
-            // padding-bottom: 5px;
             height: 23px;
             margin-right: 5px;
             padding-right: 23px;
             padding-bottom: 12px;
-            // position: absolute;
-            // top: 280px;
-            //  margin-left: 288px;
           }
         }
       }
+
       .inner_box {
         height: 200px;
         position: relative;
@@ -136,19 +122,15 @@
           margin-left: 16px;
           width: 50px;
           top: 140px;
-          // top: 110px;
-          //margin-left: 16px;
           background-color: #1c1c24;
           border-radius: 5px;
-          color: #ffffff;
+          color: #FAFAFB;
           font-size: 11px;
-          //  font-weight: 500;
         }
 
         .tags {
           padding-top: 2px;
           margin-top: 5px;
-          //margin-top: 5px;
           margin-left: 16px;
           color: #1e75ff;
           font-size: 13px;
