@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../../services/UPload.service"
 import {TranslateService} from "@ngx-translate/core";
 import {Videos} from "../../../services/UPload.model";
-import {ActivatedRoute} from "@angular/router";
 import {VideoDetails} from "../../../services/UPload.model";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
@@ -13,20 +13,21 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./suggested-videos.component.scss']
 })
 export class SuggestedVideosComponent implements OnInit {
-  videos: Videos[] | undefined = [];
-  and: any;
-  lang = localStorage.getItem('lang') || 'pt'
-  imageUrl = '/maxresdefault.jpg';
-  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
-  @Input() mainVideoTags: string | undefined;
-  mainVideoTagsList: string[] = [];
+
+  videos: Videos[] | undefined = [];
   video: VideoDetails | undefined;
-  // random = [Math.floor(Math.random()*this.videos.length)];
+  mainVideoTagsList: string[] = [];
+  @Input() mainVideoTags: string | undefined;
+
   Math: any;
+  and: any;
 
+  lang = localStorage.getItem('lang') || 'pt'
 
+  suffix_url = '/maxresdefault.jpg';
+  prefix_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) {
   }

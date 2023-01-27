@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Thematics} from "../../../services/UPload.model";
 import {UPloadService} from "../../../services/UPload.service";
+import {Thematics} from "../../../services/UPload.model";
 
 @Component({
   selector: 'app-details',
@@ -9,9 +9,11 @@ import {UPloadService} from "../../../services/UPload.service";
   styleUrls: ['./thematic-details.component.scss']
 })
 export class ThematicDetailsComponent implements OnInit {
-thematics: Thematics[] = [];
-  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+  thematics: Thematics[] = [];
+
   @Input() tags!: string;
+
+  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) { }
 
@@ -20,10 +22,6 @@ thematics: Thematics[] = [];
       let title = params['title'];
       this.UPload.getThematic(title).subscribe((thematics) => {
       this.thematics = thematics as Thematics[];
-     // ).map((thematics : Thematics) => {
-   //     return {...thematics, title: thematics.title.replace(/\s/g, ' '),
-   //       thematics, tags_id: thematics.tags_id.replace(/\s/g, '')}
-   // });
     })
   })
   }

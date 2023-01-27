@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Taxonomies} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../services/UPload.service";
+import {Taxonomies} from "../../services/UPload.model";
 
 @Component({
   selector: 'app-tags',
@@ -9,7 +9,6 @@ import {UPloadService} from "../../services/UPload.service";
   styleUrls: ['./tags.component.scss']
 })
 export class TagsComponent implements OnInit {
-
   tags: Taxonomies[] = [];
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {

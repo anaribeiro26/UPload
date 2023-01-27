@@ -11,14 +11,18 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./tag-videos.component.scss']
 })
 export class TagVideosComponent implements OnInit {
-
-  tag_videos: TaxonomyVideos[] = [];
-  and:any;
-  lang = localStorage.getItem('lang') || 'pt'
-  @Input() tags_id!: number;
-  image_url = '/hqdefault.jpg'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
+
+  tag_videos: TaxonomyVideos[] = [];
+
+  @Input() tags_id!: number;
+
+  and:any;
+
+  lang = localStorage.getItem('lang') || 'pt';
+
+  suffix_url = '/hqdefault.jpg';
 
   constructor(private UPload: UPloadService, private translate: TranslateService) {
   }
