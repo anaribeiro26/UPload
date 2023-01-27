@@ -4,7 +4,6 @@
   margin-left: 30px;
 
   .videos {
-    //position: absolute;
     top: 5em;
     display: flex;
     justify-content: flex-start;
@@ -14,7 +13,6 @@
 
     .cel:hover {
       .small_image {
-        // filter: grayscale(70%);
         transform: scale(1.1);
       }
 
@@ -28,8 +26,6 @@
     .cel {
       width: 320px;
       height: 270px;
-      //height: 255px;
-      //height: 375px;
       border-radius: 16px;
       background-color: #1c1c24;
       position: relative;
@@ -54,7 +50,6 @@
       }
 
       .itens {
-        //margin: 20px;
         margin-top: -10px;
         margin-left: 16px;
 
@@ -68,8 +63,6 @@
             font-size: 13px;
             letter-spacing: 0.1px;
             color: #92929D;
-            //padding-top: 8px;
-            //padding-bottom: 55px;
 
             .ago {
               display: inline;
@@ -95,7 +88,7 @@
           font-size: 16px;
           margin-bottom: 3px;
           margin-top: 8px;
-         margin-right: 50px;
+          margin-right: 50px;
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
@@ -112,13 +105,10 @@
           height: 20px;
           width: 50px;
           top: 130px;
-          // top: 110px;
-          //margin-left: 16px;
           background-color: #1c1c24;
           border-radius: 5px;
           color: #ffffff;
           font-size: 11px;
-          //  font-weight: 500;
         }
 
         .logo {
@@ -133,26 +123,18 @@
           background-color: #1C1C24;
           cursor: pointer;
         }
+
         .actions {
           display: flex;
           justify-content: flex-end;
           align-items: flex-end;
           margin-right: 7px;
-          // padding-left: 80px;
-         //padding-right: 5px;
-         //width: 84px;
-         ////width: 165px;
-         //padding-top: 65px;
-          // padding-right: 20px;
 
           .ng-fa-icon {
             font-size: 18px;
             color: #92929D;
             cursor: pointer;
             padding-right: 10px;
-            // position: absolute;
-            //top: 280px;
-            // margin-left: 256px;
           }
 
           fa-icon:hover {
@@ -166,16 +148,10 @@
           .share {
             background-image: url("../../../../assets/ic_Share.svg");
             background-size: cover;
-            //height: 26px;
             cursor: pointer;
-            // padding-right: 24px;
-            // padding-bottom: 5px;
             height: 23px;
             margin-right: 5px;
             padding-right: 23px;
-            // position: absolute;
-            // top: 280px;
-            //  margin-left: 288px;
           }
         }
       }

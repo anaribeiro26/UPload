@@ -1,15 +1,9 @@
 .header {
-  // margin: 50px 0 35px 30px;
-  // font-style: normal;
-  // font-size: 16px;
-  // letter-spacing: 0.1px;
-  // color: #FAFAFB;
   h1 {
     margin-left: 30px;
     margin-top: 30px;
     color: #ffffff;
     font-size: 25px;
-    // font-weight: 600;
   }
 }
 
@@ -18,8 +12,6 @@
   justify-content: center;
 
   .videos {
-    //position: absolute;
-    //top: 5em;
     display: flex;
     justify-content: flex-start;
     flex-wrap: wrap;
@@ -29,10 +21,7 @@
 
     .cel {
       cursor: pointer;
-      //width: 340px;
       width: 312px;
-      //  height: 280px;
-      //height: 270px;
       height: 255px;
       border-radius: 16px;
       background-color: #1c1c24;
@@ -40,10 +29,8 @@
 
       .card_image {
         margin-bottom: 15px;
-        // width: 340px;
         width: 312px;
         height: 176px;
-        // object-fit: cover;
         border-radius: 16px 16px 0 0;
         overflow: hidden;
       }
@@ -59,20 +46,13 @@
       }
 
       .itens {
-        // margin: 5px;
-        // height: 75px;
         margin-top: -10px;
         height: 65px;
         display: flex;
         flex-direction: column;
         justify-content: center;
 
-
-
         .category {
-          // margin-bottom: 10px;
-          //margin-top: 10px;
-
           .title {
             width: fit-content;
             font-size: 14px;
@@ -88,7 +68,6 @@
           color: rgba(255, 255, 255, 70%);
           font-size: 18px;
           margin-top: 5px;
-          //margin-bottom: 10px;
           margin-bottom: 5px;
           margin-left: 15px;
           margin-right: 15px;
@@ -121,22 +100,14 @@
     }
 
   .box {
-    // position: relative;
-
     .play {
       position: absolute;
       top: 0;
       bottom: 0;
-      //left: 15.7rem;
       right: 0;
-      //width: 50%;
-      //width: 30%;
-      //height: 75%;
       height: 176px;
       width: 100px;
       opacity: 0.99;
-      //transition: 0.5s ease;
-      //background-color: #1C1C24;
       background: -webkit-gradient(linear, left top, left bottom, from(#1C1C24), to(rgba(28, 28, 36, 0.64)));
       border-radius: 0 18px 0 0;
 
@@ -155,21 +126,3 @@
   }
 }
 }
-//.outer_box {
-//
-//}
-//
-//.thumbnail {
-//  position: relative;
-//  width: 30%;
-//  height: 25%;
-//  border-radius: 20px;
-//
-//
-//  .play {
-//    position: absolute;
-//    height: 100%;
-//    width: 50%;
-//    background: red;
-//  }
-//}
