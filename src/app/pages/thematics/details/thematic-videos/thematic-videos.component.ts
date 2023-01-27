@@ -11,15 +11,18 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./thematic-videos.component.scss']
 })
 export class ThematicVideosComponent implements OnInit {
-  thematic_videos: ThematicVideos[] = [];
-  and: any;
-  lang = localStorage.getItem('lang') || 'pt'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
-  image_url = '/hqdefault.jpg';
+
+  thematic_videos: ThematicVideos[] = [];
+
   @Input() tags_id!: any;
 
-  title = "Artigo de Temática"
+  and: any;
+
+  lang = localStorage.getItem('lang') || 'pt'
+
+  suffix_url = '/hqdefault.jpg';
 
   constructor(private UPload: UPloadService, private translate: TranslateService) {
   }

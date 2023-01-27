@@ -1,8 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {UPloadService} from "../../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
+import {UPloadService} from "../../../services/UPload.service";
 import {VideoComments} from "../../../services/UPload.model";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {faFlag} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -11,19 +11,22 @@ import {faFlag} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./video-comments.component.scss']
 })
 export class VideoCommentsComponent implements OnInit {
-  meuFormGroup: FormGroup;
+  faFlag = faFlag;
+  myFormGroup: FormGroup;
+
   videoComments: VideoComments[] = [];
+
+  @Input() video_id!: string;
+
   lang = localStorage.getItem('lang') || 'pt'
-  title = "Comentários"
+
   url = "https://robohash.org/";
   set = "?set=set4&bgset=bg2";
-  random = (Math.random() + 1).toString(36).substring(7);
-  @Input() video_id!: string;
-  faFlag = faFlag;
 
+  random = (Math.random() + 1).toString(36).substring(7);
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private formBuilder: FormBuilder) {
-    this.meuFormGroup = this.formBuilder.group({
+    this.myFormGroup = this.formBuilder.group({
       name: ['', [
         Validators.required,
         Validators.minLength(2)]],
@@ -93,10 +96,8 @@ export class VideoCommentsComponent implements OnInit {
     this.UPload.reportVideoComment(parseInt(id)).subscribe();
     console.log(id)
 
-
     let toast: any = document.getElementById("snackbar");
     toast.className = "show";
     setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
-
   }
 }

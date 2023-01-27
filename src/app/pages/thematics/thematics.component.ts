@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Thematics} from "../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../services/UPload.service";
-import {replaceAllPipe} from "../../pipe/replaceAll.pipe";
+import {Thematics} from "../../services/UPload.model";
 
 @Component({
   selector: 'app-thematics',
@@ -12,9 +11,8 @@ import {replaceAllPipe} from "../../pipe/replaceAll.pipe";
 
 export class ThematicsComponent implements OnInit {
   thematics: Thematics[] = [];
-  replaceAllPipe = replaceAllPipe;
+
   image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
-  currentTitle: any;
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
   }

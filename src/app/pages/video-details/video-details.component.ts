@@ -14,16 +14,18 @@ import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid
   styleUrls: ['./video-details.component.scss']
 })
 export class VideoDetailsComponent implements OnInit {
-
-  video: VideoDetails | undefined;
-  and: any;
-  id: any;
-  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
   faThumbsUp = faThumbsUp;
   faThumbsDown = faThumbsDown;
   faThumbsDownSolid = faThumbsDownSolid;
   faThumbsUpSolid = faThumbsUpSolid;
   faFlag = faFlag;
+
+  video: VideoDetails | undefined;
+
+  and: any;
+  id: any;
+
+  prefix_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) {
   }
