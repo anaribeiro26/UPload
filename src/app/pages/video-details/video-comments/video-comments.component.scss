@@ -8,7 +8,6 @@
   }
 
   .form {
-    //display: flex;
     width: 100%;
     height: 100%;
     max-height: 80px;
@@ -46,13 +45,13 @@
             text-overflow: ellipsis;
 
             .error {
-              color: red;
+              color: rgba(221, 0, 0, 100%);
               display: flex;
               font-size: 11px;
             }
 
             .error-email {
-              color: red;
+              color: rgba(221, 0, 0, 100%);
               display: flex;
               font-size: 11px;
               margin-left: 10px;
@@ -78,19 +77,13 @@
           background-color: #13131A;
           border: none;
           border-bottom: 2px solid rgba(255, 255, 255, 70%);
-          // margin-right: 5px;
-          //margin-bottom: 5px;
           padding-bottom: 10px;
-          color: white;
-          //margin-top: 5px;
-          //width: 50%;
+          color: #FAFAFB;
         }
-
 
         input[type="text"]:hover, input[type="email"]:hover {
           border-bottom: 2px solid rgba(255, 255, 255, 100%);
         }
-
 
         .message_error {
           display: flex;
@@ -108,9 +101,7 @@
             background-color: #13131A;
             border: none;
             border-bottom: 2px solid rgba(255, 255, 255, 70%);
-            // margin-right: 5px;
-            //margin-bottom: 15px;
-            color: white;
+            color: #FAFAFB;
             resize: none;
           }
 
@@ -118,12 +109,10 @@
             border-bottom: 2px solid rgba(255, 255, 255, 100%);
           }
 
-          .erro_message {
-            color: red;
+          .error_message {
+            color: rgba(221, 0, 0, 100%);
             display: flex;
-            //margin-bottom: 20px;
             font-size: 11px;
-
           }
         }
       }
@@ -132,21 +121,17 @@
     .submit-button {
       margin-top: 10px;
       padding-top: 10px;
-      //margin-top: 0;
       display: flex;
       justify-content: flex-end;
-      //margin-left: 50px;
       padding-left: 20px;
       width: 100%;
 
       button {
-        // width: 30%;
         width: 180px;
         border-radius: 14px;
         color: rgba(255, 255, 255, 70%);
         background-color: #13131A;
         border: 1px solid rgba(255, 255, 255, 70%);
-        // border-radius: 30px;
         padding-top: 7px;
         padding-bottom: 7px;
       }
@@ -172,20 +157,6 @@
     }
   }
 
-  //@media screen and (max-width: 885px) {
-  //  .form {
-  //    max-width: 550px;
-  //    margin-bottom: 40px;
-  //  }
-  //}
-
-  //@media screen and (max-width: 790px) {
-  //  .form {
-  //    max-width: 450px;
-  //    margin-bottom: 40px;
-  //  }
-  //}
-
   @media screen and (max-width: 500px) {
     .form {
       max-width: 350px;
@@ -199,167 +170,7 @@
       }
     }
   }
-  //border: red 1px solid;
 
-  //input {
-  //  background-color: transparent;
-  //  color: white;
-  //  //border-bottom-style: solid;
-  //}
-
-  //.inputs {
-  //  display: flex;
-  //  justify-content: flex-start;
-  //  align-items: center;
-  //  //border: red 1px solid;
-  //}
-
-  //input[type="email"] {
-  //  margin-left: 10px;
-  //}
-
-  //input[type="text"], input[type="email"] {
-  //  background-color: #13131A;
-  //  border: none;
-  //  border-bottom: 2px solid rgba(255, 255, 255, 70%);
-  //  // margin-right: 5px;
-  //  margin-bottom: 5px;
-  //  padding-bottom: 10px;
-  //  color: white;
-  //  //margin-top: 5px;
-  //}
-
-  //input[type="text"]:hover, input[type="email"]:hover {
-  //  border-bottom: 2px solid rgba(255, 255, 255, 100%);
-  //}
-
-
-  //.user_data {
-  //  display: flex;
-  //  flex: 2;
-  //  justify-content: space-between;
-  //  width: calc(97.9% - 60px);
-  //  //border: red 1px solid;
-
-  //}
-
-  //#name {
-  //  //width: calc(97.9% - 60px);
-  //  width: 48%;
-  //  border-width: 0px 0px 2px 0px;
-  //  margin-left: 10px;
-  //  //border: red 1px solid;
-
-  //}
-
-  //#email {
-  //  width: 48%;
-  //  border-width: 0px 0px 2px 0px;
-  //}
-
-  //.message {
-  //  display: flex;
-  //  justify-content: flex-end;
-  //  //border: red 1px solid;
-  //}
-
-  //#message {
-  //  width: calc(100% - 70px);
-  //  border-width: 0px 0px 2px 0px;
-  //  //border: red 1px solid;
-
-  //}
-
-  //.submit-button {
-  //  margin-top: 20px;
-  //  display: flex;
-  //  justify-content: flex-end;
-  //  //margin-left: 50px;
-  //  width: 100%;
-
-  //  button {
-  //    width: 30%;
-  //    border-radius: 14px;
-  //    color: white;
-  //    background-color: #13131A;
-  //    border: 1px solid #FFFFFF;
-  //    border-radius: 14px;
-  //    padding-top: 10px;
-  //    padding-bottom: 10px;
-  //  }
-
-  //  button:hover {
-  //    color: rgba(255, 255, 255, 100%);
-  //    border: 1px solid rgba(255, 255, 255, 100%);
-  //    cursor: pointer;
-  //  }
-
-  //}
-
-  //img {
-  //  width: 60px;
-  //  height: 60px;
-  //  border-radius: 30px;
-  //}
-
-  //.comments {
-  //  //border: red 1px solid;
-  //
-  //  .first-line {
-  //    display: flex;
-  //    //border: red 1px solid;
-  //
-  //    .name-date {
-  //      width: calc(100% - 60px);
-  //      margin-left: 11px;
-  //      display: flex;
-  //      align-items: center;
-  //      //border: red 1px solid;
-  //      font-weight: 600;
-  //      line-height: 21px;
-  //      letter-spacing: 0.1px;
-  //      color: #FAFAFB;
-  //
-  //
-  //      .name {
-  //        color: white;
-  //        font-weight: 600;
-  //        display: flex;
-  //      }
-  //
-  //      .date {
-  //        color: rgba(116, 116, 123, 1);
-  //      }
-  //
-  //      .ago {
-  //        margin-right: 5px;
-  //        margin-left: 5px;
-  //        color: rgba(116, 116, 123, 1);
-  //      }
-  //
-  //
-  //    }
-  //
-  //  }
-  //
-  //  .comment {
-  //    align-items: center;
-  //    //border: red 1px solid;
-  //    margin-left: 61px;
-  //    font-weight: 400;
-  //    font-size: 14px;
-  //    text-align: justify;
-  //    letter-spacing: 0.2px;
-  //    color: #FAFAFB;
-  //
-  //  }
-  //
-  //  p {
-  //    margin-top: 0;
-  //    margin-bottom: 0;
-  //  }
-  //
-  //}
   .comment-box {
     margin-top: 70px;
   }
@@ -375,9 +186,7 @@
   .comment {
     display: flex;
     align-items: center;
-    //margin-top: 20px;
-    //border: red 1px solid;
-    color: white;
+    color: #FAFAFB;
 
     .photo {
       padding-right: 7px;
@@ -393,7 +202,6 @@
       display: flex;
       flex-direction: column;
       margin-left: 10px;
-      //border: red 1px solid;
 
       .user_data {
         display: flex;
@@ -401,27 +209,19 @@
       }
 
       .timestamp {
-        // display: flex;
         color: rgba(116, 116, 123, 1);
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        // margin-left: 10px;
-
-        .ago {
-          //  margin-left: 10px;
-        }
 
         .date {
           margin-left: 5px;
-
         }
       }
 
       .user {
-        //width: min-content;
         display: -webkit-box;
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
@@ -465,24 +265,22 @@
       }
 
       #snackbar {
-        visibility: hidden; /* Hidden by default. Visible on click */
-        min-width: 200px; /* Set a default minimum width */
-        margin-left: -125px; /* Divide value of min-width by 2 */
-        background-color: #0b2e09; /* Black background color */
-        color: #fff; /* White text color */
-        text-align: center; /* Centered text */
-        border-radius: 10px; /* Rounded borders */
-        padding: 12px; /* Padding */
-        position: fixed; /* Sit on top of the screen */
-        z-index: 1; /* Add a z-index if needed */
-        left: 50%; /* Center the snackbar */
-        bottom: 30px; /* 30px from the bottom */
+        visibility: hidden;
+        min-width: 200px;
+        margin-left: -125px;
+        background-color: rgba(255, 255, 2555, 90%);
+        color: #FAFAFB;
+        text-align: center;
+        border-radius: 10px;
+        padding: 12px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
       }
 
       #snackbar.show {
-        visibility: visible; /* Show the snackbar */
-        /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-        However, delay the fade out process for 2.5 seconds */
+        visibility: visible;
         -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
         animation: fadein 0.5s, fadeout 0.5s 2.5s;
       }

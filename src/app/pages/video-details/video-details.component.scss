@@ -1,34 +1,16 @@
-@media screen and (max-width: 560px) {
-  .details-body {
-    padding-top: 35px;
-    padding-right: 15px;
-  }
-}
-
 .details-body {
   display: flex;
-  width: 95%;
- //  margin: auto;
-  // width: 90%;
-  // margin: auto;
-  //border: red 1px solid;
+  //width: 95%;
+  padding-right: 35px; //test
   margin-top: 30px;
-
 
   .container {
     display: flex;
     width: 100%;
-    // width: 90%;
     padding-left: 30px;
-    //flex-direction: column;
-    //width: 72%;
-    //border: red 1px solid;
-
 
     .inside-box {
       width: 85%;
-      // width: 90%;
-      //border: red 1px solid;
       .title-box {
         display: flex;
         flex-direction: column;
@@ -37,7 +19,6 @@
           display: flex;
           justify-content: space-between;
           align-items: center;
-          // height: 35px;
 
           .title {
             font-style: normal;
@@ -63,29 +44,27 @@
           }
 
           #snackbar {
-            visibility: hidden; /* Hidden by default. Visible on click */
-            min-width: 200px; /* Set a default minimum width */
-            margin-left: -125px; /* Divide value of min-width by 2 */
-            //background-color: #0b2e09; /* Black background color */
+            visibility: hidden;
+            min-width: 200px;
+            margin-left: -125px;
             background-color: rgba(255, 255, 2555, 90%);
             color: #1C1C24;
             font-weight: 600;
-            //color: #fff; /* White text color */
-            text-align: center; /* Centered text */
-            border-radius: 10px; /* Rounded borders */
-            padding: 12px; /* Padding */
-            position: fixed; /* Sit on top of the screen */
-            z-index: 1; /* Add a z-index if needed */
-            left: 50%; /* Center the snackbar */
-            bottom: 30px; /* 30px from the bottom */
+            text-align: center;
+            border-radius: 10px;
+            padding: 12px;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            bottom: 30px;
           }
+
           #snackbar.show {
-            visibility: visible; /* Show the snackbar */
-            /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
-            However, delay the fade out process for 2.5 seconds */
+            visibility: visible;
             -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
             animation: fadein 0.5s, fadeout 0.5s 2.5s;
           }
+
           @-webkit-keyframes fadein {
             from {bottom: 0; opacity: 0;}
             to {bottom: 30px; opacity: 1;}
@@ -109,7 +88,6 @@
 
 
         .tags {
-         // display: flex;
           margin-top: 10px;
           margin-bottom: 10px;
           display: -webkit-box;
@@ -117,25 +95,16 @@
           -webkit-box-orient: vertical;
           overflow: hidden;
           text-overflow: ellipsis;
-          //a {
-          //  text-decoration: none;
-          //  color: #1e75ff;
-          //}
-
 
           .tag-item {
-            // margin: 5px 0 10px 0;
             margin-top: 10px;
             margin-bottom: 10px;
             margin-right: 5px;
             text-decoration: none;
             color: #1e75ff;
             cursor: pointer;
-
           }
         }
-
-
       }
 
       .video-line {
@@ -148,8 +117,6 @@
         z-index: 1;
         border-radius: 20px 20px;
         width: 100%;
-        //border: red 1px solid;
-
       }
 
       .channel-box:hover {
@@ -161,7 +128,6 @@
       .channel-box {
         display: flex;
         margin-top: 15px;
-        //border: red 1px solid;
 
         .photo {
           display: flex;
@@ -169,7 +135,6 @@
           align-items: flex-end;
           padding-bottom: 5px;
           cursor: pointer;
-          //border: red 1px solid;
         }
 
         .logo {
@@ -177,7 +142,6 @@
           width: 70px;
           height: 70px;
           border: 2px solid #FFFFFF;
-          //padding-bottom: 5px;
         }
 
 
@@ -189,7 +153,6 @@
 
           .second-box {
             cursor: pointer;
-            cursor: pointer;
           }
 
           .date {
@@ -198,14 +161,8 @@
             -webkit-line-clamp: 1;
             -webkit-box-orient: vertical;
             overflow: hidden;
-
           }
-
         }
-
-        //.second-box {
-        //  border: 2px solid #FFFFFF;
-        //}
 
         .channel-info {
           display: flex;
@@ -214,30 +171,23 @@
           letter-spacing: 0.1px;
           width: 100%;
           margin-top: inherit;
-          //border: red 1px solid;
-
         }
 
         .channel-title {
           font-style: normal;
-          //font-weight: 400;
           font-size: 16px;
-          //letter-spacing: 0.1px;
           color: rgba(255, 255, 255, 80%);
           padding-bottom: 5px;
           display: -webkit-box;
           -webkit-line-clamp: 1;
           -webkit-box-orient: vertical;
           overflow: hidden;
-         // text-overflow: ellipsis;
-          //border: red 1px solid;
         }
 
         .date {
           font-style: normal;
           color: #92929D;
           font-size: 14px;
-          //border: red 1px solid;
         }
 
         .like-dislike {
@@ -245,7 +195,6 @@
           padding-bottom: 20px;;
           display: flex;
           align-items: center;
-          //border: red 1px solid;
 
           .bar {
             color: rgba(255, 255, 255, 100%);
@@ -267,8 +216,6 @@
           }
 
           .like:hover {
-            //font-size: 1.2em;
-            // color: blue;
             color: rgba(255, 255, 255, 100%);
             transition-timing-function: ease-in-out;
           }
@@ -281,7 +228,6 @@
 
             fa-icon {
               font-size: 20px;
-              // margin-right: 0;
             }
 
             p {
@@ -290,12 +236,8 @@
           }
 
           .dislike:hover {
-            //font-size: 1.2em;
             color: rgba(255, 255, 255, 100%);
-            // transition-timing-function: ease-in-out;
           }
-
-
         }
 
         p {
@@ -310,28 +252,19 @@
         background: #1C1C24;
         border-radius: 10px;
         margin-top: 15px;
-        //border: red 1px solid;
 
         .description {
           width: 98%;
-          font-weight: 400;
           font-size: 14px;
-          line-height: 15px;
           text-align: justify;
-          letter-spacing: 0.2px;
           color: #FAFAFB;
           margin: auto;
-          font-family: 'Poppins';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 14px;
-          line-height: 25px;
-          /* or 179% */
-          // margin-bottom: -15px;
 
           p {
             margin-left: 10px;
             margin-right: 10px;
+            margin-bottom: 10px;
+            margin-top: 10px;
           }
         }
       }
@@ -346,118 +279,14 @@
     display: flex;
     justify-content: flex-end;
   }
-
 }
 
-//.big-box {
-//  display: flex;
-//  justify-content: flex-start;
-//  width: 100%;
-//
-//
-//  .container {
-//    width: 30%;
-//    height: 100%;
-//    background: #13131A;
-//
-//
-//    .title {
-//
-//      font-family: "Poppins";
-//      font-style: normal;
-//      font-size: 0.7em;
-//      line-height: 50px;
-//      color: #FAFAFB;
-//      left: 22px;
-//      position: relative;
-//      width: 98vh;
-//    }
-//
-//    .tags {
-//      color: #0835c9;
-//      font-size: 15px;
-//      position: relative;
-//      left: 21px;
-//      bottom: 25px;
-//    }
-//
-//    .video {
-//      position: absolute;
-//      width: 55%;
-//      left: 240px;
-//      border-radius: 20px 20px 20px 20px;
-//      overflow: hidden;
-//      z-index: 1;
-//
-//    }
-//
-//
-//    .channels {
-//      font-family: "Roboto";
-//      font-style: normal;
-//      font-weight: 400;
-//      font-size: 16px;
-//      line-height: 19px;
-//      letter-spacing: 0.1px;
-//      color: #FAFAFB;
-//      position: relative;
-//      top: 474px;
-//      left: 100px;
-//    }
-//
-//    .date {
-//      font-family: "Roboto";
-//      font-style: normal;
-//      font-weight: 400;
-//      line-height: 1px;
-//      letter-spacing: 0.1px;
-//      color: #92929D;
-//      position: relative;
-//      top: 478px;
-//      left: 100px;
-//    }
-//
-//    .logo {
-//      border-radius: 50%;
-//      position: absolute;
-//      width: 69.72px;
-//      height: 69.65px;
-//      left: 240px;
-//      border: 2px solid #FFFFFF;
-//      top: 585px;
-//    }
-//
-//    .description {
-//      position: absolute;
-//      width: 55%;
-//      left: 240px;
-//      font-family: "Poppins";
-//      font-style: normal;
-//      font-weight: 400;
-//      font-size: 14px;
-//      line-height: 25px;
-//      text-align: justify;
-//      letter-spacing: 0.2px;
-//      color: #FAFAFB;
-//      top: 48em;
-//      border-radius: 20px;
-//      background: #1C1C24;
-//
-//    }
-//
-//    .side-bar {
-//      left: 20em;
-//      float: left;
-//      width: 30%;
-//      justify-content: left;
-//      position: relative;
-//      flex-wrap: wrap;
-//    }
-//  }
-//}
-//
-//
-
+@media screen and (max-width: 560px) {
+  .details-body {
+    padding-top: 35px;
+    padding-right: 15px;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .details-body {
@@ -467,11 +296,8 @@
       .inside-box {
         .title-box {
           .title-container {
-            //flex-direction: column;
-            //align-items: baseline;
             .flag {
               padding-right: 25px;
-              //margin-top: -25px;
             }
           }
         }
