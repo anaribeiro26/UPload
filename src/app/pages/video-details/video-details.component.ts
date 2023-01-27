@@ -22,8 +22,8 @@ export class VideoDetailsComponent implements OnInit {
 
   video: VideoDetails | undefined;
 
-  and: any;
-  id: any;
+  and: string | undefined;
+  id: string | undefined;
 
   prefix_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
 
@@ -100,7 +100,7 @@ export class VideoDetailsComponent implements OnInit {
               if (this.video.likes !== undefined) {
                 this.video.likes = (parseInt(this.video.likes) + 1).toString();
               } else {
-                this.video.likes = "0";
+                this.video.likes = "1";
               }
             }
           })
@@ -138,7 +138,7 @@ export class VideoDetailsComponent implements OnInit {
               if (this.video.dislikes !== undefined) {
                 this.video.dislikes = (parseInt(this.video.dislikes) + 1).toString();
               } else {
-                this.video.dislikes = "0";
+                this.video.dislikes = "1";
               }
             }
           })
