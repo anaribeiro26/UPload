@@ -2,31 +2,7 @@
   display: flex;
   margin-right: 30px;
   margin-left: 15px;
-
-  h2 {
-    //position: absolute;
-    //font-style: normal;
-    // font-weight: 500;
-    font-size: 14px;
-    //line-height: 21px;
-    // letter-spacing: 0.1px;
-    color: #FAFAFB;
-    // left: 10px;
-  }
-
-  p {
-    //position: absolute;
-    // font-style: normal;
-    // font-weight: 500;
-    font-size: 14px;
-    // line-height: 21px;
-    // letter-spacing: 0.1px;
-    color: #FAFAFB;
-    // left: 10px;
-    // cursor: pointer;
-  }
 }
-
 
 .container-box {
   margin-top: 69px;
@@ -49,7 +25,6 @@
     background-color: #1c1c24;
     position: relative;
     cursor: pointer;
-
 
     .card_image {
       width: 19rem;
@@ -79,17 +54,15 @@
         color: #1E75FF;
         font-size: 14px;
         letter-spacing: 0.1px;
-        // margin-bottom: 3px;
         margin: 0;
         padding-top: 15px;
-        // margin-top: 5px;
       }
 
       .title {
-        //color: #FAFAFB;
         color: rgba(255, 255, 255, 80%);
         font-size: 16px;
         margin: 0;
+        margin-bottom: -5px;
         padding-top: 7px;
         width: 100%;
         max-width: 260px;
@@ -98,7 +71,6 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
         text-overflow: ellipsis;
-        // margin-bottom: 3px;
         text-decoration: none;
       }
 
@@ -108,25 +80,17 @@
         align-items: baseline;
 
         .actions {
-          margin-top: 8px;
+          margin-top: 14px;
           display: flex;
           justify-content: flex-end;
-          margin-right: -15px;
-          // padding-left: 80px;
-         // padding-right: 5px;
+          margin-right: -10px;
           width: 84px;
-          //width: 165px;
-          //padding-top: 65px;
-          // padding-right: 20px;
 
           .ng-fa-icon {
             font-size: 18px;
             color: #92929D;
             cursor: pointer;
             padding-right: 10px;
-            // position: absolute;
-            //top: 280px;
-            // margin-left: 256px;
           }
 
           fa-icon:hover {
@@ -142,27 +106,15 @@
             background-size: cover;
             height: 23px;
             cursor: pointer;
-            // padding-right: 24px;
-            // padding-bottom: 5px;
             margin-right: 5px;
             padding-right: 23px;
             padding-bottom: 12px;
-            // position: absolute;
-            // top: 280px;
-            //  margin-left: 288px;
           }
-
-          // .share-button {
-          //   // background-image: ../../../assets/ic_Share.svg;
-          //   // position: absolute;
-          //   // top: 280px;
-          //   //  margin-left: 288px;
-          // }
         }
 
         .date {
           display: flex;
-          margin-top: 10px;
+          margin-top: 5px;
 
           span {
             &.ago {
@@ -186,6 +138,7 @@
           }
         }
       }
+
       .duration {
         display: flex;
         position: absolute;
@@ -194,13 +147,10 @@
         height: 20px;
         width: 40px;
         top: 120px;
-        // top: 110px;
-        //margin-left: 16px;
         background-color: #1c1c24;
         border-radius: 5px;
         color: #ffffff;
         font-size: 10px;
-        //  font-weight: 500;
       }
 
       .logo {
@@ -209,7 +159,7 @@
         height: 59px;
         width: 60px;
         position: absolute;
-        top: 8.4rem;
+        top: 7.8rem;
         margin-left: 13rem;
         border: 2px solid #FFFFFF;
         background-color: #1C1C24;

@@ -1,24 +1,12 @@
 .uploads {
   display: flex;
-  //justify-content: center;
 
   .videos {
     margin-left: 30px;
-    // position: absolute;
-    // top: 80px;
     display: flex;
-    //   justify-content: center;
     flex-wrap: wrap;
     gap: 20px;
     padding-bottom: 25px;
-
-    .outer_box_empty {
-      width: 312px;
-    }
-
-    .outer_box:hover {
-      cursor: pointer;
-    }
 
     .outer_box {
       width: 315px;
@@ -59,24 +47,18 @@
             margin-top: 0;
           }
         }
+
         .actions {
           display: flex;
           justify-content: flex-end;
-          // padding-left: 80px;
           padding-right: 10px;
           width: 84px;
-          //width: 165px;
-          //padding-top: 65px;
-          // padding-right: 20px;
 
           .ng-fa-icon {
             font-size: 18px;
             color: #92929D;
             cursor: pointer;
             padding-right: 10px;
-            // position: absolute;
-            //top: 280px;
-            // margin-left: 256px;
           }
 
           fa-icon:hover {
@@ -90,17 +72,11 @@
           .share {
             background-image: url("../../../../assets/ic_Share.svg");
             background-size: cover;
-            height: 26px;
             cursor: pointer;
-            // padding-right: 24px;
-            // padding-bottom: 5px;
             height: 23px;
             margin-right: 5px;
             padding-right: 23px;
             padding-bottom: 12px;
-            // position: absolute;
-            // top: 280px;
-            //  margin-left: 288px;
           }
         }
       }
@@ -118,19 +94,14 @@
           height: 20px;
           width: 50px;
           top: 150px;
-          // top: 110px;
-          //margin-left: 16px;
           background-color: #1c1c24;
           border-radius: 5px;
           color: #ffffff;
           font-size: 11px;
-          //  font-weight: 500;
         }
 
         .tags {
           margin-top: 5px;
-         // top: 170px;
-          //margin-top: 5px;
           margin-left: 16px;
           color: #1e75ff;
           font-size: 14px;
@@ -152,6 +123,14 @@
         overflow: hidden;
         text-overflow: ellipsis;
       }
+    }
+
+    .outer_box_empty {
+      width: 312px;
+    }
+
+    .outer_box:hover {
+      cursor: pointer;
     }
   }
 }
