@@ -28,11 +28,11 @@ import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {ThematicDetailsComponent} from './pages/thematics/details/thematic-details.component';
 import {ThematicVideosComponent} from './pages/thematics/details/thematic-videos/thematic-videos.component';
-import {replaceAllPipe} from './pipe/replaceAll.pipe';
+import {replaceAllPipe} from './pipes/replaceAll.pipe';
 import {YoutubePlayerComponent} from "./pages/video-details/youtube-player/youtube-player.component";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {SuggestedChannelsComponent} from './pages/homepage/suggested-channels/suggested-channels.component';
-import {CategoriesComponent} from './pages/categories//categories.component';
+import {CategoriesComponent} from './pages/categories/categories.component';
 import {CategoryVideosComponent} from './pages/categories/category-videos/category-videos.component';
 
 @NgModule({
