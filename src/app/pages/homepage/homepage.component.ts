@@ -32,6 +32,7 @@ export class HomepageComponent implements OnInit {
       this.videos = (videos as Videos[]).map((videos : Videos) => {
         return {...videos, title: videos.title.replace(/\s/g, '-')}
       });
+
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });

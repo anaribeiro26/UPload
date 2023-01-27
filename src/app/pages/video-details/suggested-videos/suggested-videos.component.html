@@ -7,7 +7,7 @@
                [src]="video.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
         </div>
         <div class="itens">
-          <p class="name" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" [innerHTML]="video.channel"></p>
+          <p class="name" routerLink="/channel/{{video.channel | replaceAll : ' ' : '-'}}" routerLinkActive="active" [innerHTML]="video.channel"></p>
           <a class="title" routerLink="/video/{{video.title}}" routerLinkActive="active" [innerHTML]="video.title | replaceAll : '-' : ' '"></a>
           <div class="ago_actions">
             <div class="date"  routerLink="/video/{{video.title}}" routerLinkActive="active">
@@ -23,7 +23,7 @@
               <div class="share" (click)="clickShare(video.video)"></div>
             </div>
           </div>
-            <img class="logo" alt="logo" [src]="prefix_url + video.logo" routerLink="/channels/{{video.channel_id}}" routerLinkActive="active" >
+            <img [title]="video.channel" class="logo" alt="logo" [src]="prefix_url + video.logo" routerLink="/channel/{{video.channel | replaceAll : ' ' : '-'}}" routerLinkActive="active">
         </div>
       </div>
     </div>

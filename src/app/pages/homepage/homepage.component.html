@@ -6,18 +6,18 @@
     <div class="row">
       <div class="cel" *ngFor="let v of videos">
         <div class="box">
-          <div class="card_image" routerLink="/video/{{v.title}}" routerLinkActive="active">
+          <div class="card_image" [title]="v.title | replaceAll : '-' : ' '" routerLink="/video/{{v.title}}" routerLinkActive="active">
             <img class="thumbnail" alt="thumbnail"
                  [src]="v.video.replace('https://www.youtube.com/watch?v=', 'https://img.youtube.com/vi/') + suffix_url"/>
-            <div class="channel_logo"><img class="logo" alt="logo" [src]="prefix_url + v.logo">
+            <div class="channel_logo" [title]="v.channel" routerLink="/channel/{{v.channel | replaceAll : ' ' : '-'}}" routerLinkActive="active"><img class="logo" alt="logo" [src]="prefix_url + v.logo">
             </div>
           </div>
           <div class="itens">
             <div class="video_info">
-              <p class="name" routerLinkActive="active" [innerHTML]="v.channel"></p>
-              <p class="titleVideo" routerLink="/video/{{v.title}}" routerLinkActive="active"
+              <p class="name" [title]="v.channel | replaceAll : '-' : ' '" routerLink="/channel/{{v.channel | replaceAll : ' ' : '-'}}" routerLinkActive="active" [innerHTML]="v.channel"></p>
+              <p class="titleVideo" [title]="v.title | replaceAll : '-' : ' '" routerLink="/video/{{v.title}}" routerLinkActive="active"
                  [innerHTML]="v.title | replaceAll : '-' : ' '"></p>
-              <div class="date">
+              <div class="date" routerLink="/video/{{v.title}}" routerLinkActive="active">
                 <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
                 <p class="timestamp" [innerHTML]="v.date"></p>
                 <span class="ago">{{'upload.time_ago' | translate}}</span>
