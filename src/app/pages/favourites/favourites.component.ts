@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {UPloadService} from "../../services/UPload.service";
 import {ActivatedRoute} from "@angular/router";
+import {UPloadService} from "../../services/UPload.service";
 import {faStar} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -10,6 +10,7 @@ import {faStar} from "@fortawesome/free-solid-svg-icons";
 })
 export class FavouritesComponent implements OnInit {
   faStar = faStar;
+
   favorites_list: any[] = [];
 
   image_url = '/maxresdefault.jpg';

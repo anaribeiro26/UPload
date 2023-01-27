@@ -12,15 +12,17 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-
-  videos: Videos[] | undefined = [];
-  and: any;
-  lang = localStorage.getItem('lang') || 'pt'
-  image_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
-  imageUrl = '/maxresdefault.jpg'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
-  //faShare = faShareNodes;
+
+  videos: Videos[] | undefined = [];
+
+  and: any;
+
+  lang = localStorage.getItem('lang') || 'pt'
+
+  prefix_url = "https://dev-project-upskill-grupo05.pantheonsite.io";
+  suffix_url = '/maxresdefault.jpg'
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService, private translate: TranslateService) { }
 

@@ -11,13 +11,18 @@ import {faBookmark as faBookmarkSolid} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./playlist-videos.component.scss']
 })
 export class PlaylistVideosComponent implements OnInit {
-  videosPlaylist: VideosPlaylist[] = [];
-  and: any;
-  lang = localStorage.getItem('lang') || 'pt'
   faBookmarkSolid = faBookmarkSolid;
   faBookmark = faBookmark;
-  image_url = '/hqdefault.jpg'
+
+  videosPlaylist: VideosPlaylist[] = [];
+
   @Input() id!: any;
+
+  and: any;
+
+  lang = localStorage.getItem('lang') || 'pt';
+
+  suffix_url = '/hqdefault.jpg';
 
   constructor(private UPload: UPloadService, private translate: TranslateService) {
   }

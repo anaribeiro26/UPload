@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
-import {Playlists} from "../../../services/UPload.model";
 import {ActivatedRoute} from "@angular/router";
 import {UPloadService} from "../../../services/UPload.service";
+import {Playlists} from "../../../services/UPload.model";
 
 @Component({
   selector: 'app-playlist-details',
@@ -10,6 +10,7 @@ import {UPloadService} from "../../../services/UPload.service";
 })
 export class PlaylistDetailsComponent implements OnInit {
   playlistDetails: Playlists[] = [];
+
   image_url = '/hqdefault.jpg'
 
   constructor(private route: ActivatedRoute, private UPload: UPloadService) {
