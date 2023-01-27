@@ -84,7 +84,6 @@ export class SuggestedVideosComponent implements OnInit {
     })
   }
 
-
   changeFavorite(id: number) {
     this.UPload.toggleFavorite(id)
   }

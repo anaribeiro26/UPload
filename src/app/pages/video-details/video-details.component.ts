@@ -13,6 +13,7 @@ import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid
   templateUrl: './video-details.component.html',
   styleUrls: ['./video-details.component.scss']
 })
+
 export class VideoDetailsComponent implements OnInit {
   faThumbsUp = faThumbsUp;
   faThumbsDown = faThumbsDown;
@@ -194,7 +195,9 @@ export class VideoDetailsComponent implements OnInit {
 
     let toast: any = document.getElementById("snackbar");
     toast.className = "show";
-    setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, 3000);
+    setTimeout(function () {
+      toast.className = toast.className.replace("show", "");
+    }, 3000);
   }
 }
 

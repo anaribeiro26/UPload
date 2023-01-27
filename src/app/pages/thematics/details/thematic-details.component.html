@@ -6,8 +6,10 @@
     <div class="picture_section">
       <img alt="logo" class="logo" [src]="image_url+t.thumbnail">
     </div>
-      <h3 class="title" [innerHTML]="t.title"></h3>
-      <h5 class="title">○ {{'upload.article_title' | translate}}</h5>
+    <h3 class="title" [innerHTML]="t.title"></h3>
+    <div class="tags"><span *ngFor="let tag of t.tags.split(',').slice(0, 3)" routerLink="/tags/{{tag.split(' ').join('')}}" routerLinkActive="active">#{{tag.split(' ').join('')}} </span>
+    </div>
+    <h5 class="title">○ {{'upload.article_title' | translate}}</h5>
   </div>
   <p class="description" [innerHTML]="t.description"></p>
   <app-thematic-videos [tags_id]="t.tags_id"></app-thematic-videos>
