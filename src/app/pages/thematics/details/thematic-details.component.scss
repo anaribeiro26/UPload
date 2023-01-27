@@ -1,12 +1,6 @@
 .thematics {
   margin-top: 10px;
 
-  .thematic_info {
-    display: flex;
-    flex-direction: column;
-    margin-top: -80px;
-  }
-
   .header {
     margin-left: 20px;
     margin-right: 20px;
@@ -21,18 +15,35 @@
     }
   }
 
-  .picture_section {
+  .thematic_info {
     display: flex;
-    justify-content: flex-end;
-  }
+    flex-direction: column;
+    margin-top: -80px;
 
-  .logo {
-    border-radius: 50%;
-    border: 6px solid #FFFFFF;
-    height: 140px;
-    width: 140px;
-    margin-right: 60px;
-  }
+    .tags {
+      cursor: pointer;
+      margin-left: 30px;
+      margin-top: 5px;
+      color: #1e75ff;
+      font-size: 14px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .picture_section {
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .logo {
+      border-radius: 50%;
+      border: 6px solid #FFFFFF;
+      height: 140px;
+      width: 140px;
+      margin-right: 60px;
+    }
+
     h3 {
       &.title {
         font-size: 25px;
@@ -52,6 +63,7 @@
         font-size: 15px;
       }
     }
+  }
 
   .description {
     margin-left: 30px;
@@ -108,6 +120,7 @@
 
     .header {
       margin-top: 80px;
+
       .header_image {
         height: 160px;
         width: 100%;
