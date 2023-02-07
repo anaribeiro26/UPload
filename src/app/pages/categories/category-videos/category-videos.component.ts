@@ -29,7 +29,9 @@ export class CategoryVideosComponent implements OnInit {
 
   ngOnInit(): void {
     this.UPload.getCategoryVideos(this.category_id).subscribe((category_videos) => {
-      this.category_videos = category_videos as TaxonomyVideos[];
+      this.category_videos = (category_videos as TaxonomyVideos[]).map((category_videos : TaxonomyVideos) => {
+        return {...category_videos, title: category_videos.title.replace(/\s/g, '-')}
+      });
       this.translate.get('upload.and').subscribe(and => {
         this.and = (and);
       });

@@ -214,7 +214,11 @@
   }
 }
 
-
+@media screen and (max-width: 560px) {
+  .body {
+    padding-bottom: 120px;
+  }
+}
 
 
 

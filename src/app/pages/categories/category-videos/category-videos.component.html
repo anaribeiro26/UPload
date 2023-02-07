@@ -15,7 +15,7 @@
             >#{{tag}} </span>
         </p>
       </div>
-      <p class="title" routerLink="/video/{{c.title}}" routerLinkActive="active" [innerHTML]="c.title"></p>
+      <p class="title" routerLink="/video/{{c.title}}" routerLinkActive="active" [innerHTML]="c.title | replaceAll : '-' : ' '"></p>
       <div class="time_actions">
       <div class="date" routerLink="/video/{{c.title}}" routerLinkActive="active">
         <p class="ago" *ngIf="lang=='pt'">{{'upload.timestamp' | translate}}</p>
