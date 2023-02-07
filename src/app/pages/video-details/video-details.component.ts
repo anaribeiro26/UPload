@@ -4,7 +4,11 @@ import {UPloadService} from "../../services/UPload.service";
 import {TranslateService} from "@ngx-translate/core";
 import {VideoDetails} from "../../services/UPload.model";
 import {faThumbsDown, faThumbsUp} from "@fortawesome/free-regular-svg-icons";
-import {faFlag, faThumbsDown as faThumbsDownSolid, faThumbsUp as faThumbsUpSolid} from "@fortawesome/free-solid-svg-icons";
+import {
+  faFlag,
+  faThumbsDown as faThumbsDownSolid,
+  faThumbsUp as faThumbsUpSolid
+} from "@fortawesome/free-solid-svg-icons";
 
 //@ts-ignore
 
@@ -36,8 +40,9 @@ export class VideoDetailsComponent implements OnInit {
     this.route.params.subscribe((params) => {
       let title = params['title'];
       this.UPload.getVideoDetails(title).subscribe((video) => {
-        this.video = video[0];
+        this.video = video[0]
         this.id = video[0].id;
+        this.video.channel = video[0].channel.replace(/\s/g, '-');
 
         this.translate.get('upload.and').subscribe(and => {
           this.and = (and);

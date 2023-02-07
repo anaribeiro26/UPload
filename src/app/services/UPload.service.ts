@@ -2,23 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
-import {
-  Channels,
-  ChannelVideos,
-  VideoDetails,
-  Videos,
-  VideosPlaylist,
-  Taxonomies,
-  TaxonomyVideos,
-  Playlists,
-  ChannelComments,
-  VideoComments,
-  FlagCounter,
-  FlaggingRequest,
-  FlaggingResponse,
-  Thematics,
-  ThematicVideos,
-} from "./UPload.model";
+import {Channels, ChannelVideos, VideoDetails, Videos, VideosPlaylist, Taxonomies, TaxonomyVideos, ChannelComments, VideoComments, FlagCounter, FlaggingRequest, FlaggingResponse, Thematics, ThematicVideos,} from "./UPload.model";
 import {Observable} from "rxjs";
 
 let prefix: any;
@@ -48,7 +32,6 @@ export class UPloadService {
   faThumbsDownSolid = faThumbsDownSolid;
   faThumbsUpSolid = faThumbsUpSolid;
   icon: any = faThumbsUp;
-  //videosPlaylist: VideosPlaylist[] = [];
 
   favorites: number[] = JSON.parse(localStorage.getItem("my_favorites") || "[]")
 
@@ -71,16 +54,6 @@ export class UPloadService {
   getSuggestedThematics() {
     return this.http.get(BASE_URL + prefix + "/artigos/aleatorios")
   }
-
-  //getThematicVideos() {
-  //  return new Observable(observer => {
-  //    this.http.get<ThematicVideos[]>(BASE_URL + "/videos").subscribe((videos: Videos[]) => {
-  //      observer.next(videos.filter((video: Videos) => {
-  //        return this.favorites.includes(video.id)
-  //      }))
-  //    });
-  //  })
-  //}
 
   getChannel(title: string) {
     return this.http.get<Channels[]>(BASE_URL + prefix + "/canais/" + title)

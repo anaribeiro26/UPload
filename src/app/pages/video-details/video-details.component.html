@@ -18,13 +18,13 @@
             <app-youtube-player [id]="getYoutubeId(video.video)"></app-youtube-player>
           </div>
         </div>
-        <div class="channel-box" title="{{video.channel}}">
-          <div class="photo" routerLink="/channels/{{video.channel_id}}">
+        <div class="channel-box" title="{{video.channel | replaceAll : '-' : ' '}}">
+          <div class="photo" routerLink="/channel/{{video.channel}}">
             <img class="logo" alt="video" [src]="prefix_url + video.logo">
           </div>
           <div class="title-like">
-            <div class="second-box" routerLink="/channels/{{video.channel_id}}">
-              <div class="title"><p class="channel-title">{{video.channel}}</p></div>
+            <div class="second-box" routerLink="/channel/{{video.channel}}">
+              <div class="title"><p class="channel-title" [innerHTML]="video.channel  | replaceAll : '-' : ' '"></p></div>
               <div class="date"><p>{{'upload.timestamp' | translate}} {{video.date}}</p></div>
             </div>
             <div class="like-dislike">
